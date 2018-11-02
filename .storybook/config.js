@@ -4,7 +4,7 @@ import staticMarkup from "react-storybook-addon-static-markup";
 setAddon(staticMarkup);
 
 function loadStories() {
-  require("../src/stories");
+  require("../src/stories.index");
 }
 
 configure(loadStories, module);
