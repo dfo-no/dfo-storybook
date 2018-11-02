@@ -17,11 +17,7 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "dependencies": {
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
-    "react-scripts": "2.1.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@storybook/addon-a11y": "^4.0.2",
@@ -33,6 +29,11 @@
     "@storybook/addons": "^4.0.2",
     "@storybook/react": "^4.0.2",
     "babel-loader": "^8.0.4",
-    "react-storybook-addon-static-markup": "^0.1.0"
+    "classnames": "^2.2.6",
+    "node-sass": "^4.9.4",
+    "react-scripts": "2.1.1",
+    "react-storybook-addon-static-markup": "^0.1.0",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
   }
 }

@@ -1,0 +1,39 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: $text;
+}
+
+figure img {
+  max-width: 100%;
+}
+
+table,
+td {
+  border: 1px solid $secondary;
+  border-collapse: collapse;
+  padding: 20px;
+  font-size: 1.6rem;
+}
+
+blockquote {
+  color: $primary;
+  font-size: 3.2rem;
+}
+
+cite {
+  display: block;
+  float: right;
+  font-weight: 300;
+}
+
+tr:first-child {
+  background-color: $primary;
+  color: #fff;
+}
+
+input {
+  border-radius: 0;
+  -webkit-appearance: none;
+}
