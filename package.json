@@ -18,6 +18,7 @@
     "not op_mini all"
   ],
   "license": "MIT",
+  "main": "./src/components",
   "dependencies": {},
   "peerDependencies": {
     "react": "^16.6.0",
