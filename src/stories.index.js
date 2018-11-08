@@ -7,7 +7,7 @@ import { checkA11y } from "@storybook/addon-a11y";
 import { withNotes } from "@storybook/addon-notes";
 
 import { Welcome } from "@storybook/react/demo";
-import { Button, Input } from "./components";
+import { Button, Input, Checkbox } from "./components";
 import { TypographyPage, FormPage } from "./pages";
 
 storiesOf("Welcome", module).add("to Storybook", () => (
@@ -19,8 +19,14 @@ storiesOf("Typography", module).add("Overview", () => <TypographyPage />);
 storiesOf("Forms", module)
   .addDecorator(withKnobs)
   .addDecorator(checkA11y)
-  .addWithStaticMarkup("Input field", () => (
+  .addWithStaticMarkup("Text field", () => (
     <Input label="Ditt brukernavn her:" value="brukernavn@dfo.no" />
+  ))
+  .addWithStaticMarkup("Checkbox field", () => (
+    <Checkbox
+      label="Nyhetsbrev om virksomhets- og økonomistyring"
+      name="fields[customerNoteInterests][]"
+    />
   ))
   .addWithStaticMarkup("Complete form", () => <FormPage />);
 

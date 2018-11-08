@@ -12,14 +12,9 @@ export default function FormPage() {
         value="kari@dfo.no"
         disabled
       />
-      <Input label="Fornavn:" type="text" name="fields[firstName]" value="" />
-      <Input label="Etternavn:" type="text" name="fields[lastName]" value="" />
-      <Input
-        label="Virksomhet:"
-        type="text"
-        name="fields[organisation]"
-        value=""
-      />
+      <Input label="Fornavn:" type="text" name="fields[firstName]" />
+      <Input label="Etternavn:" type="text" name="fields[lastName]" />
+      <Input label="Virksomhet:" type="text" name="fields[organisation]" />
       <strong>Abonner på :</strong>
       <Checkbox
         label="Nyhetsbrev om virksomhets- og økonomistyring"

@@ -3,8 +3,9 @@ import "./Checkbox.scss";
 
 export default function Checkbox({ label, ...rest }) {
   const inputRef = React.createRef();
+  const { name } = rest;
   return (
-    <label htmlFor={rest.name} className="dfo-checkbox">
+    <label htmlFor={name} className="dfo-checkbox">
       <input
         ref={inputRef}
         type="checkbox"
