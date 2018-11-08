@@ -1,6 +1,6 @@
 import React from "react";
 import "../components/reset";
-import { Form, Input, Checkbox } from "../components";
+import { Form, Input, Checkbox, Button } from "../components";
 
 export default function FormPage() {
   return (
@@ -25,7 +25,7 @@ export default function FormPage() {
         label="Nyhetsbrev om virksomhets- og økonomistyring"
         name="fields[customerNoteInterests][]"
       />
-      <input type="submit" class="button" value="Send" />
+      <Button type="submit">Send</Button>
     </Form>
   );
 }

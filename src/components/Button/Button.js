@@ -5,8 +5,8 @@ import "./Button.scss";
 export default function Button({ children = [], invert, ...rest }) {
   return (
     <button
-      className={classNames("button", {
-        "button--invert": invert
+      className={classNames("dfo-button", {
+        "dfo-button--invert": invert
       })}
     >
       {children}

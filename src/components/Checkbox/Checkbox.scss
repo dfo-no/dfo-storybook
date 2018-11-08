@@ -7,6 +7,14 @@
   display: block;
   white-space: nowrap;
   &__input {
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: 2px solid $border;
+    margin: $padding-small 0;
+    outline-color: transparent;
+    outline-style: none;
+    background-color: #fff;
+    padding: $padding-small;
     position: relative;
     width: 2rem;
     height: 2rem;

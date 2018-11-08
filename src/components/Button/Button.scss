@@ -1,13 +1,13 @@
 @import "../_core/_index";
 
-.button {
+.dfo-button {
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
   transition: background-color 0.125s;
   text-decoration: none;
   display: inline-block;
-
+  width: 100%;
   padding: 0.85rem 2.5rem;
   flex-shrink: 0;
 
@@ -35,19 +35,15 @@
   }
 }
 
-.button--invert {
+.dfo-button--invert {
   background: $blogBackground;
   color: $text;
   border: 2px solid transparent;
-  &.button:hover {
+  &.dfo-button:hover {
     background: $blogBackground;
     border: 2px solid $primary;
   }
-  &.button:focus {
+  &.dfo-button:focus {
     border: 2px solid $primary;
   }
-}
-
-button:not([class]) {
-  @extend .button;
 }
