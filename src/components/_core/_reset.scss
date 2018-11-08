@@ -1,15 +1,53 @@
+@import "./_index";
+
 * {
   margin: 0;
   padding: 0;
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: $text;
+}
+
+figure img {
+  max-width: 100%;
+}
+
+table,
+td {
+  border: 1px solid $secondary;
+  border-collapse: collapse;
+  padding: 20px;
+  font-size: 1.6rem;
+}
+
+blockquote {
+  color: $primary;
+  font-size: 3.2rem;
+}
+
+cite {
+  display: block;
+  float: right;
+  font-weight: 300;
+}
+
+tr:first-child {
+  background-color: $primary;
+  color: #fff;
+}
+
+input {
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
 html {
   // In order for all rem sizes to be multiples of 10 (1.2rem => 12px)
   font-size: 10px;
-
-  // @media screen and (max-width: $mobile) {
-  //   font-size: 9px;
-  // }
 }
 
 body {
@@ -18,7 +56,6 @@ body {
   font-weight: 400;
   font-size: 1.8rem;
   color: $text;
-
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -41,8 +78,15 @@ p {
   }
 }
 
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3 {
   color: $primary;
   margin: 0 0 0.125em;
   line-height: 1.25em;
@@ -54,13 +98,20 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
-h1, h2, h3, h4,
-.h1, .h2, .h3, .h4 {
+h1,
+h2,
+h3,
+h4,
+.h1,
+.h2,
+.h3,
+.h4 {
   font-family: "Source Serif Pro";
   font-weight: 700;
 }
 
-h1, .h1 {
+h1,
+.h1 {
   font-size: 5rem;
 
   @media screen and (max-width: $tablet) {
@@ -72,7 +123,8 @@ h1, .h1 {
   }
 }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: 2.2rem;
 
   @media screen and (max-width: $tablet) {
@@ -80,29 +132,27 @@ h2, .h2 {
   }
 }
 
-h3, .h3,
-h4, .h4 {
+h3,
+.h3,
+h4,
+.h4 {
   font-size: 1.8rem;
 }
 
-h4, .h4 {
+h4,
+.h4 {
   font-weight: 400;
 }
 
-h5, .h5 {
+h5,
+.h5 {
   font-family: "Source Sans Pro";
   font-weight: 600;
   font-size: 1.8rem;
 }
 
-.accordion {
-  h1, h2, h3, h4, h5, h6,
-  .h1, .h2, .h3, .h4, .h5, .h6 {
-    @extend .h5;
-  }
-}
-
-ul, ol {
+ul,
+ol {
   margin: $padding-medium 0;
   padding-left: $padding-large;
 }

@@ -8,10 +8,13 @@ import { withNotes } from "@storybook/addon-notes";
 
 import { Welcome } from "@storybook/react/demo";
 import { Button } from "./components";
+import { TypographyPage } from "./pages";
 
 storiesOf("Welcome", module).add("to Storybook", () => (
   <Welcome showApp={linkTo("Button")} />
 ));
+
+storiesOf("Typography", module).add("Overview", () => <TypographyPage />);
 
 storiesOf("Button", module)
   .addDecorator(withKnobs)

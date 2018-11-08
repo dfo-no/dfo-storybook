@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "start": "npm run storybook",
+    "dev": "npm run storybook",
     "build": "echo 'not implemented, will build npm package'",
     "test": "react-scripts test",
     "storybook": "start-storybook -p 9009 -s public",
