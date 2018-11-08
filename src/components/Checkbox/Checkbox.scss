@@ -1,0 +1,29 @@
+@import "../_core/_index";
+
+.dfo-checkbox {
+  color: $primary;
+  cursor: pointer;
+  margin-right: 20px;
+  display: block;
+  white-space: nowrap;
+  &__input {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    border-color: $secondary;
+    background-color: #fff;
+    margin-right: 5px;
+    vertical-align: middle;
+    &:checked {
+      background: url("/tickmark.svg") no-repeat center center;
+      background-size: 75%;
+    }
+    &:hover,
+    &:focus {
+      border-color: $primary;
+    }
+  }
+  &__text {
+    display: inline-block;
+  }
+}

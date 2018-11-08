@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import "./styles.scss";
+import "./Button.scss";
 
 export default function Button({ children = [], invert, ...rest }) {
   return (

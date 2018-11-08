@@ -1,5 +1,3 @@
-@import "./_index";
-
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +8,19 @@ body {
   margin: 0;
   padding: 0;
   color: $text;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 figure img {
