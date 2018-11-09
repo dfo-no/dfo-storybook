@@ -4,7 +4,7 @@
   "scripts": {
     "start": "npm run storybook",
     "dev": "npm run storybook",
-    "build": "echo 'not implemented, will build npm package'",
+    "build": "npm run build-storybook",
     "test": "react-scripts test",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"

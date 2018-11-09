@@ -20,6 +20,10 @@ To open storybook, run `npm start storybook`.
 
 (TODO: Describe our Sass conventions)
 
+## Deploying storybook
+
+1. Run `npm run build` to create a static build in a folder called `storybook-static/`.
+
 ## Background
 
 This project was originally scaffolded with [create-react-app](https://github.com/facebook/create-react-app), and [Storybook](https://github.com/storybooks/storybook) was added afterwards.
