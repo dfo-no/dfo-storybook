@@ -22,10 +22,10 @@
   "main": "./src/components",
   "dependencies": {},
   "peerDependencies": {
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
     "classnames": "^2.2.6",
-    "node-sass": "^4.9.4"
+    "node-sass": "^4.9.4",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -38,11 +38,11 @@
     "@storybook/addons": "^4.0.2",
     "@storybook/react": "^4.0.2",
     "babel-loader": "^8.0.4",
-    "react-scripts": "2.1.1",
-    "react-storybook-addon-static-markup": "^0.1.0",
+    "classnames": "^2.2.6",
+    "node-sass": "^4.9.4",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "classnames": "^2.2.6",
-    "node-sass": "^4.9.4"
+    "react-scripts": "2.1.1",
+    "react-storybook-addon-static-markup": "https://github.com/nilsnh/react-storybook-addon-static-markup.git"
   }
 }

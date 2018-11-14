@@ -10,9 +10,8 @@ import { Welcome } from "@storybook/react/demo";
 import { Button, Input, Checkbox } from "./components";
 import { TypographyPage, FormPage } from "./pages";
 
-storiesOf("Welcome", module).add("to Storybook", () => (
-  <Welcome showApp={linkTo("Button")} />
-));
+storiesOf("Welcome", module)
+  .add("to Storybook", () => <Welcome showApp={linkTo("Button")} />);
 
 storiesOf("Typography", module).add("Overview", () => <TypographyPage />);
 
