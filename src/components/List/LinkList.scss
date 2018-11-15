@@ -1,0 +1,125 @@
+@import "../_core/_index";
+
+$navBorderColor: $secondary;
+
+@if $site == "intranet" {
+  $navBorderColor: $darkborder;
+}
+
+.nav {
+  //@include block(false);
+
+  &--nomargin {
+    margin-bottom: 0;
+  }
+
+  &--no-border {
+    border: 0;
+
+    .nav {
+      &__item {
+        border: 0;
+
+        &:first-child,
+        &:last-child {
+          border: 0;
+        }
+
+        &--left {
+          .nav {
+            &__link {
+              padding-left: $padding-medium + 2.2rem;
+
+              &__symbol {
+                left: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &--light {
+    color: #fff;
+
+    .nav {
+      &__item {
+        a {
+          color: #fff;
+
+          &:hover {
+            color: $secondary;
+          }
+        }
+      }
+    }
+  }
+
+  &__links {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+
+    &--no-margin {
+      margin: 0;
+    }
+  }
+
+  &__link {
+    padding: $padding-small ($padding-medium + 2.2rem + $padding-large)
+      $padding-small $padding-medium;
+    text-decoration: none;
+    color: $text;
+    font-size: 1.8rem;
+    display: block;
+    position: relative;
+
+    &:hover {
+      color: $secondary;
+    }
+
+    &__symbol {
+      position: absolute;
+      top: $padding-small + 0.3rem;
+      right: $padding-medium;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 0rem;
+  }
+
+  &__item {
+    border-bottom: 1px solid $navBorderColor;
+
+    font-weight: normal;
+    cursor: pointer;
+
+    &:first-child {
+      border-top: 1px solid $navBorderColor;
+    }
+
+    &:nth-last-child(1) {
+      border-bottom: 1px solid $navBorderColor;
+    }
+
+    &--left {
+      .nav__link {
+        padding-right: $padding-medium;
+        padding-left: $padding-medium + 2.2rem + $padding-medium;
+
+        &__symbol {
+          right: auto;
+          left: $padding-medium;
+        }
+      }
+    }
+  }
+
+  &__image {
+    height: 24px;
+    float: right;
+    transform: translateY(2px);
+  }
+}

@@ -2,12 +2,12 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { linkTo } from "@storybook/addon-links";
-import { withKnobs, text, boolean } from "@storybook/addon-knobs";
+import { withKnobs, text, boolean, object } from "@storybook/addon-knobs";
 import { checkA11y } from "@storybook/addon-a11y";
 import { withNotes } from "@storybook/addon-notes";
 
 import { Welcome } from "@storybook/react/demo";
-import { Button, Input, Checkbox } from "./components";
+import { Button, Input, Checkbox, LinkList } from "./components";
 import { TypographyPage, FormPage, ColorsPage } from "./pages";
 
 storiesOf("Welcome", module).add("to Storybook", () => (
@@ -31,6 +31,30 @@ storiesOf("Forms", module)
     />
   ))
   .addWithStaticMarkup("Complete form", () => <FormPage />);
+
+storiesOf("Lists", module)
+  .addDecorator(withKnobs)
+  .addDecorator(checkA11y)
+  .addWithStaticMarkup("Link list", () => (
+    <LinkList
+      title={text("Title", "Regnskap og økonomistyring")}
+      links={object("Links", [
+        {
+          text: "Utredningsinstruksen",
+          link: "/fagomrader/utredningsinstruksen"
+        },
+        { text: "Økonomiregelverket", link: "/fagomrader/økonomiregelverket" },
+        {
+          text: "Statens personalhåndbok",
+          externalLink: "https://lovdata.no/dokument/SPH/sph-2018"
+        },
+        {
+          text: "Reiseregning (for reiser etter 22. juni 2018) bokmål (Excel)",
+          downloadLink: "/fagomrader/lastNed"
+        }
+      ])}
+    />
+  ));
 
 storiesOf("Button", module)
   .addDecorator(withKnobs)
