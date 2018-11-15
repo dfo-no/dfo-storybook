@@ -44,6 +44,9 @@ $navBorderColor: $secondary;
     color: #fff;
 
     .nav {
+      &__heading {
+        color: #fff;
+      }
       &__item {
         a {
           color: #fff;

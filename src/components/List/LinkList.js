@@ -1,11 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 import "./LinkList.scss";
 import LinkListSymbol from "./LinkListSymbol";
 
-export default function LinkList({ title, links }) {
+export default function LinkList({ title, links, invert }) {
   return (
-    <div className="nav">
+    <div
+      className={classNames("nav", {
+        "nav--light": invert
+      })}
+    >
       {title && <h2 className="nav__heading">{title}</h2>}
       <ul className="nav__links">
         {links.map(({ text, link, externalLink, downloadLink }) => {
@@ -16,6 +21,7 @@ export default function LinkList({ title, links }) {
                 <div className="nav__link__content">{text}</div>
                 <div className="nav__link__symbol">
                   <LinkListSymbol
+                    light={invert}
                     external={!!externalLink}
                     download={!!downloadLink}
                   />
@@ -31,6 +37,7 @@ export default function LinkList({ title, links }) {
 
 LinkList.propTypes = {
   title: PropTypes.string,
+  invert: PropTypes.boolean,
   links: PropTypes.arrayOf(
     PropTypes.oneOfType([
       PropTypes.shape({
@@ -51,5 +58,6 @@ LinkList.propTypes = {
 
 LinkList.defaultProps = {
   title: "",
+  invert: false,
   links: []
 };

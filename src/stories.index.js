@@ -9,6 +9,7 @@ import { withNotes } from "@storybook/addon-notes";
 import { Welcome } from "@storybook/react/demo";
 import { Button, Input, Checkbox, LinkList } from "./components";
 import { TypographyPage, FormPage, ColorsPage } from "./pages";
+import { DarkBackground } from "./stories.decorators";
 
 storiesOf("Welcome", module).add("to Storybook", () => (
   <Welcome showApp={linkTo("Button")} />
@@ -38,6 +39,29 @@ storiesOf("Lists", module)
   .addWithStaticMarkup("Link list", () => (
     <LinkList
       title={text("Title", "Regnskap og økonomistyring")}
+      invert={boolean("Invert", false)}
+      links={object("Links", [
+        {
+          text: "Utredningsinstruksen",
+          link: "/fagomrader/utredningsinstruksen"
+        },
+        { text: "Økonomiregelverket", link: "/fagomrader/økonomiregelverket" },
+        {
+          text: "Statens personalhåndbok",
+          externalLink: "https://lovdata.no/dokument/SPH/sph-2018"
+        },
+        {
+          text: "Reiseregning (for reiser etter 22. juni 2018) bokmål (Excel)",
+          downloadLink: "/fagomrader/lastNed"
+        }
+      ])}
+    />
+  ))
+  .addDecorator(DarkBackground)
+  .addWithStaticMarkup("Link list: Inverted", () => (
+    <LinkList
+      title={text("Title", "Regnskap og økonomistyring")}
+      invert={boolean("Invert", true)}
       links={object("Links", [
         {
           text: "Utredningsinstruksen",
