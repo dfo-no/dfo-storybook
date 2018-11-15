@@ -8,14 +8,22 @@ import { withNotes } from "@storybook/addon-notes";
 
 import { Welcome } from "@storybook/react/demo";
 import { Button, Input, Checkbox, LinkList } from "./components";
-import { TypographyPage, FormPage, ColorsPage } from "./pages";
 import { DarkBackground } from "./stories.decorators";
+import {
+  TypographyPage,
+  FormPage,
+  ColorsPage,
+  TablePage
+} from "./pages";
 
 storiesOf("Welcome", module).add("to Storybook", () => (
   <Welcome showApp={linkTo("Button")} />
 ));
 
 storiesOf("Typography", module).add("Overview", () => <TypographyPage />);
+
+storiesOf("Tables", module)
+  .add("Default", () => <TablePage />)
 
 storiesOf("Colors", module).add("Colors: dfo.no", () => <ColorsPage />);
 
