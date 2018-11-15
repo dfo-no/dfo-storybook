@@ -14,9 +14,9 @@ storiesOf("Welcome", module).add("to Storybook", () => (
   <Welcome showApp={linkTo("Button")} />
 ));
 
-storiesOf("Typography", module)
-  .add("Overview", () => <TypographyPage />)
-  .add("Colors: dfo.no", () => <ColorsPage />);
+storiesOf("Typography", module).add("Overview", () => <TypographyPage />);
+
+storiesOf("Colors", module).add("Colors: dfo.no", () => <ColorsPage />);
 
 storiesOf("Forms", module)
   .addDecorator(withKnobs)
