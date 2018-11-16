@@ -99,4 +99,14 @@ storiesOf("Button", module)
     <Button invert={boolean("Invert", true)} onClick={action("clicked")}>
       {text("Text", "Meld deg på nyhetsbrev")}
     </Button>
+  ))
+  .addWithStaticMarkup("CTA link disguised as button", () => (
+    <Button
+      plainLink={boolean("Link", true)}
+      cta={boolean("cta", true)}
+      invert={boolean("invert", false)}
+      href="/somewhere"
+    >
+      {text("Text", "Meld deg på nyhetsbrev")}
+    </Button>
   ));
