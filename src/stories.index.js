@@ -17,7 +17,13 @@ storiesOf("Welcome", module).add("to Storybook", () => (
 
 storiesOf("Typography", module).add("Overview", () => <TypographyPage />);
 
-storiesOf("Tables", module).add("Default", () => <TablePage />);
+storiesOf("Tables", module)
+  .addDecorator(withKnobs)
+  .add("Table", () => <TablePage
+    caption={text("Caption", "<p>Imperial to metric conversion factors<br/><em>Values are given to three significant figures unless exact</em></p>")}
+    zebra={boolean("Zebra stripes", false)}
+    borders={boolean("Borders", false)}
+  />)
 
 storiesOf("Colors", module).add("Colors: dfo.no", () => <ColorsPage />);
 

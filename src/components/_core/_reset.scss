@@ -162,87 +162,57 @@ blockquote {
 }
 
 /** @todo: Move this stuff 👇 elsewhere **/
-table, .table {
-  width: 100%;
+.table__wrapper {
   overflow-x: auto;
+  max-width: 100%;
+}
 
+table, .table {
   border: 0;
+  border-color: $darkborder !important;
+  border-top: 1px solid $darkborder;
+  border-bottom: 1px solid $darkborder;
+  border-collapse: collapse;
+
   font-size: 1.6rem;
   font-variant-numeric: lining-nums tabular-nums;
   text-align: left;
   font-weight: 400;
 
-  border-collapse: collapse;
-
-  &.table--simple {
-    table, td, th, tr {
-      border-color: $darkborder;
-    }
-  }
-
-  &.table--tight {
-    td, th {
-      padding: $padding-xxsmall $padding-xsmall;
-    }
-  }
-
-  &.table--striped {
-    tbody tr:nth-child(even) {
-      background: $darkerbackground;
-    }
-  }
-
-  &:not(.table--simple) {
-    border: 1px solid $primary;
-
-    thead th {
-      background: $primary;
-      color: $textonprimary;
-    }
-  }
-
   caption {
-    margin-bottom: $padding-xsmall;
-
-    text-align: left;
-    text-transform: uppercase;
-    font-family: "Sans Serif Pro";
-    font-style: italic;
+    margin: $padding-xsmall 0;
+    padding: $padding-medium;
+    border-top: 1px solid $darkborder;
+    font-size: 1.6rem;
+    font-weight: 400;
   }
-
-  tr, td, th {
-    border-color: $primary;
-    border-style: solid;
-    border-width: 0;
-  }
-
 
   td, th {
-    padding: $padding-xsmall $padding-small;
-
-    &[rowspan]:not(:first-child) { border-left-width: 1px; }
-    &[rowspan]:not(:last-child) { border-right-width: 1px; }
+    padding: 1.25rem 3rem 1.25rem 1.25rem;
+    line-height: 2.2rem;
   }
 
-  td { border-bottom-width: 1px; }
   th {
-    font-weight: 600;
-    border-bottom-width: 2px;
-  }
-
-  tbody {
-    tr {
-      &:last-child { border-bottom-width: 0; }
-    }
+    font-weight: 800;
+    vertical-align: top;
   }
 
   tfoot {
-    tr {
-      border-top-width: 2px;
-    }
+    border-top: 3px solid $darkborder;
+  }
 
-    td {
-      font-weight: 600;
+  &.table--striped {
+    tbody {
+      tr:nth-child(odd) td {
+        background: rgba($secondary, 0.075);
+      }
+    }
+  }
+
+  &.table--with-borders {
+    td, th {
+      border: 1px solid $darkborder;
+      padding: 1rem 1.5rem;
     }
   }
 }
