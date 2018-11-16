@@ -56,7 +56,7 @@ export default function FormPage({caption, zebra, borders}) {
               <td></td>
               <td>1.61</td>
             </tr>
-            <tr class="group">
+            <tr>
               <th rowspan="4">Area</th>
               <td>square inches</td>
               <td>sq. millimetres (mm²)</td>
@@ -85,7 +85,7 @@ export default function FormPage({caption, zebra, borders}) {
               <td></td>
               <td>2.47</td>
             </tr>
-            <tr class="group">
+            <tr>
               <th rowspan="4">Volume</th>
               <td>cubic inches</td>
               <td>millitres (ml)</td>
