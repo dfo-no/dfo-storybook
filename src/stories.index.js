@@ -9,12 +9,7 @@ import { withNotes } from "@storybook/addon-notes";
 import { Welcome } from "@storybook/react/demo";
 import { Button, Input, Checkbox, LinkList } from "./components";
 import { DarkBackground } from "./stories.decorators";
-import {
-  TypographyPage,
-  FormPage,
-  ColorsPage,
-  TablePage
-} from "./pages";
+import { TypographyPage, FormPage, ColorsPage, TablePage } from "./pages";
 
 storiesOf("Welcome", module).add("to Storybook", () => (
   <Welcome showApp={linkTo("Button")} />
@@ -22,8 +17,7 @@ storiesOf("Welcome", module).add("to Storybook", () => (
 
 storiesOf("Typography", module).add("Overview", () => <TypographyPage />);
 
-storiesOf("Tables", module)
-  .add("Default", () => <TablePage />)
+storiesOf("Tables", module).add("Default", () => <TablePage />);
 
 storiesOf("Colors", module).add("Colors: dfo.no", () => <ColorsPage />);
 
@@ -91,8 +85,18 @@ storiesOf("Lists", module)
 storiesOf("Button", module)
   .addDecorator(withKnobs)
   .addDecorator(checkA11y)
-  .addWithStaticMarkup("with example text", () => (
-    <Button invert={boolean("Invert", false)} onClick={action("clicked")}>
+  .addWithStaticMarkup("Basic", () => (
+    <Button onClick={action("clicked")}>
+      {text("Text", "Meld deg på nyhetsbrev")}
+    </Button>
+  ))
+  .addWithStaticMarkup("Call to action", () => (
+    <Button cta={boolean("cta", true)} onClick={action("clicked")}>
+      {text("Text", "Meld deg på nyhetsbrev")}
+    </Button>
+  ))
+  .addWithStaticMarkup("Inverted light version", () => (
+    <Button invert={boolean("Invert", true)} onClick={action("clicked")}>
       {text("Text", "Meld deg på nyhetsbrev")}
     </Button>
   ));
