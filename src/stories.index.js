@@ -9,7 +9,7 @@ import { withNotes } from "@storybook/addon-notes";
 import { Welcome } from "@storybook/react/demo";
 import { Button, Input, Checkbox, LinkList, Factbox } from "./components";
 import { DarkBackground } from "./stories.decorators";
-import { TypographyPage, FormPage, ColorsPage, TablePage } from "./pages";
+import { TypographyPage, FormPage, ColorsPage } from "./pages";
 
 storiesOf("Welcome", module).add("to Storybook", () => (
   <Welcome showApp={linkTo("Button")} />
@@ -17,18 +17,18 @@ storiesOf("Welcome", module).add("to Storybook", () => (
 
 storiesOf("Typography", module).add("Overview", () => <TypographyPage />);
 
-storiesOf("Tables", module)
-  .addDecorator(withKnobs)
-  .add("Table", () => (
-    <TablePage
-      caption={text(
-        "Caption",
-        "<p>Imperial to metric conversion factors<br/><em>Values are given to three significant figures unless exact</em></p>"
-      )}
-      zebra={boolean("Zebra stripes", false)}
-      borders={boolean("Borders", false)}
-    />
-  ));
+//storiesOf("Tables", module)
+//  .addDecorator(withKnobs)
+//  .add("Table", () => (
+//    <TablePage
+//      caption={text(
+//        "Caption",
+//        "<p>Imperial to metric conversion factors<br/><em>Values are given to three significant figures unless exact</em></p>"
+//      )}
+//      zebra={boolean("Zebra stripes", false)}
+//      borders={boolean("Borders", false)}
+//    />
+//  ));
 
 storiesOf("Colors", module).add("Colors: dfo.no", () => <ColorsPage />);
 
