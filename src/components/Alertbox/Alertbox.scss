@@ -1,11 +1,9 @@
 @import "../_core/_index";
 
-@import "../_core/_index";
-
 .dfo-alertbox {
   background-color: $error;
   color: $textonprimary;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 600;
   padding-bottom: 5px;
   padding-top: 5px;
@@ -17,7 +15,7 @@
 
 .dfo-alertbox__content {
   p {
-    // force p tags to be inline.
+    // remove line breaks caused by p tags.
     display: inline-block;
     margin-bottom: 0;
     margin-right: 0.3em;
