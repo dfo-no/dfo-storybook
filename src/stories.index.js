@@ -7,7 +7,14 @@ import { checkA11y } from "@storybook/addon-a11y";
 import { withNotes } from "@storybook/addon-notes";
 
 import { Welcome } from "@storybook/react/demo";
-import { Button, Input, Checkbox, LinkList, Factbox } from "./components";
+import {
+  Button,
+  Input,
+  Checkbox,
+  LinkList,
+  Factbox,
+  Alertbox
+} from "./components";
 import { DarkBackground } from "./stories.decorators";
 import { TypographyPage, FormPage, ColorsPage } from "./pages";
 
@@ -117,6 +124,17 @@ storiesOf("Factbox", module)
         </li>
       </ul>
     </Factbox>
+  ));
+
+storiesOf("Alertbox", module)
+  .addDecorator(withKnobs)
+  .addDecorator(checkA11y)
+  .addWithStaticMarkup("Alertbox", () => (
+    <Alertbox>
+      <p>Dette er en viktig melding.</p>
+      <p>Og den kan gjerne foregå over flere linjer.</p>
+      <p>Med en linje til.</p>
+    </Alertbox>
   ));
 
 storiesOf("Button", module)
