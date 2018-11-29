@@ -1,0 +1,58 @@
+.dfo-input {
+  &__label {
+    color: #1a1a1a;
+    font-size: 16px;
+    font-weight: 500;
+    vertical-align: bottom;
+    transform: translateY(-5px);
+  }
+  &__input {
+    -webkit-appearance: none;
+    outline: none;
+    box-shadow: none;
+    border: 2px solid $border;
+    margin: $padding-small 0;
+    outline-color: transparent;
+    outline-style: none;
+    background-color: #fff;
+    padding: $padding-small;
+    width: 100%;
+    transform: translateY(-5px);
+    padding: 11px;
+    border-width: 2px;
+  }
+  &__input:focus,
+  &__input:hover {
+    -webkit-appearance: none;
+    border-color: $primary;
+  }
+  &__input--shake {
+    animation: dfo-shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+}
+
+@keyframes dfo-shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}

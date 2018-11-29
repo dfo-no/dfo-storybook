@@ -1,0 +1,167 @@
+@import "./base/sizes";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: $text;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+figure img {
+  max-width: 100%;
+}
+
+blockquote {
+  color: $primary;
+  font-size: 3.2rem;
+}
+
+cite {
+  display: block;
+  float: right;
+  font-weight: 300;
+}
+
+input {
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+button {
+  font-family: "Source Sans Pro";
+}
+
+html {
+  // In order for all rem sizes to be multiples of 10 (1.2rem => 12px)
+  font-size: 10px;
+}
+
+body {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: $text;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: $primary;
+
+  &:hover {
+    color: $secondary;
+  }
+}
+
+p {
+  margin: 0 0 2.5rem;
+  line-height: 1.5em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3 {
+  color: $primary;
+  margin: 0 0 0.125em;
+  line-height: 1.25em;
+
+  ol + &,
+  ul + &,
+  p + & {
+    margin-top: $padding-large;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+.h1,
+.h2,
+.h3,
+.h4 {
+  font-family: "Source Serif Pro";
+  font-weight: 700;
+}
+
+h1,
+.h1 {
+  font-size: 5rem;
+
+  @media screen and (max-width: $tablet) {
+    font-size: 5rem * 0.75;
+  }
+
+  @media screen and (max-width: $mobile) {
+    font-size: 5rem * 0.6;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 2.2rem;
+
+  @media screen and (max-width: $tablet) {
+    font-size: 2.2rem * 0.9;
+  }
+}
+
+h3,
+.h3,
+h4,
+.h4 {
+  font-size: 1.8rem;
+}
+
+h4,
+.h4 {
+  font-weight: 400;
+}
+
+h5,
+.h5 {
+  font-family: "Source Sans Pro";
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+ul,
+ol {
+  margin: $padding-medium 0;
+  padding-left: $padding-large;
+}
+
+blockquote {
+  margin: $padding-large 0;
+}
+

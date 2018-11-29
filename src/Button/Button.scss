@@ -1,0 +1,46 @@
+.dfo-button {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  transition: background-color 0.125s;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.85rem 2.5rem;
+  flex-shrink: 0;
+
+  background: $primaryLight;
+  color: $background;
+  cursor: pointer;
+
+  &:first-child {
+    margin-right: 1.5rem;
+  }
+
+  &:hover {
+    background-color: $secondary;
+  }
+
+  &--cta {
+    background: $tertiary;
+    color: $textonprimary;
+
+    &:hover,
+    &:focus {
+      background-color: $secondary;
+      color: $textonprimary;
+    }
+  }
+}
+
+.dfo-button--invert {
+  background: $blogBackground;
+  color: $text;
+  border: 2px solid transparent;
+  &.dfo-button:hover {
+    background: $blogBackground;
+    border: 2px solid $primary;
+  }
+  &.dfo-button:focus {
+    border: 2px solid $primary;
+  }
+}

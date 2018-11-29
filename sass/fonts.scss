@@ -1,0 +1,88 @@
+// Build path to font file
+@function buildPath($nodeModule, $format, $fileBase, $fileSuffix) {
+  $folder: to-upper-case($format);
+  $extension: $format;
+
+  // Account for nested folder for woff/woff2
+  @if ($format == 'woff2') {
+    $folder: "WOFF2/TTF";
+    $extension: "ttf.woff2";
+  } @else if ($format == 'woff') {
+    $folder: "WOFF/OTF";
+    $extension: "otf.woff";
+  }
+
+  @return "~#{$nodeModule}/#{$folder}/#{$fileBase}#{$fileSuffix}.#{$extension}";
+}
+
+// The font's we're making available
+$fonts: (
+  "Source Sans Pro": (
+    nodeModule: 'source-sans-pro',
+    fileBase: 'SourceSansPro-',
+    weights: (
+      (name: 'Light', weight: 300, styles: (normal, italic)),
+      (name: 'Regular', weight: 400, styles: (normal, italic)),
+      (name: 'Semibold', weight: 600, styles: (normal)),
+      (name: 'Bold', weight: 700, styles: (normal)),
+    )
+  ),
+  "Source Serif Pro": (
+    nodeModule: 'source-serif-pro',
+    fileBase: 'SourceSerifPro-',
+    weights: (
+      (name: 'Regular', weight: 400, styles: (normal)),
+      (name: 'Bold', weight: 700, styles: (normal)),
+    )
+  )
+);
+
+// Generate the font-face definitions
+@each $font, $data in $fonts {
+  $nodeModule: map-get($data, "nodeModule");
+  $fileBase: map-get($data, "fileBase");
+
+  @each $weight in map-get($data, "weights") {
+    @each $style in map-get($weight, "styles") {
+      $weightName: map-get($weight, "name");
+
+      $localFontNameCompact: $fileBase;
+      $localFontNameSpaced: $font;
+
+      $fileSuffix: '';
+
+      // Build file suffix and full font name (referencing a font possibly
+      // installed locally). The full font name looks like "Source Sans Pro
+      // Semibold Italic". The suffix is for instance LightIt (It for Italic)
+      @if ($weightName == "Regular" and $style == italic) {
+        $fileSuffix: "It";
+        $localFontNameSpaced: "#{$localFontNameSpaced} Italic";
+      } @else if ($weightName == 'Regular') {
+        $fileSuffix: $weightName;
+        $localFontNameSpaced: "#{$localFontNameSpaced}";
+      } @else if ($style == italic) {
+        $fileSuffix: "#{$weightName}It";
+        $localFontNameSpaced: "#{$localFontNameSpaced} #{$weightName} Italic";
+      } @else {
+        $fileSuffix: $weightName;
+        $localFontNameSpaced: "#{$localFontNameSpaced} #{$weightName}";
+      }
+
+      $localFontNameCompact: "#{$localFontNameCompact}#{$fileSuffix}";
+
+      /* #{$font} #{map-get($weight, name)} (#{map-get($weight, weight)}) #{$style} */
+      @font-face {
+        font-family: $font;
+        font-style: $style;
+        font-weight: map-get($weight, weight);
+        src:
+          local("#{$localFontNameSpaced}"),
+          local("#{$localFontNameCompact}"),
+          url(buildPath($nodeModule, 'woff2', $fileBase, $fileSuffix)) format('woff2'),
+          url(buildPath($nodeModule, 'woff', $fileBase, $fileSuffix)) format('woff'),
+          url(buildPath($nodeModule, 'otf', $fileBase, $fileSuffix)) format('opentype'),
+          url(buildPath($nodeModule, 'ttf', $fileBase, $fileSuffix)) format('truetype'),
+      }
+    }
+  }
+}
