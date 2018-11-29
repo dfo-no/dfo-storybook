@@ -99,7 +99,7 @@ export default function MyAwesomeApp() {
 ## 🤓 Development 
 In order to work on the components you first need to clone the repo, install the dependencies by writing `npm install` and after that: `npm start`.
 
-## 📋 Rules
+### 📋 Rules
 
 - All styles are written with SCSS (SASS)
 - Follow the airbnb-sass-styleguide: https://github.com/airbnb/css
