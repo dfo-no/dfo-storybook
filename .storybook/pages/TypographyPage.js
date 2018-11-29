@@ -1,5 +1,4 @@
 import React from "react";
-import "../components/reset";
 
 export default function TypographyPage() {
   return (

@@ -2,8 +2,6 @@ import React from "react";
 import { text, boolean, object } from "@storybook/addon-knobs";
 import classNames from 'classnames'
 
-import "../components/reset";
-
 var decodeHTML = function (html) {
 	var txt = document.createElement('textarea');
 	txt.innerHTML = html;

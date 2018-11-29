@@ -1,5 +1,4 @@
 import React from "react";
-import "../components/reset";
 
 // Currently this overview needs to be manually updated.
 // unsure if we can remove the need for updating this overview when

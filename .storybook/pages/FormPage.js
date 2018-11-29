@@ -1,6 +1,5 @@
 import React from "react";
-import "../components/reset";
-import { Form, Input, Checkbox, Button } from "../components";
+import { Form, Input, Checkbox, Button } from "../../src/index";
 
 export default function FormPage() {
   return (
