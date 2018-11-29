@@ -1,0 +1,126 @@
+@import "../_core/_index";
+
+.dfo-accordion {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dfo-accordion__panel--is-active .dfo-accordion-title {
+  background-color: #012a4c;
+  border-color: #012a4c;
+  color: #fff;
+}
+
+.dfo-accordion-title {
+  background-color: #f7f7f7;
+  border-top: 1px solid #009fe3;
+  color: #333;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  text-align: left;
+  line-height: 2.2rem;
+
+  &__content {
+    width: 100%;
+    line-height: 1.5em;
+    font-size: 18px;
+  }
+  &__arrow {
+    margin-left: 4rem;
+    -webkit-box-flex: 0;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+  }
+}
+
+.dfo-accordion-content {
+  padding: 2rem;
+  background: #f7f7f7;
+  display: none;
+
+  &--is-active {
+    display: block;
+  }
+}
+
+//  when accordion is not active or hovered
+@mixin notActive {
+  background-color: $darkbackground;
+  border-top: $border;
+  color: $text;
+}
+
+// when accordion is being hovered or is being active
+@mixin isActive {
+  background-color: $primary;
+  border-color: $primary;
+  color: white;
+  .arrow polygon {
+    fill: white;
+  }
+}
+
+.dfotest-accordion {
+  $border: 1px solid $secondary;
+  border-bottom: $border;
+
+  width: 100%;
+  //max-width: $content-max-width;
+  list-style-type: none;
+  padding: 0;
+
+  //  top row of an accordion
+  .dfotest-accordion__panel--is-active .dfotest-accordion-title {
+    @include isActive;
+  }
+
+  .dfotest-accordion-title,
+  .dfotest-accordion-title button {
+    @include notActive;
+
+    padding: $padding-small $padding-medium;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    width: 100%;
+    text-align: left;
+    line-height: 2.2rem;
+
+    &:hover {
+      @include isActive;
+    }
+
+    &__content {
+      width: 100%;
+      line-height: 1.5em;
+    }
+
+    .dfotest-accordion-title__arrow {
+      margin-left: $padding-large;
+      flex-grow: 0;
+    }
+  }
+
+  .dfotest-accordion-content {
+    padding: $padding-medium;
+    background: $darkbackground;
+    display: none;
+    &.is-active {
+      display: block;
+    }
+  }
+
+  .accordion__arrow {
+    height: 30px;
+    width: 30px;
+    margin-right: $padding-small;
+    text-align: right;
+    float: right;
+  }
+}

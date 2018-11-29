@@ -45,6 +45,10 @@ input {
   -webkit-appearance: none;
 }
 
+button {
+  font-family: "Source Sans Pro";
+}
+
 html {
   // In order for all rem sizes to be multiples of 10 (1.2rem => 12px)
   font-size: 10px;
@@ -160,4 +164,3 @@ ol {
 blockquote {
   margin: $padding-large 0;
 }
-

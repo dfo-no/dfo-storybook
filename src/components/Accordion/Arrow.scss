@@ -1,0 +1,17 @@
+.dfo-arrow {
+  transition: transform 0.1s ease;
+  &--180,
+  &--up {
+    transform: rotateX(180deg);
+  }
+  &--left {
+    transform: rotate(90deg) translateX(12.5%);
+  }
+  &--right {
+    transform: rotate(-90deg) translateX(25%);
+  }
+  &--large {
+    height: 35px;
+    width: 35px;
+  }
+}

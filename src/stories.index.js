@@ -13,7 +13,8 @@ import {
   Checkbox,
   LinkList,
   Factbox,
-  Alertbox
+  Alertbox,
+  Accordion
 } from "./components";
 import { DarkBackground } from "./stories.decorators";
 import { TypographyPage, FormPage, ColorsPage } from "./pages";
@@ -95,6 +96,35 @@ storiesOf("Lists", module)
         {
           text: "Reiseregning (for reiser etter 22. juni 2018) bokmål (Excel)",
           downloadLink: "/fagomrader/lastNed"
+        }
+      ])}
+    />
+  ));
+
+storiesOf("Accordion", module)
+  .addDecorator(withKnobs)
+  .addDecorator(checkA11y)
+  .addWithStaticMarkup("Accordion", () => (
+    <Accordion
+      panels={object("Panels", [
+        {
+          heading: "Generelt om rollestrukturen",
+          id: "1",
+          content: <p>Her er noe tekst i en skuff</p>
+        },
+        {
+          heading: "Funksjonsroller",
+          id: "2",
+          content: (
+            <p>
+              Noe <strong>sterkt</strong> innhold
+            </p>
+          )
+        },
+        {
+          heading: "Basisroller",
+          id: "3",
+          content: <p>Her kommer noe om utredningsinstruksen</p>
         }
       ])}
     />
