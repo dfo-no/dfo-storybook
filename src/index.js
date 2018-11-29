@@ -6,3 +6,4 @@ export * from "./Factbox";
 export * from "./Form";
 export * from "./Input";
 export * from "./List";
+export * from "./Header";
