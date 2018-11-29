@@ -1,6 +1,6 @@
 {
   "name": "@dfo/components",
-  "version": "0.1.0-alpha.9",
+  "version": "0.1.0-alpha.10",
   "scripts": {
     "start": "npm run storybook",
     "dev": "npm run storybook",
@@ -18,7 +18,10 @@
   ],
   "license": "MIT",
   "main": "./src/components",
-  "dependencies": {},
+  "dependencies": {
+    "source-sans-pro": "^2.40.0",
+    "source-serif-pro": "^2.0.7"
+  },
   "peerDependencies": {
     "classnames": "^2.2.6",
     "node-sass": "^4.9.4",
@@ -37,10 +40,13 @@
     "@storybook/react": "^4.0.2",
     "babel-loader": "^8.0.4",
     "classnames": "^2.2.6",
+    "copy-webpack-plugin": "^4.6.0",
     "node-sass": "^4.9.4",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-scripts": "2.1.1",
-    "react-storybook-addon-static-markup": "https://github.com/nilsnh/react-storybook-addon-static-markup.git"
+    "react-storybook-addon-static-markup": "https://github.com/nilsnh/react-storybook-addon-static-markup.git",
+    "sass-resources-loader": "^2.0.0",
+    "webpack-merge": "^4.1.4"
   }
 }

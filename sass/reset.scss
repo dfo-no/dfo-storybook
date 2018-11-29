@@ -1,4 +1,4 @@
-@import "./sizes";
+@import "./base/sizes";
 
 * {
   margin: 0;
@@ -164,3 +164,4 @@ ol {
 blockquote {
   margin: $padding-large 0;
 }
+
