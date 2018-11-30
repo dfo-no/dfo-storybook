@@ -1,9 +1,12 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
+import { storiesOf, addDecorator } from "@storybook/react";
 import { linkTo } from "@storybook/addon-links";
-
 import { Welcome } from "@storybook/react/demo";
+
+import { Padding } from './stories.decorators'
 import { TypographyPage, FormPage, ColorsPage } from "./pages";
+
+addDecorator(Padding)
 
 storiesOf("Welcome", module)
   .add("to Storybook", () => <Welcome showApp={linkTo("Button")} />);
