@@ -1,8 +1,8 @@
 import React from "react";
 import addons from "@storybook/addons";
 
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/styles/hljs';
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { docco } from "react-syntax-highlighter/dist/styles/hljs";
 
 class CSSPanelComponent extends React.Component {
   state = {
@@ -12,7 +12,6 @@ class CSSPanelComponent extends React.Component {
   onAddCSS = rawCss => {
     this.setState({ css: rawCss });
   };
-
 
   componentDidMount() {
     const { channel, api } = this.props;
@@ -28,9 +27,10 @@ class CSSPanelComponent extends React.Component {
   render() {
     const { css } = this.state;
     const { active } = this.props;
+    const cssToRender = Array.isArray(css) ? css.join("\n") : css;
     return active ? (
-      <SyntaxHighlighter language='css' style={docco}>
-        {css}
+      <SyntaxHighlighter language="css" style={docco}>
+        {cssToRender}
       </SyntaxHighlighter>
     ) : null;
   }

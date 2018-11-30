@@ -34,12 +34,15 @@ storiesOf("Accordion", module)
               heading: "Basisroller",
               id: "3",
               content: <p>Her kommer noe om utredningsinstruksen</p>
-            },
+            }
           ])}
         />
       </ShowStaticMarkup>
     ),
     {
-      css: require('!to-string-loader!css-loader!sass-loader!./Accordion.scss'),
+      css: [
+        require("!to-string-loader!css-loader!sass-loader!./Accordion.scss"),
+        require("!to-string-loader!css-loader!sass-loader!./AccordionArrow.scss")
+      ]
     }
   );

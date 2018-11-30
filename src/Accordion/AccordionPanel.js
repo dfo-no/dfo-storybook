@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import Arrow from "./Arrow";
+import AccordionArrow from "./AccordionArrow";
 
 export default function AccordionPanel({
   id,
@@ -26,7 +26,7 @@ export default function AccordionPanel({
       >
         <div className="dfo-accordion-title__content">{heading}</div>
         <div className="dfo-accordion-title__arrow">
-          <Arrow fill={isOpen ? "#fff" : null} active={isOpen} />
+          <AccordionArrow fill={isOpen ? "#fff" : null} active={isOpen} />
         </div>
       </button>
       <div
