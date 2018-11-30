@@ -31,10 +31,7 @@ class CSSPanelComponent extends React.Component {
   render() {
     const { css } = this.state;
     const { active } = this.props;
-
-    return active ? (
-      <CSSPanel dangerouslySetInnerHTML={{ __html: css }} />
-    ) : null;
+    return active ? <CSSPanel>{css}</CSSPanel> : null;
   }
 
   // This is some cleanup tasks when the Notes panel is unmounting.

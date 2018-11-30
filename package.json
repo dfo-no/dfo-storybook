@@ -47,6 +47,7 @@
     "react-scripts": "2.1.1",
     "react-storybook-addon-static-markup": "https://github.com/nilsnh/react-storybook-addon-static-markup.git",
     "sass-resources-loader": "^2.0.0",
+    "to-string-loader": "^1.1.5",
     "webpack-merge": "^4.1.4"
   }
 }
