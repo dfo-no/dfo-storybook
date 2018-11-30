@@ -7,7 +7,7 @@ import Header from "./Header";
 storiesOf("Header", module)
   .addDecorator(withKnobs)
   .addDecorator(checkA11y)
-  .addWithStaticMarkup("Header", () => (
+  .add("Header", () => (
     <Header
       links={object("Links", [
         { link: <p>Her er noe tekst i en skuff</p> },

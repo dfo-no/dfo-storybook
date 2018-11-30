@@ -8,7 +8,7 @@ import { Factbox } from ".";
 storiesOf("Factbox", module)
   .addDecorator(withKnobs)
   .addDecorator(checkA11y)
-  .addWithStaticMarkup("Factbox", () => (
+  .add("Factbox", () => (
     <Factbox>
       <h2>Nøkkeltall</h2>
       <ul>

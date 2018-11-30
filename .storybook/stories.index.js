@@ -3,15 +3,17 @@ import { storiesOf, addDecorator } from "@storybook/react";
 import { linkTo } from "@storybook/addon-links";
 import { Welcome } from "@storybook/react/demo";
 
-import { Padding } from './stories.decorators'
+import { Padding, ShowStaticMarkup } from "./stories.decorators";
 import { TypographyPage, FormPage, ColorsPage } from "./pages";
 
-addDecorator(Padding)
+addDecorator(Padding);
+addDecorator(ShowStaticMarkup);
 
-storiesOf("Welcome", module)
-  .add("to Storybook", () => <Welcome showApp={linkTo("Button")} />);
+storiesOf("Welcome", module).add("to Storybook", () => (
+  <Welcome showApp={linkTo("Button")} />
+));
 
 storiesOf("Pages", module)
   .add("Overview", () => <TypographyPage />)
   .add("Colors: dfo.no", () => <ColorsPage />)
-  .addWithStaticMarkup("Complete form", () => <FormPage />)
+  .add("Complete form", () => <FormPage />);

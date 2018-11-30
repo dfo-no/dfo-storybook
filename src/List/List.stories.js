@@ -9,7 +9,7 @@ import { DarkBackground } from "../../.storybook/stories.decorators";
 storiesOf("List", module)
   .addDecorator(withKnobs)
   .addDecorator(checkA11y)
-  .addWithStaticMarkup("Link list", () => (
+  .add("Link list", () => (
     <LinkList
       title={text("Title", "Regnskap og økonomistyring")}
       invert={boolean("Invert", false)}
@@ -31,7 +31,7 @@ storiesOf("List", module)
     />
   ))
   .addDecorator(DarkBackground)
-  .addWithStaticMarkup("Link list: Inverted", () => (
+  .add("Link list: Inverted", () => (
     <LinkList
       title={text("Title", "Regnskap og økonomistyring")}
       invert={boolean("Invert", true)}

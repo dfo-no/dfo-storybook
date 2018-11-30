@@ -8,12 +8,12 @@ import { Input, Checkbox } from "..";
 storiesOf("Forms", module)
   .addDecorator(withKnobs)
   .addDecorator(checkA11y)
-  .addWithStaticMarkup("Text field", () => (
+  .add("Text field", () => (
     <Input label="Ditt brukernavn her:" value="brukernavn@dfo.no" />
   ))
-  .addWithStaticMarkup("Checkbox field", () => (
+  .add("Checkbox field", () => (
     <Checkbox
       label="Nyhetsbrev om virksomhets- og økonomistyring"
       name="fields[customerNoteInterests][]"
     />
-  ))
+  ));
