@@ -1,3 +1,5 @@
+@import "./base/_index";
+
 // Build path to font file
 @function buildPath($nodeModule, $format, $fileBase, $fileSuffix) {
   $folder: to-upper-case($format);

@@ -1,12 +1,8 @@
 import React from "react";
 import addons from "@storybook/addons";
-import styled from "@emotion/styled";
 
-const CSSPanel = styled.div({
-  margin: 10,
-  width: "100%",
-  overflow: "auto"
-});
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/dist/styles/hljs';
 
 class CSSPanelComponent extends React.Component {
   state = {
@@ -16,6 +12,7 @@ class CSSPanelComponent extends React.Component {
   onAddCSS = rawCss => {
     this.setState({ css: rawCss });
   };
+
 
   componentDidMount() {
     const { channel, api } = this.props;
@@ -31,7 +28,11 @@ class CSSPanelComponent extends React.Component {
   render() {
     const { css } = this.state;
     const { active } = this.props;
-    return active ? <CSSPanel>{css}</CSSPanel> : null;
+    return active ? (
+      <SyntaxHighlighter language='css' style={docco}>
+        {css}
+      </SyntaxHighlighter>
+    ) : null;
   }
 
   // This is some cleanup tasks when the Notes panel is unmounting.

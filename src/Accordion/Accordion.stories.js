@@ -4,7 +4,6 @@ import { withKnobs, object } from "@storybook/addon-knobs";
 import { checkA11y } from "@storybook/addon-a11y";
 import { ShowStaticMarkup } from "react-storybook-addon-static-markup";
 import { withCSS } from "../../.storybook/static-css-addon";
-import css from "to-string-loader!css-loader!sass-loader!./Accordion.scss";
 import { Accordion } from ".";
 
 storiesOf("Accordion", module)
@@ -35,10 +34,12 @@ storiesOf("Accordion", module)
               heading: "Basisroller",
               id: "3",
               content: <p>Her kommer noe om utredningsinstruksen</p>
-            }
+            },
           ])}
         />
       </ShowStaticMarkup>
     ),
-    { css }
+    {
+      css: require('!to-string-loader!css-loader!sass-loader!./Accordion.scss'),
+    }
   );

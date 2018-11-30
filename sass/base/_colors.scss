@@ -40,10 +40,8 @@ $site: "web" !default;
 // Get the default colors
 $siteColors: map-get($colors, $site);
 
-/**
- * Assign colors to variables in order to avoid having
- * to map-get $colors in every single sass file..
- */
+// Assign colors to variables in order to avoid having to map-get
+// $colors in every single sass file..
 $primary: map-get($siteColors, "primary");
 $primaryLight: map-get($siteColors, "primaryLight");
 $secondary: map-get($siteColors, "secondary");

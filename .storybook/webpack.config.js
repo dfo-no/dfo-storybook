@@ -2,27 +2,21 @@
 var join = require('path').join
 var root = join(__dirname, '..');
 
-var transpileModules = [] // list node modules that needs transpiling
-var babelifyDirs = [root].concat(
-  transpileModules.map(mod => join(root, 'node_modules', mod))
-)
-
 module.exports = (baseConfig, env, defaultConfig) => {
-  defaultConfig.module.rules.forEach((rule, index) => {
-    if (!'apekatt.scss'.match(rule.test)) {
-      return;
-    }
+  const styleRuleIndex = defaultConfig.module.rules.findIndex(
+    rule => 'apekatt.scss'.match(rule.test)
+  );
 
-    defaultConfig.module.rules[index].use.push({
-      loader: 'sass-resources-loader',
-      options: {
-        resources: [
-          join(root, './sass/base/_index.scss'),
-          join(root, './sass/reset.scss'),
-        ],
-      },
-    })
-  });
+  // Add sass-resource-loader to style rule
+  defaultConfig.module.rules[styleRuleIndex].use.push({
+    loader: 'sass-resources-loader',
+    options: {
+      resources: [
+        join(root, './sass/reset.scss'),
+        join(root, './sass/fonts.scss'),
+      ],
+    },
+  })
 
   return defaultConfig;
 }
