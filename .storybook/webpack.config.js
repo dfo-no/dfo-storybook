@@ -8,17 +8,18 @@ module.exports = (baseConfig, env, defaultConfig) => {
   );
 
   // Add sass-resource-loader to style rule
-  if (sassRule && sassRule.use) {
-    sassRule.use.push({
-      loader: "sass-resources-loader",
-      options: {
-        resources: [
-          join(root, "./sass/reset.scss"),
-          join(root, "./sass/fonts.scss")
-        ]
-      }
-    });
-  }
+  // .use is used when npm run dev
+  // .loader is used when npm run build
+  const loaderList = sassRule.use || sassRule.loader;
+  loaderList.push({
+    loader: "sass-resources-loader",
+    options: {
+      resources: [
+        join(root, "./sass/reset.scss"),
+        join(root, "./sass/fonts.scss")
+      ]
+    }
+  });
 
   return defaultConfig;
 };
