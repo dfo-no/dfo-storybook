@@ -22,14 +22,14 @@ export default class Accordion extends React.Component {
     const { panels } = this.props;
     return panels.length > 0 ? (
       <ul className="dfo-accordion">
-        {panels.map(panel => (
+        {panels.map(({ id, content, ...rest }) => (
           <AccordionPanel
-            key={panel.id}
-            {...panel}
-            isOpen={panel.id === this.state.openPanelId}
+            key={id}
+            {...{ id, ...rest }}
+            isOpen={id === this.state.openPanelId}
             onClick={this.onPanelClicked}
           >
-            {panel.content}
+            {content}
           </AccordionPanel>
         ))}
       </ul>
@@ -42,7 +42,7 @@ Accordion.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       heading: PropTypes.string.isRequired,
-      content: PropTypes.oneOf([PropTypes.string, PropTypes.func]).isRequired
+      content: PropTypes.oneOf([PropTypes.string, PropTypes.object]).isRequired
     })
   )
 };

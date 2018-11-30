@@ -42,7 +42,6 @@ export default function AccordionPanel({
 
 AccordionPanel.propTypes = {
   heading: PropTypes.string,
-  content: PropTypes.string,
   children: PropTypes.object,
   onClick: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired
@@ -50,6 +49,5 @@ AccordionPanel.propTypes = {
 
 AccordionPanel.defaultProps = {
   heading: "",
-  content: "",
   children: []
 };
