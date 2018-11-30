@@ -13,8 +13,45 @@ Run `npm run build` to create a static build in a folder called `storybook-stati
 
 --- 
 
-## Using the components in your project for the first time
-In order to use the components in your project there's a few things you need to do. If you'd rather see an example project, a working project with webpack@4 and babel@8 can be found under `/examples`.
+## Using the components in your project
+
+### Next.js
+In order to use the components in your project there's a few things you need to do. If you'd rather see an example project, a working project with next@7 can be found under `/examples/nextjs`.
+
+1. Adding the dependencies: `npx install-peerdeps @dfo/components` (if you don't already have `npx` installed, you need to: `npm i -g npx`).
+2. Do `npm i --save-dev node-sass @zeit/next-sass` in order to be able compile scss files both from the component library and your own project.
+3. In order for nextjs to transpile modules from the `node_modules` folder, we need to augument the configuration. Modifying the babel config is not easy, so we'll pull inn a module that does just this: `npm i --save-dev next-plugin-transpile-modules`.
+4. Create a `next.config.js` in the root of your project containing what you need, but at least this:
+
+```js
+const withTM = require('next-plugin-transpile-modules');
+const withSass = require('@zeit/next-sass');
+
+module.exports = withSass(
+  withTM({
+    transpileModules: [
+      '@dfo/components',
+    ],
+  }),
+);
+```
+
+This lets next know that the module called `@dfo/components` shoul be transpiled along with everything else inside the app.
+
+5. Start using the components. Like this, in `pages/index.js`:
+
+```js
+import React from 'react';
+import { Button } from '@dfo/components';
+
+export default () => <div>
+  <h1>You can haz... 🥁</h1>
+  <Button>BUTTON</Button>
+</div>
+```
+
+### Vanilla React project
+In order to use the components in your project there's a few things you need to do. If you'd rather see an example project, a working project with webpack@4 and babel@8 can be found under `/examples/simple-react`.
 
 1. Adding the dependencies: `npx install-peerdeps @dfo/components` (if you don't already have `npx` installed, you need to: `npm i -g npx`)
 2. Add a `babel.config.js` (given that you're on `babel@>7`) containing whatever babel configs you need. You should at least have these two:
@@ -94,6 +131,8 @@ export default function MyAwesomeApp() {
 
 8. 🚀
 
+### Using
+
 ---
 
 ## 🤓 Development 
@@ -104,7 +143,6 @@ In order to work on the components you first need to clone the repo, install the
 - All styles are written with SCSS (SASS)
 - Follow the airbnb-sass-styleguide: https://github.com/airbnb/css
 - Use the BEM methodology: http://getbem.com/
-- All of the React-components has to be functional components (no state), because we will only be using the rendered markup.
 - Follow the WCAG 2.0 guidelines, with DIFI's modifications: https://uu.difi.no/krav-og-regelverk/wcag-20-standarden
 
 ### 📦 Our SASS dependencies
