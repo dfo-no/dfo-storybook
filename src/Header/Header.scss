@@ -1,4 +1,100 @@
 @import "../../sass/base/index";
 
+@mixin takeOver {
+  display: block;
+  background: red;
+  padding-bottom: 0;
+  overflow: scroll;
+  height: 100vh;
+  max-height: 100%;
+  background: $primary;
+  .dfo-header {
+    &__wrapper {
+      display: block;
+      background: $background;
+      padding: 0;
+    }
+
+    &__menu{
+      display: block;
+      border-top: 2px solid #e6e6e6;
+      background: $darkbackground;
+      padding: 0 $padding-medium;
+    }
+
+  }
+}
+
+.dfo-menu {
+  &__item {
+    font-weight: 600;
+    font-size: 1.6rem;
+    text-decoration: none;
+
+    @media screen and (min-width: $burgerMenuBreakpoint + 1) {
+      margin: 0 1.75rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    @media screen and (max-width: $burgerMenuBreakpoint) {
+      display: block;
+      width: 100%;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+  }
+}
+
 .dfo-header {
+  border-bottom: 2px solid $border;
+  background: $background;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__wrapper {
+    display: flex;
+    margin: 0 (-$padding-medium);
+    align-items: center;
+    flex: 1;
+
+    &__inner {
+      z-index: 0;
+      min-height: 6rem;
+      display: flex;
+      flex: 1 0;
+      justify-content: space-between;
+      align-items: center;
+      padding: $padding-small;
+
+      @media screen and (min-width: $tablet) {
+        padding: $padding-medium;
+        min-height: 8rem;
+      }
+    }
+  }
+  &__menu {
+    display: flex;
+    align-items: baseline;
+    padding: 0 $padding-medium;
+
+    @media screen and (max-width: $burgerMenuBreakpoint - 1) {
+      display: none;
+    }
+  }
+}
+
+.container {
+  margin: 0 $document-padding;
+
+  &--flex {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
