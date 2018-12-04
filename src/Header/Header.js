@@ -10,27 +10,24 @@ export default class Header extends React.Component{
   constructor(props){
     super(props)
     this.links,
-    this.state = { isOpen: null },
+    this.state = { isOpen: false },
     this.menuToggle = this.menuToggle.bind(this);
   }
   menuToggle(){
-    this.setState(({ isOpen }, props) => {
-      console.log(isOpen)
-      return isOpen ? null : true;
-    });
+    this.setState({isOpen: !this.state.isOpen});
   }
   render(){
     const links = this.props.links;
 
     return (
-      <header className={classNames("dfo-header", ({ "dfo-header--menu-open" : this.isOpen }))}>
+      <header className={classNames("dfo-header", ({ "dfo-header--menu-open" : this.state.isOpen }))}>
         <div className="container container--flex">
           <div className="dfo-header__wrapper">
             <div className="dfo-header__wrapper__inner">
               <img src={logo} alt="Direktoratet for Økonomistyrings logo" />
-              <div className="header__menu-toggle-wrapper">
-                <button type="button" className="header__menu-toggle" onClick={this.menuToggle}>
-                  Meny <Burger open={this.isOpen} />
+              <div className="dfo-header__menu-toggle-wrapper">
+                <button type="button" className="dfo-header__menu-toggle" onClick={this.menuToggle}>
+                  Meny <Burger open={this.state.isOpen} />
                 </button>
               </div>
             </div>
@@ -49,13 +46,11 @@ export default class Header extends React.Component{
 }
 
 Header.propTypes = {
-  links: propTypes.object,
-  //isOpen: propTypes.bool,
+  links: propTypes.array,
   menuToggle: propTypes.func
 }
 
 Header.defaultProps = {
-  links: {},
-  //isOpen: null
+  links: [],
 };
 
