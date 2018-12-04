@@ -1,21 +1,36 @@
 import React from "react";
 import "./Header.scss";
+import propTypes from 'prop-types';
+import classNames from "classnames";
 import Burger from "./HeaderBurger";
 
 import logo from "./dfo-logo.svg";
 
-export default function Header({
-  links = []
-  }) {
+export default class Header extends React.Component{
+  constructor(props){
+    super(props)
+    this.links,
+    this.state = { isOpen: null },
+    this.menuToggle = this.menuToggle.bind(this);
+  }
+  menuToggle(){
+    this.setState(({ isOpen }, props) => {
+      console.log(isOpen)
+      return isOpen ? null : true;
+    });
+  }
+  render(){
+    const links = this.props.links;
+
     return (
-      <header className="dfo-header dfo-header--menu-open">
+      <header className={classNames("dfo-header", ({ "dfo-header--menu-open" : this.isOpen }))}>
         <div className="container container--flex">
           <div className="dfo-header__wrapper">
             <div className="dfo-header__wrapper__inner">
               <img src={logo} alt="Direktoratet for Økonomistyrings logo" />
               <div className="header__menu-toggle-wrapper">
-                <button type="button" className="header__menu-toggle">
-                  Meny <Burger open={true}/>
+                <button type="button" className="header__menu-toggle" onClick={this.menuToggle}>
+                  Meny <Burger open={this.isOpen} />
                 </button>
               </div>
             </div>
@@ -30,4 +45,17 @@ export default function Header({
         </div>
       </header>
     );
+  }
 }
+
+Header.propTypes = {
+  links: propTypes.object,
+  //isOpen: propTypes.bool,
+  menuToggle: propTypes.func
+}
+
+Header.defaultProps = {
+  links: {},
+  //isOpen: null
+};
+

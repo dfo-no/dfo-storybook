@@ -41,7 +41,7 @@ export default function Burger({
 
 Burger.propTypes = {
   className: PropTypes.string,
-  open: PropTypes.bool,
+  //open: PropTypes.bool,
   width: PropTypes.string,
   height: PropTypes.string,
   fill: PropTypes.string,
@@ -49,7 +49,7 @@ Burger.propTypes = {
 
 Burger.defaultProps = {
   className: null,
-  open: false,
+  //open: false,
   width: '14',
   height: '10.8',
   fill: '#032b4a',
