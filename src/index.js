@@ -7,3 +7,4 @@ export * from "./Form";
 export * from "./Input";
 export * from "./List";
 export * from "./Header";
+export * from "./Burger";

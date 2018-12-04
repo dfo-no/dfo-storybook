@@ -85,7 +85,14 @@
       display: none;
     }
   }
+  &__menu-toggle {
+    display: none;
+    margin-right: 0;
 
+    @media screen and (max-width: $burgerMenuBreakpoint - 1) {
+      display: block;
+    }
+  }
   &--menu-open {
     @media screen and (max-width: $burgerMenuBreakpoint - 1) {
       @include takeOver();
