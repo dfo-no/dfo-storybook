@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.scss";
+import Burger from "./HeaderBurger";
 
 import logo from "./dfo-logo.svg";
 
@@ -12,6 +13,11 @@ export default function Header({
           <div className="dfo-header__wrapper">
             <div className="dfo-header__wrapper__inner">
               <img src={logo} alt="Direktoratet for Økonomistyrings logo" />
+              <div className="header__menu-toggle-wrapper">
+                <button type="button" className="header__menu-toggle">
+                  Meny <Burger open={true}/>
+                </button>
+              </div>
             </div>
             <div className="dfo-header__menu">
               <div className="dfo-menu">
