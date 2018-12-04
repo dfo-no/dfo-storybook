@@ -21,7 +21,6 @@
       background: $darkbackground;
       padding: 0 $padding-medium;
     }
-
   }
 }
 
@@ -84,6 +83,12 @@
 
     @media screen and (max-width: $burgerMenuBreakpoint - 1) {
       display: none;
+    }
+  }
+
+  &--menu-open {
+    @media screen and (max-width: $burgerMenuBreakpoint - 1) {
+      @include takeOver();
     }
   }
 }

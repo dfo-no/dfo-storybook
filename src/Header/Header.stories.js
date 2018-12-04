@@ -13,9 +13,8 @@ storiesOf("Header", module)
     "Header",
     () => (
       <Header
-
         links={object("Links", [
-          { link: "url", title: "Link title"},
+          { link: "url", title: "Link title" },
           { link: "url", title: "Link title" },
           { link: "url", title: "Link title" }
         ])}
@@ -25,4 +24,3 @@ storiesOf("Header", module)
       css: require("!to-string-loader!css-loader!sass-loader!./Header.scss")
     }
   );
-
