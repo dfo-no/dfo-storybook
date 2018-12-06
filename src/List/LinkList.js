@@ -5,13 +5,20 @@ import "./LinkList.scss";
 import LinkListSymbol from "./LinkListSymbol";
 
 export default function LinkList({ title, links, invert }) {
+  // string titles are rendered as h2 by default
+  const HeadingComponent =
+    typeof title === "string" ? (
+      <h2 className="nav__heading">{title}</h2>
+    ) : (
+      <div className="nav__heading">{title}</div>
+    );
   return (
     <div
       className={classNames("nav", {
         "nav--light": invert
       })}
     >
-      {title && <h2 className="nav__heading">{title}</h2>}
+      {title && HeadingComponent}
       <ul className="nav__links">
         {links.map(({ text, link, externalLink, downloadLink }) => {
           const theLink = downloadLink || externalLink || link;
@@ -36,8 +43,8 @@ export default function LinkList({ title, links, invert }) {
 }
 
 LinkList.propTypes = {
-  title: PropTypes.string,
-  invert: PropTypes.boolean,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  invert: PropTypes.bool,
   links: PropTypes.arrayOf(
     PropTypes.oneOfType([
       PropTypes.shape({
