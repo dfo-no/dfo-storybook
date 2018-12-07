@@ -20,6 +20,7 @@ export default function AccordionPanel({
     >
       <button
         value={id}
+        data-accordion-panel-id={id}
         onClick={() => onClick({ id })}
         {...rest}
         className="dfo-accordion-title"

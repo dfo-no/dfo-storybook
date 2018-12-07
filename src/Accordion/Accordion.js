@@ -18,9 +18,9 @@ export default class Accordion extends React.Component {
         return id !== openPanelId ? { openPanelId: id } : { openPanelId: null };
       },
       () => {
-        const { onPanelClicked, panels } = this.props;
+        const { panels } = this.props;
         const clickedPanel = panels.find(panel => panel.id === id);
-        onPanelClicked(clickedPanel);
+        this.props.onPanelClicked(clickedPanel);
       }
     );
   }
