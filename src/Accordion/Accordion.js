@@ -20,7 +20,10 @@ export default class Accordion extends React.Component {
       () => {
         const { panels } = this.props;
         const clickedPanel = panels.find(panel => panel.id === id);
-        this.props.onPanelClicked(clickedPanel);
+        this.props.onPanelClicked({
+          isOpen: !!this.state.openPanelId,
+          panel: clickedPanel
+        });
       }
     );
   }
