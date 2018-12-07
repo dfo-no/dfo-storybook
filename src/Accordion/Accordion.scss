@@ -1,4 +1,4 @@
-@import '../../sass/base/index';
+@import "../../sass/base/index";
 
 .dfo-accordion {
   list-style: none;
@@ -12,9 +12,16 @@
   color: $background;
 }
 
+.dfo-accordion__panel .dfo-accordion-title {
+  border-top: 1px solid $secondary;
+}
+
+.dfo-accordion__panel:last-of-type .dfo-accordion-title {
+  border-bottom: 1px solid $secondary;
+}
+
 .dfo-accordion-title {
   background-color: $darkbackground;
-  border-top: 1px solid $secondary;
   color: $text;
   padding: 1rem 2rem;
   font-weight: 600;
