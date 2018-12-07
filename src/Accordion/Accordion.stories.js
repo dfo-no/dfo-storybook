@@ -2,6 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { withKnobs, object } from "@storybook/addon-knobs";
 import { checkA11y } from "@storybook/addon-a11y";
+import { action } from "@storybook/addon-actions";
 import { ShowStaticMarkup } from "react-storybook-addon-static-markup";
 import { withCSS } from "../../.storybook/static-css-addon";
 import { Accordion } from ".";
@@ -35,6 +36,7 @@ storiesOf("Accordion", module)
             content: <p>Her kommer noe om utredningsinstruksen</p>
           }
         ])}
+        onPanelClicked={action("onPanelClicked")}
       />
     ),
     {

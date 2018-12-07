@@ -13,9 +13,16 @@ export default class Accordion extends React.Component {
   }
 
   onPanelClicked({ id }) {
-    this.setState(({ openPanelId }, props) => {
-      return id !== openPanelId ? { openPanelId: id } : { openPanelId: null };
-    });
+    this.setState(
+      ({ openPanelId }) => {
+        return id !== openPanelId ? { openPanelId: id } : { openPanelId: null };
+      },
+      () => {
+        const { onPanelClicked, panels } = this.props;
+        const clickedPanel = panels.find(panel => panel.id === id);
+        onPanelClicked(clickedPanel);
+      }
+    );
   }
 
   render() {
@@ -44,9 +51,11 @@ Accordion.propTypes = {
       heading: PropTypes.string.isRequired,
       content: PropTypes.oneOf([PropTypes.string, PropTypes.object]).isRequired
     })
-  )
+  ),
+  onPanelClicked: PropTypes.func
 };
 
 Accordion.defaultProps = {
-  panels: []
+  panels: [],
+  onPanelClicked: () => null
 };
