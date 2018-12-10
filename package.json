@@ -19,6 +19,7 @@
   "license": "MIT",
   "main": "./src",
   "dependencies": {
+    "foundation-sites": "^6.5.1",
     "source-sans-pro": "^2.40.0",
     "source-serif-pro": "^2.0.7"
   },
