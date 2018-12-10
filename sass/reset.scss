@@ -1,9 +1,13 @@
 @import "./base/_index";
 
+@include foundation-global-styles;
+
 * {
   margin: 0;
   padding: 0;
 }
+
+html { font-size: 10px; }
 
 html,
 body {
@@ -166,7 +170,6 @@ blockquote {
 }
 
 // Stuff from foundation. Can we get rid of this over time?
-@include foundation-global-styles;
 @include foundation-flex-grid;
 @include foundation-flex-classes;
 @include foundation-visibility-classes;
