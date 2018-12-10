@@ -14,6 +14,6 @@ storiesOf("Welcome", module).add("to Storybook", () => (
 ));
 
 storiesOf("Pages", module)
-  .add("Overview", () => <TypographyPage />)
+  .add("Typography", () => <TypographyPage />)
   .add("Colors: dfo.no", () => <ColorsPage />)
   .add("Complete form", () => <FormPage />);

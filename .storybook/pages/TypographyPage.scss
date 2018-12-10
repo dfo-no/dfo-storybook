@@ -1,0 +1,72 @@
+@import "../../sass/base/index";
+
+.table__wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: $padding-large 0;
+  // Force scrollbars to show on Mac if the content is overflowing.
+  // Source: https://stackoverflow.com/questions/7855590
+  padding-bottom: $padding-xsmall;
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    &:vertical {
+      width: 5px;
+    }
+    &::horizontal {
+      height: 5px;
+    }
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 2px solid $background; /* should match background, can't be transparent */
+    background-color: $darkborder;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: $background;
+    border-radius: 8px;
+  }
+}
+
+table, tr, td, th {
+  border: 0;
+}
+
+table, .table {
+  border: 0;
+  border-color: $darkborder !important;
+  border-top: 1px solid $darkborder;
+  border-bottom: 1px solid $darkborder;
+  border-collapse: collapse;
+
+  font-size: 1.6rem;
+  font-variant-numeric: lining-nums tabular-nums;
+  text-align: left;
+  font-weight: 400;
+
+  caption {
+    margin: $padding-xsmall 0;
+    padding: $padding-medium;
+    border-top: 1px solid $darkborder;
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+
+  td, th {
+    padding: 1.25rem 3rem 1.25rem 1.25rem;
+    line-height: 2.2rem;
+    vertical-align: top;
+  }
+
+  th {
+    font-weight: 800;
+  }
+
+  thead {
+    th {
+      border-bottom: 4px solid $darkborder;
+      vertical-align: bottom;
+    }
+  }
+}
+
