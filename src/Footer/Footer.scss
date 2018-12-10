@@ -1,0 +1,39 @@
+@import "../../sass/base/index";
+
+.dfo-footer {
+  background-color: $primary;
+  padding: $padding-xlarge 0;
+  color: $textonprimary;
+
+  &--compact {
+    padding: $padding-large 0;
+  }
+
+  &__contact-wrapper {
+    @media screen and (max-width: $tablet - 1px) {
+      margin-top: $padding-large;
+    }
+  }
+
+  &__contact {
+    list-style-type: none;
+    color: #fff;
+    padding-left: 0;
+    font-size: 1.8rem;
+    margin: 0;
+
+    & a {
+      color: #fff;
+    }
+  }
+
+  &__logo {
+    margin-bottom: $padding-medium;
+    margin-top: $padding-medium;
+  }
+}
+
+.dfo-container {
+  margin: 0 $document-padding;
+
+}
