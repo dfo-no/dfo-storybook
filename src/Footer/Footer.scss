@@ -10,7 +10,7 @@
   }
 
   &__contact-wrapper {
-    @media screen and (max-width: $tablet - 1px) {
+    @media screen and (max-width: map-get($breakpoints, 'medium')) {
       margin-top: $padding-large;
     }
   }
@@ -29,7 +29,6 @@
 
   &__logo {
     margin-bottom: $padding-medium;
-    margin-top: $padding-medium;
   }
 }
 
