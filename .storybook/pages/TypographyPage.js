@@ -8,7 +8,7 @@ export default function TypographyPage() {
       <br/>
       <br/>
       <h2>Fontstiler</h2>
-      <div class="table__wrapper">
+      <div className="table__wrapper">
         <tbody>
           <table className="table">
             <thead>
@@ -94,7 +94,7 @@ export default function TypographyPage() {
 
       <h2>Fontstørrelser</h2>
 
-      <div class="table__wrapper">
+      <div className="table__wrapper">
         <tbody>
           <table className="table">
             <thead>
@@ -200,7 +200,14 @@ export default function TypographyPage() {
       </ol>
 
       <h2>Blockquotes</h2>
-      <blockquote>Dette er en blockquote.</blockquote>
+      <div className="block--text">
+      <blockquote>
+        Dette er en blockquote.
+        <footer>
+          <cite>Kari Nordmann</cite>
+        </footer>
+      </blockquote>
+      </div>
 
 {/*
       <h2>Paragraf-eksempel</h2>

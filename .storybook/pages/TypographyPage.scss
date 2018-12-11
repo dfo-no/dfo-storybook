@@ -1,5 +1,16 @@
 @import "../../sass/base/index";
 
+@mixin block($lastChildZeroMargin:true) {
+  margin-bottom: $padding-large;
+  clear: both;
+
+  @if $lastChildZeroMargin {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
 .table__wrapper {
   width: 100%;
   overflow-x: auto;
@@ -70,3 +81,11 @@ table, .table {
   }
 }
 
+.block {
+  @include block;
+
+  &--text {
+    clear: initial;
+    max-width: $mobile;
+  }
+}
