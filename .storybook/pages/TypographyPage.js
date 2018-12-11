@@ -98,7 +98,7 @@ export default function TypographyPage() {
         <tbody>
           <table className="table">
             <thead>
-              <th>Tittel</th>
+              <th>Element</th>
               <th>Mobil</th>
               <th>Tablet</th>
               <th>Desktop</th>
