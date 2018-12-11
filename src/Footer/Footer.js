@@ -12,13 +12,13 @@ export default function Footer({
       <footer className="dfo-footer">
         <div className="container">
           <div className="row">
-            <div className="small-12 medium-6 nav nav--nomargin nav--light">
-              <ul className="nav__links nav__links--no-margin">
+            <div className="small-12 medium-6 dfo-nav dfo-nav--nomargin dfo-nav--light">
+              <ul className="dfo-nav__links dfo-nav__links--no-margin">
                 { links.map(({ uri, title }) => (
-                  <li key={uri} className="nav__item">
-                    <a href={uri} className="nav__link">
-                    <div className="nav__link__content">{title}</div>
-                    <div className="nav__link__symbol">
+                  <li key={uri} className="dfo-nav__item">
+                    <a href={uri} className="dfo-nav__link">
+                    <div>{title}</div>
+                    <div className="dfo-nav__link__symbol">
                         <NavSymbol light />
                     </div>
                     </a>
@@ -72,7 +72,7 @@ export default function Footer({
             </div>
 
             <div className="small-12 large-5 large-offset-1">
-              Tlf: <a href="tel:+4740007997">400 07 997</a>
+              Tlf: 400 07 997
               <br/>Org. nr. 986 252 932
             </div>
           </div>

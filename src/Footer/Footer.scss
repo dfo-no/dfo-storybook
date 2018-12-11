@@ -1,5 +1,20 @@
 @import "../../sass/base/index";
 
+@mixin block($lastChildZeroMargin:true) {
+  margin-bottom: $padding-large;
+  clear: both;
+
+  @if $lastChildZeroMargin {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.dfo-container {
+  margin: 0 $document-padding;
+}
+
 .dfo-footer {
   background-color: $primary;
   padding: $padding-xlarge 0;
@@ -32,7 +47,69 @@
   }
 }
 
-.dfo-container {
-  margin: 0 $document-padding;
+.dfo-nav {
+  @include block(false);
 
+  &--nomargin {
+    margin-bottom: 0;
+  }
+
+  &--light {
+    color: #fff;
+
+    .dfo-nav {
+      &__item {
+        a {
+          color: #fff;
+
+          &:hover {
+            color: $secondary;
+          }
+        }
+      }
+    }
+  }
+
+  &__links {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+
+    &--no-margin {
+      margin: 0;
+    }
+  }
+
+  &__link {
+    padding: $padding-small ($padding-medium + 2.2rem + $padding-large) $padding-small $padding-medium;
+    text-decoration: none;
+    color: $text;
+    font-size: 1.8rem;
+    display: block;
+    position: relative;
+
+    &:hover {
+      color: $secondary;
+    }
+
+    &__symbol {
+      position: absolute;
+      top: $padding-small + 0.3rem;
+      right: $padding-medium;
+    }
+  }
+
+  &__item {
+    border-bottom: 1px solid $secondary;
+    font-weight: normal;
+    cursor: pointer;
+
+    &:first-child {
+      border-top: 1px solid $secondary;
+    }
+
+    &:nth-last-child(1) {
+      border-bottom: 1px solid $secondary;
+    }
+  }
 }
