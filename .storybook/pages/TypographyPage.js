@@ -133,6 +133,18 @@ export default function TypographyPage() {
             <td></td>
             <td></td>
           </tr>
+          <tr>
+            <td>h5</td>
+            <td>1.8rem</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>a, p, ol, ul</td>
+            <td>1.8rem</td>
+            <td></td>
+            <td></td>
+          </tr>
           </table>
         </tbody>
       </div>
@@ -164,6 +176,12 @@ export default function TypographyPage() {
       <ul>
         <li>Unordered list item</li>
         <li>Unordered list item</li>
+        <ul>
+          <li>Nested list item</li>
+          <li>Nested list item</li>
+          <li>Nested list item</li>
+        </ul>
+        <li>Unordered list item</li>
         <li>Unordered list item</li>
       </ul>
 
@@ -172,11 +190,18 @@ export default function TypographyPage() {
       <ol>
         <li>Ordered list item</li>
         <li>Ordered list item</li>
+        <ol>
+          <li>Nested list item</li>
+          <li>Nested list item</li>
+          <li>Nested list item</li>
+        </ol>
+        <li>Ordered list item</li>
         <li>Ordered list item</li>
       </ol>
 
       <h2>Blockquotes</h2>
       <blockquote>Dette er en blockquote.</blockquote>
+
 {/*
       <h2>Paragraf-eksempel</h2>
       <p>
