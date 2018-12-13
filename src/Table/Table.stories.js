@@ -16,7 +16,7 @@ storiesOf("Table", module)
   .addDecorator(checkA11y)
   .addDecorator(withCSS)
   .add(
-    "Wrap native table elements",
+    "Basic example",
     () => (
       <Table>
         <ExampleTableHtml />

@@ -79,7 +79,13 @@
     &.table--striped {
       tbody {
         tr:nth-child(odd) td {
-          background: $darkerbackground;
+          // specialcase handling for intranet because
+          // $darkerbackground does not look that great as stripe.
+          @if $site == "intranet" {
+            background: #dce8f1;
+          } @else {
+            background: $darkerbackground;
+          }
         }
       }
     }
