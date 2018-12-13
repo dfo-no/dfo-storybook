@@ -8,3 +8,4 @@ export * from "./Form";
 export * from "./Header";
 export * from "./Input";
 export * from "./List";
+export * from "./Table";
