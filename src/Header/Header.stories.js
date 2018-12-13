@@ -21,6 +21,6 @@ storiesOf("Header", module)
       />
     ),
     {
-      css: require("!to-string-loader!css-loader!sass-loader!./Header.scss")
+      css: require("!to-string-loader!css-loader!sass-loader?outputStyle=compressed!./Header.scss")
     }
   );

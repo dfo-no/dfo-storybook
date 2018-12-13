@@ -20,6 +20,6 @@ storiesOf("Alertbox", module)
       </Alertbox>
     ),
     {
-      css: require("!to-string-loader!css-loader!sass-loader!./Alertbox.scss")
+      css: require("!to-string-loader!css-loader!sass-loader?outputStyle=compressed!./Alertbox.scss")
     }
   );

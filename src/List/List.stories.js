@@ -7,7 +7,7 @@ import { LinkList } from ".";
 import { DarkBackground } from "../../.storybook/stories.decorators";
 
 const options = {
-  css: require("!to-string-loader!css-loader!sass-loader!./LinkList.scss")
+  css: require("!to-string-loader!css-loader!sass-loader?outputStyle=compressed!./LinkList.scss")
 };
 
 storiesOf("List", module)

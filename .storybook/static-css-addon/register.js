@@ -1,7 +1,7 @@
 import React from "react";
 import addons from "@storybook/addons";
-
 import SyntaxHighlighter from "react-syntax-highlighter";
+import * as cssbeautify from "cssbeautify";
 import { docco } from "react-syntax-highlighter/dist/styles/hljs";
 
 class CSSPanelComponent extends React.Component {
@@ -10,7 +10,13 @@ class CSSPanelComponent extends React.Component {
   };
 
   onAddCSS = rawCss => {
-    this.setState({ css: rawCss });
+    const css = Array.isArray(rawCss) ? rawCss.join("\n") : rawCss;
+    const prettyCss = cssbeautify(css, {
+      indent: "  ",
+      openbrace: "end-of-line",
+      autosemicolon: true
+    });
+    this.setState({ css: prettyCss });
   };
 
   componentDidMount() {
@@ -27,10 +33,9 @@ class CSSPanelComponent extends React.Component {
   render() {
     const { css } = this.state;
     const { active } = this.props;
-    const cssToRender = Array.isArray(css) ? css.join("\n") : css;
     return active ? (
       <SyntaxHighlighter language="css" style={docco}>
-        {cssToRender}
+        {css}
       </SyntaxHighlighter>
     ) : null;
   }

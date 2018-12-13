@@ -41,8 +41,8 @@ storiesOf("Accordion", module)
     ),
     {
       css: [
-        require("!to-string-loader!css-loader!sass-loader!./Accordion.scss"),
-        require("!to-string-loader!css-loader!sass-loader!./AccordionArrow.scss")
+        require("!to-string-loader!css-loader!sass-loader?outputStyle=compressed!./Accordion.scss"),
+        require("!to-string-loader!css-loader!sass-loader?outputStyle=compressed!./AccordionArrow.scss")
       ]
     }
   );

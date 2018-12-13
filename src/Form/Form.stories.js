@@ -14,7 +14,7 @@ storiesOf("Forms", module)
     "Text field",
     () => <Input label="Ditt brukernavn her:" value="brukernavn@dfo.no" />,
     {
-      css: require("!to-string-loader!css-loader!sass-loader!../Input/Input.scss")
+      css: require("!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Input/Input.scss")
     }
   )
   .add(
@@ -26,6 +26,6 @@ storiesOf("Forms", module)
       />
     ),
     {
-      css: require("!to-string-loader!css-loader!sass-loader!../Checkbox/Checkbox.scss")
+      css: require("!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Checkbox/Checkbox.scss")
     }
   );

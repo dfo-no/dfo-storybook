@@ -7,7 +7,7 @@ import { Table } from ".";
 import { ExampleTableHtml } from "./Table.stories.data";
 
 const options = {
-  css: require("!to-string-loader!css-loader!sass-loader!./Table.scss")
+  css: require("!to-string-loader!css-loader!sass-loader?outputStyle=compressed!./Table.scss")
 };
 
 storiesOf("Table", module)

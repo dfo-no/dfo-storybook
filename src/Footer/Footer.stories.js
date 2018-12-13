@@ -19,7 +19,7 @@ storiesOf("Footer", module)
       ])}/>
     ),
     {
-      css: require("!to-string-loader!css-loader!sass-loader!./Footer.scss")
+      css: require("!to-string-loader!css-loader!sass-loader?outputStyle=compressed!./Footer.scss")
     }
   )
     .add("Footer without links",
@@ -27,6 +27,6 @@ storiesOf("Footer", module)
       <Footer/>
     ),
     {
-      css: require("!to-string-loader!css-loader!sass-loader!./Footer.scss")
+      css: require("!to-string-loader!css-loader!sass-loader?outputStyle=compressed!./Footer.scss")
     }
   );
