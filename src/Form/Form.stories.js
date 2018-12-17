@@ -1,10 +1,10 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { withKnobs } from "@storybook/addon-knobs";
 import { checkA11y } from "@storybook/addon-a11y";
 import { withCSS } from "../../.storybook/static-css-addon";
+import { withKnobs, text, object } from "@storybook/addon-knobs";
 
-import { Input, Checkbox } from "..";
+import { Input, Checkbox, RadioButtons } from "..";
 
 storiesOf("Forms", module)
   .addDecorator(withKnobs)
@@ -27,5 +27,21 @@ storiesOf("Forms", module)
     ),
     {
       css: require("!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Checkbox/Checkbox.scss")
+    }
+  )
+  .add(
+    "Radiobuttons field",
+    () => (
+      <RadioButtons
+        name="isLeader"
+        legend={text("Legend", "Er du i en lederstilling?")}
+        options={object("Options", [
+          { label: "Ja", value: "yes", defaultChecked: true },
+          { label: "Nei", value: "no" }
+        ])}
+      />
+    ),
+    {
+      css: require("!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../RadioButtons/RadioButtons.scss")
     }
   );
