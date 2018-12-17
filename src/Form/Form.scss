@@ -1,9 +1,15 @@
-@import '../../sass/base/index';
+@import "../../sass/base/index";
 
 .dfo-form {
   background-color: $darkbackground;
   max-width: $form-max-width;
   width: 100%;
   margin-bottom: $element-gap;
-  padding: $padding-medium;
+  padding: $padding-large;
+}
+
+.dfo-form-title {
+  border-bottom: 1px solid $primaryLight;
+  padding-bottom: $padding-small;
+  margin-bottom: $padding-medium;
 }
