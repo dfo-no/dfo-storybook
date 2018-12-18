@@ -1,7 +1,7 @@
 @import "../../sass/base/index";
 
 .dfo-form {
-  background-color: $darkbackground;
+  background-color: $darkerbackground;
   max-width: $form-max-width;
   width: 100%;
   margin-bottom: $element-gap;
@@ -14,13 +14,23 @@
   margin-bottom: $padding-medium;
 }
 
+.dfo-form-submit-wrapper {
+  background-color: $darkbackground;
+  margin-left: -$padding-large;
+  margin-right: -$padding-large;
+  margin-bottom: -$padding-large;
+  padding-top: $padding-large;
+  padding-left: $padding-large;
+  padding-bottom: $padding-large;
+}
+
 .dfo-form-fieldset {
   margin: 0;
   margin-left: -$padding-large;
   margin-right: -$padding-large;
   margin-bottom: $padding-small;
 
-  padding: 0;
+  padding-top: 0;
   padding-left: $padding-large;
   padding-right: $padding-large;
   padding-bottom: $padding-small;

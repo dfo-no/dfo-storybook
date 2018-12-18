@@ -24,7 +24,9 @@ export default function FormPage() {
           { label: "Nei", value: "no" }
         ]}
       />
-      <Button type="submit">Meld på</Button>
+      <div className="dfo-form-submit-wrapper">
+        <Button type="submit">Meld på</Button>
+      </div>
     </Form>
   );
 }
