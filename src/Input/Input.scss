@@ -54,7 +54,7 @@
   }
 
   &--is-error {
-    margin-bottom: $padding-large;
+    margin-bottom: $padding-medium;
 
     .dfo-error-wrapper::before {
       background-color: $error;

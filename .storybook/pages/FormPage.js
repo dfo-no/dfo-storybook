@@ -4,16 +4,27 @@ import { Form, Input, Checkbox, Button, RadioButtons } from "../../src/index";
 export default function FormPage() {
   return (
     <Form method="post">
-      <Form.Title>DFØs Styringskonferanse 2019</Form.Title>
-      <Form.SectionTitle>Kontaktinformation:</Form.SectionTitle>
-      <Input label="Fornavn" type="text" name="fields[firstName]" value="" />
-      <Input label="Etternavn" type="text" name="fields[lastName]" value="" />
-      <strong>Abonner på:</strong>
-      <Checkbox
-        label="Nyhetsbrev om virksomhets- og økonomistyring"
-        name="fields[customerNoteInterests][]"
+      <h2 className="dfo-form-title">DFØs Styringskonferanse 2019</h2>
+      <fieldset className="dfo-form-fieldset">
+        <legend className="dfo-form-legend">Kontaktinformation:</legend>
+        <Input label="Fornavn" type="text" name="fields[firstName]" value="" />
+        <Input
+          label="Etternavn"
+          type="text"
+          error="Vennligst fyll ut etternavn"
+          name="fields[lastName]"
+          value=""
+        />
+      </fieldset>
+      <RadioButtons
+        name="isLeader"
+        legend={"Er du i en lederstilling?"}
+        options={[
+          { label: "Ja", value: "yes", defaultChecked: true },
+          { label: "Nei", value: "no" }
+        ]}
       />
-      <Button type="submit">Send</Button>
+      <Button type="submit">Meld på</Button>
     </Form>
   );
 }

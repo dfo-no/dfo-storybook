@@ -13,3 +13,27 @@
   padding-bottom: $padding-small;
   margin-bottom: $padding-medium;
 }
+
+.dfo-form-fieldset {
+  margin: 0;
+  margin-left: -$padding-large;
+  margin-right: -$padding-large;
+  margin-bottom: $padding-small;
+
+  padding: 0;
+  padding-left: $padding-large;
+  padding-right: $padding-large;
+  padding-bottom: $padding-small;
+
+  border: none;
+  display: block;
+  border-bottom: 2px solid $white;
+  &:last-of-type() {
+    border: none;
+  }
+}
+
+.dfo-form-legend {
+  color: $primary;
+  padding-bottom: $padding-small;
+}
