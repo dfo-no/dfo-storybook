@@ -59,7 +59,6 @@ storiesOf("Forms", module)
     () => (
       <RadioButtons
         name="isLeader"
-        legend={text("Legend", "Er du i en lederstilling?")}
         options={object("Options", [
           { label: "Ja", value: "yes", defaultChecked: true },
           { label: "Nei", value: "no" }

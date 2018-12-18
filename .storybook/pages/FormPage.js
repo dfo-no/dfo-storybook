@@ -16,14 +16,16 @@ export default function FormPage() {
           value=""
         />
       </fieldset>
-      <RadioButtons
-        name="isLeader"
-        legend={"Er du i en lederstilling?"}
-        options={[
-          { label: "Ja", value: "yes", defaultChecked: true },
-          { label: "Nei", value: "no" }
-        ]}
-      />
+      <fieldset className="dfo-form-fieldset">
+        <legend className="dfo-form-legend">Er du i en lederstilling?</legend>
+        <RadioButtons
+          name="isLeader"
+          options={[
+            { label: "Ja", value: "yes", defaultChecked: true },
+            { label: "Nei", value: "no" }
+          ]}
+        />
+      </fieldset>
       <div className="dfo-form-submit-wrapper">
         <Button type="submit">Meld på</Button>
       </div>
