@@ -1,14 +1,14 @@
-@import '../../sass/base/index';
+@import "../../sass/base/index";
 
 .dfo-input {
-  &__label {
-    color: #1a1a1a;
-    font-size: 16px;
-    font-weight: 500;
-    vertical-align: bottom;
-    transform: translateY(-5px);
-  }
-  &__input {
+  width: 100%;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: $primary;
+  display: block;
+  position: relative;
+
+  input {
     -webkit-appearance: none;
     outline: none;
     box-shadow: none;
@@ -19,42 +19,51 @@
     background-color: #fff;
     padding: $padding-small;
     width: 100%;
-    transform: translateY(-5px);
-    padding: 11px;
-    border-width: 2px;
   }
-  &__input:focus,
-  &__input:hover {
+
+  input:hover,
+  input:active,
+  input:focus,
+  label:focus {
     -webkit-appearance: none;
-    border-color: $primary;
-  }
-  &__input--shake {
-    animation: dfo-shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px;
-  }
-}
-
-@keyframes dfo-shake {
-  10%,
-  90% {
-    transform: translate3d(-1px, 0, 0);
   }
 
-  20%,
-  80% {
-    transform: translate3d(2px, 0, 0);
+  input:hover,
+  label:hover {
+    border-color: $secondary;
   }
 
-  30%,
-  50%,
-  70% {
-    transform: translate3d(-4px, 0, 0);
+  input:active,
+  input:focus,
+  label:focus {
+    border-color: $primaryLight;
   }
 
-  40%,
-  60% {
-    transform: translate3d(4px, 0, 0);
+  .dfo-error-wrapper {
+    position: relative;
+
+    &:before {
+      width: 2px;
+      content: "";
+      background-color: transparent;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -18px;
+    }
+  }
+
+  &--is-error {
+    margin-bottom: $padding-large;
+
+    .dfo-error-wrapper::before {
+      background-color: $error;
+    }
+
+    .dfo-error-wrapper__error {
+      padding-left: $padding-small;
+      font-weight: normal;
+      font-style: italic;
+    }
   }
 }

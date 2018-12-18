@@ -8,7 +8,8 @@ export default function FormPage() {
       <Input
         label="Din e-postadresse. (Av sikkerhetsgrunner kan du ikke endre den her.)"
         type="email"
-        value="kari@dfo.no"
+        name="email"
+        defaultValue="kari@dfo.no"
         disabled
       />
       <Input label="Fornavn:" type="text" name="fields[firstName]" />

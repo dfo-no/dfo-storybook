@@ -1,14 +1,38 @@
 import React from "react";
+import PropTypes from "prop-types";
+import classnames from "classnames";
 import "./Input.scss";
 
-export default function Input({ label, ...rest }) {
-  const { name } = rest;
+const Input = ({ label, name, error, ...rest }) => {
+  const { id = `input-${name}` } = rest;
   return (
-    <div className="dfo-input">
-      <label htmlFor={name} className="dfo-input__label">
+    <label
+      htmlFor={id}
+      className={classnames("dfo-input", { "dfo-input--is-error": error })}
+    >
+      <div className="dfo-error-wrapper">
         {label}
-        <input className="dfo-input__input" {...rest} />
-      </label>
-    </div>
+        <input {...{ ...rest, id }} />
+        {error && <span className="dfo-error-wrapper__error">{error}</span>}
+      </div>
+    </label>
   );
-}
+};
+
+Input.defaultProps = {
+  label: "",
+  placeholder: "",
+  error: "",
+  id: ""
+};
+
+Input.propTypes = {
+  id: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string,
+  type: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  error: PropTypes.any
+};
+
+export default Input;
