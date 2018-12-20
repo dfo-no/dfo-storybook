@@ -1,6 +1,7 @@
-import React from "react";
-import * as classNames from "classnames";
-import "./Button.scss";
+import React from 'react';
+import * as classNames from 'classnames';
+
+import './Button.scss';
 
 export default function Button({
   children = [],
@@ -9,10 +10,11 @@ export default function Button({
   plainLink,
   ...rest
 }) {
-  const classes = classNames("dfo-button", {
-    "dfo-button--invert": invert,
-    "dfo-button--cta": cta
+  const classes = classNames('dfo-button', {
+    'dfo-button--invert': invert,
+    'dfo-button--cta': cta,
   });
+
   if (plainLink) {
     return (
       <a className={classes} {...rest}>
@@ -20,8 +22,9 @@ export default function Button({
       </a>
     );
   }
+
   return (
-    <button className={classes} {...rest}>
+    <button className={classes} {...rest} type="button">
       {children}
     </button>
   );

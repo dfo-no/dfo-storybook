@@ -1,14 +1,17 @@
-import React from "react";
-import PropTypes from "prop-types";
-import classnames from "classnames";
-import "./Input.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
-const Input = ({ label, name, error, ...rest }) => {
+import './Input.scss';
+
+const Input = ({
+  label, name, error, ...rest
+}) => {
   const { id = `input-${name}` } = rest;
   return (
     <label
       htmlFor={id}
-      className={classnames("dfo-input", { "dfo-input--is-error": error })}
+      className={classnames('dfo-input', { 'dfo-input--is-error': error })}
     >
       <div className="dfo-error-wrapper">
         {label}
@@ -20,10 +23,10 @@ const Input = ({ label, name, error, ...rest }) => {
 };
 
 Input.defaultProps = {
-  label: "",
-  placeholder: "",
-  error: "",
-  id: ""
+  label: '',
+  placeholder: '',
+  error: '',
+  id: '',
 };
 
 Input.propTypes = {
@@ -32,7 +35,7 @@ Input.propTypes = {
   label: PropTypes.string,
   type: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
-  error: PropTypes.any
+  error: PropTypes.any,
 };
 
 export default Input;

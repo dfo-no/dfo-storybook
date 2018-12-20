@@ -1,5 +1,7 @@
-import React from "react";
-import "./RadioButtons.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+
+import './RadioButtons.scss';
 
 export default function RadioButtons({ name, legend, options = [] }) {
   return (
@@ -25,3 +27,17 @@ export default function RadioButtons({ name, legend, options = [] }) {
     </div>
   );
 }
+
+RadioButtons.propTypes = {
+  name: PropTypes.string.isRequired,
+  legend: PropTypes.string,
+  options: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+  })),
+};
+
+RadioButtons.defaultProps = {
+  legend: null,
+  options: [],
+};

@@ -1,21 +1,22 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { checkA11y } from "@storybook/addon-a11y";
-import { withCSS } from "../../.storybook/static-css-addon";
-import { withNotes } from "@storybook/addon-notes";
-import { Table } from ".";
-import { ExampleTableHtml } from "./Table.stories.data";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { checkA11y } from '@storybook/addon-a11y';
+import { withNotes } from '@storybook/addon-notes';
+
+import { withCSS } from '../../.storybook/static-css-addon';
+import ExampleTableHtml from './Table.stories.data';
+import { Table } from '.';
 
 const options = {
-  css: require("!to-string-loader!css-loader!sass-loader?outputStyle=compressed!./Table.scss")
+  css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!./Table.scss'),
 };
 
-storiesOf("Table", module)
+storiesOf('Table', module)
   .addDecorator(checkA11y)
   .addDecorator(withCSS)
   .addDecorator(withNotes)
   .add(
-    "Wrapping native table",
+    'Wrapping native table',
     () => (
       <Table>
         <ExampleTableHtml />
@@ -29,6 +30,6 @@ storiesOf("Table", module)
       In dfo.no's Craft CMS tables are stored as plain html.
 
       That's why this component is built to handle a plain html table.
-      `
-    }
+      `,
+    },
   );

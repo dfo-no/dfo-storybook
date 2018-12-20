@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 
 import App from './App';
 
-const appContainer = document.getElementById("app");
+const appContainer = document.getElementById('app');
 
-if (appContainer) {
-  ReactDOM.render(<App />, appContainer)
+if (appContainer) {
+  ReactDOM.render(<App />, appContainer);
 }

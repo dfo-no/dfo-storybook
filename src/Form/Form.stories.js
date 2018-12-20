@@ -1,49 +1,49 @@
-import React from "react";
-import { storiesOf } from "@storybook/react";
-import { checkA11y } from "@storybook/addon-a11y";
-import { withCSS } from "../../.storybook/static-css-addon";
-import { withNotes } from "@storybook/addon-notes";
-import { withKnobs, text, object } from "@storybook/addon-knobs";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { checkA11y } from '@storybook/addon-a11y';
+import { withNotes } from '@storybook/addon-notes';
+import { withKnobs, text, object } from '@storybook/addon-knobs';
 
-import { Input, Checkbox, RadioButtons } from "..";
+import { withCSS } from '../../.storybook/static-css-addon';
+import { Input, Checkbox, RadioButtons } from '..';
 
-storiesOf("Forms", module)
+storiesOf('Forms', module)
   .addDecorator(withKnobs)
   .addDecorator(checkA11y)
   .addDecorator(withCSS)
   .addDecorator(withNotes)
   .add(
-    "Text field",
+    'Text field',
     () => (
       <Input
-        label={text("label", "Fornavn:")}
-        name={text("name", "firstName")}
+        label={text('label', 'Fornavn:')}
+        name={text('name', 'firstName')}
         type="text"
       />
     ),
     {
-      css: require("!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Input/Input.scss")
-    }
+      css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Input/Input.scss'),
+    },
   )
   .add(
-    "Text field (error)",
+    'Text field (error)',
     () => (
       <Input
-        label={text("label", "Fornavn:")}
-        name={text("name", "firstName")}
-        error={text("error", "Vennligst fyll ut fornavn")}
+        label={text('label', 'Fornavn:')}
+        name={text('name', 'firstName')}
+        error={text('error', 'Vennligst fyll ut fornavn')}
         type="text"
       />
     ),
     {
-      css: require("!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Input/Input.scss"),
+      css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Input/Input.scss'),
       notes: `
       Error
-      `
-    }
+      `,
+    },
   )
   .add(
-    "Checkbox field",
+    'Checkbox field',
     () => (
       <Checkbox
         label="Nyhetsbrev om virksomhets- og økonomistyring"
@@ -51,21 +51,21 @@ storiesOf("Forms", module)
       />
     ),
     {
-      css: require("!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Checkbox/Checkbox.scss")
-    }
+      css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Checkbox/Checkbox.scss'),
+    },
   )
   .add(
-    "Radiobuttons field",
+    'Radiobuttons field',
     () => (
       <RadioButtons
         name="isLeader"
-        options={object("Options", [
-          { label: "Ja", value: "yes", defaultChecked: true },
-          { label: "Nei", value: "no" }
+        options={object('Options', [
+          { label: 'Ja', value: 'yes', defaultChecked: true },
+          { label: 'Nei', value: 'no' },
         ])}
       />
     ),
     {
-      css: require("!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../RadioButtons/RadioButtons.scss")
-    }
+      css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../RadioButtons/RadioButtons.scss'),
+    },
   );

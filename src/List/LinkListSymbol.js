@@ -1,8 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function LinkListSymbol({ external, download, light }) {
-  const fill = light ? "#ffffff" : "#032b4a";
+  const fill = light ? '#ffffff' : '#032b4a';
+
   if (external) {
     return (
       <svg
@@ -82,11 +83,11 @@ export default function LinkListSymbol({ external, download, light }) {
 LinkListSymbol.propTypes = {
   light: PropTypes.bool,
   download: PropTypes.bool,
-  external: PropTypes.bool
+  external: PropTypes.bool,
 };
 
 LinkListSymbol.defaultProps = {
   light: false,
   download: false,
-  external: false
+  external: false,
 };

@@ -1,19 +1,22 @@
-import React from "react";
-import PropTypes from "prop-types";
-import classNames from "classnames";
-import "./AccordionArrow.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
-export default function AccordionArrow({ fill, modifier, large, active }) {
+import './AccordionArrow.scss';
+
+export default function AccordionArrow({
+  fill, modifier, large, active,
+}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="22"
       height="22"
       viewBox="0 1 22 22"
-      className={classNames("dfo-accordion-arrow", {
+      className={classNames('dfo-accordion-arrow', {
         [`dfo-accordion-arrow--${modifier}`]: modifier,
-        "dfo-accordion-arrow--180": active,
-        "dfo-accordion-arrow--large": large
+        'dfo-accordion-arrow--180': active,
+        'dfo-accordion-arrow--large': large,
       })}
     >
       <polygon
@@ -28,12 +31,12 @@ AccordionArrow.propTypes = {
   fill: PropTypes.string,
   modifier: PropTypes.string,
   active: PropTypes.bool,
-  large: PropTypes.bool
+  large: PropTypes.bool,
 };
 
 AccordionArrow.defaultProps = {
-  fill: "#032b4a",
+  fill: '#032b4a',
   modifier: null,
   active: false,
-  large: false
+  large: false,
 };

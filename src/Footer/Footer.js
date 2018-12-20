@@ -1,14 +1,16 @@
-import React from "react";
-import "./Footer.scss";
-import NavSymbol from "./FooterNavSymbol";
-import propTypes from 'prop-types';
-import logo from "./logo-white.svg";
+import React from 'react';
+import PropTypes from 'prop-types';
+
+import NavSymbol from './FooterNavSymbol';
+import logo from './logo-white.svg';
+
+import './Footer.scss';
 
 export default function Footer({
-    links
-  }) {
-  if(links){
-    return(
+  links,
+}) {
+  if (links) {
+    return (
       <footer className="dfo-footer">
         <div className="container">
           <div className="row">
@@ -17,15 +19,15 @@ export default function Footer({
                 { links.map(({ uri, title }) => (
                   <li key={uri} className="dfo-nav__item">
                     <a href={uri} className="dfo-nav__link">
-                    <div>{title}</div>
-                    <div className="dfo-nav__link__symbol">
+                      <div>{title}</div>
+                      <div className="dfo-nav__link__symbol">
                         <NavSymbol light />
-                    </div>
+                      </div>
                     </a>
                   </li>
                 )) }
-                </ul>
-              </div>
+              </ul>
+            </div>
 
             <div className="small-8 medium-3 medium-offset-1">
               <div className="dfo-footer__contact-wrapper">
@@ -51,7 +53,8 @@ export default function Footer({
       </footer>
     );
   }
-  return(
+
+  return (
     <footer className="dfo-footer dfo-footer--compact">
       <div className="container">
         <div className="row">
@@ -67,13 +70,13 @@ export default function Footer({
           <div className="row small-12 medium-6 collapse">
             <div className="small-12 large-6">
               Karl Johans gate 37 B
-              <br/>
+              <br />
               Pb 7154 St. Olavs plass, 0130 Oslo
             </div>
 
             <div className="small-12 large-5 large-offset-1">
               Tlf: 400 07 997
-              <br/>Org. nr. 986 252 932
+              <br />Org. nr. 986 252 932
             </div>
           </div>
         </div>
@@ -83,5 +86,12 @@ export default function Footer({
 }
 
 Footer.propTypes = {
-  links: propTypes.object,
+  links: PropTypes.arrayOf(PropTypes.shape({
+    uri: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  })),
+};
+
+Footer.defaultProps = {
+  links: null,
 };

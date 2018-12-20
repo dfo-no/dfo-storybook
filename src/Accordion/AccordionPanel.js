@@ -1,7 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import classNames from "classnames";
-import AccordionArrow from "./AccordionArrow";
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
+import AccordionArrow from './AccordionArrow';
 
 export default function AccordionPanel({
   id,
@@ -14,8 +15,8 @@ export default function AccordionPanel({
 }) {
   return (
     <li
-      className={classNames("dfo-accordion__panel", {
-        "dfo-accordion__panel--is-active": isOpen
+      className={classNames('dfo-accordion__panel', {
+        'dfo-accordion__panel--is-active': isOpen,
       })}
     >
       <button
@@ -24,15 +25,16 @@ export default function AccordionPanel({
         onClick={() => onClick({ id })}
         {...rest}
         className="dfo-accordion-title"
+        type="button"
       >
         <div className="dfo-accordion-title__content">{heading}</div>
         <div className="dfo-accordion-title__arrow">
-          <AccordionArrow fill={isOpen ? "#fff" : null} active={isOpen} />
+          <AccordionArrow fill={isOpen ? '#fff' : null} active={isOpen} />
         </div>
       </button>
       <div
-        className={classNames("dfo-accordion-content", {
-          "dfo-accordion-content--is-active": isOpen
+        className={classNames('dfo-accordion-content', {
+          'dfo-accordion-content--is-active': isOpen,
         })}
       >
         {children}
@@ -45,10 +47,10 @@ AccordionPanel.propTypes = {
   heading: PropTypes.string,
   children: PropTypes.object,
   onClick: PropTypes.func.isRequired,
-  id: PropTypes.string.isRequired
+  id: PropTypes.string.isRequired,
 };
 
 AccordionPanel.defaultProps = {
-  heading: "",
-  children: []
+  heading: '',
+  children: [],
 };

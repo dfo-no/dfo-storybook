@@ -1,26 +1,22 @@
-import React from "react";
-import "./Header.scss";
+import React from 'react';
 import propTypes from 'prop-types';
-import classNames from "classnames";
-import Burger from "./HeaderBurger";
+import classNames from 'classnames';
 
-import logo from "./dfo-logo.svg";
+import Burger from './HeaderBurger';
+import logo from './dfo-logo.svg';
 
-export default class Header extends React.Component{
-  constructor(props){
-    super(props)
-    this.links,
-    this.state = { isOpen: false },
-    this.menuToggle = this.menuToggle.bind(this);
-  }
-  menuToggle(){
-    this.setState({isOpen: !this.state.isOpen});
-  }
-  render(){
-    const links = this.props.links;
+import './Header.scss';
+
+export default class Header extends React.Component {
+  state = { isOpen: false }
+
+  menuToggle = () => this.setState(({ isOpen }) => ({ isOpen: !isOpen }))
+
+  render() {
+    const { links } = this.props;
 
     return (
-      <header className={classNames("dfo-header", ({ "dfo-header--menu-open" : this.state.isOpen }))}>
+      <header className={classNames('dfo-header', ({ 'dfo-header--menu-open': this.state.isOpen }))}>
         <div className="container container--flex">
           <div className="dfo-header__wrapper">
             <div className="dfo-header__wrapper__inner">
@@ -33,8 +29,8 @@ export default class Header extends React.Component{
             </div>
             <div className="dfo-header__menu">
               <div className="dfo-menu">
-                {links.map((item, i) => (
-                <a className="dfo-menu__item" key={i} href={item.link}>{item.title}</a>
+                {links.map(item => (
+                  <a className="dfo-menu__item" key={item.link} href={item.link}>{item.title}</a>
                 ))}
               </div>
             </div>
@@ -47,10 +43,8 @@ export default class Header extends React.Component{
 
 Header.propTypes = {
   links: propTypes.array,
-  menuToggle: propTypes.func
-}
+};
 
 Header.defaultProps = {
   links: [],
 };
-

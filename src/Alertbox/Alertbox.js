@@ -1,8 +1,11 @@
-import React from "react";
-import "./Alertbox.scss";
-import alertIcon from "./alert.svg";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function Alertbox({ children = [], ...rest }) {
+import alertIcon from './alert.svg';
+
+import './Alertbox.scss';
+
+export default function Alertbox({ children = [] }) {
   return children.length > 0 ? (
     <div className="dfo-alertbox">
       <img className="dfo-alertbox__icon" src={alertIcon} alt="varsel icon" />
@@ -10,3 +13,7 @@ export default function Alertbox({ children = [], ...rest }) {
     </div>
   ) : null;
 }
+
+Alertbox.propTypes = {
+  children: PropTypes.any.isRequired,
+};

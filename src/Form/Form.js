@@ -1,7 +1,16 @@
-import React from "react";
-import "./Form.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function Form(props) {
-  const { children = [] } = props;
+import './Form.scss';
+
+export default function Form({ children }) {
   return <form className="dfo-form">{children}</form>;
 }
+
+Form.propTypes = {
+  children: PropTypes.any,
+};
+
+Form.defaultProps = {
+  children: [],
+};

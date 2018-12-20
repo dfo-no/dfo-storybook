@@ -1,5 +1,6 @@
-import React from "react";
-import "./Checkbox.scss";
+import React from 'react';
+
+import './Checkbox.scss';
 
 export default function Checkbox({ label, ...rest }) {
   const { name } = rest;

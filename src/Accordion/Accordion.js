@@ -1,30 +1,30 @@
-import React from "react";
-import PropTypes from "prop-types";
-import "./Accordion.scss";
-import AccordionPanel from "./AccordionPanel";
+import React from 'react';
+import PropTypes from 'prop-types';
+
+import AccordionPanel from './AccordionPanel';
+
+import './Accordion.scss';
 
 export default class Accordion extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      openPanelId: null
+      openPanelId: null,
     };
     this.onPanelClicked = this.onPanelClicked.bind(this);
   }
 
   onPanelClicked({ id }) {
     this.setState(
-      ({ openPanelId }) => {
-        return id !== openPanelId ? { openPanelId: id } : { openPanelId: null };
-      },
+      ({ openPanelId }) => (id !== openPanelId ? { openPanelId: id } : { openPanelId: null }),
       () => {
         const { panels } = this.props;
         const clickedPanel = panels.find(panel => panel.id === id);
         this.props.onPanelClicked({
           isOpen: !!this.state.openPanelId,
-          panel: clickedPanel
+          panel: clickedPanel,
         });
-      }
+      },
     );
   }
 
@@ -52,13 +52,13 @@ Accordion.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       heading: PropTypes.string.isRequired,
-      content: PropTypes.oneOf([PropTypes.string, PropTypes.object]).isRequired
-    })
+      content: PropTypes.oneOf([PropTypes.string, PropTypes.object]).isRequired,
+    }),
   ),
-  onPanelClicked: PropTypes.func
+  onPanelClicked: PropTypes.func,
 };
 
 Accordion.defaultProps = {
   panels: [],
-  onPanelClicked: () => null
+  onPanelClicked: () => null,
 };
