@@ -5,13 +5,59 @@
     "start": "npm run storybook",
     "dev": "npm run storybook",
     "build": "npm run build-storybook",
-    "test": "react-scripts test",
     "storybook": "start-storybook -p 9009",
     "build-storybook": "build-storybook",
-    "publish": "np"
+    "publish": "npm run test && np",
+    "test": "eslint ."
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "rules": {
+      "max-len": [
+        2,
+        {
+          "code": 150,
+          "tabWidth": 2,
+          "ignoreUrls": true
+        }
+      ],
+      "react/prefer-stateless-function": 0,
+      "react/forbid-prop-types": 0,
+      "react/jsx-filename-extension": 0,
+      "react/destructuring-assignment": 0,
+      "react/jsx-one-expression-per-line": 0,
+      "jsx-a11y/anchor-is-valid": 0,
+      "jsx-a11y/click-events-have-key-events": 0,
+      "jsx-a11y/label-has-for": 0
+    },
+    "overrides": [
+      {
+        "files": ["*.stories.js"],
+        "rules": {
+          "import/no-extraneous-dependencies": "off",
+          "import/no-webpack-loader-syntax": "off",
+          "import/no-unresolved": "off",
+          "global-require": "off"
+        }
+      },
+      {
+        "files": ["src/[A-Z]*/index.js"],
+        "rules": {
+          "import/prefer-default-export": "off"
+        }
+      },
+      {
+        "files": "examples/**/*.js",
+        "rules": {
+          "import/no-unresolved": "off"
+        }
+      }
+    ],
+    "env": {
+      "browser": true,
+      "node": true
+    }
   },
   "browserslist": [
     ">0.2%",
@@ -29,7 +75,8 @@
     "classnames": "^2.2.6",
     "node-sass": "^4.9.4",
     "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "react-dom": "^16.6.0",
+    "prop-types": "^15.6.2"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -41,14 +88,20 @@
     "@storybook/addon-viewport": "^4.0.2",
     "@storybook/addons": "^4.0.2",
     "@storybook/react": "^4.0.2",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
     "classnames": "^2.2.6",
     "copy-webpack-plugin": "^4.6.0",
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
     "node-sass": "^4.9.4",
     "np": "^3.1.0",
+    "prop-types": "^15.6.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "react-scripts": "2.1.1",
     "react-storybook-addon-static-markup": "https://github.com/nilsnh/react-storybook-addon-static-markup.git",
     "react-syntax-highlighter": "^10.0.1",
     "sass-resources-loader": "^2.0.0",
