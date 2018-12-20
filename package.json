@@ -33,7 +33,9 @@
     },
     "overrides": [
       {
-        "files": ["*.stories.js"],
+        "files": [
+          "*.stories.js"
+        ],
         "rules": {
           "import/no-extraneous-dependencies": "off",
           "import/no-webpack-loader-syntax": "off",
@@ -42,7 +44,9 @@
         }
       },
       {
-        "files": ["src/[A-Z]*/index.js"],
+        "files": [
+          "src/[A-Z]*/index.js"
+        ],
         "rules": {
           "import/prefer-default-export": "off"
         }
@@ -102,6 +106,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
+    "react-scripts": "^2.1.1",
     "react-storybook-addon-static-markup": "https://github.com/nilsnh/react-storybook-addon-static-markup.git",
     "react-syntax-highlighter": "^10.0.1",
     "sass-resources-loader": "^2.0.0",
