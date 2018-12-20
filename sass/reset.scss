@@ -169,6 +169,16 @@ blockquote {
   margin: $padding-large 0;
 }
 
+fieldset,
+legend,
+form {
+  margin: 0;
+  padding: 0;
+  position: static;
+  display: block;
+  border: 0;
+}
+
 // Stuff from foundation. Can we get rid of this over time?
 @include foundation-flex-grid;
 @include foundation-flex-classes;

@@ -1,49 +1,38 @@
 @import "../../sass/base/index";
 
 .dfo-form {
-  background-color: $darkerbackground;
-  max-width: $form-max-width;
   width: 100%;
+  max-width: $form-max-width;
   margin-bottom: $element-gap;
-  padding: $padding-large;
-}
+  padding: $padding-large 0 0;
+  overflow: auto;
+  background-color: $darkerbackground;
 
-.dfo-form-title {
-  border-bottom: 1px solid $primaryLight;
-  padding-bottom: $padding-small;
-  margin-bottom: $padding-medium;
-}
+  &__fieldset {
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+    padding: $padding-large;
+    
+    &:not(:first-of-type) {
+      border-top: 5px solid $darkbackground;
+    }
 
-.dfo-form-submit-wrapper {
-  background-color: $darkbackground;
-  margin-left: -$padding-large;
-  margin-right: -$padding-large;
-  margin-bottom: -$padding-large;
-  padding-top: $padding-large;
-  padding-left: $padding-large;
-  padding-bottom: $padding-large;
-}
-
-.dfo-form-fieldset {
-  margin: 0;
-  margin-left: -$padding-large;
-  margin-right: -$padding-large;
-  margin-bottom: $padding-small;
-
-  padding-top: 0;
-  padding-left: $padding-large;
-  padding-right: $padding-large;
-  padding-bottom: $padding-small;
-
-  border: none;
-  display: block;
-  border-bottom: 2px solid $white;
-  &:last-of-type() {
-    border: none;
+    &--reset-background {
+      padding-bottom: 0;
+      border: 0;
+      background-color: $darkbackground;
+    }
   }
-}
+  
+  h2 {
+    margin: 0 $padding-large $padding-semilarge $padding-large;
+    padding-bottom: $padding-semilarge;
+    border-bottom: 1px solid $primary;
+  }
 
-.dfo-form-legend {
-  color: $primary;
-  padding-bottom: $padding-small;
+  legend {
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+    color: $text;
+  }
 }

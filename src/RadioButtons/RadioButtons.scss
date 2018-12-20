@@ -3,6 +3,10 @@
 .dfo-radio-buttons {
   border: none;
 
+  + * {
+    margin-top: $padding-small;
+  }
+
   input {
     -webkit-appearance: none;
     outline: none;
