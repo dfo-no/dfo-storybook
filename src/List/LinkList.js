@@ -28,7 +28,7 @@ export default function LinkList({ title, links, invert }) {
 
           return (
             <li key={theLink} className="nav__item">
-              <a className="nav__link" href={externalLink ? theLink : `/${theLink}`}>
+              <a className="nav__link" href={link ? `/${link}` : theLink}>
                 <div className="nav__link__content">{text}</div>
                 <div className="nav__link__symbol">
                   <LinkListSymbol
