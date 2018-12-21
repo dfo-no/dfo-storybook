@@ -7,12 +7,12 @@ import {
   Button,
   RadioButtons,
   Checkbox,
-  Select
+  Select,
 } from '../index';
 
 storiesOf('Forms', module)
   .add('Complete form', () => (
-    <div style={{maxWidth: '705px'}}>
+    <div style={{ maxWidth: '705px' }}>
       <Form method="post">
         <h2>DFØs Styringskonferanse 2019</h2>
         <fieldset className="dfo-form__fieldset">
@@ -41,7 +41,10 @@ storiesOf('Forms', module)
           <Checkbox
             name="ledercheck"
             label="Del 1"
-            description="Her er det litt plass til tekst om noe om etteller annet eller litt til. Her er det litt plass til tekst om noe om etteller annet eller litt til."
+            description="
+              Her er det litt plass til tekst om noe om etteller annet eller litt
+              til. Her er det litt plass til tekst om noe om etteller annet eller litt til.
+            "
           />
           <Checkbox
             name="ledercheck"

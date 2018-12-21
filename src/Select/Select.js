@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import './Select.scss';
 
 export default function Select({ name, label, options }) {
-
   return (
     <div className="dfo-select">
       {
@@ -13,13 +12,9 @@ export default function Select({ name, label, options }) {
         )
       }
       <select id={`select-${name}`} name={name}>
-        {options.map((
-          option
-          ) => {
-            return (
-              <option key={option}>{option}</option>
-              );
-            })}
+        {options.map(option => (
+          <option key={option}>{option}</option>
+        ))}
       </select>
     </div>
   );
@@ -32,7 +27,5 @@ Select.propTypes = {
 };
 
 Select.defaultProps = {
-  name: '',
-  label: '',
-  options: [],
+  label: null,
 };

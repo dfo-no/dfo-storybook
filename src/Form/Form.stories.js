@@ -5,7 +5,9 @@ import { withNotes } from '@storybook/addon-notes';
 import { withKnobs, text, object } from '@storybook/addon-knobs';
 
 import { withCSS } from '../../.storybook/static-css-addon';
-import { Input, Checkbox, RadioButtons, Select } from '..';
+import {
+  Input, Checkbox, RadioButtons, Select,
+} from '..';
 
 storiesOf('Forms', module)
   .addDecorator(withKnobs)
