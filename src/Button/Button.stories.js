@@ -19,7 +19,7 @@ storiesOf('Button', module)
     'Basic',
     () => (
       <Button onClick={action('clicked')}>
-        {text('Text', 'Meld deg på nyhetsbrev')}
+        {text('Text', 'Sign up for our newsletter')}
       </Button>
     ),
     options,
@@ -28,7 +28,7 @@ storiesOf('Button', module)
     'Call to action',
     () => (
       <Button cta={boolean('cta', true)} onClick={action('clicked')}>
-        {text('Text', 'Meld deg på nyhetsbrev')}
+        {text('Text', 'Sign up for our newsletter')}
       </Button>
     ),
     options,
@@ -37,7 +37,7 @@ storiesOf('Button', module)
     'Inverted light version',
     () => (
       <Button invert={boolean('Invert', true)} onClick={action('clicked')}>
-        {text('Text', 'Meld deg på nyhetsbrev')}
+        {text('Text', 'Sign up for our newsletter')}
       </Button>
     ),
     options,
@@ -51,7 +51,7 @@ storiesOf('Button', module)
         invert={boolean('invert', false)}
         href="/somewhere"
       >
-        {text('Text', 'Meld deg på nyhetsbrev')}
+        {text('Text', 'Sign up for our newsletter')}
       </Button>
     ),
     options,

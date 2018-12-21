@@ -16,23 +16,23 @@ storiesOf('Accordion', module)
       <Accordion
         panels={object('Panels', [
           {
-            heading: 'Generelt om rollestrukturen',
+            heading: 'Something vague about the role structure',
             id: '1',
-            content: <p>Her er noe tekst i en skuff</p>,
+            content: <p>Text in an accordion panel</p>,
           },
           {
-            heading: 'Funksjonsroller',
+            heading: 'Function roles',
             id: '2',
             content: (
               <p>
-                Noe <strong>sterkt</strong> innhold
+                Really <strong>important</strong> content in bold
               </p>
             ),
           },
           {
-            heading: 'Basisroller',
+            heading: 'Basis roles',
             id: '3',
-            content: <p>Her kommer noe om utredningsinstruksen</p>,
+            content: <p>Something about something in here</p>,
           },
         ])}
         onPanelClicked={action('onPanelClicked')}

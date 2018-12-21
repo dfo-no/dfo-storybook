@@ -14,9 +14,8 @@ storiesOf('Alertbox', module)
     'Alertbox',
     () => (
       <Alertbox>
-        <p>Dette er en viktig melding.</p>
-        <p>Og den kan gjerne foregå over flere linjer.</p>
-        <p>Med en linje til.</p>
+        <p>This is an important announcement.</p>
+        <p>It is perfectly fine to have more than one paragraph.</p>
       </Alertbox>
     ),
     {
