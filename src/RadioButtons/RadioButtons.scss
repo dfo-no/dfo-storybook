@@ -44,11 +44,13 @@
     border-radius: 50%;
     background-color: $background;
     position: relative;
+    cursor: pointer;
 
     &:hover,
     &:checked {
       border-color: $primaryLight;
     }
+    &:hover,
     &:focus {
       border-width: 4px;
     }

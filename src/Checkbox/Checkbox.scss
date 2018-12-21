@@ -2,8 +2,11 @@
 
 .dfo-checkbox {
   display: flex;
-  padding-top: $padding-xsmall;
   color: $primary;
+
+  + * {
+    margin-top: $padding-medium;
+  }
 
   &__input {
     width: 3rem;
@@ -20,7 +23,6 @@
 
     &:checked {
       background: url("/checked.svg") no-repeat center center;
-      background-size: 75%;
       background-color: $primaryLight;
     }
 
@@ -31,10 +33,11 @@
     }
   }
   &__text-wrapper {
-    margin-top: 12px;
     display: inline-block;
-    white-space: normal;
 
+    &--label-text {
+      font-weight: 600;
+    }
     &--extra-text {
       font-weight: normal;
     }

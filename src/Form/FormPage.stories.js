@@ -7,11 +7,12 @@ import {
   Button,
   RadioButtons,
   Checkbox,
+  Select
 } from '../index';
 
 storiesOf('Forms', module)
   .add('Complete form', () => (
-    <div style={{ maxWidth: '705px' }}>
+    <div style={{maxWidth: '705px'}}>
       <Form method="post">
         <h2>DFØs Styringskonferanse 2019</h2>
         <fieldset className="dfo-form__fieldset">
@@ -36,9 +37,22 @@ storiesOf('Forms', module)
           />
         </fieldset>
         <fieldset className="dfo-form__fieldset">
+          <h3>Hvilke deler av konferansen du skal delta på? </h3>
           <Checkbox
             name="ledercheck"
-            label="Er du i en lederstilling?"
+            label="Del 1"
+            description="Her er det litt plass til tekst om noe om etteller annet eller litt til. Her er det litt plass til tekst om noe om etteller annet eller litt til."
+          />
+          <Checkbox
+            name="ledercheck"
+            label="Del 2"
+          />
+        </fieldset>
+        <fieldset className="dfo-form__fieldset">
+          <Select
+            name="dropdown"
+            label="Dette er en dropdown"
+            options={['Val 1', 'Val 2']}
           />
         </fieldset>
         <fieldset className="dfo-form__fieldset dfo-form__fieldset--reset-background">

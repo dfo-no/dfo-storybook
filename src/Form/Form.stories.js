@@ -5,7 +5,7 @@ import { withNotes } from '@storybook/addon-notes';
 import { withKnobs, text, object } from '@storybook/addon-knobs';
 
 import { withCSS } from '../../.storybook/static-css-addon';
-import { Input, Checkbox, RadioButtons } from '..';
+import { Input, Checkbox, RadioButtons, Select } from '..';
 
 storiesOf('Forms', module)
   .addDecorator(withKnobs)
@@ -67,5 +67,18 @@ storiesOf('Forms', module)
     ),
     {
       css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../RadioButtons/RadioButtons.scss'),
+    },
+  )
+  .add(
+    'Select',
+    () => (
+      <Select
+        name="dropdown"
+        label="Dette er en dropdown"
+        options={['Val 1', 'Val 2']}
+      />
+    ),
+    {
+      css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Select/Select.scss'),
     },
   );

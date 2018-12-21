@@ -29,9 +29,18 @@
     border-bottom: 1px solid $primary;
   }
 
-  legend {
+  h3 {
+    width: auto;
     font-size: 2.2rem;
     line-height: 2.2rem;
+    margin-bottom: $padding-medium;
+    font-family: "Source Sans Pro";
+    font-weight: normal;
+  }
+
+  legend {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
     color: $text;
   }
 }
