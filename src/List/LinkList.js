@@ -25,9 +25,10 @@ export default function LinkList({ title, links, invert }) {
           text, link, externalLink, downloadLink,
         }) => {
           const theLink = downloadLink || externalLink || link;
+
           return (
             <li key={theLink} className="nav__item">
-              <a className="nav__link" href={theLink}>
+              <a className="nav__link" href={externalLink ? theLink : `/${theLink}`}>
                 <div className="nav__link__content">{text}</div>
                 <div className="nav__link__symbol">
                   <LinkListSymbol
