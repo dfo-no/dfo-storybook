@@ -6,12 +6,12 @@ import {
   Input,
   Button,
   RadioButtons,
-  Checkbox
+  Checkbox,
 } from '../index';
 
 storiesOf('Forms', module)
   .add('Complete form', () => (
-    <div style={{maxWidth: '705px'}}>
+    <div style={{ maxWidth: '705px' }}>
       <Form method="post">
         <h2>DFØs Styringskonferanse 2019</h2>
         <fieldset className="dfo-form__fieldset">
