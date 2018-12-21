@@ -32,6 +32,11 @@
     margin: 0 $padding-large $padding-semilarge $padding-large;
     padding: $padding-large 0 $padding-semilarge;
     border-bottom: 1px solid $primary;
+
+    @media screen and (max-width: $mobile) {
+      margin-left: $padding-medium;
+      margin-right: $padding-medium;
+    }
   }
 
   h3 {
