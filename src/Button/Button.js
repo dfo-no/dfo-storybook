@@ -8,6 +8,7 @@ export default function Button({
   invert,
   cta,
   plainLink,
+  onSubmit,
   ...rest
 }) {
   const classes = classNames('dfo-button', {
@@ -24,7 +25,7 @@ export default function Button({
   }
 
   return (
-    <button className={classes} {...rest} type="button">
+    <button className={classes} {...rest} type="button" onSubmit={onSubmit}>
       {children}
     </button>
   );

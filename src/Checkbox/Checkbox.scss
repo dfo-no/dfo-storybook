@@ -2,39 +2,41 @@
 
 .dfo-checkbox {
   display: flex;
-  align-items: center;
+  padding-top: $padding-xsmall;
   color: $primary;
-  cursor: pointer;
-  padding-top: $padding-medium;
-  padding-bottom: $padding-medium;
-  white-space: nowrap;
+
   &__input {
-    -webkit-appearance: none;
+    width: 3rem;
+    height: 3rem;
+    flex-shrink: 0;
+    margin-right: 1rem;
+    border: 2px solid $primaryLight;
     box-shadow: none;
-    border: 2px solid $border;
-    margin: $padding-small 0;
+    -webkit-appearance: none;
     outline-color: transparent;
     outline-style: none;
     background-color: #fff;
-    padding: $padding-small;
     position: relative;
-    width: 2rem;
-    height: 2rem;
-    border-color: $secondary;
-    background-color: #fff;
-    margin-right: 10px;
-    vertical-align: middle;
+
     &:checked {
-      background: url("/tickmark.svg") no-repeat center center;
+      background: url("/checked.svg") no-repeat center center;
       background-size: 75%;
+      background-color: $primaryLight;
     }
+
     &:hover,
     &:focus {
-      border-color: $primary;
+      border-width: 4px;
+      border-color: $primaryLight;
     }
   }
-  &__text {
+  &__text-wrapper {
+    margin-top: 12px;
     display: inline-block;
     white-space: normal;
+
+    &--extra-text {
+      font-weight: normal;
+    }
   }
 }

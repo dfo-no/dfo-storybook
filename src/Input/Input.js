@@ -15,7 +15,7 @@ const Input = ({
     >
       <div className="dfo-error-wrapper">
         {label}
-        <input {...{ ...rest, id }} />
+        <input name={name} {...{ ...rest, id }} />
         {error && <span className="dfo-error-wrapper__error">{error}</span>}
       </div>
     </label>

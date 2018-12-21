@@ -2,10 +2,8 @@
 
 .dfo-form {
   width: 100%;
-  max-width: $form-max-width;
+  max-width: unset;
   margin-bottom: $element-gap;
-  padding: $padding-large 0 0;
-  overflow: auto;
   background-color: $darkerbackground;
 
   &__fieldset {
@@ -18,15 +16,16 @@
     }
 
     &--reset-background {
-      padding-bottom: 0;
+      padding: $padding-large $padding-large 0 0;
       border: 0;
       background-color: $darkbackground;
     }
   }
   
   h2 {
+    width: auto;
     margin: 0 $padding-large $padding-semilarge $padding-large;
-    padding-bottom: $padding-semilarge;
+    padding: $padding-large 0 $padding-semilarge;
     border-bottom: 1px solid $primary;
   }
 

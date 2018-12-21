@@ -4,7 +4,7 @@
   border: none;
 
   + * {
-    margin-top: $padding-small;
+    margin-top: $padding-medium;
   }
 
   input {
@@ -19,7 +19,7 @@
     padding: $padding-small;
     &:focus,
     &:hover {
-      border-color: $primary;
+      border-color: $primaryLight;
     }
   }
 
@@ -27,34 +27,39 @@
   input {
     width: auto;
     display: inline-block;
-    margin-right: $padding-small;
-    vertical-align: middle;
+  }
+  
+  label {
+    margin-right: $padding-medium;
     cursor: pointer;
   }
-
+  
   input {
-    width: 2rem;
-    height: 2rem;
-    border-color: $primary;
+    vertical-align: middle;
+    width: 30px; 
+    height: 30px;
+    line-height: 30px;
+    margin-right: 0.5rem;
+    border-color: $primaryLight;
     border-radius: 50%;
     background-color: $background;
     position: relative;
 
     &:hover,
     &:checked {
-      border-color: $primary;
+      border-color: $primaryLight;
     }
     &:focus {
-      border-color: $secondary;
+      border-width: 4px;
     }
 
     // Checked dot for a button.
     &:checked:after {
       content: "";
-      width: 1rem;
-      height: 1rem;
+      width: 18px;
+      height: 18px;
       border-radius: 50%;
-      background-color: $primary;
+      background-color: $primaryLight;
       position: absolute;
       top: 50%;
       left: 50%;
