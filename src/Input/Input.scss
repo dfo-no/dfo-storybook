@@ -17,7 +17,7 @@
     outline-color: transparent;
     outline-style: none;
     background-color: #fff;
-    padding: $padding-small;
+    padding: $padding-medium;
     width: 100%;
   }
 
@@ -26,16 +26,6 @@
   input:focus,
   label:focus {
     -webkit-appearance: none;
-  }
-
-  input:hover,
-  label:hover {
-    border-color: $secondary;
-  }
-
-  input:active,
-  input:focus,
-  label:focus {
     border-color: $primaryLight;
   }
 

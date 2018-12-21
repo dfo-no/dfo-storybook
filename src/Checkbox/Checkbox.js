@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './Checkbox.scss';
 
@@ -13,7 +14,7 @@ export default function Checkbox({ label, description, ...rest }) {
         {...rest}
       />
       <div className="dfo-checkbox__text-wrapper">
-        <div>{label}</div>
+        <div className="dfo-checkbox__text-wrapper--label-text">{label}</div>
         {
           description && (
             <div className="dfo-checkbox__text-wrapper--extra-text">{description}</div>
@@ -23,3 +24,8 @@ export default function Checkbox({ label, description, ...rest }) {
     </label>
   );
 }
+
+Checkbox.propTypes = {
+  label: PropTypes.string,
+  description: PropTypes.string,
+};

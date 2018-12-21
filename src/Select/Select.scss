@@ -1,0 +1,32 @@
+@import '../../sass/base/index';
+
+.dfo-select {
+  
+  + * {
+    margin-top: $padding-medium;
+  }
+
+  label {
+    margin-bottom: $padding-small;
+    font-weight: 600;
+    font-size: 18px;
+    color: $primary;
+    display: block;
+  }
+
+  select {
+    padding: 1.8rem 2.6rem;
+    outline: 0;
+    border: 2px solid $border;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: white url("/select.svg") no-repeat calc(100% - 2.6rem) center;
+
+    &:hover,
+    &:focus {
+      border-color: $primaryLight;
+    }
+  }
+}
