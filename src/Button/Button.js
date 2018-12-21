@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import * as classNames from 'classnames';
 
 import './Button.scss';
@@ -9,6 +10,7 @@ export default function Button({
   cta,
   plainLink,
   onSubmit,
+  type,
   ...rest
 }) {
   const classes = classNames('dfo-button', {
@@ -25,8 +27,17 @@ export default function Button({
   }
 
   return (
-    <button className={classes} {...rest} type="button" onSubmit={onSubmit}>
+    // eslint-disable-next-line react/button-has-type
+    <button className={classes} type={type} {...rest} onSubmit={onSubmit}>
       {children}
     </button>
   );
 }
+
+Button.propTypes = {
+  type: PropTypes.string,
+};
+
+Button.defaultProps = {
+  type: 'button',
+};
