@@ -10,18 +10,23 @@
     padding-inline-start: 0;
     padding-inline-end: 0;
     padding: $padding-large;
-    
+
+    @media screen and (max-width: $mobile) {
+      padding: $padding-medium;
+    }
+
     &:not(:first-of-type) {
       border-top: 5px solid $darkbackground;
     }
 
     &--reset-background {
-      padding: $padding-large $padding-large 0 0;
+      padding: 0;
+      padding-top: $padding-medium;
       border: 0;
       background-color: $darkbackground;
     }
   }
-  
+
   h2 {
     width: auto;
     margin: 0 $padding-large $padding-semilarge $padding-large;
