@@ -1,12 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 import './Checkbox.scss';
 
-export default function Checkbox({ label, description, ...rest }) {
+export default function Checkbox({
+  label,
+  description,
+  inline,
+  ...rest
+}) {
   const labelKey = `checkbox-${label}`;
   return (
-    <label htmlFor={labelKey} className="dfo-checkbox">
+    <label
+      htmlFor={labelKey}
+      className={classnames(
+        'dfo-checkbox',
+        { 'dfo-checkbox--inline': inline },
+      )}
+    >
       <input
         id={labelKey}
         type="checkbox"
@@ -14,10 +26,10 @@ export default function Checkbox({ label, description, ...rest }) {
         {...rest}
       />
       <div className="dfo-checkbox__text-wrapper">
-        <div className="dfo-checkbox__text-wrapper--label-text">{label}</div>
+        <span className="dfo-checkbox__label-text">{label}</span>
         {
-          description && (
-            <div className="dfo-checkbox__text-wrapper--extra-text">{description}</div>
+          !inline && description && (
+            <span className="dfo-checkbox__description">{description}</span>
           )
         }
       </div>
@@ -28,8 +40,10 @@ export default function Checkbox({ label, description, ...rest }) {
 Checkbox.propTypes = {
   label: PropTypes.string.isRequired,
   description: PropTypes.string,
+  inline: PropTypes.bool,
 };
 
 Checkbox.defaultProps = {
   description: null,
+  inline: false,
 };

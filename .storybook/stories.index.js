@@ -16,8 +16,6 @@ addDecorator(Padding);
 addDecorator(ShowStaticMarkup);
 
 storiesOf("Welcome", module)
-  .add('Index', () => <WelcomePage/>);
-
-storiesOf('Visual basis')
+  .add('Index', () => <WelcomePage/>)
   .add("Typography", () => <TypographyPage />)
-  .add("Colors: dfo.no", () => <ColorsPage />)
+  .add("Colors: dfo.no", () => <ColorsPage />);
