@@ -8,9 +8,10 @@ export default function Form({ children, className, ...rest }) {
 }
 
 Form.propTypes = {
-  children: PropTypes.any,
+  className: PropTypes.string,
+  children: PropTypes.any.isRequired,
 };
 
 Form.defaultProps = {
-  children: [],
+  className: null,
 };

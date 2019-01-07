@@ -35,9 +35,18 @@ export default function Button({
 }
 
 Button.propTypes = {
+  cta: PropTypes.bool,
+  invert: PropTypes.bool,
+  plainLink: PropTypes.bool,
+  onSubmit: PropTypes.func,
   type: PropTypes.string,
+  children: PropTypes.any.isRequired,
 };
 
 Button.defaultProps = {
+  cta: false,
+  invert: false,
+  plainLink: false,
   type: 'button',
+  onSubmit: f => f,
 };

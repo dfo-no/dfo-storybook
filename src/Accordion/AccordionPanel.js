@@ -7,7 +7,6 @@ import AccordionArrow from './AccordionArrow';
 export default function AccordionPanel({
   id,
   heading,
-  content,
   isOpen,
   onClick,
   children,
@@ -46,11 +45,13 @@ export default function AccordionPanel({
 AccordionPanel.propTypes = {
   heading: PropTypes.string,
   children: PropTypes.object,
+  isOpen: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
 };
 
 AccordionPanel.defaultProps = {
+  isOpen: false,
   heading: '',
   children: [],
 };
