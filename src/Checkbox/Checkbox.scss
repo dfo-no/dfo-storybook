@@ -3,9 +3,14 @@
 .dfo-checkbox {
   display: flex;
   color: $primary;
+  break-inside: avoid-column;
 
   + * {
     margin-top: $padding-medium;
+  }
+
+  + .dfo-expand {
+    margin-top: $padding-small;
   }
 
   &--inline {

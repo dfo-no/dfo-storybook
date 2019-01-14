@@ -179,6 +179,15 @@ form {
   border: 0;
 }
 
+fieldset > legend {
+  float: left;
+  margin-bottom: $padding-medium;
+
+  + * {
+    clear: left;
+  }
+}
+
 // Stuff from foundation. Can we get rid of this over time?
 @include foundation-flex-grid;
 @include foundation-flex-classes;
