@@ -5,7 +5,8 @@ import { withNotes } from '@storybook/addon-notes';
 import { withKnobs } from '@storybook/addon-knobs';
 
 import { withCSS } from '../../.storybook/static-css-addon';
-import { Checkbox } from '..';
+import { Form, Fieldset, Checkbox } from '..';
+import { CheckboxGroup } from '.';
 
 storiesOf('Checbox', module)
   .addDecorator(withKnobs)
@@ -92,6 +93,32 @@ storiesOf('Checbox', module)
           label="Booboo"
         />
       </div>
+    ),
+    {
+      css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Checkbox/Checkbox.scss'),
+    },
+  )
+  .add(
+    'Two column layout checbox fields',
+    () => (
+      <Form>
+        <Fieldset legend="Har du noen allergier?">
+          <CheckboxGroup twoCols>
+            {[
+              'Mandler', 'Laktose', 'Aprikos',
+              'Fisk', 'Hasselnøtter', 'Hvalnøtter',
+              'Gluten', 'Vann', 'Grønnsaker',
+              'Salt', 'Sukker',
+            ].map(allergen => (
+              <Checkbox
+                key={allergen}
+                name="allergi"
+                label={allergen}
+              />
+            ))}
+          </CheckboxGroup>
+        </Fieldset>
+      </Form>
     ),
     {
       css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Checkbox/Checkbox.scss'),

@@ -1,0 +1,8 @@
+@import '../../sass/base/index';
+
+.dfo-checkboxgroup {
+  &--two-cols {
+    columns: 2 200px;
+    column-gap: $padding-medium;
+  }
+}
