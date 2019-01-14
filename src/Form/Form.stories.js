@@ -9,6 +9,7 @@ import {
   RadioButtons,
   Checkbox,
   Select,
+  Expand,
 } from '../index';
 
 storiesOf('Forms', module)
@@ -55,8 +56,7 @@ storiesOf('Forms', module)
     <div style={{ maxWidth: '705px' }}>
       <Form method="post">
         <h2>DFØs Styringskonferanse 2019</h2>
-        <Fieldset>
-          <legend>Kontaktinformation:</legend>
+        <Fieldset legend="Kontaktinformation:">
           <Input label="Fornavn" type="text" name="fields[firstName]" value="" />
           <Input
             label="Etternavn"
@@ -66,18 +66,19 @@ storiesOf('Forms', module)
             value=""
           />
         </Fieldset>
-        <Fieldset>
+        <Fieldset legend="Er du i en lederstilling?">
           <RadioButtons
             name="isLeader"
-            legend="Er du i en lederstilling?"
             options={[
               { label: 'Ja', value: 'yes', defaultChecked: true },
               { label: 'Nei', value: 'no' },
             ]}
           />
+          <Expand title="Usikker?">
+            Dersom du ikke vet om du er leder, er du det nok ikke..
+          </Expand>
         </Fieldset>
-        <Fieldset>
-          <h3>Hvilke deler av konferansen du skal delta på? </h3>
+        <Fieldset legend="Hvilke deler av konferansen du skal delta på?">
           <Checkbox
             name="ledercheck"
             label="Del 1"

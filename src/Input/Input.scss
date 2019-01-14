@@ -8,6 +8,10 @@
   display: block;
   position: relative;
 
+  + .dfo-expand {
+    margin-top: $padding-small;
+  }
+
   input {
     -webkit-appearance: none;
     outline: none;

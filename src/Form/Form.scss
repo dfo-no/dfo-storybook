@@ -39,18 +39,18 @@
     }
   }
 
-  h3 {
+  legend {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    color: $text;
+  }
+
+  h3, .dfo-form__fieldset-title {
     width: auto;
     font-size: 2.2rem;
     line-height: 2.2rem;
     margin-bottom: $padding-medium;
     font-family: "Source Sans Pro";
     font-weight: normal;
-  }
-
-  legend {
-    font-size: 1.8rem;
-    line-height: 1.8rem;
-    color: $text;
   }
 }

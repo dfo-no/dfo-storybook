@@ -7,6 +7,10 @@
     margin-top: $padding-medium;
   }
 
+  + .dfo-expand {
+    margin-top: $padding-small;
+  }
+
   input {
     -webkit-appearance: none;
     outline: none;
@@ -28,15 +32,15 @@
     width: auto;
     display: inline-block;
   }
-  
+
   label {
     margin-right: $padding-medium;
     cursor: pointer;
   }
-  
+
   input {
     vertical-align: middle;
-    width: 30px; 
+    width: 30px;
     height: 30px;
     line-height: 30px;
     margin-right: 0.5rem;
