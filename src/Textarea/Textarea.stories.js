@@ -5,7 +5,7 @@ import { withNotes } from '@storybook/addon-notes';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 
 import { withCSS } from '../../.storybook/static-css-addon';
-import { Textarea, Fieldset } from '..';
+import { Fieldset, Textarea } from '..';
 
 storiesOf('Textarea', module)
   .addDecorator(withKnobs)

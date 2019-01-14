@@ -9,6 +9,7 @@ import './Expand.scss';
 export default class Expand extends Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
+    children: PropTypes.any.isRequired,
   }
 
   state = { open: false }

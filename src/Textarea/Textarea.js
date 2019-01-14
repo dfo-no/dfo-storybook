@@ -1,10 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import AutosizeTextarea from 'react-textarea-autosize';
+import TextareaAutosize from 'react-textarea-autosize';
 
 import './Textarea.scss';
-import TextareaAutosize from 'react-textarea-autosize';
 
 export default class Textarea extends PureComponent {
   static propTypes = {
