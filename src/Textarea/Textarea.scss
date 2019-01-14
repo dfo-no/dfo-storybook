@@ -1,0 +1,68 @@
+@import "../../sass/base/index";
+
+.dfo-textarea {
+  width: 100%;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: $primary;
+  display: block;
+  position: relative;
+
+  + * {
+    margin-top: $padding-medium;
+  }
+
+  + .dfo-expand {
+    margin-top: $padding-small;
+  }
+
+  textarea {
+    -webkit-appearance: none;
+    line-height: 1.5;
+    outline: none;
+    box-shadow: none;
+    border: 2px solid $border;
+    margin: $padding-small 0;
+    outline-color: transparent;
+    outline-style: none;
+    background-color: #fff;
+    padding: $padding-small;
+    width: 100%;
+  }
+
+  textarea:hover,
+  textarea:active,
+  textarea:focus,
+  label:focus {
+    -webkit-appearance: none;
+    border-color: $primaryLight;
+  }
+
+  .dfo-error-wrapper {
+    position: relative;
+
+    &:before {
+      width: 2px;
+      content: "";
+      background-color: transparent;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -18px;
+    }
+  }
+
+  &--is-error {
+    margin-bottom: $padding-medium;
+
+    .dfo-error-wrapper::before {
+      background-color: $error;
+    }
+
+    .dfo-error-wrapper__error {
+      padding-left: $padding-small;
+      font-weight: normal;
+      font-style: italic;
+    }
+  }
+}
