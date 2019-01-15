@@ -18,16 +18,25 @@ storiesOf('Button', module)
   .add(
     'Basic',
     () => (
-      <Button onClick={action('clicked')}>
-        {text('Text', 'Sign up for our newsletter')}
-      </Button>
+      <div>
+        <Button
+          disabled={boolean('disabled', false)}
+          onClick={action('clicked')}
+        >
+          {text('Text', 'Sign up for our newsletter')}
+        </Button>
+      </div>
     ),
     options,
   )
   .add(
     'Call to action',
     () => (
-      <Button cta={boolean('cta', true)} onClick={action('clicked')}>
+      <Button
+        cta={boolean('cta', true)}
+        onClick={action('clicked')}
+        disabled={boolean('disabled', false)}
+      >
         {text('Text', 'Sign up for our newsletter')}
       </Button>
     ),
@@ -36,7 +45,11 @@ storiesOf('Button', module)
   .add(
     'Inverted light version',
     () => (
-      <Button invert={boolean('Invert', true)} onClick={action('clicked')}>
+      <Button
+        invert={boolean('Invert', true)}
+        onClick={action('clicked')}
+        disabled={boolean('disabled', false)}
+      >
         {text('Text', 'Sign up for our newsletter')}
       </Button>
     ),
