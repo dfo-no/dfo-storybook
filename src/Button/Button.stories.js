@@ -19,10 +19,7 @@ storiesOf('Button', module)
     'Basic',
     () => (
       <div>
-        <Button
-          disabled={boolean('disabled', false)}
-          onClick={action('clicked')}
-        >
+        <Button onClick={action('clicked')}>
           {text('Text', 'Sign up for our newsletter')}
         </Button>
       </div>
@@ -35,7 +32,6 @@ storiesOf('Button', module)
       <Button
         cta={boolean('cta', true)}
         onClick={action('clicked')}
-        disabled={boolean('disabled', false)}
       >
         {text('Text', 'Sign up for our newsletter')}
       </Button>
@@ -48,7 +44,6 @@ storiesOf('Button', module)
       <Button
         invert={boolean('Invert', true)}
         onClick={action('clicked')}
-        disabled={boolean('disabled', false)}
       >
         {text('Text', 'Sign up for our newsletter')}
       </Button>
