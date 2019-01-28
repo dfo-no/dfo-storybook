@@ -1,7 +1,6 @@
 @import '../../sass/base/index';
 
 .dfo-select {
-
   + * {
     margin-top: $padding-medium;
   }
@@ -26,7 +25,7 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background: white url("/select.svg") no-repeat calc(100% - 2.6rem) center;
+    background: white url('./select.svg') no-repeat calc(100% - 2.6rem) center;
 
     &:hover,
     &:focus {
