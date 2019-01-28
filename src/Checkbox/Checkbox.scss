@@ -28,7 +28,8 @@
         width: 1em;
         margin-top: 0.25em;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           padding: 0;
         }
 
@@ -55,11 +56,12 @@
     background-color: #fff;
 
     &:checked {
-      background: url("/checked.svg") no-repeat center center;
+      background: url('./checked.svg') no-repeat center center;
       background-size: calc(3rem - 8px);
       background-color: $primaryLight;
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         background-color: $secondary;
         border-color: $secondary;
       }
@@ -71,7 +73,8 @@
     }
   }
 
-  &__text-wrapper {}
+  &__text-wrapper {
+  }
 
   &__label-text {
     display: inline-block;
