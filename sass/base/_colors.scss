@@ -3,8 +3,8 @@ $colors: (
   web: (
     primary: #012a4c,
     primaryLight: #005b91,
-    secondary: #009EE1,
-    tertiary: #00a982,
+    secondary: #009ee1,
+    tertiary: #008566,
     warning: #f7b715,
     error: #e83f53,
     text: #333333,
@@ -14,13 +14,13 @@ $colors: (
     darkbackground: #f7f7f7,
     background: #ffffff,
     border: #e6e6e6,
-    darkborder: #d1d1d1
+    darkborder: #d1d1d1,
   ),
   intranet: (
     primary: #012a4c,
     primaryLight: #005b91,
-    secondary: #009EE1,
-    tertiary: #00a982,
+    secondary: #009ee1,
+    tertiary: #008566,
     warning: #f7b715,
     error: #e83f53,
     text: #333333,
@@ -30,32 +30,32 @@ $colors: (
     darkbackground: #ebf7fe,
     background: #ffffff,
     border: #e6e6e6,
-    darkborder: #d1d1d1
-  )
+    darkborder: #d1d1d1,
+  ),
 );
 
 // Create overrideable variable which defaults to $site.
-$site: "web" !default;
+$site: 'web' !default;
 
 // Get the default colors
 $siteColors: map-get($colors, $site);
 
 // Assign colors to variables in order to avoid having to map-get
 // $colors in every single sass file..
-$primary: map-get($siteColors, "primary");
-$primaryLight: map-get($siteColors, "primaryLight");
-$secondary: map-get($siteColors, "secondary");
-$tertiary: map-get($siteColors, "tertiary");
-$error: map-get($siteColors, "error");
-$warning: map-get($siteColors, "warning");
-$text: map-get($siteColors, "text");
-$textonprimary: map-get($siteColors, "textonprimary");
-$grayText: map-get($siteColors, "grayText");
-$darkerbackground: map-get($siteColors, "darkerbackground");
-$darkbackground: map-get($siteColors, "darkbackground");
-$background: map-get($siteColors, "background");
-$border: map-get($siteColors, "border");
-$darkborder: map-get($siteColors, "darkborder");
+$primary: map-get($siteColors, 'primary');
+$primaryLight: map-get($siteColors, 'primaryLight');
+$secondary: map-get($siteColors, 'secondary');
+$tertiary: map-get($siteColors, 'tertiary');
+$error: map-get($siteColors, 'error');
+$warning: map-get($siteColors, 'warning');
+$text: map-get($siteColors, 'text');
+$textonprimary: map-get($siteColors, 'textonprimary');
+$grayText: map-get($siteColors, 'grayText');
+$darkerbackground: map-get($siteColors, 'darkerbackground');
+$darkbackground: map-get($siteColors, 'darkbackground');
+$background: map-get($siteColors, 'background');
+$border: map-get($siteColors, 'border');
+$darkborder: map-get($siteColors, 'darkborder');
 
 // Blog colors, only applicable for web for now.
 $blogDarkBackground: #0d2a4b;
