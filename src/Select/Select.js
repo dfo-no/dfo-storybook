@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import './Select.scss';
 
 export default function Select({
-  name, label, options = [], children = [],
+  name, label, options, children,
 }) {
-  if (children.length > 0) {
+  if (children) {
     return <div className="dfo-select">{children}</div>;
   }
   return (
@@ -22,11 +22,12 @@ export default function Select({
 }
 
 Select.propTypes = {
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   label: PropTypes.string,
-  options: PropTypes.array.isRequired,
+  options: PropTypes.array,
 };
 
 Select.defaultProps = {
   label: null,
+  options: [],
 };
