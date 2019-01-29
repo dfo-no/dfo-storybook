@@ -3,14 +3,15 @@ import PropTypes from 'prop-types';
 
 import './Select.scss';
 
-export default function Select({ name, label, options }) {
+export default function Select({
+  name, label, options = [], children = [],
+}) {
+  if (children.length > 0) {
+    return <div className="dfo-select">{children}</div>;
+  }
   return (
     <div className="dfo-select">
-      {
-        label && (
-          <label htmlFor={`select-${name}`}>{label}</label>
-        )
-      }
+      {label && <label htmlFor={`select-${name}`}>{label}</label>}
       <select id={`select-${name}`} name={name}>
         {options.map(option => (
           <option key={option}>{option}</option>
