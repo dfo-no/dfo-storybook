@@ -1,6 +1,6 @@
 {
   "name": "@dfo/components",
-  "version": "4.2.2",
+  "version": "4.2.3",
   "scripts": {
     "start": "npm run storybook",
     "dev": "npm run storybook",
@@ -32,10 +32,15 @@
       "react/jsx-one-expression-per-line": 0,
       "jsx-a11y/anchor-is-valid": 0,
       "jsx-a11y/click-events-have-key-events": 0,
-      "jsx-a11y/label-has-associated-control": [ 2, {
-        "labelAttributes": ["label"],
-        "depth": 3
-      }],
+      "jsx-a11y/label-has-associated-control": [
+        2,
+        {
+          "labelAttributes": [
+            "label"
+          ],
+          "depth": 3
+        }
+      ],
       "jsx-a11y/label-has-for": 0
     },
     "overrides": [
