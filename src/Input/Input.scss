@@ -13,10 +13,10 @@
   }
 
   input {
-    -webkit-appearance: none;
+    appearance: none;
     outline: none;
     box-shadow: none;
-    border: 2px solid $border;
+    border: 2px solid $primaryLight;
     margin: $padding-small 0;
     outline-color: transparent;
     outline-style: none;
@@ -29,8 +29,8 @@
   input:active,
   input:focus,
   label:focus {
-    -webkit-appearance: none;
-    border-color: $primaryLight;
+    appearance: none;
+    box-shadow: inset 0 0 0 2px $primaryLight;
   }
 
   .dfo-error-wrapper {

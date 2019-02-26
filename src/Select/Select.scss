@@ -21,16 +21,14 @@
   select {
     padding: 1.8rem 2.6rem;
     outline: 0;
-    border: 2px solid $border;
+    border: 2px solid $primaryLight;
     box-sizing: border-box;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     background: white url('./select.svg') no-repeat calc(100% - 2.6rem) center;
 
     &:hover,
     &:focus {
-      border-color: $primaryLight;
+      box-shadow: inset 0 0 0 2px $primaryLight;
     }
   }
 }
