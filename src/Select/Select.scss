@@ -1,6 +1,8 @@
 @import '../../sass/base/index';
 
 .dfo-select {
+  font-size: 1.8rem;
+
   + * {
     margin-top: $padding-medium;
   }
@@ -12,7 +14,6 @@
   label {
     margin-bottom: $padding-small;
     font-weight: 600;
-    font-size: 18px;
     color: $primary;
     display: block;
   }

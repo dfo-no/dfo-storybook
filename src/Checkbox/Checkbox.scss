@@ -4,6 +4,7 @@
   display: flex;
   color: $primary;
   break-inside: avoid-column;
+  font-size: 1.8rem;
 
   + * {
     margin-top: $padding-medium;
