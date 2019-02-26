@@ -30,7 +30,7 @@ storiesOf('Select', module)
     () => (
       <div style={{ maxWidth: '705px' }}>
         <Select>
-          <label labelFor="section-select">Advanced select</label>
+          <label htmlFor="section-select">Advanced select</label>
           <select name="advanced-select" id="section-select">
             <option value="">Ikke valgt</option>
             <optgroup label="Strategi- og fellestjenesteavdelingen">

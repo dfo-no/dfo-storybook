@@ -22,12 +22,14 @@ export default function Select({
 }
 
 Select.propTypes = {
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
   label: PropTypes.string,
   options: PropTypes.array,
+  children: PropTypes.any,
 };
 
 Select.defaultProps = {
+  children: null,
   label: null,
   options: [],
 };
