@@ -7,6 +7,7 @@ import './Button.scss';
 export default function Button({
   children = [],
   invert,
+  danger,
   cta,
   plainLink,
   onSubmit,
@@ -14,6 +15,7 @@ export default function Button({
   ...rest
 }) {
   const classes = classNames('dfo-button', {
+    'dfo-button--danger': danger,
     'dfo-button--invert': invert,
     'dfo-button--cta': cta,
   });
@@ -37,6 +39,7 @@ export default function Button({
 Button.propTypes = {
   cta: PropTypes.bool,
   invert: PropTypes.bool,
+  danger: PropTypes.bool,
   plainLink: PropTypes.bool,
   onSubmit: PropTypes.func,
   type: PropTypes.string,
@@ -45,6 +48,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   cta: false,
+  danger: false,
   invert: false,
   plainLink: false,
   type: 'button',

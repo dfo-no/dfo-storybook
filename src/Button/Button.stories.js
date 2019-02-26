@@ -51,12 +51,24 @@ storiesOf('Button', module)
     options,
   )
   .add(
+    'Error button',
+    () => (
+      <Button
+        plainLink={boolean('Link', true)}
+        danger={boolean('danger', true)}
+        href="/somewhere"
+      >
+        {text('Text', 'Dangerous button')}
+      </Button>
+    ),
+    options,
+  )
+  .add(
     'CTA link disguised as button',
     () => (
       <Button
         plainLink={boolean('Link', true)}
         cta={boolean('cta', true)}
-        invert={boolean('invert', false)}
         href="/somewhere"
       >
         {text('Text', 'Sign up for our newsletter')}
