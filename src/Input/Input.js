@@ -8,6 +8,7 @@ const Input = ({
   label, name, error, ...rest
 }) => {
   const { id = `input-${name}` } = rest;
+
   return (
     <label
       htmlFor={id}
@@ -26,7 +27,7 @@ Input.defaultProps = {
   label: '',
   placeholder: '',
   error: '',
-  id: '',
+  id: undefined,
 };
 
 Input.propTypes = {
