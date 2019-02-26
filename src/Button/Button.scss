@@ -1,6 +1,7 @@
 @import '../../sass/base/index';
 
 $dangerColor: #e5243b;
+$darkDangerColor: #890303;
 $ctaColor: #008566;
 
 .dfo-button {
@@ -37,9 +38,9 @@ $ctaColor: #008566;
 
     &:hover,
     &:focus {
-      background-color: $background;
-      border-color: $dangerColor;
-      color: $dangerColor;
+      background-color: $darkDangerColor;
+      border-color: $darkDangerColor;
+      color: $textonprimary;
     }
   }
 
