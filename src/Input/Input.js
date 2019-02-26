@@ -14,9 +14,19 @@ const Input = ({
       htmlFor={id}
       className={classnames('dfo-input', { 'dfo-input--is-error': error })}
     >
-      <div className="dfo-error-wrapper">
+      <div
+        className="dfo-error-wrapper"
+        aria-live="assertive"
+        aria-relevant="additions removals"
+      >
         {label}
-        <input name={name} {...{ ...rest, id }} />
+
+        <input
+          aria-invalid={!!error}
+          name={name}
+          {...{ ...rest, id }}
+        />
+
         {error && <span className="dfo-error-wrapper__error">{error}</span>}
       </div>
     </label>

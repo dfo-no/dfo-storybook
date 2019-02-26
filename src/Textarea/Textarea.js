@@ -7,6 +7,7 @@ import './Textarea.scss';
 
 export default class Textarea extends PureComponent {
   static propTypes = {
+    id: PropTypes.string,
     children: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     label: PropTypes.string,
@@ -15,6 +16,7 @@ export default class Textarea extends PureComponent {
   }
 
   static defaultProps = {
+    id: undefined,
     label: null,
     error: null,
     autosize: false,
@@ -27,13 +29,15 @@ export default class Textarea extends PureComponent {
       label,
       error,
       autosize,
+      id,
       ...rest
     } = this.props;
 
     const textareaProps = {
       ...rest,
-      id: `textarea-${name}`,
+      id: id || `textarea-${name}`,
       name,
+      'aria-invalid': !!error,
     };
 
     return (
@@ -41,7 +45,11 @@ export default class Textarea extends PureComponent {
         htmlFor={textareaProps.id}
         className={classnames('dfo-textarea', { 'dfo-textarea--is-error': error })}
       >
-        <div className="dfo-error-wrapper">
+        <div
+          className="dfo-error-wrapper"
+          aria-live="assertive"
+          aria-relevant="additions removals"
+        >
           {label}
 
           {autosize
