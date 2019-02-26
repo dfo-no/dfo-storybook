@@ -51,14 +51,13 @@ storiesOf('Button', module)
     options,
   )
   .add(
-    'Error button',
+    'Danger button',
     () => (
       <Button
-        plainLink={boolean('Link', true)}
         danger={boolean('danger', true)}
-        href="/somewhere"
+        onClick={action('clicked')}
       >
-        {text('Text', 'Dangerous button')}
+        {text('Text', 'Delete all dem datas 😰')}
       </Button>
     ),
     options,
