@@ -39,6 +39,6 @@ storiesOf('Textarea', module)
       </Fieldset>
     ),
     {
-      css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Select/Select.scss'),
+      css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Textarea/Textarea.scss'),
     },
   );
