@@ -75,6 +75,9 @@ module.exports = {
     "presets": [
       "@babel/preset-env", 
       "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
     ]
 }
 ```
@@ -122,7 +125,19 @@ module.exports = {
 }
 ```
 
-7. Start using the components:
+7. Add resolve alias for foundation-site references by adding the following to your webpack config:
+
+```js
+{
+  resolve: {
+    alias: {
+      '../../node_modules/foundation-sites': 'foundation-sites'
+    }
+  }
+}
+```
+
+8. Start using the components:
 
 ```jsx
 import { Button } from '@dfo/components';
@@ -143,7 +158,7 @@ export default function MyAwesomeApp() {
 }
 ```
 
-8. 🚀
+9. 🚀
 
 ---
 
