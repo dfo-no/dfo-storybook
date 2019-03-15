@@ -7,5 +7,13 @@ module.exports = withSass(
     transpileModules: [
       '@dfo/components',
     ],
+    webpack(config) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        '../../node_modules/foundation-sites': 'foundation-sites',
+      };
+
+      return config;
+    },
   }),
 );

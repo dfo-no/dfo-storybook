@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@dfo/components": "0.1.0-alpha.10",
+    "@dfo/components": "4.4.0",
     "@zeit/next-sass": "^1.0.1",
     "classnames": "^2.2.6",
     "next": "^7.0.2",

@@ -32,9 +32,20 @@ const withSass = require('@zeit/next-sass');
 
 module.exports = withSass(
   withTM({
+    // this is needed for next to transpile the folder in node_modules
     transpileModules: [
       '@dfo/components',
     ],
+    webpack(config) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+
+        // this is needed for next to resolve the foundation-sites references
+        '../../node_modules/foundation-sites': 'foundation-sites'
+      }
+
+      return config;
+    }
   }),
 );
 ```
