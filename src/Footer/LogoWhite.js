@@ -12,13 +12,7 @@ export default function LogoWhite() {
       alt="Direktoratet for Økonomistyrings logo"
       className="dfo-footer__logo"
     >
-      <defs>
-        <clipPath id="a" transform="translate(0.001 -0.957)">
-          <rect width="246.983" height="48.998" style={{ fill: 'none' }} />
-        </clipPath>
-      </defs>
-      <title>logo-white</title>
-      <g style={{ clipPath: 'url(#a)' }}>
+      <g>
         <path d="M61.806,17.629H59.655V3.551h2.354c3.579,0,6.093.785,6.093,7.039,0,6.195-2.675,7.039-6.3,7.039M62.289,5.14H61.465v10.9h0.663c2.574,0,4.163-.6,4.163-5.451,0-4.987-1.589-5.45-4-5.45" transform="translate(0.001 -0.957)" style={{ fill: '#fff' }} />
         <path d="M72.425,5.361a1.207,1.207,0,1,1,1.187-1.205,1.192,1.192,0,0,1-1.187,1.205m-0.9,1.609h1.81V17.629h-1.81V6.97Z" transform="translate(0.001 -0.957)" style={{ fill: '#fff' }} />
         <path d="M82.058,8.86a4.568,4.568,0,0,0-1.307-.2,2.261,2.261,0,0,0-1.669.845v8.126h-1.81V6.97h1.387L78.92,8.378A2.489,2.489,0,0,1,81.172,6.77a4.884,4.884,0,0,1,.886.121V8.86Z" transform="translate(0.001 -0.957)" style={{ fill: '#fff' }} />
