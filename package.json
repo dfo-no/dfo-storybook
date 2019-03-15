@@ -7,7 +7,7 @@
     "build": "npm run build-storybook",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook",
-    "publish": "np",
+    "release": "np",
     "test": "eslint ."
   },
   "publishConfig": {
@@ -116,7 +116,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.11.1",
     "node-sass": "^4.9.4",
-    "np": "^3.1.0",
+    "np": "^4.0.2",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
