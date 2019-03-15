@@ -24,7 +24,9 @@
     border: 2px solid $primaryLight;
     box-sizing: border-box;
     appearance: none;
-    background: white url('./select.svg') no-repeat calc(100% - 2.6rem) center;
+
+    // url-encoded version of ./select.svg 👇
+    background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4.7mm' height='2.723mm' viewBox='0 0 13.322 7.719'%3E%3Ctitle%3Edown_arrow%3C/title%3E%3Cpath d='M0,1.057L1.048,0,6.661,5.612,12.274,0l1.048,1.057L6.661,7.719Z' style='fill:%230f2b4c'/%3E%3C/svg%3E") no-repeat calc(100% - 2.6rem) center;
 
     &:hover,
     &:focus {

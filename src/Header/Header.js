@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 import classNames from 'classnames';
 
 import Burger from './HeaderBurger';
-import logo from './dfo-logo.svg';
+import Logo from './Logo';
 
 import './Header.scss';
 
@@ -20,7 +20,7 @@ export default class Header extends React.Component {
         <div className="container container--flex">
           <div className="dfo-header__wrapper">
             <div className="dfo-header__wrapper__inner">
-              <img src={logo} alt="Direktoratet for Økonomistyrings logo" />
+              <Logo />
               <div className="dfo-header__menu-toggle-wrapper">
                 <button type="button" className="dfo-header__menu-toggle" onClick={this.menuToggle}>
                   Meny <Burger open={this.state.isOpen} />

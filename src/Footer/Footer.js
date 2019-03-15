@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import NavSymbol from './FooterNavSymbol';
-import logo from './logo-white.svg';
+import LogoWhite from './LogoWhite';
 
 import './Footer.scss';
 
@@ -31,11 +31,7 @@ export default function Footer({
 
             <div className="small-8 medium-3 medium-offset-1">
               <div className="dfo-footer__contact-wrapper">
-                <img
-                  src={logo}
-                  alt="Direktoratet for Økonomistyrings logo"
-                  className="dfo-footer__logo"
-                />
+                <LogoWhite />
 
                 <ul className="dfo-footer__contact">
                   <li>Karl Johans gate 37 B</li>
@@ -60,11 +56,7 @@ export default function Footer({
         <div className="row">
 
           <div className="small-12 medium-6 large-4">
-            <img
-              src={logo}
-              alt="Direktoratet for Økonomistyrings logo"
-              className="dfo-footer__logo"
-            />
+            <LogoWhite />
           </div>
 
           <div className="row small-12 medium-6 collapse">
