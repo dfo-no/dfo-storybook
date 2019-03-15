@@ -6,7 +6,7 @@ export default function App() {
     <div>
       <Header />
       <main style={{ margin: '3rem 2rem' }}>
-        <h1>Yo 👋</h1>
+        <h1>Yo <span role="img" aria-label="Hånd som vinker">👋</span></h1>
         <Button>Heisann</Button>
       </main>
       <Footer />
