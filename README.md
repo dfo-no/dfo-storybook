@@ -74,12 +74,12 @@ In order to use the components in your project there's a few things you need to 
 module.exports = {
     "presets": [
       "@babel/preset-env", 
-      "@babel/preset-react"
+      "@babel/preset-react",
     ],
     "plugins": [
-      "@babel/plugin-proposal-class-properties"
-    ]
-}
+      "@babel/plugin-proposal-class-properties",
+    ],
+},
 ```
 
 3. Modify the exclude option for your babel loader so that it doesn't exclude the `@dfo/components` folder in node modules:
@@ -89,9 +89,9 @@ module.exports = {
   test: /\.jsx?$/,
   exclude: /node_modules\/(?!@dfo\/components)/,
   use: {
-    loader: "babel-loader"
-  }
-}
+    loader: "babel-loader",
+  },
+},
 ```
 
 4. Add SASS resource loader by writing `npm i --save-dev sass-resources-loader`. We'll need this in the next step when we set up loading of base styles.
@@ -104,7 +104,7 @@ module.exports = {
     resources: [
       './node_modules/@dfo/components/sass/base/_index.scss',
       './node_modules/@dfo/components/sass/reset.scss',
-      './node_modules/@dfo/components/sass/fonts.scss'
+      './node_modules/@dfo/components/sass/fonts.scss',
     ],
   },
 }
@@ -119,9 +119,9 @@ module.exports = {
       loader: 'file-loader',
       options: {
           name: '[name].[ext]',
-          outputPath: 'fonts/'
-      }
-  }]
+          outputPath: 'fonts/',
+      },
+  }],
 }
 ```
 
@@ -131,10 +131,10 @@ module.exports = {
 {
   resolve: {
     alias: {
-      '../../node_modules/foundation-sites': 'foundation-sites'
-    }
-  }
-}
+      '../../node_modules/foundation-sites': 'foundation-sites',
+    },
+  },
+},
 ```
 
 8. Start using the components:
