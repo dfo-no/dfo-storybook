@@ -34,6 +34,13 @@ module.exports = {
         ],
       },
       {
+        resolve: {
+          alias: {
+            '../../node_modules/foundation-sites': 'foundation-sites',
+          },
+        },
+      },
+      {
         test: /\.jsx?$/,
         exclude: /node_modules\/(?!@dfo\/components)/,
         use: {
