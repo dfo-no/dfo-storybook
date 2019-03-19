@@ -32,7 +32,7 @@ storiesOf('Select', module)
         <Select>
           <label htmlFor="section-select">Advanced select</label>
           <select name="advanced-select" id="section-select">
-            <option value="">Ikke valgt</option>
+            <option value="" disabled selected>Ikke valgt</option>
             <optgroup label="Strategi- og fellestjenesteavdelingen">
               <option value="Seksjon for adm. og anskaffelser">Seksjon for adm. og anskaffelser (10)</option>
               <option value="Seksjon for informasjonsteknologi">Seksjon for informasjonsteknologi (22)</option>
