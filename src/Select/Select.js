@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './Select.scss';
 
 export default function Select({
-  name, label, options, children, placeholder, ...rest
+  name, label, options, children, initiallyEmpty, ...rest
 }) {
   if (children) {
     return <div className="dfo-select">{children}</div>;
@@ -13,7 +13,7 @@ export default function Select({
     <div className="dfo-select">
       {label && <label htmlFor={`select-${name}`}>{label}</label>}
       <select id={`select-${name}`} name={name} {...rest}>
-        { (placeholder || placeholder === '') && <option key="placeholder" value="" disabled>{placeholder}</option> }
+        { initiallyEmpty && <option key="" value="" disabled></option> }
         { options.map(option => {
             return (typeof option === "object") ? <option key={option.value} value={option.value}>{option.text}</option> : <option key={option}>{option}</option>;
         })}
