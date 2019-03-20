@@ -12,7 +12,7 @@ export default function Select({
   return (
     <div className="dfo-select">
       {label && <label htmlFor={`select-${name}`}>{label}</label>}
-      <select id={`select-${name}`} name={name} defaultValue="" {...rest}>
+      <select id={`select-${name}`} name={name} {...rest}>
         { (placeholder || placeholder === '') && <option key="placeholder" value="" disabled>{placeholder}</option> }
         { options.map(option => {
             return (typeof option === "object") ? <option key={option.value} value={option.value}>{option.text}</option> : <option key={option}>{option}</option>;
