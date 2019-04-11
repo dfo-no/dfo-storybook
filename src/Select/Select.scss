@@ -33,5 +33,13 @@
     &:focus {
       box-shadow: inset 0 0 0 1px $primaryLight;
     }
+
+    &.displayPlaceholder {
+      color: $grayText;
+    }
+  }
+
+  option:not(:first-of-type) {
+    color: $text;
   }
 }
