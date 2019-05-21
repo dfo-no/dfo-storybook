@@ -16,7 +16,7 @@ export default function Select({
   return (
     <label
       htmlFor={`select-${name}`}
-      className={classnames('dfo-input', { 'dfo-input--is-error': error })}
+      className={classnames('dfo-select', { 'dfo-select--is-error': error })}
     >
       <div
         className="dfo-select dfo-error-wrapper"
