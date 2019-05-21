@@ -21,6 +21,7 @@
   select {
     padding: 1.8rem 2.6rem;
     outline: 0;
+    margin: $padding-small 0;
     border: 2px solid $primaryLight;
     box-sizing: border-box;
     appearance: none;
@@ -41,5 +42,33 @@
 
   option:not(:first-of-type) {
     color: $text;
+  }
+
+  .dfo-error-wrapper {
+    position: relative;
+
+    &:before {
+      width: 2px;
+      content: "";
+      background-color: transparent;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -18px;
+    }
+  }
+
+  &--is-error {
+    margin-bottom: $padding-medium;
+
+    .dfo-error-wrapper::before {
+      background-color: $error;
+    }
+
+    .dfo-error-wrapper__error {
+      padding-left: $padding-small;
+      font-weight: normal;
+      font-style: italic;
+    }
   }
 }
