@@ -106,7 +106,14 @@ storiesOf('Select', module)
     'placeholder',
     () => (
       <div style={{ maxWidth: '705px' }}>
-        <Select name="placeholder-select" placeholder="Select option" options={['valg 1', 'valg 2']} value={undefined} onChange={(e) => {alert(e.target.value)}} label="Dropdown with placeholder" />
+        <Select
+          name="placeholder-select"
+          placeholder="Select option"
+          options={['valg 1', 'valg 2']}
+          value={undefined}
+          onChange={(e) => {alert(`onChange - event.target.value: ${e.target.value}`)}}
+          label="Dropdown with placeholder"
+        />
       </div>
     ),
     options, 
@@ -115,7 +122,14 @@ storiesOf('Select', module)
     'selected with plain string options',
     () => (
       <div style={{ maxWidth: '705px' }}>
-        <Select name="placeholder-select" placeholder="Select option" options={['valg 1', 'valg 2']} value='valg 2' onChange={(e) => {alert(e.target.value)}} label="Dropdown with selected value and plain string objects" />
+        <Select
+          name="placeholder-select"
+          placeholder="Select option"
+          options={['valg 1', 'valg 2']}
+          value='valg 2'
+          onChange={(e) => {alert(`onChange - event.target.value: ${e.target.value}`)}}
+          label="Dropdown with selected value and plain string objects"
+        />
       </div>
     ),
     options, 
@@ -124,7 +138,15 @@ storiesOf('Select', module)
     'with error',
     () => (
       <div style={{ maxWidth: '705px' }}>
-        <Select name="placeholder-select" placeholder="Select option" options={['valg 1', 'valg 2']} value={undefined} onChange={(e) => {alert('onChange - event.target.value: ' + e.target.value)}} label="Dropdown with error" error="Not selected" />
+        <Select
+          name="placeholder-select"
+          placeholder="Select option"
+          options={['valg 1', 'valg 2']}
+          value={undefined}
+          onChange={(e) => {alert(`onChange - event.target.value: ${e.target.value}`)}}
+          label="Dropdown with error"
+          error="Not selected"
+        />
       </div>
     ),
     options, 
@@ -133,7 +155,14 @@ storiesOf('Select', module)
     'options as objects',
     () => (
       <div style={{ maxWidth: '705px' }}>
-        <Select name="placeholder-select" placeholder="Select option" options={selectOptions} value='key2' onChange={(e) => {alert('onChange - event.target.value: ' + e.target.value)}} label="Options as objects" />
+        <Select
+          name="placeholder-select"
+          placeholder="Select option"
+          options={selectOptions}
+          value='key2'
+          onChange={(e) => {alert(`onChange - event.target.value: ${e.target.value}`)}}
+          label="Options as objects"
+        />
       </div>
     ),
     options, 
@@ -142,7 +171,15 @@ storiesOf('Select', module)
     'options with custom display attribute',
     () => (
       <div style={{ maxWidth: '705px' }}>
-        <Select name="placeholder-select" placeholder="Select option" displayAttr='name' options={selectOptions} value='1' onChange={(e) => {alert('onChange - event.target.value: ' + e.target.value)}} label="Options with custom display attribute" />        
+        <Select
+          name="placeholder-select"
+          placeholder="Select option"
+          displayAttr='name'
+          options={selectOptions}
+          value='1'
+          onChange={(e) => {alert(`onChange - event.target.value: ${e.target.value}`)}}
+          label="Options with custom display attribute"
+        />
       </div>
     ),
     options, 
