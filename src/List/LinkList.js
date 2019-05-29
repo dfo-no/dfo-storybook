@@ -22,13 +22,13 @@ export default function LinkList({ title, links, invert }) {
       {title && HeadingComponent}
       <ul className="nav__links">
         {links.map(({
-          text, link, externalLink, downloadLink,
+          text, link, externalLink, downloadLink, target
         }) => {
           const theLink = downloadLink || externalLink || link;
 
           return (
             <li key={theLink} className="nav__item">
-              <a className="nav__link" href={link ? `/${link}` : theLink}>
+              <a className="nav__link" href={link ? `/${link}` : theLink} target={target}>
                 <div className="nav__link__content">{text}</div>
                 <div className="nav__link__symbol">
                   <LinkListSymbol
@@ -54,10 +54,12 @@ LinkList.propTypes = {
       PropTypes.shape({
         text: PropTypes.string,
         link: PropTypes.string,
+        target: PropTypes.string,
       }),
       PropTypes.shape({
         text: PropTypes.string,
         externalLink: PropTypes.string,
+        target: PropTypes.string,
       }),
       PropTypes.shape({
         text: PropTypes.string,

@@ -41,6 +41,11 @@ storiesOf('List', module)
               'Reiseregning (for reiser etter 22. juni 2018) bokmål (Excel)',
             downloadLink: '/fagomrader/lastNed',
           },
+          {
+            text: 'Åpne i nytt vindu/fane',
+            link: '/test',
+            target: '_blank'
+          },
         ])}
       />
     ),
@@ -70,6 +75,11 @@ storiesOf('List', module)
             text:
               'Reiseregning (for reiser etter 22. juni 2018) bokmål (Excel)',
             downloadLink: '/fagomrader/lastNed',
+          },
+          {
+            text: 'Åpne i nytt vindu/fane',
+            link: '/test',
+            target: '_blank'
           },
         ])}
       />
