@@ -55,7 +55,7 @@ export default function Select({
 
         <select aria-invalid={!!error} id={`select-${name}`} name={name} value={value || placeholderOptionSelected || undefined} className={placeholderVisibleStyle} {...rest}>
           
-          name{ (placeholder || placeholder === '') && <option key={placeholder} value={PLACEHOLDER_KEY} disabled>{placeholder}</option> }
+          { (placeholder || placeholder === '') && <option key={placeholder} value={PLACEHOLDER_KEY} disabled>{placeholder}</option> }
           
           { selectOptions }
 
@@ -63,7 +63,7 @@ export default function Select({
 
         {error && <span className="dfo-error-wrapper__error">{error}</span>}
 
-        </div>
+      </div>
     </label>
   );
 }
@@ -85,5 +85,4 @@ Select.defaultProps = {
   options: [],
   displayAttr: 'text',
   placeholder: null
-
 };
