@@ -11,6 +11,19 @@ const options = {
   css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Select/Select.scss'),
 };
 
+const selectOptions = {
+  1: {
+    id: "key1",
+    name: "name1",
+    text: "text1"
+  },
+  key2: {
+    id: "key2",
+    name: "name2",
+    text: "text2"
+  },
+}
+
 storiesOf('Select', module)
   .addDecorator(withKnobs)
   .addDecorator(checkA11y)
@@ -88,4 +101,49 @@ storiesOf('Select', module)
       </div>
     ),
     options,
+  )
+  .add(
+    'placeholder',
+    () => (
+      <div style={{ maxWidth: '705px' }}>
+        <Select name="placeholder-select" placeholder="Select option" options={['valg 1', 'valg 2']} value={undefined} onChange={(e) => {alert(e.target.value)}} label="Dropdown with placeholder" />
+      </div>
+    ),
+    options, 
+  )
+  .add(
+    'selected with plain string options',
+    () => (
+      <div style={{ maxWidth: '705px' }}>
+        <Select name="placeholder-select" placeholder="Select option" options={['valg 1', 'valg 2']} value='valg 2' onChange={(e) => {alert(e.target.value)}} label="Dropdown with selected value and plain string objects" />
+      </div>
+    ),
+    options, 
+  )
+  .add(
+    'with error',
+    () => (
+      <div style={{ maxWidth: '705px' }}>
+        <Select name="placeholder-select" placeholder="Select option" options={['valg 1', 'valg 2']} value={undefined} onChange={(e) => {alert('onChange - event.target.value: ' + e.target.value)}} label="Dropdown with error" error="Not selected" />
+      </div>
+    ),
+    options, 
+  )
+  .add(
+    'options as objects',
+    () => (
+      <div style={{ maxWidth: '705px' }}>
+        <Select name="placeholder-select" placeholder="Select option" options={selectOptions} value='key2' onChange={(e) => {alert('onChange - event.target.value: ' + e.target.value)}} label="Options as objects" />
+      </div>
+    ),
+    options, 
+  )
+  .add(
+    'options with custom display attribute',
+    () => (
+      <div style={{ maxWidth: '705px' }}>
+        <Select name="placeholder-select" placeholder="Select option" displayAttr='name' options={selectOptions} value='1' onChange={(e) => {alert('onChange - event.target.value: ' + e.target.value)}} label="Options with custom display attribute" />        
+      </div>
+    ),
+    options, 
   );
