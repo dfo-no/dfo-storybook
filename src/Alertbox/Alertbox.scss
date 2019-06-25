@@ -15,9 +15,9 @@
 
 .dfo-alertbox__content {
   p {
-    // remove line breaks caused by p tags.
     display: inline-block;
-    margin-bottom: 0;
+    line-height: 1.25em;
+    margin-bottom: 0.5em;
     margin-right: 0.3em;
     a {
       color: inherit;
