@@ -44,7 +44,7 @@ storiesOf('List', module)
           {
             text: 'Åpne i nytt vindu/fane',
             link: '/test',
-            target: '_blank'
+            target: '_blank',
           },
         ])}
       />
@@ -79,7 +79,7 @@ storiesOf('List', module)
           {
             text: 'Åpne i nytt vindu/fane',
             link: '/test',
-            target: '_blank'
+            target: '_blank',
           },
         ])}
       />

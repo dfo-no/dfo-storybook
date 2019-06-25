@@ -8,7 +8,8 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook",
     "release": "np",
-    "test": "eslint ."
+    "test": "eslint .",
+    "precommit": "npm test"
   },
   "publishConfig": {
     "access": "public"

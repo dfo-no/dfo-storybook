@@ -22,7 +22,7 @@ export default function LinkList({ title, links, invert }) {
       {title && HeadingComponent}
       <ul className="nav__links">
         {links.map(({
-          text, link, externalLink, downloadLink, target
+          text, link, externalLink, downloadLink, target,
         }) => {
           const theLink = downloadLink || externalLink || link;
 
