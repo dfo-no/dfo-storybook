@@ -1,4 +1,7 @@
 # @dfo/components
+
+[![Build Status](https://travis-ci.com/netliferesearch/dfo-storybook.svg?branch=master)](https://travis-ci.com/netliferesearch/dfo-storybook)
+
 A collection of frontend components and building blocks for Direktoratet for Økonomistyring (DFØ). The components are built with react and SCSS.
 
 To install, write `npm install @dfo/components` in the terminal. NPM will let you know which `peerDependencies` you need to install with it. Alternatively, you can write `npx install-peerdeps @dfo/components` which will install both the components and its peers.
@@ -6,7 +9,7 @@ To install, write `npm install @dfo/components` in the terminal. NPM will let yo
 ## 🥁 Publishing new versions
 When you want to release a new version of `@dfo/components` on npm, go to your terminal, navigate to the repo root and do `npm run publish` and follow the instructions.
 
-## 📖 Documentation 
+## 📖 Documentation
 The components are documented using [storybook](https://storybook.js.org/). To start it, run `npm start storybook` after you've cloned the repository and installed the \[storybook\] dependencies.
 
 The documentation is deployed to https://komponenter.dfo.no.
@@ -14,7 +17,7 @@ The documentation is deployed to https://komponenter.dfo.no.
 ### Deploying the storybook
 Run `npm run build` to create a static build in a folder called `storybook-static/` and upload the storybook to wherever you want to host it from.
 
---- 
+---
 
 ## Using the components in your project
 
@@ -73,7 +76,7 @@ In order to use the components in your project there's a few things you need to 
 ```js
 module.exports = {
     "presets": [
-      "@babel/preset-env", 
+      "@babel/preset-env",
       "@babel/preset-react",
     ],
     "plugins": [
@@ -142,7 +145,7 @@ module.exports = {
 ```jsx
 import { Button } from '@dfo/components';
 
-// Preferablt import once per chunk only to keep 
+// Preferablt import once per chunk only to keep
 // the bundle size down
 import '@dfo/sass/reset';
 import '@dfo/sass/fonts';
@@ -162,7 +165,7 @@ export default function MyAwesomeApp() {
 
 ---
 
-## 🤓 Development 
+## 🤓 Development
 In order to work on the components you first need to clone the repo, install the dependencies by writing `npm install` and after that: `npm start`.
 
 ### 🔗 npm link
