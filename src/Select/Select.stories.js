@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { checkA11y } from '@storybook/addon-a11y';
 import { withNotes } from '@storybook/addon-notes';
 import { withKnobs } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 
 import { withCSS } from '../../.storybook/static-css-addon';
 import { Select } from '..';
@@ -33,7 +34,7 @@ storiesOf('Select', module)
     'simple',
     () => (
       <div style={{ maxWidth: '705px' }}>
-        <Select name="dropdown" label="Dette er en dropdown" options={['Val 1', 'Val 2']} />
+        <Select name="dropdown" label="Dette er en dropdown" options={['Val 1', 'Val 2']} onChange={action('select-value-changed')} />
       </div>
     ),
     options,
@@ -44,7 +45,7 @@ storiesOf('Select', module)
       <div style={{ maxWidth: '705px' }}>
         <Select>
           <label htmlFor="section-select">Advanced select</label>
-          <select name="advanced-select" id="section-select">
+          <select name="advanced-select" id="section-select" onChange={action('select-value-changed')}>
             <option value="" disabled selected>Ikke valgt</option>
             <optgroup label="Strategi- og fellestjenesteavdelingen">
               <option value="Seksjon for adm. og anskaffelser">Seksjon for adm. og anskaffelser (10)</option>
@@ -111,7 +112,7 @@ storiesOf('Select', module)
           placeholder="Select option"
           options={['valg 1', 'valg 2']}
           value={undefined}
-          onChange={(e) => { alert(`onChange - event.target.value: ${e.target.value}`); }}
+          onChange={action('select-value-changed')}
           label="Dropdown with placeholder"
         />
       </div>
@@ -127,7 +128,7 @@ storiesOf('Select', module)
           placeholder="Select option"
           options={['valg 1', 'valg 2']}
           value="valg 2"
-          onChange={(e) => { alert(`onChange - event.target.value: ${e.target.value}`); }}
+          onChange={action('select-value-changed')}
           label="Dropdown with selected value and plain string objects"
         />
       </div>
@@ -143,7 +144,7 @@ storiesOf('Select', module)
           placeholder="Select option"
           options={['valg 1', 'valg 2']}
           value={undefined}
-          onChange={(e) => { alert(`onChange - event.target.value: ${e.target.value}`); }}
+          onChange={action('select-value-changed')}
           label="Dropdown with error"
           error="Not selected"
         />
@@ -160,7 +161,7 @@ storiesOf('Select', module)
           placeholder="Select option"
           options={selectOptions}
           value="key2"
-          onChange={(e) => { alert(`onChange - event.target.value: ${e.target.value}`); }}
+          onChange={action('select-value-changed')}
           label="Options as objects"
         />
       </div>
@@ -177,7 +178,7 @@ storiesOf('Select', module)
           displayAttr="name"
           options={selectOptions}
           value="1"
-          onChange={(e) => { alert(`onChange - event.target.value: ${e.target.value}`); }}
+          onChange={action('select-value-changed')}
           label="Options with custom display attribute"
         />
       </div>
