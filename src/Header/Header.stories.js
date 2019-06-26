@@ -22,6 +22,8 @@ storiesOf('Header', module)
       />
     ),
     {
+      /* eslint-disable import/no-webpack-loader-syntax */
       css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!./Header.scss'),
+      /* eslint-enable import/no-webpack-loader-syntax */
     },
   );

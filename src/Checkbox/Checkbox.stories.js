@@ -22,7 +22,9 @@ storiesOf('Checbox', module)
       />
     ),
     {
+      /* eslint-disable import/no-webpack-loader-syntax */
       css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Checkbox/Checkbox.scss'),
+      /* eslint-enable import/no-webpack-loader-syntax */
     },
   )
   .add(
@@ -38,7 +40,9 @@ storiesOf('Checbox', module)
       />
     ),
     {
+      /* eslint-disable import/no-webpack-loader-syntax */
       css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Checkbox/Checkbox.scss'),
+      /* eslint-enable import/no-webpack-loader-syntax */
     },
   )
   .add(
@@ -60,7 +64,9 @@ storiesOf('Checbox', module)
       </div>
     ),
     {
+      /* eslint-disable import/no-webpack-loader-syntax */
       css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Checkbox/Checkbox.scss'),
+      /* eslint-enable import/no-webpack-loader-syntax */
     },
   )
   .add(
@@ -95,7 +101,9 @@ storiesOf('Checbox', module)
       </div>
     ),
     {
+      /* eslint-disable import/no-webpack-loader-syntax */
       css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Checkbox/Checkbox.scss'),
+      /* eslint-enable import/no-webpack-loader-syntax */
     },
   )
   .add(
@@ -121,6 +129,8 @@ storiesOf('Checbox', module)
       </Form>
     ),
     {
+      /* eslint-disable import/no-webpack-loader-syntax */
       css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Checkbox/Checkbox.scss'),
+      /* eslint-enable import/no-webpack-loader-syntax */
     },
   );

@@ -10,7 +10,9 @@ import { withCSS } from '../../.storybook/static-css-addon';
 import { LinkList } from '.';
 
 const options = {
+  /* eslint-disable import/no-webpack-loader-syntax */
   css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!./LinkList.scss'),
+/* eslint-enable import/no-webpack-loader-syntax */
 };
 
 storiesOf('List', module)

@@ -22,7 +22,9 @@ storiesOf('Footer', module)
       />
     ),
     {
+      /* eslint-disable import/no-webpack-loader-syntax */
       css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!./Footer.scss'),
+      /* eslint-enable import/no-webpack-loader-syntax */
     },
   )
   .add('Footer without links',
@@ -30,5 +32,7 @@ storiesOf('Footer', module)
       <Footer />
     ),
     {
+      /* eslint-disable import/no-webpack-loader-syntax */
       css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!./Footer.scss'),
+      /* eslint-enable import/no-webpack-loader-syntax */
     });
