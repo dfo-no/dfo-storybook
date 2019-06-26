@@ -2,9 +2,9 @@
 var join = require("path").join;
 var root = join(__dirname, "..");
 
-module.exports = (baseConfig, env, defaultConfig) => {
+module.exports = ({mode, config}) => {
   // Find a rule that matches a file with the scss extension
-  const sassRule = defaultConfig.module.rules.find(rule =>
+  const sassRule = config.module.rules.find(rule =>
     "apekatt.scss".match(rule.test)
   );
 
@@ -22,7 +22,7 @@ module.exports = (baseConfig, env, defaultConfig) => {
     }
   });
 
-  defaultConfig.output.publicPath = '/';
+  config.output.publicPath = '/';
 
-  return defaultConfig;
+  return config;
 };
