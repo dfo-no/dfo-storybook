@@ -82,6 +82,10 @@
   ],
   "license": "MIT",
   "main": "./src",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/netliferesearch/dfo-storybook.git"
+  },
   "dependencies": {
     "cssbeautify": "^0.3.1",
     "foundation-sites": "^6.5.1",
@@ -121,7 +125,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "react-scripts": "2.1.1",
+    "react-scripts": "3.0.1",
     "react-storybook-addon-static-markup": "https://github.com/nilsnh/react-storybook-addon-static-markup.git",
     "react-syntax-highlighter": "^10.0.1",
     "sass-resources-loader": "^2.0.0",
