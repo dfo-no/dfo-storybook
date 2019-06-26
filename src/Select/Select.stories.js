@@ -13,16 +13,16 @@ const options = {
 
 const selectOptions = {
   1: {
-    id: "key1",
-    name: "name1",
-    text: "text1"
+    id: 'key1',
+    name: 'name1',
+    text: 'text1',
   },
   key2: {
-    id: "key2",
-    name: "name2",
-    text: "text2"
+    id: 'key2',
+    name: 'name2',
+    text: 'text2',
   },
-}
+};
 
 storiesOf('Select', module)
   .addDecorator(withKnobs)
@@ -111,12 +111,12 @@ storiesOf('Select', module)
           placeholder="Select option"
           options={['valg 1', 'valg 2']}
           value={undefined}
-          onChange={(e) => {alert(`onChange - event.target.value: ${e.target.value}`)}}
+          onChange={(e) => { alert(`onChange - event.target.value: ${e.target.value}`); }}
           label="Dropdown with placeholder"
         />
       </div>
     ),
-    options, 
+    options,
   )
   .add(
     'selected with plain string options',
@@ -126,13 +126,13 @@ storiesOf('Select', module)
           name="placeholder-select"
           placeholder="Select option"
           options={['valg 1', 'valg 2']}
-          value='valg 2'
-          onChange={(e) => {alert(`onChange - event.target.value: ${e.target.value}`)}}
+          value="valg 2"
+          onChange={(e) => { alert(`onChange - event.target.value: ${e.target.value}`); }}
           label="Dropdown with selected value and plain string objects"
         />
       </div>
     ),
-    options, 
+    options,
   )
   .add(
     'with error',
@@ -143,13 +143,13 @@ storiesOf('Select', module)
           placeholder="Select option"
           options={['valg 1', 'valg 2']}
           value={undefined}
-          onChange={(e) => {alert(`onChange - event.target.value: ${e.target.value}`)}}
+          onChange={(e) => { alert(`onChange - event.target.value: ${e.target.value}`); }}
           label="Dropdown with error"
           error="Not selected"
         />
       </div>
     ),
-    options, 
+    options,
   )
   .add(
     'options as objects',
@@ -159,13 +159,13 @@ storiesOf('Select', module)
           name="placeholder-select"
           placeholder="Select option"
           options={selectOptions}
-          value='key2'
-          onChange={(e) => {alert(`onChange - event.target.value: ${e.target.value}`)}}
+          value="key2"
+          onChange={(e) => { alert(`onChange - event.target.value: ${e.target.value}`); }}
           label="Options as objects"
         />
       </div>
     ),
-    options, 
+    options,
   )
   .add(
     'options with custom display attribute',
@@ -174,13 +174,13 @@ storiesOf('Select', module)
         <Select
           name="placeholder-select"
           placeholder="Select option"
-          displayAttr='name'
+          displayAttr="name"
           options={selectOptions}
-          value='1'
-          onChange={(e) => {alert(`onChange - event.target.value: ${e.target.value}`)}}
+          value="1"
+          onChange={(e) => { alert(`onChange - event.target.value: ${e.target.value}`); }}
           label="Options with custom display attribute"
         />
       </div>
     ),
-    options, 
+    options,
   );
