@@ -25,6 +25,8 @@ storiesOf('Alertbox', module)
       </Alertbox>
     ),
     {
+      /* eslint-disable import/no-webpack-loader-syntax */
       css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!./Alertbox.scss'),
+      /* eslint-enable import/no-webpack-loader-syntax */
     },
   );

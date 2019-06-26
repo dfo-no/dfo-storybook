@@ -24,7 +24,9 @@ storiesOf('Text field', module)
       </div>
     ),
     {
+      /* eslint-disable import/no-webpack-loader-syntax */
       css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Input/Input.scss'),
+      /* eslint-enable import/no-webpack-loader-syntax */
     },
   )
   .add(
@@ -40,7 +42,9 @@ storiesOf('Text field', module)
       </div>
     ),
     {
+      /* eslint-disable import/no-webpack-loader-syntax */
       css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Input/Input.scss'),
+      /* eslint-enable import/no-webpack-loader-syntax */
       notes: `
       Error
       `,

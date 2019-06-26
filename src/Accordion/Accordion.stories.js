@@ -1,14 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, object } from '@storybook/addon-knobs';
-import { checkA11y } from '@storybook/addon-a11y';
 import { action } from '@storybook/addon-actions';
 import { withCSS } from '../../.storybook/static-css-addon';
 import { Accordion } from '.';
 
 storiesOf('Accordion', module)
   .addDecorator(withKnobs)
-  .addDecorator(checkA11y)
   .addDecorator(withCSS)
   .add(
     'Accordion',
@@ -39,9 +37,11 @@ storiesOf('Accordion', module)
       />
     ),
     {
+      /* eslint-disable import/no-webpack-loader-syntax */
       css: [
         require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!./Accordion.scss'),
         require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!./AccordionArrow.scss'),
       ],
+      /* eslint-disable import/no-webpack-loader-syntax */
     },
   );
