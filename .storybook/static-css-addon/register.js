@@ -1,6 +1,7 @@
 import React from "react";
 import addons from "@storybook/addons";
 import SyntaxHighlighter from "react-syntax-highlighter";
+import { STORY_CHANGED } from '@storybook/core-events';
 import * as cssbeautify from "cssbeautify";
 import { docco } from "react-syntax-highlighter/dist/styles/hljs";
 
@@ -25,7 +26,7 @@ class CSSPanelComponent extends React.Component {
     channel.on("WITHCSS/add_css", this.onAddCSS);
 
     // Clear the current css on every story change.
-    this.stopListeningOnStory = api.onStory(() => {
+    this.stopListeningOnStory = api.on(STORY_CHANGED,() => {
       this.onAddCSS("");
     });
   }
