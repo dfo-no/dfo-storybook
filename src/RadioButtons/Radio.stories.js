@@ -1,18 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { checkA11y } from '@storybook/addon-a11y';
-import { withNotes } from '@storybook/addon-notes';
-import { withKnobs } from '@storybook/addon-knobs';
 
-import { withCSS } from '../../.storybook/static-css-addon';
 import { RadioButtons, Fieldset } from '..';
 import { Form } from '../Form';
 
 storiesOf('Radio buttons', module)
-  .addDecorator(withKnobs)
-  .addDecorator(checkA11y)
-  .addDecorator(withCSS)
-  .addDecorator(withNotes)
   .add(
     'with legend',
     () => (

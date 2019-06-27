@@ -1,10 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
-import { checkA11y } from '@storybook/addon-a11y';
+import { text, boolean } from '@storybook/addon-knobs';
 
-import { withCSS } from '../../.storybook/static-css-addon';
 import { Button } from '.';
 
 const options = {
@@ -14,9 +12,6 @@ const options = {
 };
 
 storiesOf('Button', module)
-  .addDecorator(withKnobs)
-  .addDecorator(checkA11y)
-  .addDecorator(withCSS)
   .add(
     'Basic',
     () => (

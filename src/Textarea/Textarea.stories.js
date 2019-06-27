@@ -1,17 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { checkA11y } from '@storybook/addon-a11y';
-import { withNotes } from '@storybook/addon-notes';
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { text, boolean } from '@storybook/addon-knobs';
 
-import { withCSS } from '../../.storybook/static-css-addon';
 import { Fieldset, Textarea } from '..';
 
 storiesOf('Textarea', module)
-  .addDecorator(withKnobs)
-  .addDecorator(checkA11y)
-  .addDecorator(withCSS)
-  .addDecorator(withNotes)
   .add(
     'Textarea',
     () => (

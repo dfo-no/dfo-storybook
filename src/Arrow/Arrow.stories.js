@@ -1,9 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { checkA11y } from '@storybook/addon-a11y';
-import { withKnobs, color, boolean } from '@storybook/addon-knobs';
+import { color, boolean } from '@storybook/addon-knobs';
 
-import { withCSS } from '../../.storybook/static-css-addon';
 import { Arrow } from '.';
 
 const options = {
@@ -13,9 +11,6 @@ const options = {
 };
 
 storiesOf('Arrow', module)
-  .addDecorator(withKnobs)
-  .addDecorator(checkA11y)
-  .addDecorator(withCSS)
   .add(
     'Arrow',
     () => (

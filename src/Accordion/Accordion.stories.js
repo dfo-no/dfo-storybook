@@ -1,13 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { withCSS } from '../../.storybook/static-css-addon';
+import { object } from '@storybook/addon-knobs';
 import { Accordion } from '.';
 
 storiesOf('Accordion', module)
-  .addDecorator(withKnobs)
-  .addDecorator(withCSS)
   .add(
     'Accordion',
     () => (

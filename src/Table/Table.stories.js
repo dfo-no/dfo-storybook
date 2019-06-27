@@ -1,9 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { checkA11y } from '@storybook/addon-a11y';
-import { withNotes } from '@storybook/addon-notes';
 
-import { withCSS } from '../../.storybook/static-css-addon';
 import ExampleTableHtml from './Table.stories.data';
 import { Table } from '.';
 
@@ -14,9 +11,6 @@ const options = {
 };
 
 storiesOf('Table', module)
-  .addDecorator(checkA11y)
-  .addDecorator(withCSS)
-  .addDecorator(withNotes)
   .add(
     'Wrapping native table',
     () => (
