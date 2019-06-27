@@ -1,13 +1,14 @@
 # @dfo/components
 
 [![Build Status](https://travis-ci.com/netliferesearch/dfo-storybook.svg?branch=master)](https://travis-ci.com/netliferesearch/dfo-storybook)
+[![npm version](https://badge.fury.io/js/%40dfo%2Fcomponents.svg)](https://badge.fury.io/js/%40dfo%2Fcomponents)
 
 A collection of frontend components and building blocks for Direktoratet for Økonomistyring (DFØ). The components are built with react and SCSS.
 
 To install, write `npm install @dfo/components` in the terminal. NPM will let you know which `peerDependencies` you need to install with it. Alternatively, you can write `npx install-peerdeps @dfo/components` which will install both the components and its peers.
 
 ## 🥁 Publishing new versions
-When you want to release a new version of `@dfo/components` on npm, go to your terminal, navigate to the repo root and do `npm run publish` and follow the instructions.
+When you want to release a new version of `@dfo/components` on npm, go to your terminal, navigate to the repo root and do `npm run release` and follow the instructions.
 
 ## 📖 Documentation
 The components are documented using [storybook](https://storybook.js.org/). To start it, run `npm start storybook` after you've cloned the repository and installed the \[storybook\] dependencies.
