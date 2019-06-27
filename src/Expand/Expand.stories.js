@@ -1,9 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs } from '@storybook/addon-knobs';
-import { checkA11y } from '@storybook/addon-a11y';
 
-import { withCSS } from '../../.storybook/static-css-addon';
 import { Expand } from '.';
 
 const options = {
@@ -13,9 +10,6 @@ const options = {
 };
 
 storiesOf('Expand', module)
-  .addDecorator(withKnobs)
-  .addDecorator(checkA11y)
-  .addDecorator(withCSS)
   .add(
     'Basic',
     () => (

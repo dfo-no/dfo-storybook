@@ -1,12 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import {
-  withKnobs, text, boolean, object,
+  text, boolean, object,
 } from '@storybook/addon-knobs';
-import { checkA11y } from '@storybook/addon-a11y';
 
 import { DarkBackground } from '../../.storybook/stories.decorators';
-import { withCSS } from '../../.storybook/static-css-addon';
 import { LinkList } from '.';
 
 const options = {
@@ -16,9 +14,6 @@ const options = {
 };
 
 storiesOf('List', module)
-  .addDecorator(withKnobs)
-  .addDecorator(checkA11y)
-  .addDecorator(withCSS)
   .add(
     'Link list',
     () => (
@@ -53,7 +48,6 @@ storiesOf('List', module)
     ),
     options,
   )
-  .addDecorator(DarkBackground)
   .add(
     'Link list: Inverted',
     () => (
@@ -86,5 +80,8 @@ storiesOf('List', module)
         ])}
       />
     ),
-    options,
+    {
+      ...options,
+      decorators: [DarkBackground]
+    },
   );

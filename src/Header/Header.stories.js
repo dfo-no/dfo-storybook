@@ -1,15 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, object } from '@storybook/addon-knobs';
-import { checkA11y } from '@storybook/addon-a11y';
+import { object } from '@storybook/addon-knobs';
 
-import { withCSS } from '../../.storybook/static-css-addon';
 import Header from './Header';
 
 storiesOf('Header', module)
-  .addDecorator(withKnobs)
-  .addDecorator(checkA11y)
-  .addDecorator(withCSS)
   .add(
     'Header',
     () => (

@@ -1,13 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs } from '@storybook/addon-knobs';
-import { checkA11y } from '@storybook/addon-a11y';
 
 import { Factbox } from '.';
 
 storiesOf('Factbox', module)
-  .addDecorator(withKnobs)
-  .addDecorator(checkA11y)
   .add('Factbox', () => (
     <Factbox>
       <h2>Nøkkeltall</h2>
