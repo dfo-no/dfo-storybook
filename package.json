@@ -8,11 +8,15 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook",
     "release": "np",
-    "test": "eslint .",
-    "precommit": "npm test"
+    "test": "eslint ."
   },
   "publishConfig": {
     "access": "public"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
   },
   "eslintConfig": {
     "parser": "babel-eslint",
@@ -120,6 +124,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.11.1",
+    "husky": "^2.4.1",
     "node-sass": "^4.9.4",
     "np": "^4.0.2",
     "prop-types": "^15.6.2",

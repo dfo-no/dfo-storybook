@@ -82,6 +82,6 @@ storiesOf('List', module)
     ),
     {
       ...options,
-      decorators: [DarkBackground]
+      decorators: [DarkBackground],
     },
   );
