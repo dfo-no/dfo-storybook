@@ -1,4 +1,4 @@
-@import "../../sass/base/index";
+@import '../../sass/base/index';
 
 .dfo-textarea {
   width: 100%;
@@ -21,7 +21,7 @@
     line-height: 1.5;
     outline: none;
     box-shadow: none;
-    border: 2px solid $border;
+    border: 2px solid $primaryLight;
     margin: $padding-small 0;
     outline-color: transparent;
     outline-style: none;
@@ -35,7 +35,8 @@
   textarea:focus,
   label:focus {
     -webkit-appearance: none;
-    border-color: $primaryLight;
+    appearance: none;
+    box-shadow: inset 0 0 0 1px $primaryLight;
   }
 
   .dfo-error-wrapper {
@@ -43,7 +44,7 @@
 
     &:before {
       width: 2px;
-      content: "";
+      content: '';
       background-color: transparent;
       position: absolute;
       top: 0;
