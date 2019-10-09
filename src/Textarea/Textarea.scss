@@ -1,4 +1,4 @@
-@import '../../sass/base/index';
+@import "../../sass/base/index";
 
 .dfo-textarea {
   width: 100%;
@@ -44,7 +44,7 @@
 
     &:before {
       width: 2px;
-      content: '';
+      content: "";
       background-color: transparent;
       position: absolute;
       top: 0;
