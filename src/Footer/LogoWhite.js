@@ -9,7 +9,7 @@ export default function LogoWhite() {
       width="246.984"
       height="48.041"
       viewBox="0 0 246.984 48.041"
-      alt="Direktoratet for Økonomistyrings logo"
+      title="Direktoratet for Økonomistyrings logo"
       className="dfo-footer__logo"
     >
       <g>

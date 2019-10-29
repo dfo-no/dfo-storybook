@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function Logo() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="200.82" height="39.062" viewBox="0 0 200.82 39.062" alt="Direktoratet for Økonomistyrings logo">
+    <svg xmlns="http://www.w3.org/2000/svg" width="200.82" height="39.062" viewBox="0 0 200.82 39.062" title="Direktoratet for Økonomistyrings logo">
       <g>
         <path d="M50.254,14.334H48.5V2.888h1.914c2.91,0,4.954.638,4.954,5.723,0,5.037-2.175,5.723-5.119,5.723M50.647,4.18h-0.67v8.863h0.539c2.093,0,3.385-.491,3.385-4.432,0-4.055-1.292-4.431-3.254-4.431" transform="translate(0.001 -0.778)" style={{ fill: '#002458' }} />
         <path d="M58.888,4.359a0.981,0.981,0,1,1,.965-0.98,0.969,0.969,0,0,1-.965.98M58.153,5.667h1.472v8.667H58.153V5.667Z" transform="translate(0.001 -0.778)" style={{ fill: '#002458' }} />
