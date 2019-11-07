@@ -10,7 +10,8 @@ export default function Checkbox({
   inline,
   ...rest
 }) {
-  const labelKey = `checkbox-${label}`;
+  // Remove whitespace from id and for
+  const labelKey = `checkbox-${label.replace(/\s/g, '')}`;
   return (
     <label
       htmlFor={labelKey}
