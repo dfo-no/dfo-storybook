@@ -1,7 +1,7 @@
 @import '../../sass/base/index';
 
 .dfo-select {
-  font-size: 1.8rem;  
+  font-size: 1.8rem;
   margin-bottom: $padding-small;
   font-weight: 600;
   color: $primary;
@@ -33,7 +33,7 @@
     }
 
     &.dfo-select__placeholder {
-      color: $grayText;
+      color: $grayPlaceholder;
     }
   }
 

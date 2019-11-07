@@ -6,10 +6,11 @@ $colors: (
     secondary: #009EE1,
     tertiary: #00a982,
     warning: #f7b715,
-    error: #e83f53,
+    error: #E51F36,
     text: #333333,
     textonprimary: #ffffff,
     grayText: #7f7f7f,
+    grayPlaceholder: #737272,
     darkerbackground: #efefef,
     darkbackground: #f7f7f7,
     background: #ffffff,
@@ -51,6 +52,7 @@ $warning: map-get($siteColors, "warning");
 $text: map-get($siteColors, "text");
 $textonprimary: map-get($siteColors, "textonprimary");
 $grayText: map-get($siteColors, "grayText");
+$grayPlaceholder: map-get($siteColors, "grayPlaceholder");
 $darkerbackground: map-get($siteColors, "darkerbackground");
 $darkbackground: map-get($siteColors, "darkbackground");
 $background: map-get($siteColors, "background");
