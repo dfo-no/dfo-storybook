@@ -125,7 +125,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.11.1",
     "husky": "^2.4.1",
-    "node-sass": "^4.9.4",
+    "node-sass": "^4.13.0",
     "np": "^4.0.2",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
