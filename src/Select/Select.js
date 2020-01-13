@@ -70,7 +70,7 @@ export default function Select({
           {...rest}
         >
           {(placeholder || placeholder === '') && (
-            <option key={placeholder} value={placeholder} disabled>
+            <option key={placeholder} value={placeholder}>
               {placeholder}
             </option>
           )}
