@@ -1,6 +1,6 @@
 {
   "name": "@dfo/components",
-  "version": "4.5.2",
+  "version": "4.5.3",
   "scripts": {
     "start": "npm run storybook",
     "dev": "npm run storybook",
