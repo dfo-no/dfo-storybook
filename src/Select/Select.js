@@ -7,7 +7,7 @@ import './Select.scss';
 // Options can be expressed as either array of strings or an object with keys.
 function parseSelectOptions({ options, displayAttr }) {
   if (Array.isArray(options)) {
-    return options.map(option => (
+    return options.map((option) => (
       <option key={option}>{option}</option>
     ));
   }
@@ -94,6 +94,8 @@ Select.propTypes = {
   children: PropTypes.any,
   placeholder: PropTypes.string,
   displayAttr: PropTypes.string,
+  value: PropTypes.string,
+  error: PropTypes.string,
 };
 
 Select.defaultProps = {
@@ -102,4 +104,6 @@ Select.defaultProps = {
   options: [],
   displayAttr: 'text',
   placeholder: null,
+  value: null,
+  error: null,
 };

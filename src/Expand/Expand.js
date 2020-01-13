@@ -7,14 +7,12 @@ import { Arrow } from '../Arrow';
 import './Expand.scss';
 
 export default class Expand extends Component {
-  static propTypes = {
-    title: PropTypes.string.isRequired,
-    children: PropTypes.any.isRequired,
+  constructor(props) {
+    super(props);
+    this.state = { open: false };
   }
 
-  state = { open: false }
-
-  toggleOpen = () => this.setState(({ open }) => ({ open: !open }))
+  toggleOpen = () => this.setState(({ open }) => ({ open: !open }));
 
   render() {
     const { open } = this.state;
@@ -34,3 +32,8 @@ export default class Expand extends Component {
     );
   }
 }
+
+Expand.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.any.isRequired,
+};

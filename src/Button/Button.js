@@ -52,5 +52,5 @@ Button.defaultProps = {
   invert: false,
   plainLink: false,
   type: 'button',
-  onSubmit: f => f,
+  onSubmit: (f) => f,
 };

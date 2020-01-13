@@ -5,15 +5,6 @@ import classnames from 'classnames';
 import './CheckboxGroup.scss';
 
 export default class CheckboxGroup extends PureComponent {
-  static propTypes = {
-    children: PropTypes.any.isRequired,
-    twoCols: PropTypes.bool,
-  }
-
-  static defaultProps = {
-    twoCols: false,
-  }
-
   render() {
     const { twoCols, children } = this.props;
     return (
@@ -28,3 +19,12 @@ export default class CheckboxGroup extends PureComponent {
     );
   }
 }
+
+CheckboxGroup.propTypes = {
+  children: PropTypes.any.isRequired,
+  twoCols: PropTypes.bool,
+};
+
+CheckboxGroup.defaultProps = {
+  twoCols: false,
+};

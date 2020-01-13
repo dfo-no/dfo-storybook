@@ -6,22 +6,6 @@ import TextareaAutosize from 'react-textarea-autosize';
 import './Textarea.scss';
 
 export default class Textarea extends PureComponent {
-  static propTypes = {
-    id: PropTypes.string,
-    children: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    label: PropTypes.string,
-    error: PropTypes.string,
-    autosize: PropTypes.bool,
-  }
-
-  static defaultProps = {
-    id: undefined,
-    label: null,
-    error: null,
-    autosize: false,
-  }
-
   render() {
     const {
       children: text,
@@ -54,8 +38,7 @@ export default class Textarea extends PureComponent {
 
           {autosize
             ? <TextareaAutosize {...textareaProps}>{text}</TextareaAutosize>
-            : <textarea {...textareaProps}>{text}</textarea>
-          }
+            : <textarea {...textareaProps}>{text}</textarea>}
 
           {error && <span className="dfo-error-wrapper__error">{error}</span>}
         </div>
@@ -63,3 +46,19 @@ export default class Textarea extends PureComponent {
     );
   }
 }
+
+Textarea.propTypes = {
+  id: PropTypes.string,
+  children: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string,
+  error: PropTypes.string,
+  autosize: PropTypes.bool,
+};
+
+Textarea.defaultProps = {
+  id: undefined,
+  label: null,
+  error: null,
+  autosize: false,
+};

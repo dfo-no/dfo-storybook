@@ -8,7 +8,10 @@ import Logo from './Logo';
 import './Header.scss';
 
 export default class Header extends React.Component {
-  state = { isOpen: false }
+  constructor(props) {
+    super(props);
+    this.state = { isOpen: false };
+  }
 
   menuToggle = () => this.setState(({ isOpen }) => ({ isOpen: !isOpen }))
 
@@ -29,7 +32,7 @@ export default class Header extends React.Component {
             </div>
             <div className="dfo-header__menu">
               <div className="dfo-menu">
-                {links.map(item => (
+                {links.map((item) => (
                   <a className="dfo-menu__item" key={item.link} href={item.link}>{item.title}</a>
                 ))}
               </div>

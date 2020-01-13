@@ -109,7 +109,7 @@ storiesOf('Checbox', module)
               'Fisk', 'Hasselnøtter', 'Hvalnøtter',
               'Gluten', 'Vann', 'Grønnsaker',
               'Salt', 'Sukker',
-            ].map(allergen => (
+            ].map((allergen) => (
               <Checkbox
                 key={allergen}
                 name="allergi"
