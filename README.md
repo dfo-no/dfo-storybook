@@ -16,7 +16,14 @@ The components are documented using [storybook](https://storybook.js.org/). To s
 The documentation is deployed to https://komponenter.dfo.no.
 
 ### Deploying the storybook
-Run `npm run build` to create a static build in a folder called `storybook-static/` and upload the storybook to wherever you want to host it from.
+~~Run `npm run build` to create a static build in a folder called `storybook-static/` and upload the storybook to wherever you want to host it from.~~
+
+This project is hosted on DFØ´s server. To access this you need to connect with a VPN client. Ask Torgeir, Nils or Ådne to set this up correctly. 
+
+You also need to add a git remote to this server and push you changes directly to DFØ´s server. Don't forget to push your changes to GitHub as well. 
+
+Remote: 
+- Production: ssh://kom@dfo.no:/home/kom/git/dfo-storybook
 
 ---
 
@@ -99,6 +106,7 @@ module.exports = {
 ```
 
 4. Add SASS resource loader by writing `npm i --save-dev sass-resources-loader`. We'll need this in the next step when we set up loading of base styles.
+
 5. Make SCSS base (variables, colors etc.) available for every scss file compiled by webpack by adding the `sass-resource-loader` to all style transformation:
 
 ```js
