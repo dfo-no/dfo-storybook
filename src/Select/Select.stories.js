@@ -84,8 +84,8 @@ storiesOf('Select', module)
               <option value="Styring">Styring (17)</option>
               <option value="Utredning og analyse">Utredning og analyse (5)</option>
             </optgroup>
-            <optgroup label="Direktoratet for økonomistyring">
-              <option value="Direktoratet for økonomistyring">Direktoratet for økonomistyring (1)</option>
+            <optgroup label="Direktoratet for forvaltning og økonomistyring">
+              <option value="Direktoratet for forvaltning og økonomistyring">Direktoratet for forvaltning og økonomistyring (1)</option>
               <option value="Forvaltnings og analyseavd.">Forvaltnings og analyseavd. (1)</option>
               <option value="Kommunikasjonsenheten">Kommunikasjonsenheten (9)</option>
               <option value="Lønnsavdelingen">Lønnsavdelingen (1)</option>

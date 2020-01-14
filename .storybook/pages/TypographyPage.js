@@ -214,7 +214,7 @@ export default function TypographyPage() {
       <h2>Paragraf-eksempel</h2>
       <p>
         Regelverk og systemer{" "}
-        <a href="https://dfo.no/">Direktoratet for økonomistyring</a> forvalter
+        <a href="https://dfo.no/">Direktoratet for forvaltning og økonomistyring</a> forvalter
         økonomiregelverket, utredningsinstruksen og to av statens
         konsernsystemer. Dette er oppgaver som er delegert til oss fra
         Finansdepartementet. <em>Vi er opptatt av å forbedre</em> regelverkene

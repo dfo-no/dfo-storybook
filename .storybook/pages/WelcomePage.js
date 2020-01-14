@@ -4,7 +4,7 @@ export default function WelcomePage() {
   return (
     <div>
       <h1><code>@dfo/components</code> 🚀</h1>
-      <p>Documentation of components built for Direktoratet for økonomistyring (DFØ).</p>
+      <p>Documentation of components built for Direktoratet for forvaltning og økonomistyring (DFØ).</p>
 
       {/*
       <h2>Looking for a design guide?</h2>
