@@ -1,5 +1,8 @@
 @import "../../sass/base/index";
 
+$disabledColor: #dddddd;
+$disabledBorderColor: #aaaaaa;
+
 .dfo-input {
   width: 100%;
   font-size: 1.8rem;
@@ -31,6 +34,12 @@
   label:focus {
     appearance: none;
     box-shadow: inset 0 0 0 1px $primaryLight;
+  }
+
+  input:disabled {
+    border-color: $disabledBorderColor;
+    background-color: $disabledColor;
+    box-shadow: none;
   }
 
   .dfo-error-wrapper {

@@ -42,4 +42,22 @@ storiesOf('Text field', module)
       Error
       `,
     },
+  )
+  .add(
+    'disabled',
+    () => (
+      <div style={{ maxWidth: '705px' }}>
+        <Input
+          label={text('label', 'Fornavn:')}
+          name={text('name', 'firstName')}
+          type="text"
+          disabled
+        />
+      </div>
+    ),
+    {
+      /* eslint-disable import/no-webpack-loader-syntax */
+      css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Input/Input.scss'),
+      /* eslint-enable import/no-webpack-loader-syntax */
+    },
   );

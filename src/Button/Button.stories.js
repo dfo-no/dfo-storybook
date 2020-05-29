@@ -71,4 +71,15 @@ storiesOf('Button', module)
       </Button>
     ),
     options,
+  )
+  .add(
+    'Disabled',
+    () => (
+      <div>
+        <Button onClick={action('clicked')} disabled>
+          {text('Text', 'Sign up for our newsletter')}
+        </Button>
+      </div>
+    ),
+    options,
   );

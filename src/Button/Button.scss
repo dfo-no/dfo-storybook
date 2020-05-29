@@ -3,6 +3,7 @@
 $dangerColor: #e5243b;
 $darkDangerColor: #890303;
 $ctaColor: #008566;
+$disabledColor: #cccccc;
 
 .dfo-button {
   font-size: 1.8rem;
@@ -29,6 +30,12 @@ $ctaColor: #008566;
     background-color: $secondary;
     border-color: $secondary;
     color: $background;
+  }
+
+  &:disabled {
+    background-color: $disabledColor;
+    border-color: $disabledColor;
+    cursor: default;
   }
 
   &--danger {
