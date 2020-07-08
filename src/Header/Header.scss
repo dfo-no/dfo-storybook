@@ -1,4 +1,4 @@
-@import "../../sass/base/index";
+@import '../../sass/base/index';
 
 @mixin takeOver {
   display: block;
@@ -16,7 +16,7 @@
       padding: 0;
     }
 
-    &__menu{
+    &__menu {
       display: block;
       overflow: auto;
       border-top: 2px solid #e6e6e6;
@@ -28,6 +28,7 @@
 
 .dfo-menu {
   &__item {
+    display: inline;
     font-weight: 600;
     font-size: 1.6rem;
     text-decoration: none;
@@ -47,6 +48,17 @@
       margin-bottom: 2rem;
       font-size: 2rem;
     }
+  }
+  &__item button {
+    font-weight: 600;
+    font-size: inherit;
+    cursor: pointer;
+  }
+  &__item button:hover {
+    color: $secondary;
+  }
+  &__item--active span {
+    text-decoration: underline;
   }
 }
 
