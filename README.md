@@ -12,7 +12,7 @@ See also documentation chapters:
 1. [Developing new components](docs/developing-components.md).
 
 ## 🥁 Publishing new versions to NPM
-When you want to release a new version of `@dfo/components` on npm, go to your terminal, navigate to the repo root and do `npm run release` and follow the instructions. 
+When you want to release a new version of `@dfo/components` on npm, go to your terminal, navigate to the repo root and do `npm run release` and follow the instructions. Be sure to check if the new version [complies with the rules](docs/developing-components.md#-code-rules-and-guidelines).
 
 ## 🚀 Deploying the storybook
 
@@ -21,7 +21,7 @@ This project is hosted on DFØ's server. To access this you need to connect with
 Before deploying you need to add git remotes for staging and production. Pushing to these remotes will trigger a build on DFØ's server. Don't forget to push your changes to GitHub as well.
 
 Remotes: 
-- Staging: ssh://kom@**test.**dfo.no:/home/kom/git/dfo-storybook
+- Staging: ssh://kom@test.dfo.no:/home/kom/git/dfo-storybook
 - Production: ssh://kom@dfo.no:/home/kom/git/dfo-storybook
 
 ## 🦹 Handling security vulnerabilities
