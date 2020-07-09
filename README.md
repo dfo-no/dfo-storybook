@@ -1,17 +1,21 @@
 # @dfo/components
 
+A collection of frontend components and building blocks for Direktoratet for forvaltning og Økonomistyring (DFØ).
+
 [![Build Status](https://travis-ci.com/netliferesearch/dfo-storybook.svg?branch=master)](https://travis-ci.com/netliferesearch/dfo-storybook)
 [![npm version](https://badge.fury.io/js/%40dfo%2Fcomponents.svg)](https://badge.fury.io/js/%40dfo%2Fcomponents)
 
-A collection of frontend components and building blocks for Direktoratet for forvaltning og Økonomistyring (DFØ). The components are built with react and SCSS. The components are documented using [storybook](https://storybook.js.org/). To start it, run `npm start storybook` after you've cloned the repository and installed the \[storybook\] dependencies.
+The components are built with react and SCSS. The components are documented using [storybook](https://storybook.js.org/). To start it, run `npm start storybook` after you've cloned the repository and installed the \[storybook\] dependencies.
 
 The documentation is deployed to https://komponenter.dfo.no.
 
 See also documentation chapters:
+
 1. [How to use components in your project](docs/using-components.md).
 1. [Developing new components](docs/developing-components.md).
 
 ## 🥁 Publishing new versions to NPM
+
 When you want to release a new version of `@dfo/components` on npm, go to your terminal, navigate to the repo root and do `npm run release` and follow the instructions. Be sure to check if the new version [complies with the rules](docs/developing-components.md#-code-rules-and-guidelines).
 
 ## 🚀 Deploying the storybook
@@ -20,7 +24,8 @@ This project is hosted on DFØ's server. To access this you need to connect with
 
 Before deploying you need to add git remotes for staging and production. Pushing to these remotes will trigger a build on DFØ's server. Don't forget to push your changes to GitHub as well.
 
-Remotes: 
+Remotes:
+
 - Staging: ssh://kom@test.dfo.no:/home/kom/git/dfo-storybook
 - Production: ssh://kom@dfo.no:/home/kom/git/dfo-storybook
 
