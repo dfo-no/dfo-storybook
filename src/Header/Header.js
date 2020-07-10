@@ -64,12 +64,12 @@ export default class Header extends React.Component {
             </div>
             <div className="dfo-header__menu">
               <div className="dfo-menu">
-                <HeaderLanguageOptions languages={languages} onEvent={this.languageSelectionHandler} />
                 {links.map((item) => (
                   <a className="dfo-menu__item" key={item.link} href={item.link}>
                     {item.title}
                   </a>
                 ))}
+                <HeaderLanguageOptions languages={languages} onEvent={this.languageSelectionHandler} />
               </div>
             </div>
           </div>
