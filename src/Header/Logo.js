@@ -7,7 +7,7 @@ export default function Logo({ type, ...restOfSvgAttributes }) {
   if (type === 'en') {
     return (
       <EnglishLogo
-        {...{ title: 'Logo: The Norwegian Agency for Public and Financial Management', width: '300', height: '40', ...restOfSvgAttributes }}
+        {...{ title: 'Logo: The Norwegian Agency for Public and Financial Management', width: '330', height: '40', ...restOfSvgAttributes }}
       />
     );
   }
