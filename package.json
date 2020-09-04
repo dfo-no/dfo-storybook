@@ -64,7 +64,7 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^1.7.0",
     "husky": "^2.4.1",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "np": "^4.0.2",
     "prettier": "^2.0.5",
     "prop-types": "^15.6.2",
