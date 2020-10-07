@@ -1,0 +1,95 @@
+@import '../../sass/base/index';
+
+$dangerColor: #e5243b;
+$darkDangerColor: #890303;
+$ctaColor: #008566;
+$disabledColor: #cccccc;
+
+.fab-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: absolute bottom 0;
+}
+
+.fab-content {
+  size: 100%;
+}
+
+.fab-button {
+  align-self: flex-end;
+  width: 80px;
+}
+
+.dfo-button {
+  font-size: 1.8rem;
+  line-height: 1em;
+  font-style: normal;
+  font-weight: 400;
+  transition: background-color 0.25s, border-color 0.25s;
+  text-decoration: none;
+  display: inline-block;
+  padding: 1.2rem 2.4rem;
+  flex-shrink: 0;
+
+  border: 2px solid $primaryLight;
+  background: $primaryLight;
+  color: $background;
+  cursor: pointer;
+
+  &:first-child {
+    margin-right: 1.5rem;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $secondary;
+    border-color: $secondary;
+    color: $background;
+  }
+
+  &:disabled {
+    background-color: $disabledColor;
+    border-color: $disabledColor;
+    cursor: default;
+  }
+
+  &--danger {
+    background: $dangerColor;
+    color: $textonprimary;
+    border-color: $dangerColor;
+
+    &:hover,
+    &:focus {
+      background-color: $darkDangerColor;
+      border-color: $darkDangerColor;
+      color: $textonprimary;
+    }
+  }
+
+  &--cta {
+    background: $ctaColor;
+    color: $textonprimary;
+    border-color: $ctaColor;
+
+    &:hover,
+    &:focus {
+      background-color: $secondary;
+      border-color: $secondary;
+      color: $textonprimary;
+    }
+  }
+
+  &--invert {
+    background: $blogBackground;
+    color: $text;
+    border-color: $text;
+
+    &:hover,
+    &:focus {
+      color: $background;
+      border-color: $text;
+      background: $text;
+    }
+  }
+}
