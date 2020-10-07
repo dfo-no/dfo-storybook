@@ -14,14 +14,14 @@ export default class FloatingActionButton extends React.Component {
   }
 
   render() {
-    const { children = [], invert, danger, cta, plainLink, onSubmit, type, ...rest } = this.props;
+    const { SubComponent, onSubmit, type, ...rest } = this.props;
 
     const { open } = this.state;
 
     return (
       <>
         <div className="fab-wrapper">
-          <div className="fab-content">{open && children}</div>
+          <div className="fab-content">{open && <SubComponent closeParent={() => this.setState({ open: !open })} />} </div>
 
           <button
             type="button"
@@ -41,20 +41,13 @@ export default class FloatingActionButton extends React.Component {
 }
 
 FloatingActionButton.propTypes = {
-  cta: PropTypes.bool,
-  invert: PropTypes.bool,
-  danger: PropTypes.bool,
-  plainLink: PropTypes.bool,
   onSubmit: PropTypes.func,
+  SubComponent: PropTypes.any.isRequired,
   type: PropTypes.string,
   children: PropTypes.any.isRequired,
 };
 
 FloatingActionButton.defaultProps = {
-  cta: false,
-  danger: false,
-  invert: false,
-  plainLink: false,
   type: 'button',
   onSubmit: (f) => f,
 };
