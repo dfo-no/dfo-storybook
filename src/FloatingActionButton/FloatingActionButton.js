@@ -14,7 +14,7 @@ export default class FloatingActionButton extends React.Component {
   }
 
   render() {
-    const { SubComponent, onSubmit, type, ...rest } = this.props;
+    const { SubComponent, type, ...rest } = this.props;
 
     const { open } = this.state;
 
@@ -41,13 +41,10 @@ export default class FloatingActionButton extends React.Component {
 }
 
 FloatingActionButton.propTypes = {
-  onSubmit: PropTypes.func,
   SubComponent: PropTypes.any.isRequired,
   type: PropTypes.string,
-  children: PropTypes.any.isRequired,
 };
 
 FloatingActionButton.defaultProps = {
   type: 'button',
-  onSubmit: (f) => f,
 };
