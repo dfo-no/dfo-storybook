@@ -12,13 +12,13 @@ export default class FloatingActionButton extends React.Component {
   }
 
   render() {
-    const { SubComponent, type, ...rest } = this.props;
+    const { SubComponent, type, absolute = false, ...rest } = this.props;
 
     const { open } = this.state;
 
     return (
       <>
-        <div className="fab-wrapper">
+        <div className={absolute ? 'fab-wrapper' : 'fab-wrapper-absolute'}>
           <div className="fab-content">{open && <SubComponent closeParent={() => this.setState({ open: !open })} />} </div>
 
           <button
@@ -40,10 +40,12 @@ export default class FloatingActionButton extends React.Component {
 
 FloatingActionButton.propTypes = {
   SubComponent: PropTypes.any.isRequired,
+  absolute: PropTypes.bool,
   type: PropTypes.string,
 };
 
 FloatingActionButton.defaultProps = {
+  absolute: false,
   type: 'button',
 };
 
