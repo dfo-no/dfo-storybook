@@ -75,6 +75,9 @@ $disabledColor: #cccccc;
       background: $text;
     }
   }
+  &--invert:hover path {
+    fill: $blogBackground;
+  }
 }
 
 .fab-wrapper {
