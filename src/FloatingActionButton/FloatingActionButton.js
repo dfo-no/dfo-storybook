@@ -59,6 +59,7 @@ export default class FloatingActionButton extends React.Component {
 
                   if (this.subComponentRef.current) {
                     console.log('setting focus');
+                    // find all focusable sub-elements since only some of them are focusable
                     const focusable = this.subComponentRef.current.querySelectorAll(
                       'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
                     );
