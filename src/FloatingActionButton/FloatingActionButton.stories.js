@@ -23,14 +23,24 @@ const options = {
   /* eslint-enable import/no-webpack-loader-syntax */
 };
 
-storiesOf('FloatingActionButton', module).add(
-  'Basic',
-  () => (
-    <div style={{ position: 'absolute bottom 0' }}>
-      <FloatingActionButton onClick={action('clicked')} SubComponent={Chat}>
+storiesOf('FloatingActionButton', module)
+  .add(
+    'Basic',
+    () => (
+      <div style={{ position: 'absolute bottom 0' }}>
+        <FloatingActionButton onClick={action('clicked')} SubComponent={Chat}>
+          {text('Text', 'Sign up for our newsletter')}
+        </FloatingActionButton>
+      </div>
+    ),
+    options,
+  )
+  .add(
+    'Chat icon version',
+    () => (
+      <FloatingActionButton onClick={action('clicked')} SubComponent={Chat} chat>
         {text('Text', 'Sign up for our newsletter')}
       </FloatingActionButton>
-    </div>
-  ),
-  options,
-);
+    ),
+    options,
+  );

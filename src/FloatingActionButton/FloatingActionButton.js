@@ -12,7 +12,7 @@ export default class FloatingActionButton extends React.Component {
   }
 
   render() {
-    const { SubComponent, type, absolute = false, ...rest } = this.props;
+    const { SubComponent, type, absolute = false, chat = false, ...rest } = this.props;
 
     const { open } = this.state;
 
@@ -30,7 +30,17 @@ export default class FloatingActionButton extends React.Component {
               this.setState({ open: !open });
             }}
           >
-            <div className="fab-button-icon"> {open ? <CloseIcon /> : <ChatIcon />} </div>
+            <div className="fab-button-icon">
+              {(function () {
+                if (!open) {
+                  if (chat) {
+                    return <ChatIcon />;
+                  }
+                  return <OpenIcon />;
+                }
+                return <CloseIcon />;
+              }())}
+            </div>
           </button>
         </div>
       </>
@@ -40,11 +50,13 @@ export default class FloatingActionButton extends React.Component {
 
 FloatingActionButton.propTypes = {
   SubComponent: PropTypes.any.isRequired,
+  chat: PropTypes.bool,
   absolute: PropTypes.bool,
   type: PropTypes.string,
 };
 
 FloatingActionButton.defaultProps = {
+  chat: false,
   absolute: false,
   type: 'button',
 };
@@ -66,7 +78,7 @@ const CloseIcon = () => (
   </div>
 );
 
-const ChatIcon = () => (
+const OpenIcon = () => (
   <div className="fab-button-background">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
       <title>question1</title>
@@ -78,6 +90,67 @@ const ChatIcon = () => (
         10.405c0 5.468-4.24 9.965-9.605 10.375v4.032c0 0.442-0.358 0.8-0.8 0.8zM15.207 32.006c-0.442
         0-0.8-0.358-0.8-0.8v-1.601c0-0.442 0.358-0.8 0.8-0.8s0.8 0.358 0.8 0.8v1.601c0 0.442-0.358
         0.8-0.8 0.8z"
+      />
+    </svg>
+  </div>
+);
+
+const ChatIcon = () => (
+  <div className="fab-button-background">
+    <svg
+      version="1.1"
+      id="Layer_1"
+      xmlns="http://www.w3.org/2000/svg"
+      x="0px"
+      y="0px"
+      width="60px"
+      height="50px"
+      viewBox="0 0 90 78"
+      enableBackground="new 0 0 90 78"
+      xmlSpace="preserve"
+    >
+      {' '}
+      <image
+        id="image0"
+        width="90"
+        height="78"
+        x="0"
+        y="0"
+        xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABOCAMAAACXMfG9AAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+  AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAB7FBMVEUNKkoNKkoNKkoNKkoN
+  KkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoN
+  KkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoN
+  KkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoN
+  KkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoN
+  KkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoN
+  KkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoN
+  KkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoN
+  KkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkoNKkqQl6K5vcTe4OP////09fbS1dmssblv
+  eYiepK7p6uzGyc4wQ1yAiZVIV2xdaXsl4WW/AAAAlHRSTlMACDNcgaK71d3s8fPkF1qY0Psof83+
+  D2bGKpz2LqwtFJf9A2rv7h/CJVhekwyzshbOFdS5jYxNEOjpNsNEuB5xxRkYVInS6+r3rXxJwcBu
+  G7A+vzSbEeVIggGxCr4NyAu1i05SvWLw5uf5JPiaImfyt2UTIHO8SwV0dZXH09kmtGHbbQkH7Z9M
+  9IM8QXrjz7aZUycEPbRhSAAAAAFiS0dEmHbRBj4AAAAHdElNRQfkCgEPBAWsV/pGAAAD6ElEQVRY
+  w8XY91vaQBgH8LhtrVuctQqiHWpb9x511FV3taLWWbXaXbvU7j3sPkhAAgH+0d4lASGLJJxPv7/4
+  5JBPjvcuyV0I4n8mKjomNi4+IfHYcQBA0omE+LjYmOioiNnklNS0dCCR9LTUlGT9bkZmlgEoxJCV
+  maHHzc7JBSqSm5OtEc7LL1ADoxTk52mATxYa1MJsYQpPqYSLio1aYBRjcZEK2FRi1gqjlJaYwsll
+  p/XA7ICeUZbP6uoyl6RzSsUo1w+jlMsWpaIyMhmA8xXS8oWLkcoAZFVJyVXVkcsAVEvY2Rj6zPZb
+  dOGbavDIANQIx7IWlwxAXahcr+mmoRxDfbDc0IhPBqCpIYguxikDUHwoN2u+1SnH2BygW/DKALT4
+  5VbcMgCtPN2Gn27j5HaME88fQztLd0h9ZrWRlN1x4OSOKIqitdkdLC2xKHC6KD5uRh/dieRL4pln
+  pQ5DMmFo+JlT3GrsgnS3qNnD9Zc+INm/umjQDekeYSODqkF6AyfxKdK0DN0DadFTC5XDxQS+SHpY
+  +oAmKZeNa2ZoB0U5aIaDKckTV0Ja9HBxw3+1Bjrl5X80FzuyffbAMMjTvZC+LGxEX2RE9eRjg0do
+  CEgXeyBP90G6X2JcKImmAydyXAB4ueq62QPglKl1P6RFjXZJGnXXxn/ihPXyurkDORpI9RoOEeUJ
+  1NrJ0zQ/G9Chx01ydVCgCyDdJ2yk/RcKYGefnRbSqPOUy6VMo1r3ChsZVBEHN6/t3GwJoX3cEa1M
+  oxkyIGq1hlyNpLAgNDeDHIc0DRgRMgDpQfEZbUH3ELtPSKNL1EGTfK29MpNvENJDEr/GavfLjuA7
+  H18DbgxJfkxt0vQQpIskn7lWt0t8v+ZpBnbZQfv8Vxa6A1iF3zeyO5Ar4AgyzD4KRo6CHmHpUcyr
+  ELYeo9xzdww/PcYvFsbx0+P+Nc4EbnkisDCbxL3mmzxcT17FS+cHLYKnpnHK01PBa/dWjCUxXAvd
+  cczgo2cE2yTLLC551iLc3c3N45Hn58R70usLOOQFyV16NgZ7QeYl1+JSpPLSIiET03Jk8rLSS6KV
+  Pv2weZVQTJfu1wA3yogwsayt64E31izhZJib2uHNOlWvP7c0w7du31EDE8RdjfC92lF1MEHc1+Ia
+  Oh9UqIWJh5uq3f6ajm3VLswjIbBglmLNj3uezGlxCeJpYihhfEZYtlZ3dmf3nic2mddLG1/sze7u
+  rG6pmWqClAjGaEU7IZOu0P3Y8EtssuVVMLzxWsfPlktdEPzm7Tt88PvUgPvh4zjGHhOf+A3T54kv
+  X8O+nVef7W/7uaXff/z8tf/7z1+M3T2i/AM9ig3xGomd8wAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAy
+  MC0xMC0wMVQxNTowNDowNSswMzowMA7VvnMAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjAtMTAtMDFU
+  MTU6MDQ6MDUrMDM6MDB/iAbPAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAA
+  AABJRU5ErkJggg=="
       />
     </svg>
   </div>
