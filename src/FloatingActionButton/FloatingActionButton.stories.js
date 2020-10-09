@@ -28,7 +28,7 @@ storiesOf('FloatingActionButton', module)
     'Basic',
     () => (
       <>
-        <div style={{ height: '500px' }} />
+        <div style={{ height: '1500px' }} />
         <div style={{ position: 'absolute bottom 0' }}>
           <FloatingActionButton onClick={action('clicked')} SubComponent={Chat} />
         </div>
@@ -40,7 +40,7 @@ storiesOf('FloatingActionButton', module)
     'Chat icon version',
     () => (
       <>
-        <div style={{ height: '500px' }} />
+        <div style={{ height: '1500px' }} />
         <FloatingActionButton onClick={action('clicked')} SubComponent={Chat} chat />
       </>
     ),
@@ -50,7 +50,7 @@ storiesOf('FloatingActionButton', module)
     'Absolute position',
     () => (
       <>
-        <div style={{ height: '500px' }} />
+        <div style={{ height: '1500px' }} />
 
         <FloatingActionButton onClick={action('clicked')} SubComponent={Chat} absolute />
       </>
@@ -59,7 +59,12 @@ storiesOf('FloatingActionButton', module)
   )
   .add(
     'Move Position',
-    () => <FloatingActionButton onClick={action('clicked')} SubComponent={Chat} overRidePosition={{ bottom: '40%', right: '20%' }} />,
+    () => (
+      <>
+        <div style={{ height: '1500px' }} />
+        <FloatingActionButton onClick={action('clicked')} SubComponent={Chat} overRidePosition={{ bottom: '40%', right: '20%' }} />{' '}
+      </>
+    ),
     options,
   )
   .add('Call to action', () => <FloatingActionButton SubComponent={Chat} cta={boolean('cta', true)} onClick={action('clicked')} />, options)
