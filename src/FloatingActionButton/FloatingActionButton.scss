@@ -23,7 +23,7 @@ $disabledColor: #cccccc;
 
   background: $primaryLight;
   color: $background;
-  border: 2px solid $primaryLight;
+  border: 2px solid white;
   &:hover,
   &:focus {
     background-color: $secondary;
