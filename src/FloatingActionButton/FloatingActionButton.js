@@ -18,7 +18,10 @@ export default class FloatingActionButton extends React.Component {
 
     return (
       <>
-        <div className={!absolute ? 'fab-wrapper' : 'fab-wrapper-absolute'} style={overRidePosition || null}>
+        <div
+          className={!absolute ? 'fab-wrapper' : 'fab-wrapper-absolute'}
+          style={overRidePosition ? { bottom: overRidePosition.bottom, right: overRidePosition.right } : null}
+        >
           <div className="fab-content">{open && <SubComponent closeParent={() => this.setState({ open: !open })} />} </div>
 
           <button
