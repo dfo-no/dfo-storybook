@@ -7,10 +7,14 @@ import PropTypes from 'prop-types';
 import { FloatingActionButton } from '.';
 
 const Chat = ({ closeParent }) => (
-  <button type="button" onClick={() => closeParent()}>
-    {' '}
-    click me{' '}
-  </button>
+  <>
+    I am a sub-component that was passed in
+    <br />
+    <button type="button" onClick={() => closeParent()}>
+      {' '}
+      click me to close window{' '}
+    </button>
+  </>
 );
 
 Chat.propTypes = {
