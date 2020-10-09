@@ -26,6 +26,7 @@ export default class FloatingActionButton extends React.Component {
       'dfo-fab-button--cta': !chat && cta,
     });
 
+    // we filter away non-positional elements to disallow arbitrary css-changes
     const filteredPosition = overRidePosition && {
       ...(overRidePosition.bottom ? { bottom: overRidePosition.bottom } : {}),
       ...(overRidePosition.right ? { right: overRidePosition.right } : {}),
