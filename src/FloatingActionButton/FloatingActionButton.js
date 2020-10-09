@@ -48,7 +48,9 @@ export default class FloatingActionButton extends React.Component {
                 console.log(open);
                 this.setState({ open: !open }, () => {
                   console.log('setState callback', this.subComponentRef);
-                  this.subComponentRef.current.focus();
+                  if (this.subComponentRef.current) {
+                    this.subComponentRef.current.focus();
+                  }
                 });
               }}
             >
