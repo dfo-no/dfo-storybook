@@ -39,7 +39,14 @@ export default class FloatingActionButton extends React.Component {
     return (
       <>
         <div className={!absolute ? 'fab-wrapper' : 'fab-wrapper-absolute'} style={filteredPosition || null}>
-          <div className="fab-content">{open && <SubComponent ref={this.subComponentRef} closeParent={() => this.setState({ open: !open })} />} </div>
+          <div className="fab-content">
+            {open && (
+              <div ref={this.subComponentRef}>
+                {' '}
+                <SubComponent closeParent={() => this.setState({ open: !open })} />
+              </div>
+            )}
+          </div>
           <div className="fab-button">
             <button
               type="button"
@@ -49,8 +56,15 @@ export default class FloatingActionButton extends React.Component {
                 console.log(open);
                 this.setState({ open: !open }, () => {
                   console.log('setState callback', this.subComponentRef);
+
                   if (this.subComponentRef.current) {
-                    this.subComponentRef.current.focus();
+                    console.log('setting focus');
+                    const focusable = this.subComponentRef.current.querySelectorAll(
+                      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+                    );
+                    if (focusable.length > 0) {
+                      focusable[0].focus();
+                    }
                   }
                 });
               }}
