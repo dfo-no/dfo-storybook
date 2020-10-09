@@ -7,6 +7,8 @@ import './FloatingActionButton.scss';
 export default class FloatingActionButton extends React.Component {
   constructor(props) {
     super(props);
+    this.subComponentRef = React.createRef();
+
     this.state = {
       open: false,
     };
@@ -36,7 +38,7 @@ export default class FloatingActionButton extends React.Component {
     return (
       <>
         <div className={!absolute ? 'fab-wrapper' : 'fab-wrapper-absolute'} style={filteredPosition || null}>
-          <div className="fab-content">{open && <SubComponent closeParent={() => this.setState({ open: !open })} />} </div>
+          <div className="fab-content">{open && <SubComponent ref={this.subComponentRef} closeParent={() => this.setState({ open: !open })} />} </div>
           <div className="fab-button">
             <button
               type="button"
@@ -44,7 +46,10 @@ export default class FloatingActionButton extends React.Component {
               {...rest}
               onClick={() => {
                 console.log(open);
-                this.setState({ open: !open });
+                this.setState({ open: !open }, () => {
+                  console.log('setState callback', this.subComponentRef);
+                  this.subComponentRef.current.focus();
+                });
               }}
             >
               <div className="fab-button-icon">
