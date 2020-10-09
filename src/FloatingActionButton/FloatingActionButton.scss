@@ -75,7 +75,8 @@ $disabledColor: #cccccc;
       background: $text;
     }
   }
-  &--invert:hover path {
+  &--invert:hover path,
+  &--invert:focus path {
     fill: $blogBackground;
   }
 }
@@ -96,7 +97,6 @@ $disabledColor: #cccccc;
 
 .fab-content {
   size: 100%;
-  margin-right: 10px;
   align-self: flex-end;
 }
 
