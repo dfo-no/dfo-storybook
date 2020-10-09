@@ -34,8 +34,6 @@ export default class FloatingActionButton extends React.Component {
       ...(overRidePosition.left ? { left: overRidePosition.left } : {}),
     };
 
-    console.log(overRidePosition, filteredPosition);
-
     return (
       <>
         <div className={!absolute ? 'fab-wrapper' : 'fab-wrapper-absolute'} style={filteredPosition || null}>
@@ -53,12 +51,8 @@ export default class FloatingActionButton extends React.Component {
               className={!chat || open ? classes : null}
               {...rest}
               onClick={() => {
-                console.log(open);
                 this.setState({ open: !open }, () => {
-                  console.log('setState callback', this.subComponentRef);
-
                   if (this.subComponentRef.current) {
-                    console.log('setting focus');
                     // find all focusable sub-elements since only some of them are focusable
                     const focusable = this.subComponentRef.current.querySelectorAll(
                       'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
