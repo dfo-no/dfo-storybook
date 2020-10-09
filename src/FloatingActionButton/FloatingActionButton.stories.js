@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { text, boolean } from '@storybook/addon-knobs';
+import { boolean } from '@storybook/addon-knobs';
 import PropTypes from 'prop-types';
 
 import { FloatingActionButton } from '.';
@@ -30,9 +30,7 @@ storiesOf('FloatingActionButton', module)
       <>
         <div style={{ height: '500px' }} />
         <div style={{ position: 'absolute bottom 0' }}>
-          <FloatingActionButton onClick={action('clicked')} SubComponent={Chat}>
-            {text('Text', 'Sign up for our newsletter')}
-          </FloatingActionButton>
+          <FloatingActionButton onClick={action('clicked')} SubComponent={Chat} />
         </div>
       </>
     ),
@@ -43,9 +41,7 @@ storiesOf('FloatingActionButton', module)
     () => (
       <>
         <div style={{ height: '500px' }} />
-        <FloatingActionButton onClick={action('clicked')} SubComponent={Chat} chat>
-          {text('Text', 'Sign up for our newsletter')}
-        </FloatingActionButton>
+        <FloatingActionButton onClick={action('clicked')} SubComponent={Chat} chat />
       </>
     ),
     options,
@@ -56,20 +52,14 @@ storiesOf('FloatingActionButton', module)
       <>
         <div style={{ height: '500px' }} />
 
-        <FloatingActionButton onClick={action('clicked')} SubComponent={Chat} absolute>
-          {text('Text', 'Sign up for our newsletter')}
-        </FloatingActionButton>
+        <FloatingActionButton onClick={action('clicked')} SubComponent={Chat} absolute />
       </>
     ),
     options,
   )
   .add(
     'Move Position',
-    () => (
-      <FloatingActionButton onClick={action('clicked')} SubComponent={Chat} overRidePosition={{ bottom: '40%', right: '20%' }}>
-        {text('Text', 'Sign up for our newsletter')}
-      </FloatingActionButton>
-    ),
+    () => <FloatingActionButton onClick={action('clicked')} SubComponent={Chat} overRidePosition={{ bottom: '40%', right: '20%' }} />,
     options,
   )
   .add('Call to action', () => <FloatingActionButton SubComponent={Chat} cta={boolean('cta', true)} onClick={action('clicked')} />, options)
