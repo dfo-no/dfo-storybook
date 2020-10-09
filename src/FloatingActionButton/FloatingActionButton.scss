@@ -5,24 +5,25 @@ $darkDangerColor: #890303;
 $ctaColor: #008566;
 $disabledColor: #cccccc;
 
-.dfo-button {
+.dfo-fab-button {
   font-size: 1.8rem;
-  line-height: 1em;
   font-style: normal;
   font-weight: 400;
   transition: background-color 0.25s, border-color 0.25s;
   text-decoration: none;
-  display: inline-block;
-  padding: 1.2rem 2.4rem;
+  display: flex;
   flex-shrink: 0;
+  border-radius: 50%;
+  height: 64px;
+  width: 64px;
+  justify-content: center;
+  align-items: center;
 
-  border: 2px solid $primaryLight;
   cursor: pointer;
-  &--normal {
-    background: $primaryLight;
-    color: $background;
-  }
 
+  background: $primaryLight;
+  color: $background;
+  border: 2px solid $primaryLight;
   &:hover,
   &:focus {
     background-color: $secondary;

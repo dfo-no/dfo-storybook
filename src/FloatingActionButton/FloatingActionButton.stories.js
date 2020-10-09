@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { text } from '@storybook/addon-knobs';
+import { text, boolean } from '@storybook/addon-knobs';
 import PropTypes from 'prop-types';
 
 import { FloatingActionButton } from '.';
@@ -71,4 +71,11 @@ storiesOf('FloatingActionButton', module)
       </FloatingActionButton>
     ),
     options,
-  );
+  )
+  .add('Call to action', () => <FloatingActionButton SubComponent={Chat} cta={boolean('cta', true)} onClick={action('clicked')} />, options)
+  .add(
+    'Inverted light version',
+    () => <FloatingActionButton SubComponent={Chat} invert={boolean('Invert', true)} onClick={action('clicked')} />,
+    options,
+  )
+  .add('Danger button', () => <FloatingActionButton SubComponent={Chat} danger={boolean('danger', true)} onClick={action('clicked')} />, options);
