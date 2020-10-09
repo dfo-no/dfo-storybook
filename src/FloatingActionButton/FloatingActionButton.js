@@ -20,7 +20,7 @@ export default class FloatingActionButton extends React.Component {
     const { open } = this.state;
 
     const classes = classNames({
-      'dfo-fab-button': !chat || !open,
+      'dfo-fab-button': !chat || open,
       'dfo-fab-button--danger': !chat && danger,
       'dfo-fab-button--invert': !chat && invert,
       'dfo-fab-button--cta': !chat && cta,
