@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import * as classNames from 'classnames';
 
 import './FloatingActionButton.scss';
 
@@ -12,39 +13,53 @@ export default class FloatingActionButton extends React.Component {
   }
 
   render() {
-    const { SubComponent, type, absolute = false, chat = false, overRidePosition, ...rest } = this.props;
+    const { SubComponent, type, absolute = false, chat = false, overRidePosition, danger, invert, cta, ...rest } = this.props;
+
+    const classes = classNames('dfo-button', {
+      'dfo-button--normal': !chat,
+      'dfo-button--danger': !chat && danger,
+      'dfo-button--invert': !chat && invert,
+      'dfo-button--cta': !chat && cta,
+    });
 
     const { open } = this.state;
 
+    const filteredPosition = overRidePosition && {
+      ...(overRidePosition.bottom ? { bottom: overRidePosition.bottom } : {}),
+      ...(overRidePosition.right ? { right: overRidePosition.right } : {}),
+      ...(overRidePosition.top ? { top: overRidePosition.top } : {}),
+      ...(overRidePosition.left ? { left: overRidePosition.left } : {}),
+    };
+
+    console.log(overRidePosition, filteredPosition);
+
     return (
       <>
-        <div
-          className={!absolute ? 'fab-wrapper' : 'fab-wrapper-absolute'}
-          style={overRidePosition ? { bottom: overRidePosition.bottom, right: overRidePosition.right } : null}
-        >
+        <div className={!absolute ? 'fab-wrapper' : 'fab-wrapper-absolute'} style={filteredPosition || null}>
           <div className="fab-content">{open && <SubComponent closeParent={() => this.setState({ open: !open })} />} </div>
-
-          <button
-            type="button"
-            className="fab-button"
-            {...rest}
-            onClick={() => {
-              console.log(open);
-              this.setState({ open: !open });
-            }}
-          >
-            <div className="fab-button-icon">
-              {(function () {
-                if (!open) {
-                  if (chat) {
-                    return <ChatIcon />;
+          <div className="fab-button">
+            <button
+              type="button"
+              className={classes}
+              {...rest}
+              onClick={() => {
+                console.log(open);
+                this.setState({ open: !open });
+              }}
+            >
+              <div className="fab-button-icon">
+                {(function () {
+                  if (!open) {
+                    if (chat) {
+                      return <ChatIcon />;
+                    }
+                    return <OpenIcon />;
                   }
-                  return <OpenIcon />;
-                }
-                return <CloseIcon />;
-              }())}
-            </div>
-          </button>
+                  return <CloseIcon />;
+                }())}
+              </div>
+            </button>
+          </div>
         </div>
       </>
     );
@@ -52,6 +67,9 @@ export default class FloatingActionButton extends React.Component {
 }
 
 FloatingActionButton.propTypes = {
+  cta: PropTypes.bool,
+  invert: PropTypes.bool,
+  danger: PropTypes.bool,
   SubComponent: PropTypes.any.isRequired,
   overRidePosition: PropTypes.object,
   chat: PropTypes.bool,
@@ -60,7 +78,10 @@ FloatingActionButton.propTypes = {
 };
 
 FloatingActionButton.defaultProps = {
-  overRidePosition: null,
+  cta: false,
+  danger: false,
+  invert: false,
+  overRidePosition: { bottom: '10%', right: '2%' },
   chat: false,
   absolute: false,
   type: 'button',
@@ -72,7 +93,7 @@ const CloseIcon = () => (
       <title>cross1</title>
 
       <path
-        fill="#444"
+        fill="#FFF"
         d="M17.14 16.799l13.841-13.841c0.313-0.313 0.313-0.819 0-1.132s-0.819-0.313-1.132 0l-13.841
         13.841-13.841-13.841c-0.313-0.313-0.819-0.313-1.132 0s-0.313 0.819 0 1.132l13.841
         13.841-13.841 13.841c-0.313 0.313-0.313 0.819 0 1.132 0.156 0.156 0.361 0.234 0.566
@@ -88,7 +109,7 @@ const OpenIcon = () => (
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
       <title>question1</title>
       <path
-        fill="#444"
+        fill="#FFF"
         d="M15.207 27.204c-0.442 0-0.8-0.358-0.8-0.8v-4.802c0-0.442 0.358-0.8 0.8-0.8 4.855 0
         8.804-3.95 8.804-8.804s-3.95-8.804-8.804-8.804-8.804 3.95-8.804 8.804c0 0.442-0.358
         0.8-0.8 0.8s-0.8-0.358-0.8-0.8c0-5.737 4.668-10.405 10.405-10.405s10.405 4.668 10.405

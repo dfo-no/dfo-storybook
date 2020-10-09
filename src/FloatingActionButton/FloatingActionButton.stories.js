@@ -27,18 +27,46 @@ storiesOf('FloatingActionButton', module)
   .add(
     'Basic',
     () => (
-      <div style={{ position: 'absolute bottom 0' }}>
-        <FloatingActionButton onClick={action('clicked')} SubComponent={Chat}>
-          {text('Text', 'Sign up for our newsletter')}
-        </FloatingActionButton>
-      </div>
+      <>
+        <div style={{ height: '500px' }} />
+        <div style={{ position: 'absolute bottom 0' }}>
+          <FloatingActionButton onClick={action('clicked')} SubComponent={Chat}>
+            {text('Text', 'Sign up for our newsletter')}
+          </FloatingActionButton>
+        </div>
+      </>
     ),
     options,
   )
   .add(
     'Chat icon version',
     () => (
-      <FloatingActionButton onClick={action('clicked')} SubComponent={Chat} chat>
+      <>
+        <div style={{ height: '500px' }} />
+        <FloatingActionButton onClick={action('clicked')} SubComponent={Chat} chat>
+          {text('Text', 'Sign up for our newsletter')}
+        </FloatingActionButton>
+      </>
+    ),
+    options,
+  )
+  .add(
+    'Absolute position',
+    () => (
+      <>
+        <div style={{ height: '500px' }} />
+
+        <FloatingActionButton onClick={action('clicked')} SubComponent={Chat} absolute>
+          {text('Text', 'Sign up for our newsletter')}
+        </FloatingActionButton>
+      </>
+    ),
+    options,
+  )
+  .add(
+    'Move Position',
+    () => (
+      <FloatingActionButton onClick={action('clicked')} SubComponent={Chat} overRidePosition={{ bottom: '40%', right: '20%' }}>
         {text('Text', 'Sign up for our newsletter')}
       </FloatingActionButton>
     ),
