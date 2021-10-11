@@ -69,6 +69,10 @@
   align-items: center;
   justify-content: space-between;
 
+  &__logo-wrapper {
+    flex-basis: 75%;
+    max-width: 325px;
+  }
   &__wrapper {
     display: flex;
     margin: 0 (-$padding-medium);

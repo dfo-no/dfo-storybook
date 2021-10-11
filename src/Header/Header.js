@@ -55,7 +55,9 @@ export default class Header extends React.Component {
         <div className="container container--flex">
           <div className="dfo-header__wrapper">
             <div className="dfo-header__wrapper__inner">
-              <Logo type={activeLanguageCode} />
+              <div className="dfo-header__logo-wrapper">
+                <Logo type={activeLanguageCode} />
+              </div>
               <div className="dfo-header__menu-toggle-wrapper">
                 <button type="button" className="dfo-header__menu-toggle" onClick={this.menuToggle}>
                   <Tr id="Menu" code={activeLanguageCode} /> <Burger open={this.isMenuOpen()} />

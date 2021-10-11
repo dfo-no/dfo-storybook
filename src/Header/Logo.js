@@ -5,13 +5,9 @@ import { ReactComponent as EnglishLogo } from './logo-english.svg';
 
 export default function Logo({ type, ...restOfSvgAttributes }) {
   if (type === 'en') {
-    return (
-      <EnglishLogo
-        {...{ title: 'Logo: The Norwegian Agency for Public and Financial Management', width: '330', height: '40', ...restOfSvgAttributes }}
-      />
-    );
+    return <EnglishLogo {...{ title: 'Logo: The Norwegian Agency for Public and Financial Management', ...restOfSvgAttributes }} />;
   }
-  return <DefaultLogo {...{ title: 'Logo: Direktoratet for forvaltning og økonomistyring', width: '263', height: '40', ...restOfSvgAttributes }} />;
+  return <DefaultLogo {...{ title: 'Logo: Direktoratet for forvaltning og økonomistyring', ...restOfSvgAttributes }} />;
 }
 
 Logo.propTypes = {
