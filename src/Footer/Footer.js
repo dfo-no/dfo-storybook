@@ -61,7 +61,7 @@ export default function Footer({
 
           <div className="row small-12 medium-6 collapse">
             <div className="small-12 large-6">
-              Karl Johans gate 37 B
+              Lørenfaret 1 C
               <br />
               Pb 7154 St. Olavs plass, 0130 Oslo
             </div>
