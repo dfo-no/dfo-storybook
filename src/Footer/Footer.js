@@ -34,7 +34,7 @@ export default function Footer({
                 <LogoWhite />
 
                 <ul className="dfo-footer__contact">
-                  <li>Karl Johans gate 37 B</li>
+                  <li>Lørenfaret 1 C</li>
                   <li>Pb 7154 St. Olavs plass, 0130 Oslo</li>
                   <li>
                     Tlf: <a href="tel:+4740007997">400 07 997</a>
