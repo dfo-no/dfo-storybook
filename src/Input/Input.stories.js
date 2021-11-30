@@ -31,7 +31,6 @@ storiesOf('Text field', module)
           name={text('name', 'firstName')}
           type="text"
           asterisk
-          required
         />
       </div>
     ),
