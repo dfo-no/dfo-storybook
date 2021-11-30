@@ -14,6 +14,7 @@ export default class Textarea extends PureComponent {
       error,
       autosize,
       id,
+      asterisk,
       ...rest
     } = this.props;
 
@@ -21,6 +22,7 @@ export default class Textarea extends PureComponent {
       ...rest,
       id: id || `textarea-${name}`,
       name,
+      required: !!asterisk,
       'aria-invalid': !!error,
     };
 
@@ -35,7 +37,7 @@ export default class Textarea extends PureComponent {
           aria-relevant="additions removals"
         >
           {label}
-
+          {asterisk && <span className="dfo-required-asterisk">*</span>}
           {autosize
             ? <TextareaAutosize {...textareaProps}>{text}</TextareaAutosize>
             : <textarea {...textareaProps}>{text}</textarea>}
@@ -54,6 +56,7 @@ Textarea.propTypes = {
   label: PropTypes.string,
   error: PropTypes.string,
   autosize: PropTypes.bool,
+  asterisk: PropTypes.bool,
 };
 
 Textarea.defaultProps = {
@@ -61,4 +64,5 @@ Textarea.defaultProps = {
   label: null,
   error: null,
   autosize: false,
+  asterisk: false,
 };
