@@ -30,7 +30,7 @@ storiesOf('Text field', module)
           label={text('label', 'Fornavn:')}
           name={text('name', 'firstName')}
           type="text"
-          asterisk="true"
+          asterisk
           required
         />
       </div>

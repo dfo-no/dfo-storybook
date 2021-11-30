@@ -24,6 +24,7 @@ const Input = ({
         <input
           aria-invalid={!!error}
           name={name}
+          required={!!asterisk}
           {...{ ...rest, id }}
         />
 
