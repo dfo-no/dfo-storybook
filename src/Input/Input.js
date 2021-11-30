@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import './Input.scss';
 
 const Input = ({
-  label, name, error, ...rest
+  label, name, error, asterisk, ...rest
 }) => {
   const { id = `input-${name}` } = rest;
 
@@ -20,7 +20,7 @@ const Input = ({
         aria-relevant="additions removals"
       >
         {label}
-
+        {asterisk && <span className="dfo-required-asterisk">*</span>}
         <input
           aria-invalid={!!error}
           name={name}
@@ -38,6 +38,7 @@ Input.defaultProps = {
   placeholder: '',
   error: '',
   id: undefined,
+  asterisk: false,
 };
 
 Input.propTypes = {
@@ -47,6 +48,7 @@ Input.propTypes = {
   type: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   error: PropTypes.any,
+  asterisk: PropTypes.bool,
 };
 
 export default Input;
