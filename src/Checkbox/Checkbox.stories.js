@@ -20,6 +20,21 @@ storiesOf('Checbox', module)
     },
   )
   .add(
+    'Simple field with required asterisk',
+    () => (
+      <Checkbox
+        label="Nyhetsbrev om virksomhets- og økonomistyring"
+        name="fields[customerNoteInterests][]"
+        asterisk
+      />
+    ),
+    {
+      /* eslint-disable import/no-webpack-loader-syntax */
+      css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Checkbox/Checkbox.scss'),
+      /* eslint-enable import/no-webpack-loader-syntax */
+    },
+  )
+  .add(
     'Checbox field with description',
     () => (
       <Checkbox
