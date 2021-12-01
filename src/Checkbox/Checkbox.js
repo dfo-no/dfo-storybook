@@ -11,7 +11,6 @@ export default function Checkbox({
   asterisk,
   ...rest
 }) {
-  console.log({ asterisk });
   // Remove whitespace from id and for
   const labelKey = `checkbox-${label.replace(/\s/g, '')}`;
   return (

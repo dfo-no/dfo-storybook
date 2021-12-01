@@ -20,7 +20,7 @@ storiesOf('Checbox', module)
     },
   )
   .add(
-    'Simple field with required asterisk',
+    'Simple field with required',
     () => (
       <Checkbox
         label="Nyhetsbrev om virksomhets- og økonomistyring"

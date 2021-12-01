@@ -23,7 +23,7 @@ storiesOf('Text field', module)
     },
   )
   .add(
-    'marked required',
+    'with required',
     () => (
       <div style={{ maxWidth: '750px' }}>
         <Input
