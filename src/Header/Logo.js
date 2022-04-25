@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ReactComponent as DefaultLogo } from './logo-blue.svg';
-import { ReactComponent as EnglishLogo } from './logo-english.svg';
+// import { ReactComponent as DefaultLogo } from './logo-blue.svg';
+// import { ReactComponent as EnglishLogo } from './logo-english.svg';
+
+import DefaultLogo from './logo-blue.svg';
+import EnglishLogo from './logo-english.svg';
 
 export default function Logo({ type, ...restOfSvgAttributes }) {
   if (type === 'en') {

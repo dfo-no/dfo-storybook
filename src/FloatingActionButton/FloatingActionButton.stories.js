@@ -23,7 +23,7 @@ Chat.propTypes = {
 
 const options = {
   /* eslint-disable import/no-webpack-loader-syntax */
-  css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!./FloatingActionButton.scss'),
+  css: require('!to-string-loader!css-loader!sass-loader?!./FloatingActionButton.scss'),
   /* eslint-enable import/no-webpack-loader-syntax */
 };
 

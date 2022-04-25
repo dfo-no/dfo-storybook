@@ -24,7 +24,7 @@ storiesOf('Radio buttons', module)
     ),
     {
       /* eslint-disable import/no-webpack-loader-syntax */
-      css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../RadioButtons/RadioButtons.scss'),
+      css: require('!to-string-loader!css-loader!sass-loader?!../RadioButtons/RadioButtons.scss'),
       /* eslint-enable import/no-webpack-loader-syntax */
     },
   );

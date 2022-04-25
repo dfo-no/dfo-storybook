@@ -20,7 +20,7 @@ storiesOf('Alertbox', module)
     ),
     {
       /* eslint-disable import/no-webpack-loader-syntax */
-      css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!./Alertbox.scss'),
+      css: require('!to-string-loader!css-loader!sass-loader?!./Alertbox.scss'),
       /* eslint-enable import/no-webpack-loader-syntax */
     },
   );

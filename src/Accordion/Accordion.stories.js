@@ -36,8 +36,8 @@ storiesOf('Accordion', module)
     {
       /* eslint-disable import/no-webpack-loader-syntax */
       css: [
-        require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!./Accordion.scss'),
-        require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!./AccordionArrow.scss'),
+        require('!to-string-loader!css-loader!sass-loader?!./Accordion.scss'),
+        require('!to-string-loader!css-loader!sass-loader?!./AccordionArrow.scss'),
       ],
       /* eslint-disable import/no-webpack-loader-syntax */
     },

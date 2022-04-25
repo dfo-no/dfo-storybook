@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import NavSymbol from './FooterNavSymbol';
-import LogoWhite from './LogoWhite';
+import LogoWhite from './logo-white.svg';
 
 import './Footer.scss';
 

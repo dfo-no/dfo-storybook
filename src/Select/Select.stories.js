@@ -6,7 +6,7 @@ import { Select } from '..';
 
 const options = {
   /* eslint-disable import/no-webpack-loader-syntax */
-  css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Select/Select.scss'),
+  css: require('!to-string-loader!css-loader!sass-loader?!../Select/Select.scss'),
 /* eslint-enable import/no-webpack-loader-syntax */
 };
 

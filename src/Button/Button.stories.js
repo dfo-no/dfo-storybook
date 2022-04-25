@@ -7,7 +7,7 @@ import { Button } from '.';
 
 const options = {
   /* eslint-disable import/no-webpack-loader-syntax */
-  css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!./Button.scss'),
+  css: require('!to-string-loader!css-loader!sass-loader?!./Button.scss'),
 /* eslint-enable import/no-webpack-loader-syntax */
 };
 

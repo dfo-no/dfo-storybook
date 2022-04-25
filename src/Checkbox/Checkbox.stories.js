@@ -15,7 +15,7 @@ storiesOf('Checbox', module)
     ),
     {
       /* eslint-disable import/no-webpack-loader-syntax */
-      css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Checkbox/Checkbox.scss'),
+      css: require('!to-string-loader!css-loader!sass-loader?!../Checkbox/Checkbox.scss'),
       /* eslint-enable import/no-webpack-loader-syntax */
     },
   )
@@ -30,7 +30,7 @@ storiesOf('Checbox', module)
     ),
     {
       /* eslint-disable import/no-webpack-loader-syntax */
-      css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Checkbox/Checkbox.scss'),
+      css: require('!to-string-loader!css-loader!sass-loader?!../Checkbox/Checkbox.scss'),
       /* eslint-enable import/no-webpack-loader-syntax */
     },
   )
@@ -48,7 +48,7 @@ storiesOf('Checbox', module)
     ),
     {
       /* eslint-disable import/no-webpack-loader-syntax */
-      css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Checkbox/Checkbox.scss'),
+      css: require('!to-string-loader!css-loader!sass-loader?!../Checkbox/Checkbox.scss'),
       /* eslint-enable import/no-webpack-loader-syntax */
     },
   )
@@ -72,7 +72,7 @@ storiesOf('Checbox', module)
     ),
     {
       /* eslint-disable import/no-webpack-loader-syntax */
-      css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Checkbox/Checkbox.scss'),
+      css: require('!to-string-loader!css-loader!sass-loader?!../Checkbox/Checkbox.scss'),
       /* eslint-enable import/no-webpack-loader-syntax */
     },
   )
@@ -109,7 +109,7 @@ storiesOf('Checbox', module)
     ),
     {
       /* eslint-disable import/no-webpack-loader-syntax */
-      css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Checkbox/Checkbox.scss'),
+      css: require('!to-string-loader!css-loader!sass-loader?!../Checkbox/Checkbox.scss'),
       /* eslint-enable import/no-webpack-loader-syntax */
     },
   )
@@ -137,7 +137,7 @@ storiesOf('Checbox', module)
     ),
     {
       /* eslint-disable import/no-webpack-loader-syntax */
-      css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Checkbox/Checkbox.scss'),
+      css: require('!to-string-loader!css-loader!sass-loader?!../Checkbox/Checkbox.scss'),
       /* eslint-enable import/no-webpack-loader-syntax */
     },
   );

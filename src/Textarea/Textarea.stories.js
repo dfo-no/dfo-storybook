@@ -33,7 +33,7 @@ storiesOf('Textarea', module)
     ),
     {
       /* eslint-disable import/no-webpack-loader-syntax */
-      css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Textarea/Textarea.scss'),
+      css: require('!to-string-loader!css-loader!sass-loader?!../Textarea/Textarea.scss'),
       /* eslint-enable import/no-webpack-loader-syntax */
     },
   )
@@ -66,7 +66,7 @@ storiesOf('Textarea', module)
     ),
     {
       /* eslint-disable import/no-webpack-loader-syntax */
-      css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Textarea/Textarea.scss'),
+      css: require('!to-string-loader!css-loader!sass-loader?!../Textarea/Textarea.scss'),
       /* eslint-enable import/no-webpack-loader-syntax */
     },
   );

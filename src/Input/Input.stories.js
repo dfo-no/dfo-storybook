@@ -18,7 +18,7 @@ storiesOf('Text field', module)
     ),
     {
       /* eslint-disable import/no-webpack-loader-syntax */
-      css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Input/Input.scss'),
+      css: require('!to-string-loader!css-loader!sass-loader?!../Input/Input.scss'),
       /* eslint-enable import/no-webpack-loader-syntax */
     },
   )
@@ -36,7 +36,7 @@ storiesOf('Text field', module)
     ),
     {
       /* eslint-disable import/no-webpack-loader-syntax */
-      css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Input/Input.scss'),
+      css: require('!to-string-loader!css-loader!sass-loader?!../Input/Input.scss'),
       /* eslint-enable import/no-webpack-loader-syntax */
     },
   )
@@ -54,7 +54,7 @@ storiesOf('Text field', module)
     ),
     {
       /* eslint-disable import/no-webpack-loader-syntax */
-      css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Input/Input.scss'),
+      css: require('!to-string-loader!css-loader!sass-loader?!../Input/Input.scss'),
       /* eslint-enable import/no-webpack-loader-syntax */
       notes: `
       Error
@@ -75,7 +75,7 @@ storiesOf('Text field', module)
     ),
     {
       /* eslint-disable import/no-webpack-loader-syntax */
-      css: require('!to-string-loader!css-loader!sass-loader?outputStyle=compressed!../Input/Input.scss'),
+      css: require('!to-string-loader!css-loader!sass-loader?!../Input/Input.scss'),
       /* eslint-enable import/no-webpack-loader-syntax */
     },
   );
