@@ -1,6 +1,6 @@
 # @dfo/components
 
-(REMARK: This branch of the @dfo/components is created for use with ToA eSignering application in DFØ)
+(REMARK: This branch of the @dfo/components is created for use with ToA eSignering application in DFØ and is based on this repo: https://github.com/dfo-no/dfo-storybook)
 
 A collection of frontend components and building blocks for Direktoratet for forvaltning og Økonomistyring (DFØ).
 
