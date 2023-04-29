@@ -52,7 +52,7 @@
     "@storybook/addon-options": "^5.1.9",
     "@storybook/addon-viewport": "^5.1.9",
     "@storybook/addons": "^5.1.9",
-    "@storybook/react": "^5.1.9",
+    "@storybook/react": "^7.0.7",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
     "classnames": "^2.2.6",
