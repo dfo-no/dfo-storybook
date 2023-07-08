@@ -13,7 +13,7 @@
     "react-dom": "^16.6.3"
   },
   "devDependencies": {
-    "node-sass": "^4.10.0"
+    "node-sass": "^9.0.0"
   },
   "scripts": {
     "dev": "next",
