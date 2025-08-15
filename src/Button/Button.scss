@@ -1,4 +1,7 @@
-@import '../../sass/base/index';
+
+@use "sass:map";
+@use "sass:string";
+@use "../../sass/base/colors";
 
 $dangerColor: #e5243b;
 $darkDangerColor: #890303;
@@ -16,9 +19,9 @@ $disabledColor: #cccccc;
   padding: 1.2rem 2.4rem;
   flex-shrink: 0;
 
-  border: 2px solid $primaryLight;
-  background: $primaryLight;
-  color: $background;
+  border: 2px solid colors.$primaryLight;
+  background: colors.$primaryLight;
+  color: colors.$background;
   cursor: pointer;
 
   &:first-child {
@@ -27,9 +30,9 @@ $disabledColor: #cccccc;
 
   &:hover,
   &:focus {
-    background-color: $secondary;
-    border-color: $secondary;
-    color: $background;
+    background-color: colors.$secondary;
+    border-color: colors.$secondary;
+    color: colors.$background;
   }
 
   &:disabled {
@@ -40,40 +43,40 @@ $disabledColor: #cccccc;
 
   &--danger {
     background: $dangerColor;
-    color: $textonprimary;
+    color: colors.$textonprimary;
     border-color: $dangerColor;
 
     &:hover,
     &:focus {
       background-color: $darkDangerColor;
       border-color: $darkDangerColor;
-      color: $textonprimary;
+      color: colors.$textonprimary;
     }
   }
 
   &--cta {
     background: $ctaColor;
-    color: $textonprimary;
+    color: colors.$textonprimary;
     border-color: $ctaColor;
 
     &:hover,
     &:focus {
-      background-color: $secondary;
-      border-color: $secondary;
-      color: $textonprimary;
+      background-color: colors.$secondary;
+      border-color: colors.$secondary;
+      color: colors.$textonprimary;
     }
   }
 
   &--invert {
-    background: $blogBackground;
-    color: $text;
-    border-color: $text;
+    background: colors.$blogBackground;
+    color: colors.$text;
+    border-color: colors.$text;
 
     &:hover,
     &:focus {
-      color: $background;
-      border-color: $text;
-      background: $text;
+      color: colors.$background;
+      border-color: colors.$text;
+      background: colors.$text;
     }
   }
 }

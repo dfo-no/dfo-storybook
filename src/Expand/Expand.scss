@@ -1,8 +1,11 @@
-@import '../../sass/base/index';
+@use "sass:map";
+@use "sass:string";
+@use "../../sass/base/colors";
+@use "../../sass/base/sizes";
 
 .dfo-expand {
-  padding: $padding-small 0;
-  border-bottom: 1px solid $secondary;
+  padding: sizes.$padding-small 0;
+  border-bottom: 1px solid colors.$secondary;
   font-size: 1.8rem;
 
   &__button {
@@ -13,12 +16,12 @@
     cursor: pointer;
 
     &:hover, &:focus {
-      color: $secondary;
+      color: colors.$secondary;
       outline: none;
     }
   }
 }
 
 .dfo-form__fieldset .dfo-expand {
-  margin-left: $padding-small;
+  margin-left: sizes.$padding-small;
 }

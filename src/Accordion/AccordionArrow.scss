@@ -1,4 +1,6 @@
-@import "../../sass/base/index";
+
+@use "sass:map";
+@use "sass:string";
 
 .dfo-accordion-arrow {
   transition: transform 0.1s ease;

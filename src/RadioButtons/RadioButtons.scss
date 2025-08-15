@@ -1,30 +1,33 @@
-@import "../../sass/base/index";
+@use "sass:map";
+@use "sass:string";
+@use "../../sass/base/colors";
+@use "../../sass/base/sizes";
 
 .dfo-radio-buttons {
   border: none;
   font-size: 1.8rem;
 
   + * {
-    margin-top: $padding-medium;
+    margin-top: sizes.$padding-medium;
   }
 
   + .dfo-expand {
-    margin-top: $padding-small;
+    margin-top: sizes.$padding-small;
   }
 
   input {
     -webkit-appearance: none;
     outline: none;
     box-shadow: none;
-    border: 2px solid $border;
-    margin: $padding-small 0;
+    border: 2px solid colors.$border;
+    margin: sizes.$padding-small 0;
     outline-color: transparent;
     outline-style: none;
     background-color: #fff;
-    padding: $padding-small;
+    padding: sizes.$padding-small;
     &:focus,
     &:hover {
-      border-color: $primaryLight;
+      border-color: colors.$primaryLight;
     }
   }
 
@@ -35,7 +38,7 @@
   }
 
   label {
-    margin-right: $padding-medium;
+    margin-right: sizes.$padding-medium;
     cursor: pointer;
   }
 
@@ -45,15 +48,15 @@
     height: 30px;
     line-height: 30px;
     margin-right: 0.5rem;
-    border-color: $primaryLight;
+    border-color: colors.$primaryLight;
     border-radius: 50%;
-    background-color: $background;
+    background-color: colors.$background;
     position: relative;
     cursor: pointer;
 
     &:hover,
     &:checked {
-      border-color: $primaryLight;
+      border-color: colors.$primaryLight;
     }
     &:hover,
     &:focus {
@@ -66,7 +69,7 @@
       width: 18px;
       height: 18px;
       border-radius: 50%;
-      background-color: $primaryLight;
+      background-color: colors.$primaryLight;
       position: absolute;
       top: 50%;
       left: 50%;

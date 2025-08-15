@@ -1,4 +1,7 @@
-@import "../../sass/base/index";
+
+@use "sass:map";
+@use "sass:string";
+@use "../../sass/base/colors";
 
 .dfo-accordion {
   list-style: none;
@@ -7,22 +10,22 @@
 }
 
 .dfo-accordion__panel--is-active .dfo-accordion-title {
-  background-color: $primary;
-  border-color: $primary;
-  color: $background;
+  background-color: colors.$primary;
+  border-color: colors.$primary;
+  color: colors.$background;
 }
 
 .dfo-accordion__panel .dfo-accordion-title {
-  border-top: 1px solid $secondary;
+  border-top: 1px solid colors.$secondary;
 }
 
 .dfo-accordion__panel:last-of-type .dfo-accordion-title {
-  border-bottom: 1px solid $secondary;
+  border-bottom: 1px solid colors.$secondary;
 }
 
 .dfo-accordion-title {
-  background-color: $darkbackground;
-  color: $text;
+  background-color: colors.$darkbackground;
+  color: colors.$text;
   padding: 1rem 2rem;
   font-weight: 600;
   cursor: pointer;
@@ -48,7 +51,7 @@
 
 .dfo-accordion-content {
   padding: 2rem;
-  background: $darkbackground;
+  background: colors.$darkbackground;
   display: none;
   &--is-active {
     display: block;

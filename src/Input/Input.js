@@ -35,19 +35,19 @@ const Input = ({
 };
 
 Input.defaultProps = {
+  // id: undefined,
   label: '',
-  placeholder: '',
+  // placeholder: '',
   error: '',
-  id: undefined,
   asterisk: false,
 };
 
 Input.propTypes = {
-  id: PropTypes.string,
+  // id: PropTypes.string,
   name: PropTypes.string.isRequired,
   label: PropTypes.string,
-  type: PropTypes.string.isRequired,
-  placeholder: PropTypes.string,
+  // type: PropTypes.string.isRequired,
+  // placeholder: PropTypes.string,
   error: PropTypes.any,
   asterisk: PropTypes.bool,
 };

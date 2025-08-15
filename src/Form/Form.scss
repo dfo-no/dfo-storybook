@@ -1,55 +1,58 @@
-@import "../../sass/base/index";
+@use "sass:map";
+@use "sass:string";
+@use "../../sass/base/colors";
+@use "../../sass/base/sizes";
 
 .dfo-form {
   width: 100%;
   max-width: unset;
-  margin-bottom: $element-gap;
-  background-color: $darkerbackground;
+  margin-bottom: sizes.$element-gap;
+  background-color: colors.$darkerbackground;
 
   &__fieldset {
     padding-inline-start: 0;
     padding-inline-end: 0;
-    padding: $padding-large;
+    padding: sizes.$padding-large;
 
-    @media screen and (max-width: $mobile) {
-      padding: $padding-medium;
+    @media screen and (max-width: sizes.$mobile) {
+      padding: sizes.$padding-medium;
     }
 
     &:not(:first-of-type) {
-      border-top: 5px solid $darkbackground;
+      border-top: 5px solid colors.$darkbackground;
     }
 
     &--reset-background {
       padding: 0;
-      padding-top: $padding-medium;
+      padding-top: sizes.$padding-medium;
       border: 0;
-      background-color: $darkbackground;
+      background-color: colors.$darkbackground;
     }
   }
 
   h2 {
     width: auto;
-    margin: 0 $padding-large $padding-semilarge $padding-large;
-    padding: $padding-large 0 $padding-semilarge;
-    border-bottom: 1px solid $primary;
+    margin: 0 sizes.$padding-large sizes.$padding-semilarge sizes.$padding-large;
+    padding: sizes.$padding-large 0 sizes.$padding-semilarge;
+    border-bottom: 1px solid colors.$primary;
 
-    @media screen and (max-width: $mobile) {
-      margin-left: $padding-medium;
-      margin-right: $padding-medium;
+    @media screen and (max-width: sizes.$mobile) {
+      margin-left: sizes.$padding-medium;
+      margin-right: sizes.$padding-medium;
     }
   }
 
   legend {
     font-size: 1.8rem;
     line-height: 1.8rem;
-    color: $text;
+    color: colors.$text;
   }
 
   h3, .dfo-form__fieldset-title {
     width: auto;
     font-size: 2.2rem;
     line-height: 2.2rem;
-    margin-bottom: $padding-medium;
+    margin-bottom: sizes.$padding-medium;
     font-family: "Source Sans Pro";
     font-weight: normal;
   }

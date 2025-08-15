@@ -1,9 +1,12 @@
-@import '../../sass/base/index';
+@use "sass:map";
+@use "sass:string";
+@use "../../sass/base/colors";
+@use "../../sass/base/sizes";
 
-$navBorderColor: $secondary;
+$navBorderColor: colors.$secondary;
 
-@if $site == "intranet" {
-  $navBorderColor: $darkborder;
+@if colors.$site == "intranet" {
+  $navBorderColor: colors.$darkborder;
 }
 
 .nav {
@@ -28,7 +31,7 @@ $navBorderColor: $secondary;
         &--left {
           .nav {
             &__link {
-              padding-left: $padding-medium + 2.2rem;
+              padding-left: sizes.$padding-medium + 2.2rem;
 
               &__symbol {
                 left: 0;
@@ -52,7 +55,7 @@ $navBorderColor: $secondary;
           color: #fff;
 
           &:hover {
-            color: $secondary;
+            color: colors.$secondary;
           }
         }
       }
@@ -70,22 +73,22 @@ $navBorderColor: $secondary;
   }
 
   &__link {
-    padding: $padding-small ($padding-medium + 2.2rem + $padding-large)
-      $padding-small $padding-medium;
+    padding: sizes.$padding-small (sizes.$padding-medium + 2.2rem + sizes.$padding-large)
+      sizes.$padding-small sizes.$padding-medium;
     text-decoration: none;
-    color: $text;
+    color: colors.$text;
     font-size: 1.8rem;
     display: block;
     position: relative;
 
     &:hover {
-      color: $secondary;
+      color: colors.$secondary;
     }
 
     &__symbol {
       position: absolute;
-      top: $padding-small + 0.3rem;
-      right: $padding-medium;
+      top: sizes.$padding-small + 0.3rem;
+      right: sizes.$padding-medium;
     }
   }
 
@@ -109,12 +112,12 @@ $navBorderColor: $secondary;
 
     &--left {
       .nav__link {
-        padding-right: $padding-medium;
-        padding-left: $padding-medium + 2.2rem + $padding-medium;
+        padding-right: sizes.$padding-medium;
+        padding-left: sizes.$padding-medium + 2.2rem + sizes.$padding-medium;
 
         &__symbol {
           right: auto;
-          left: $padding-medium;
+          left: sizes.$padding-medium;
         }
       }
     }

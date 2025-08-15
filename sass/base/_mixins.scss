@@ -1,5 +1,7 @@
+@use "sizes";
+
 @mixin block($lastChildZeroMargin: true) {
-  margin-bottom: $padding-large;
+  margin-bottom: sizes.$padding-large;
   clear: both;
 
   @if $lastChildZeroMargin {

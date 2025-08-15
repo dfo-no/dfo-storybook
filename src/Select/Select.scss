@@ -1,25 +1,28 @@
-@import '../../sass/base/index';
+@use "sass:map";
+@use "sass:string";
+@use "../../sass/base/colors";
+@use "../../sass/base/sizes";
 
 .dfo-select {
   font-size: 1.8rem;
-  margin-bottom: $padding-small;
+  margin-bottom: sizes.$padding-small;
   font-weight: 600;
-  color: $primary;
+  color: colors.$primary;
   display: block;
 
   + * {
-    margin-top: $padding-medium;
+    margin-top: sizes.$padding-medium;
   }
 
   + .dfo-expand {
-    margin-top: $padding-small;
+    margin-top: sizes.$padding-small;
   }
 
   select {
     padding: 1.8rem 2.6rem;
     outline: 0;
-    margin: $padding-small 0;
-    border: 2px solid $primaryLight;
+    margin: sizes.$padding-small 0;
+    border: 2px solid colors.$primaryLight;
     box-sizing: border-box;
     appearance: none;
     -webkit-appearance: none;
@@ -29,16 +32,16 @@
 
     &:hover,
     &:focus {
-      box-shadow: inset 0 0 0 1px $primaryLight;
+      box-shadow: inset 0 0 0 1px colors.$primaryLight;
     }
 
     &.dfo-select__placeholder {
-      color: $grayPlaceholder;
+      color: colors.$grayPlaceholder;
     }
   }
 
   option:not(:first-of-type) {
-    color: $text;
+    color: colors.$text;
   }
 
   .dfo-error-wrapper {
@@ -56,14 +59,14 @@
   }
 
   &--is-error {
-    margin-bottom: $padding-medium;
+    margin-bottom: sizes.$padding-medium;
 
     .dfo-error-wrapper::before {
-      background-color: $error;
+      background-color: colors.$error;
     }
 
     .dfo-error-wrapper__error {
-      padding-left: $padding-small;
+      padding-left: sizes.$padding-small;
       font-weight: normal;
       font-style: italic;
     }

@@ -1,8 +1,9 @@
-@import "./base/_index";
+@use "sass:map";
+@use "sass:string";
 
 // Build path to font file
 @function buildPath($nodeModule, $format, $fileBase, $fileSuffix) {
-  $folder: to-upper-case($format);
+  $folder: string.to-upper-case($format);
   $extension: $format;
 
   // Account for nested folder for woff/woff2
@@ -41,12 +42,12 @@ $fonts: (
 
 // Generate the font-face definitions
 @each $font, $data in $fonts {
-  $nodeModule: map-get($data, "nodeModule");
-  $fileBase: map-get($data, "fileBase");
+  $nodeModule: map.get($data, "nodeModule");
+  $fileBase: map.get($data, "fileBase");
 
-  @each $weight in map-get($data, "weights") {
-    @each $style in map-get($weight, "styles") {
-      $weightName: map-get($weight, "name");
+  @each $weight in map.get($data, "weights") {
+    @each $style in map.get($weight, "styles") {
+      $weightName: map.get($weight, "name");
 
       $localFontNameCompact: $fileBase;
       $localFontNameSpaced: $font;
@@ -72,11 +73,11 @@ $fonts: (
 
       $localFontNameCompact: "#{$localFontNameCompact}#{$fileSuffix}";
 
-      /* #{$font} #{map-get($weight, name)} (#{map-get($weight, weight)}) #{$style} */
+      /* #{$font} #{map.get($weight, name)} (#{map.get($weight, weight)}) #{$style} */
       @font-face {
         font-family: $font;
         font-style: $style;
-        font-weight: map-get($weight, weight);
+        font-weight: map.get($weight, weight);
         src:
           local("#{$localFontNameSpaced}"),
           local("#{$localFontNameCompact}"),

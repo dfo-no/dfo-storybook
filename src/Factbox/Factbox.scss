@@ -1,14 +1,18 @@
-@import '../../sass/base/index';
+@use "sass:map";
+@use "sass:string";
+@use "../../sass/base/mixins";
+@use "../../sass/base/colors";
+@use "../../sass/base/sizes";
 
 .dfo-factbox {
-  @include block;
-  border: 1px solid $secondary;
+  @include mixins.block;
+  border: 1px solid colors.$secondary;
   width: 100%;
   display: block;
-  padding: $padding-large;
-  max-width: $content-max-width;
+  padding: sizes.$padding-large;
+  max-width: sizes.$content-max-width;
 
-  @media screen and (max-width: $tablet) {
-    padding: $padding-medium;
+  @media screen and (max-width: sizes.$tablet) {
+    padding: sizes.$padding-medium;
   }
 }

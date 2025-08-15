@@ -1,4 +1,7 @@
-@import '../../sass/base/index';
+@use "sass:map";
+@use "sass:string";
+@use "../../sass/base/colors";
+@use "../../sass/base/sizes";
 
 @mixin takeOver {
   display: block;
@@ -7,12 +10,12 @@
   overflow: scroll;
   height: 100vh;
   max-height: 100%;
-  background: $primary;
+  background: colors.$primary;
 
   .dfo-header {
     &__wrapper {
       display: block;
-      background: $background;
+      background: colors.$background;
       padding: 0;
     }
 
@@ -20,8 +23,8 @@
       display: block;
       overflow: auto;
       border-top: 2px solid #e6e6e6;
-      background: $darkbackground;
-      padding: 0 $padding-medium;
+      background: colors.$darkbackground;
+      padding: 0 sizes.$padding-medium;
     }
   }
 }
@@ -33,7 +36,7 @@
     font-size: 1.6rem;
     text-decoration: none;
 
-    @media screen and (min-width: $burgerMenuBreakpoint + 1) {
+    @media screen and (min-width: (sizes.$burgerMenuBreakpoint + 1)) {
       margin: 0 1.75rem;
 
       &:first-child {
@@ -41,7 +44,7 @@
       }
     }
 
-    @media screen and (max-width: $burgerMenuBreakpoint) {
+    @media screen and (max-width: sizes.$burgerMenuBreakpoint) {
       display: block;
       width: 100%;
       margin-top: 2rem;
@@ -55,7 +58,7 @@
     cursor: pointer;
   }
   &__item button:hover {
-    color: $secondary;
+    color: colors.$secondary;
   }
   &__item--active span {
     text-decoration: underline;
@@ -63,8 +66,8 @@
 }
 
 .dfo-header {
-  border-bottom: 2px solid $border;
-  background: $background;
+  border-bottom: 2px solid colors.$border;
+  background: colors.$background;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -75,7 +78,7 @@
   }
   &__wrapper {
     display: flex;
-    margin: 0 (-$padding-medium);
+    margin: 0 (- sizes.$padding-medium);
     align-items: center;
     flex: 1;
 
@@ -86,10 +89,10 @@
       flex: 1 0;
       justify-content: space-between;
       align-items: center;
-      padding: $padding-small;
+      padding: sizes.$padding-small;
 
-      @media screen and (min-width: $tablet) {
-        padding: $padding-medium;
+      @media screen and (min-width: sizes.$tablet) {
+        padding: sizes.$padding-medium;
         min-height: 8rem;
       }
     }
@@ -97,9 +100,9 @@
   &__menu {
     display: flex;
     align-items: baseline;
-    padding: 0 $padding-medium;
+    padding: 0 sizes.$padding-medium;
 
-    @media screen and (max-width: $burgerMenuBreakpoint - 1) {
+    @media screen and (max-width: (sizes.$burgerMenuBreakpoint - 1)) {
       display: none;
     }
   }
@@ -115,7 +118,7 @@
     border: none;
     outline: none;
 
-    @media screen and (max-width: $burgerMenuBreakpoint - 1) {
+    @media screen and (max-width: (sizes.$burgerMenuBreakpoint - 1)) {
       display: block;
     }
     &__icon {
@@ -129,14 +132,14 @@
         margin-left: 0;
       }
     }
-    @media screen and (max-width: $burgerMenuBreakpoint - 1) {
+    @media screen and (max-width: (sizes.$burgerMenuBreakpoint - 1)) {
       @include takeOver();
     }
   }
 }
 
 .container {
-  margin: 0 $document-padding;
+  margin: 0 sizes.$document-padding;
 
   &--flex {
     display: flex;

@@ -1,17 +1,20 @@
-@import '../../sass/base/index';
+@use "sass:map";
+@use "sass:string";
+@use "../../sass/base/colors";
+@use "../../sass/base/sizes";
 
 .dfo-checkbox {
   display: flex;
-  color: $primary;
+  color: colors.$primary;
   break-inside: avoid-column;
   font-size: 1.8rem;
 
   + * {
-    margin-top: $padding-medium;
+    margin-top: sizes.$padding-medium;
   }
 
   + .dfo-expand {
-    margin-top: $padding-small;
+    margin-top: sizes.$padding-small;
   }
 
   &--inline {
@@ -19,7 +22,7 @@
     margin-top: 0 !important;
 
     &:not(:last-child) {
-      margin-right: $padding-medium;
+      margin-right: sizes.$padding-medium;
     }
 
     .dfo-checkbox {
@@ -50,7 +53,7 @@
     height: 3rem;
     flex-shrink: 0;
     margin-right: 1rem;
-    border: 2px solid $primaryLight;
+    border: 2px solid colors.$primaryLight;
     box-shadow: none;
     -webkit-appearance: none;
     outline: none;
@@ -60,12 +63,12 @@
       // url-encoded version of ./checked.svg 👇
       background: url("data:image/svg+xml,%3Csvg width='22' height='20' viewBox='0 0 22 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.40808 19.4221C7.53065 19.4735 7.66225 19.5 7.79531 19.5H7.84643L7.86374 19.4988C8.00954 19.4886 8.15116 19.4467 8.27886 19.3761C8.40599 19.3059 8.51615 19.209 8.60219 19.0925L8.60333 19.091L21.696 1.52125L20.0936 0.295166L7.6889 16.9412L1.71638 10.8893L0.297607 12.327L7.08122 19.2011C7.17444 19.2955 7.28545 19.3707 7.40808 19.4221Z' fill='white'/%3E%3C/svg%3E%0A") no-repeat center center;
       background-size: calc(3rem - 8px);
-      background-color: $primaryLight;
+      background-color: colors.$primaryLight;
 
       &:hover,
       &:focus {
-        background-color: $secondary;
-        border-color: $secondary;
+        background-color: colors.$secondary;
+        border-color: colors.$secondary;
       }
     }
 
@@ -90,5 +93,5 @@
 }
 
 .dfo-required-asterisk {
-  color: $error;
+  color: colors.$error;
 }

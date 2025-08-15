@@ -15,6 +15,7 @@ module.exports = ({mode, config}) => {
   loaderList.push({
     loader: "sass-resources-loader",
     options: {
+      hoistUseStatements: true,
       resources: [
         join(root, "./sass/reset.scss"),
         join(root, "./sass/fonts.scss")

@@ -1,7 +1,11 @@
-@import "../../sass/base/index";
+@use "sass:map";
+@use "sass:string";
+@use "../../sass/base/colors";
+@use "../../sass/base/sizes";
+@use "../../sass/base/mixins";
 
 @mixin block($lastChildZeroMargin:true) {
-  margin-bottom: $padding-large;
+  margin-bottom: sizes.$padding-large;
   clear: both;
 
   @if $lastChildZeroMargin {
@@ -12,21 +16,22 @@
 }
 
 .dfo-container {
-  margin: 0 $document-padding;
+  margin: 0 sizes.$document-padding;
 }
 
 .dfo-footer {
-  background-color: $primary;
-  padding: $padding-xlarge 0;
-  color: $textonprimary;
+  background-color: colors.$primary;
+  padding: sizes.$padding-xlarge 0;
+  color: colors.$textonprimary;
 
   &--compact {
-    padding: $padding-large 0;
+    padding: sizes.$padding-large 0;
   }
 
   &__contact-wrapper {
-    @media screen and (max-width: map-get($breakpoints, 'medium')) {
-      margin-top: $padding-large;
+    // @media screen and (max-width: map-get($breakpoints, 'medium')) { // $breakpoints is not defined in this context so commenting out to be able to compile when migrating to modern Sass.
+    @media screen and (max-width: sizes.$tablet) { // Since size of medium breakpoint is not known here, we use $tablet from _sizes.scss as best guess.
+      margin-top: sizes.$padding-large;
     }
   }
 
@@ -43,7 +48,7 @@
   }
 
   &__logo {
-    margin-bottom: $padding-medium;
+    margin-bottom: sizes.$padding-medium;
   }
 }
 
@@ -63,7 +68,7 @@
           color: #fff;
 
           &:hover {
-            color: $secondary;
+            color: colors.$secondary;
           }
         }
       }
@@ -81,35 +86,35 @@
   }
 
   &__link {
-    padding: $padding-small ($padding-medium + 2.2rem + $padding-large) $padding-small $padding-medium;
+    padding: sizes.$padding-small (sizes.$padding-medium + 2.2rem + sizes.$padding-large) sizes.$padding-small sizes.$padding-medium;
     text-decoration: none;
-    color: $text;
+    color: colors.$text;
     font-size: 1.8rem;
     display: block;
     position: relative;
 
     &:hover {
-      color: $secondary;
+      color: colors.$secondary;
     }
 
     &__symbol {
       position: absolute;
-      top: $padding-small + 0.3rem;
-      right: $padding-medium;
+      top: sizes.$padding-small + 0.3rem;
+      right: sizes.$padding-medium;
     }
   }
 
   &__item {
-    border-bottom: 1px solid $secondary;
+    border-bottom: 1px solid colors.$secondary;
     font-weight: normal;
     cursor: pointer;
 
     &:first-child {
-      border-top: 1px solid $secondary;
+      border-top: 1px solid colors.$secondary;
     }
 
     &:nth-last-child(1) {
-      border-bottom: 1px solid $secondary;
+      border-bottom: 1px solid colors.$secondary;
     }
   }
 }

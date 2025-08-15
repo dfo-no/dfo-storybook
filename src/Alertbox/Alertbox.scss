@@ -1,8 +1,11 @@
-@import '../../sass/base/index';
+
+@use "sass:map";
+@use "sass:string";
+@use "../../sass/base/colors";
 
 .dfo-alertbox {
-  background-color: $error;
-  color: $textonprimary;
+  background-color: colors.$error;
+  color: colors.$textonprimary;
   font-size: 19px;
   font-weight: 600;
   padding-bottom: 5px;

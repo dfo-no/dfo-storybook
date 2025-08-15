@@ -1,5 +1,5 @@
-@import './_functions';
-@import './_sizes';
-@import './_colors';
-@import './_mixins';
-@import './foundation';
+@use '_functions';
+@use '_sizes';
+@use '_colors';
+@use '_mixins';
+@use '_foundation';

@@ -1,8 +1,10 @@
-@import '../../sass/base/index';
+@use "sass:map";
+@use "sass:string";
+@use "../../sass/base/sizes";
 
 .dfo-checkboxgroup {
   &--two-cols {
     columns: 2 200px;
-    column-gap: $padding-medium;
+    column-gap: sizes.$padding-medium;
   }
 }

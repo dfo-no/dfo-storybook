@@ -1,6 +1,9 @@
-@import "./base/_index";
+// @use "base/foundation";
+@use "base/mixins";
+@use "base/colors";
+@use "base/sizes";
 
-@include foundation-global-styles;
+// @include foundation-global-styles;
 
 * {
   margin: 0;
@@ -13,7 +16,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  color: $text;
+  color: colors.$text;
 }
 
 html {
@@ -34,7 +37,7 @@ figure img {
 }
 
 blockquote {
-  color: $primary;
+  color: colors.$primary;
   font-size: 3.2rem;
 }
 
@@ -63,17 +66,17 @@ body {
   font-style: normal;
   font-weight: 400;
   font-size: 1.8rem;
-  color: $text;
+  color: colors.$text;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 a {
-  color: $primary;
+  color: colors.$primary;
 
   &:hover {
-    color: $secondary;
+    color: colors.$secondary;
   }
 }
 
@@ -95,14 +98,14 @@ h6,
 .h1,
 .h2,
 .h3 {
-  color: $primary;
+  color: colors.$primary;
   margin: 0 0 0.125em;
   line-height: 1.25em;
 
   ol + &,
   ul + &,
   p + & {
-    margin-top: $padding-large;
+    margin-top: sizes.$padding-large;
   }
 }
 
@@ -122,11 +125,11 @@ h1,
 .h1 {
   font-size: 5rem;
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: sizes.$tablet) {
     font-size: 5rem * 0.75;
   }
 
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: sizes.$mobile) {
     font-size: 5rem * 0.6;
   }
 }
@@ -135,7 +138,7 @@ h2,
 .h2 {
   font-size: 2.2rem;
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: sizes.$tablet) {
     font-size: 2.2rem * 0.9;
   }
 }
@@ -161,12 +164,12 @@ h5,
 
 ul,
 ol {
-  margin: $padding-medium 0;
-  padding-left: $padding-large;
+  margin: sizes.$padding-medium 0;
+  padding-left: sizes.$padding-large;
 }
 
 blockquote {
-  margin: $padding-large 0;
+  margin: sizes.$padding-large 0;
 }
 
 fieldset,
@@ -181,7 +184,7 @@ form {
 
 fieldset > legend {
   float: left;
-  margin-bottom: $padding-medium;
+  margin-bottom: sizes.$padding-medium;
 
   + * {
     clear: left;
@@ -189,7 +192,7 @@ fieldset > legend {
 }
 
 // Stuff from foundation. Can we get rid of this over time?
-@include foundation-flex-grid;
-@include foundation-flex-classes;
-@include foundation-visibility-classes;
-@include foundation-media-object;
+// @include foundation-flex-grid;
+// @include foundation-flex-classes;
+// @include foundation-visibility-classes;
+// @include foundation-media-object;

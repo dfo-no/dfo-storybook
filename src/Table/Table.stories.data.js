@@ -22,7 +22,7 @@ export default function ExampleTableHtml() {
       <tbody>
         <tr>
           <td>Antall virksomheter med miljøavtrykk dokumentert per år</td>
-          <td style={{ textAlign: 'right' }}>&nbsp;</td>
+          <td style={{ textAlign: 'right' }} aria-label="Celle med et mellomrom">&nbsp;</td>
           <td style={{ textAlign: 'right' }}>22</td>
           <td style={{ textAlign: 'right' }}>30</td>
           <td style={{ textAlign: 'right' }}>40</td>
@@ -49,7 +49,7 @@ export default function ExampleTableHtml() {
         </tr>
         <tr>
           <td>Antall virksomheter med redusert miljøavtrykk per år</td>
-          <td style={{ textAlign: 'right' }}>&nbsp;</td>
+          <td style={{ textAlign: 'right' }} aria-label="Celle med et mellomrom">&nbsp;</td>
           <td style={{ textAlign: 'right' }}>14</td>
           <td style={{ textAlign: 'right' }}>17</td>
           <td style={{ textAlign: 'right' }}>20</td>
