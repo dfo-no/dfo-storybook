@@ -12,6 +12,13 @@ For a smoother workflow you can `npm link` the components into your project and 
 
 When that is done, you can go to a project where you've installed `@dfo/components` as a dependency and write `npm link @dfo/components`. NPM will replace the old folder with the dependency from npmjs.com with a symlink to the folder you just linked.
 
+### WORKAROUND: Non-maintained package (react-storybook-addon-static-markup)
+Add this to package.json:
+"react-storybook-addon-static-markup": "file:../react-storybook-addon-static-markup",
+
+Or refer directly to fork in GitHub: TODO...
+Or refer directly to fork outside GitHub: TODO...
+
 ### 📋👮 Code rules and guidelines
 
 - All styles are written with SCSS (SASS)
