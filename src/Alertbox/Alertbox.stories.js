@@ -1,13 +1,19 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { Alertbox } from '.';
 
-storiesOf('Alertbox', module)
-  .add(
-    'Alertbox',
-    () => (
-      <Alertbox>
+export default {
+  title: 'Alertbox',
+  component: Alertbox,
+  parameters: [
+    {
+      css: require('!to-string-loader!css-loader!sass-loader?!./Alertbox.scss'),
+    },
+  ]
+};
+
+export const Default = () => (
+  <Alertbox>
         <p>This is an important announcement.</p>
         <p>It is perfectly fine to have more than one paragraph.</p>
         <p>
@@ -17,10 +23,4 @@ storiesOf('Alertbox', module)
           sapien urna, egestas sagittis quam vitae, tempor volutpat eros.
         </p>
       </Alertbox>
-    ),
-    {
-      /* eslint-disable import/no-webpack-loader-syntax */
-      css: require('!to-string-loader!css-loader!sass-loader?!./Alertbox.scss'),
-      /* eslint-enable import/no-webpack-loader-syntax */
-    },
-  );
+);

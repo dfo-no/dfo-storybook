@@ -1,11 +1,13 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-
 import { Factbox } from '.';
 
-storiesOf('Factbox', module)
-  .add('Factbox', () => (
-    <Factbox>
+export default {
+  title: 'Factbox',
+  component: Factbox
+};
+
+export const DefaultFactbox = () => (
+  <Factbox>
       <h2>Nøkkeltall</h2>
       <ul>
         <li>420 ansatte (2017)</li>
@@ -25,4 +27,4 @@ storiesOf('Factbox', module)
         </li>
       </ul>
     </Factbox>
-  ));
+);

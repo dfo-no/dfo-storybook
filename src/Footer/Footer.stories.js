@@ -1,32 +1,29 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { object } from '@storybook/addon-knobs';
-
 import Footer from './Footer';
 
-storiesOf('Footer', module)
-  .add(
-    'Footer with links',
-    () => (
-      <Footer links={object('links', [
-        { title: 'Link title', uri: '/' },
-        { title: 'Link title', uri: '/' },
-        { title: 'Link title', uri: '/' },
-      ])}
-      />
-    ),
-    {
-      /* eslint-disable import/no-webpack-loader-syntax */
-      css: require('!to-string-loader!css-loader!sass-loader?!./Footer.scss'),
-      /* eslint-enable import/no-webpack-loader-syntax */
-    },
-  )
-  .add('Footer without links',
-    () => (
-      <Footer />
-    ),
-    {
-      /* eslint-disable import/no-webpack-loader-syntax */
-      css: require('!to-string-loader!css-loader!sass-loader?!./Footer.scss'),
-      /* eslint-enable import/no-webpack-loader-syntax */
-    });
+export default {
+  title: 'Footer',
+  component: Footer,
+  parameters: {
+    css: require('!to-string-loader!css-loader!sass-loader?!./Footer.scss'),
+  },
+  argTypes: {
+    links: { control: 'object', description: 'Array of link objects with title and uri properties' },
+  }
+};
+
+const Template = (args) => <Footer {...args} />;
+
+export const FooterWithLinks = Template.bind({});
+
+FooterWithLinks.args = {
+  links: [
+    { title: 'Link title', uri: '/' },
+    { title: 'Link title', uri: '/' },
+    { title: 'Link title', uri: '/' },
+  ]
+};
+
+export const FooterWithoutLinks = Template.bind({});
+
+FooterWithLinks.args = {};

@@ -1,5 +1,6 @@
 import React from "react";
-import addons from "@storybook/addons";
+// import addons from "@storybook/addons";
+import { addons } from "@storybook/manager-api";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { STORY_CHANGED } from '@storybook/core-events';
 import * as cssbeautify from "cssbeautify";

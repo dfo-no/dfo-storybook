@@ -1,6 +1,7 @@
 module.exports = {
   parser: 'babel-eslint',
-  extends: 'airbnb',
+  // extends: ['airbnb', 'plugin:storybook/recommended'],  // TODO: Evaluate activate when compatibility with eslint-plugin-react-hooks@5.2.0 is confirmed.
+  extends: ['plugin:storybook/recommended'],
   rules: {
     'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'], // allow Windows-style line endings on Windows platform, git should commit Unix-style
     'max-len': [

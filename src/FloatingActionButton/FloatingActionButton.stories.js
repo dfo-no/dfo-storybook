@@ -1,9 +1,6 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { boolean } from '@storybook/addon-knobs';
+import { action } from 'storybook/actions';
 import PropTypes from 'prop-types';
-
 import { FloatingActionButton } from '.';
 
 const Chat = ({ closeParent }) => (
@@ -27,54 +24,126 @@ const options = {
   /* eslint-enable import/no-webpack-loader-syntax */
 };
 
-storiesOf('FloatingActionButton', module)
-  .add(
-    'Basic',
-    () => (
-      <>
-        <div style={{ height: '1500px' }} />
-        <div style={{ position: 'absolute bottom 0' }}>
-          <FloatingActionButton onClick={action('clicked')} SubComponent={Chat} />
-        </div>
-      </>
-    ),
+export default {
+  title: 'FloatingActionButton',
+  component: FloatingActionButton,
+  parameters: [
     options,
-  )
-  .add(
-    'Chat icon version',
-    () => (
-      <>
-        <div style={{ height: '1500px' }} />
-        <FloatingActionButton onClick={action('clicked')} SubComponent={Chat} chat />
-      </>
-    ),
-    options,
-  )
-  .add(
-    'Absolute position',
-    () => (
-      <>
-        <div style={{ height: '1500px' }} />
+  ],
+  argTypes: {
+    onClick: { action: 'clicked', description: 'Function to call when the button is clicked' },
+    SubComponent: { control: 'object', description: 'Sub-component to render inside the button' },
+    chat: { control: 'boolean', description: 'Use chat icon instead of default icon' },
+    absolute: { control: 'boolean', description: 'Position the button absolutely' },
+    overRidePosition: { control: 'object', description: 'Override the default position of the button' },
+    cta: { control: 'boolean', description: 'Call to action style' },
+    invert: { control: 'boolean', description: 'Invert colors for light version' },
+    danger: { control: 'boolean', description: 'Danger style for the button' },
+  },
+};
 
-        <FloatingActionButton onClick={action('clicked')} SubComponent={Chat} absolute />
-      </>
-    ),
-    options,
-  )
-  .add(
-    'Move Position',
-    () => (
-      <>
-        <div style={{ height: '1500px' }} />
-        <FloatingActionButton onClick={action('clicked')} SubComponent={Chat} overRidePosition={{ bottom: '40%', right: '20%' }} />{' '}
-      </>
-    ),
-    options,
-  )
-  .add('Call to action', () => <FloatingActionButton SubComponent={Chat} cta={boolean('cta', true)} onClick={action('clicked')} />, options)
-  .add(
-    'Inverted light version',
-    () => <FloatingActionButton SubComponent={Chat} invert={boolean('Invert', true)} onClick={action('clicked')} />,
-    options,
-  )
-  .add('Danger button', () => <FloatingActionButton SubComponent={Chat} danger={boolean('danger', true)} onClick={action('clicked')} />, options);
+const TemplateBasic = (args) => (
+  <>
+    <div style={{ height: '1500px' }} />
+    <div style={{ position: 'absolute', bottom: 0 }}>
+      <FloatingActionButton {...args} />
+    </div>
+  </>
+);
+
+export const Basic = TemplateBasic.bind({});
+Basic.args = {
+  onClick: action('clicked'),
+  SubComponent: Chat,
+};
+
+// export const Basic = () => (
+//   <>
+//     <div style={{ height: '1500px' }} />
+//     <div style={{ position: 'absolute', bottom: 0 }}>
+//       <FloatingActionButton onClick={action('clicked')} SubComponent={Chat} />
+//     </div>
+//   </>
+// );
+
+const TemplateSimple = (args) => (
+  <>
+    <div style={{ height: '1500px' }} />
+    <FloatingActionButton {...args} />
+  </>
+);
+
+export const ChatIconVersion = TemplateSimple.bind({});
+ChatIconVersion.args = {
+  onClick: action('clicked'),
+  SubComponent: Chat,
+  chat: true,
+};
+
+// export const ChatIconVersion = () => (
+//   <>
+//     <div style={{ height: '1500px' }} />
+//     <FloatingActionButton onClick={action('clicked')} />
+//   </>
+// );
+
+export const AbsolutePosition = TemplateSimple.bind({});
+AbsolutePosition.args = {
+  onClick: action('clicked'),
+  SubComponent: Chat,
+  absolute: true,
+};
+
+// export const AbsolutePositionn = () => (
+//   <>
+//     <div style={{ height: '1500px' }} />
+//     <FloatingActionButton onClick={action('clicked')} SubComponent={Chat} absolute />
+//   </>
+// );
+
+export const MovePosition = TemplateSimple.bind({});
+MovePosition.args = {
+  onClick: action('clicked'),
+  SubComponent: Chat,
+  overRidePosition: { bottom: '40%', right: '20%' },
+};
+
+// export const MovePosition = () => (
+//   <>
+//     <div style={{ height: '1500px' }} />
+//     <FloatingActionButton onClick={action('clicked')} SubComponent={Chat} overRidePosition={{ bottom: '40%', right: '20%' }} />
+//   </>
+// );
+
+export const CallToAction = TemplateSimple.bind({});
+CallToAction.args = { 
+  onClick: action('clicked'),
+  SubComponent: Chat,
+  cta: true,
+};
+
+// export const CallToAction = () => (
+//   <FloatingActionButton SubComponent={Chat} cta={boolean('cta', true)} onClick={action('clicked')} />
+// );
+
+export const InvertedLightVersion = TemplateSimple.bind({});
+InvertedLightVersion.args = { 
+  onClick: action('clicked'),
+  SubComponent: Chat,
+  invert: true,
+};
+
+// export const InvertedLightVersion = () => (
+//   <FloatingActionButton SubComponent={Chat} invert={boolean('Invert', true)} onClick={action('clicked')} />
+// );
+
+export const DangerButton = TemplateSimple.bind({});
+DangerButton.args = { 
+  onClick: action('clicked'),
+  SubComponent: Chat,
+  danger: true,
+};
+
+// export const DangerButton = () => (
+//   <FloatingActionButton SubComponent={Chat} danger={boolean('danger', true)} onClick={action('clicked')} />
+// );

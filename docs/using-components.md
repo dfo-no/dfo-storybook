@@ -61,7 +61,7 @@ module.exports = {
       "@babel/preset-react",
     ],
     "plugins": [
-      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-transform-class-properties",
     ],
 },
 ```

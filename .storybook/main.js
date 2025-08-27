@@ -1,17 +1,20 @@
 module.exports = {
     stories: ['../src/**/*.stories.@(js|mdx)'],
+    staticDirs: ['../public'], // 👈 This replaces the -s flag in Storybook 8 and above
     addons: [
-        '@storybook/addon-notes',
-        '@storybook/addon-actions',
-        '@storybook/addon-knobs',
+        // '@storybook/addon-notes', // TODO: Fix this when the addon is updated to work with Storybook 9. https://www.npmjs.com/package/@storybook/addon-notes?activeTab=readme
+        // '@storybook/addon-knobs',
         '@storybook/addon-links',
-        '@storybook/addon-viewport',
         '@storybook/addon-a11y',
         '@storybook/addon-options',
         '@storybook/preset-scss',
-        'react-storybook-addon-static-markup',
+        '@storybook/preset-create-react-app', // Added as recommended by Storybook 9
+        'react-storybook-addon-static-markup'
     ],
-    core: {
-        builder: 'webpack5',
+    framework: {
+        name: '@storybook/react-webpack5',
+        options: {
+            builder: '@storybook/react-webpack5',
+        },
     },
 }

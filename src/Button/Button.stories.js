@@ -1,85 +1,71 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { text, boolean } from '@storybook/addon-knobs';
-
 import { Button } from '.';
 
 const options = {
   /* eslint-disable import/no-webpack-loader-syntax */
   css: require('!to-string-loader!css-loader!sass-loader?!./Button.scss'),
-/* eslint-enable import/no-webpack-loader-syntax */
+  /* eslint-enable import/no-webpack-loader-syntax */
 };
 
-storiesOf('Button', module)
-  .add(
-    'Basic',
-    () => (
-      <div>
-        <Button onClick={action('clicked')}>
-          {text('Text', 'Sign up for our newsletter')}
-        </Button>
-      </div>
-    ),
-    options,
-  )
-  .add(
-    'Call to action',
-    () => (
-      <Button
-        cta={boolean('cta', true)}
-        onClick={action('clicked')}
-      >
-        {text('Text', 'Sign up for our newsletter')}
-      </Button>
-    ),
-    options,
-  )
-  .add(
-    'Inverted light version',
-    () => (
-      <Button
-        invert={boolean('Invert', true)}
-        onClick={action('clicked')}
-      >
-        {text('Text', 'Sign up for our newsletter')}
-      </Button>
-    ),
-    options,
-  )
-  .add(
-    'Danger button',
-    () => (
-      <Button
-        danger={boolean('danger', true)}
-        onClick={action('clicked')}
-      >
-        {text('Text', 'Delete all dem datas 😰')}
-      </Button>
-    ),
-    options,
-  )
-  .add(
-    'CTA link disguised as button',
-    () => (
-      <Button
-        plainLink={boolean('Link', true)}
-        cta={boolean('cta', true)}
-        href="/somewhere"
-      >
-        {text('Text', 'Sign up for our newsletter')}
-      </Button>
-    ),
-    options,
-  )
-  .add(
-    'Disabled',
-    () => (
-      <div>
-        <Button onClick={action('clicked')} disabled>
-          {text('Text', 'Sign up for our newsletter')}
-        </Button>
-      </div>
-    ),
-    options,
-  );
+export default {
+  title: 'Button',
+  component: Button,
+  parameters: {
+    ...options,
+  },
+  argTypes: {
+    children: { control: 'text' },
+    cta: { control: 'boolean' },
+    invert: { control: 'boolean' },
+    danger: { control: 'boolean' },
+    plainLink: { control: 'boolean' },
+    disabled: { control: 'boolean' },
+    href: { control: 'text' },
+    onClick: { action: 'clicked' },
+  },
+};
+
+const Template = (args) => <Button {...args} />;
+
+export const Basic = Template.bind({});
+Basic.args = {
+  children: 'Sign up for our newsletter',
+  onClick: action('clicked'),
+};
+
+export const CallToAction = Template.bind({});
+CallToAction.args = {
+  children: 'Sign up for our newsletter',
+  cta: true,
+  onClick: action('clicked'),
+};
+
+export const InvertedLightVersion = Template.bind({});
+InvertedLightVersion.args = {
+  children: 'Sign up for our newsletter',
+  invert: true,
+  onClick: action('clicked'),
+};
+
+export const DangerButton = Template.bind({});
+DangerButton.args = {
+  children: 'Delete all dem datas 😰',
+  danger: true,
+  onClick: action('clicked'),
+};
+
+export const CTALinkDisguisedAsButton = Template.bind({});
+CTALinkDisguisedAsButton.args = {
+  children: 'Sign up for our newsletter',
+  plainLink: true,
+  cta: true,
+  href: '/somewhere',
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  children: 'Sign up for our newsletter',
+  disabled: true,
+  onClick: action('clicked'),
+};

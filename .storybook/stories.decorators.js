@@ -1,5 +1,5 @@
 import React from "react";
-import { ShowStaticMarkup as SSM } from "react-storybook-addon-static-markup";
+// import { ShowStaticMarkup as SSM } from "react-storybook-addon-static-markup"; // TODO: StaticMarkup - Evaluate enabling after rewriting this functionality to fit better into Storybook 9.
 
 export const DarkBackground = storyFn => (
   <div
@@ -21,4 +21,4 @@ export const Padding = storyFn => (
   </div>
 );
 
-export const ShowStaticMarkup = storyFn => <SSM>{storyFn()}</SSM>;
+// export const ShowStaticMarkup = storyFn => <SSM>{storyFn()}</SSM>; // TODO: StaticMarkup - Evaluate enabling after rewriting this functionality to fit better into Storybook 9.

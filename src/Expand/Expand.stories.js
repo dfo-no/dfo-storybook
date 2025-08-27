@@ -1,6 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-
 import { Expand } from '.';
 
 const options = {
@@ -9,13 +7,16 @@ const options = {
 /* eslint-enable import/no-webpack-loader-syntax */
 };
 
-storiesOf('Expand', module)
-  .add(
-    'Basic',
-    () => (
-      <Expand title="I don't know my birth date">
-        Bla bla ukeblad
-      </Expand>
-    ),
-    options,
-  );
+export default {
+  title: 'Expand',
+  component: Expand,
+  parameters: [
+    options
+  ]
+};
+
+export const Basic = () => (
+  <Expand title="I don't know my birth date">
+    Bla bla ukeblad
+  </Expand>
+);
