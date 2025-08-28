@@ -1,6 +1,18 @@
 module.exports = {
-  parser: 'babel-eslint',
-  // extends: ['airbnb', 'plugin:storybook/recommended'],  // TODO: Evaluate activate when compatibility with eslint-plugin-react-hooks@5.2.0 is confirmed.
+  parser: '@babel/eslint-parser',
+  parserOptions: {
+    requireConfigFile: false,
+    babelOptions: {
+      presets: ['@babel/preset-env','@babel/preset-react'],
+    },
+    ecmaVersion: 2021,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
+  plugins: ['react', 'jsx-a11y', 'import'],
+  // extends: ['airbnb', 'plugin:storybook/recommended'],  // TODO: Evaluate activate when compatibility with e.g. eslint-plugin-react-hooks@5.2.0 and other upgraded packages is confirmed.
   extends: ['plugin:storybook/recommended'],
   rules: {
     'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'], // allow Windows-style line endings on Windows platform, git should commit Unix-style
@@ -56,5 +68,6 @@ module.exports = {
   env: {
     browser: true,
     node: true,
+    es2021: true,
   },
 };
