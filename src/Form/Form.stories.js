@@ -88,7 +88,7 @@ export const CompleteForm = () => (
           name="ledercheck"
           label="Del 1"
           description="
-            Her er det litt plass til tekst om noe om etteller annet eller litt til. Her er det litt plass til tekst om noe om etteller annet eller litt til.
+            Her er det litt plass til tekst om noe om ett eller annet eller litt til.
           "
         />
         <Checkbox
