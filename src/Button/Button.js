@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as classNames from 'classnames';
 
-import './Button.scss';
+// import './Button.scss';
 
 export default function Button({
   children = [],

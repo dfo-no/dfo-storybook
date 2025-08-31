@@ -8,22 +8,9 @@ module.exports = ({mode, config}) => {
     "apekatt.scss".match(rule.test)
   );
 
-  // Add sass-resource-loader to style rule
-  // .use is used when npm run dev
-  // .loader is used when npm run build
-  const loaderList = sassRule.use || sassRule.loader;
-  loaderList.push({
-    loader: "sass-resources-loader",
-    options: {
-      hoistUseStatements: true,
-      resources: [
-        join(root, "./sass/reset.scss"),
-        join(root, "./sass/fonts.scss")
-      ]
-    }
-  });
+  // Removed sass-resources-loader injection
 
-  config.output.publicPath = '/';
+  // config.output.publicPath = '/'; // Commented out as it caused issues with Storybook 9 -> It gave a double slash in the path to static files. It's now automatically handled by Storybook.
 
   return config;
 };

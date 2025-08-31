@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as classNames from 'classnames';
 
-import './FloatingActionButton.scss';
+// import './FloatingActionButton.scss';
 
 export default class FloatingActionButton extends React.Component {
   constructor(props) {

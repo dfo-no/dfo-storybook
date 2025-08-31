@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import './Select.scss';
+// import './Select.scss';
 
 // Options can be expressed as either array of strings or an object with keys.
 function parseSelectOptions({ options, displayAttr }) {

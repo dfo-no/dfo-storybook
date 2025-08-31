@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './Form.scss';
+// import './Form.scss';
 
 export default function Form({ children, className, ...rest }) {
   return <form className="dfo-form" {...rest}>{children}</form>;

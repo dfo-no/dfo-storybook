@@ -1,5 +1,4 @@
 import React from "react";
-// import { text, boolean, object } from "@storybook/addon-knobs";
 import classNames from 'classnames'
 
 var decodeHTML = function (html) {

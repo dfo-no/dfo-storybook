@@ -1,5 +1,5 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import { Select } from '..';
 
 const selectStyles = require('!to-string-loader!css-loader!sass-loader?!../Select/Select.scss');

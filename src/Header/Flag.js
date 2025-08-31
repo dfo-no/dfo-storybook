@@ -3,8 +3,8 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import FlagNO from './FlagNO.svg';
-import FlagEN from './FlagEN.svg';
+import { ReactComponent as FlagNO } from './FlagNO.svg';
+import { ReactComponent as FlagEN } from './FlagEN.svg';
 
 export default function Flag({ code, ...rest }) {
   switch (code) {

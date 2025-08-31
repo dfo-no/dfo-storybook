@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import { Arrow } from '../Arrow';
 
-import './Expand.scss';
+// import './Expand.scss';
 
 export default class Expand extends Component {
   constructor(props) {

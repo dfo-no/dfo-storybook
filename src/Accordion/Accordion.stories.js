@@ -1,6 +1,6 @@
 import React from 'react';
 import { action } from 'storybook/actions';
-// import { object } from '@storybook/addon-knobs';
+// import { object } from '@storybook/addon-controls';
 import { Accordion } from '.';
 
 export default {
@@ -14,9 +14,10 @@ export default {
   }
 };
 
-export const Default = () => (
-  <Accordion
-    panels={object('Panels', [
+export const Default = (args) => <Accordion {...args} />;
+
+Default.args = {
+    panels: [
       {
         heading: 'Something vague about the role structure',
         id: '1',
@@ -36,7 +37,6 @@ export const Default = () => (
         id: '3',
         content: <p>Something about something in here</p>,
       },
-    ])}
-    onPanelClicked={action('onPanelClicked')}
-  />
-);
+    ],
+    onPanelClicked: () => action('onPanelClicked')
+};

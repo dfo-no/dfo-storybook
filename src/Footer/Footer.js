@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import NavSymbol from './FooterNavSymbol';
-import LogoWhite from './logo-white.svg';
+import { ReactComponent as LogoWhite } from './logo-white.svg';
 
-import './Footer.scss';
+// import './Footer.scss';
 
 export default function Footer({
   links,

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import './AccordionArrow.scss';
+// import './AccordionArrow.scss';
 
 export default function AccordionArrow({
   fill, modifier, large, active,
