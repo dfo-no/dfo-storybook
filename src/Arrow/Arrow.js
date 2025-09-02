@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-// import './Arrow.scss';
+import './Arrow.scss';
 
 export default function Arrow({
   fill, modifier, large, active,

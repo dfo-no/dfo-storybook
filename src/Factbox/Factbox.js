@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import './Factbox.scss';
+import './Factbox.scss';
 
 export default function Factbox({ children = [] }) {
   return children.length > 0 ? (

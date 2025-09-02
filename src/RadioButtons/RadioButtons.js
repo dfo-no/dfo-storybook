@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import './RadioButtons.scss';
+import './RadioButtons.scss';
 
 export default function RadioButtons({ name, options = [] }) {
   return (

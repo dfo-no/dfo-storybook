@@ -1,20 +1,52 @@
+const path = require('path');
+
 module.exports = {
-    stories: ['../src/**/*.stories.@(js|mdx)'],
-    staticDirs: ['../public'], // 👈 This replaces the -s flag in Storybook 8 and above
-    addons: [
-        // '@storybook/addon-notes', // TODO: Fix this when the addon is updated to work with Storybook 9. https://www.npmjs.com/package/@storybook/addon-notes?activeTab=readme
-        '@storybook/addon-a11y',
-        // '@storybook/addon-controls',
-        '@storybook/addon-links',
-        '@storybook/addon-options',
-        '@storybook/preset-scss',
-        '@storybook/preset-create-react-app', // Added as recommended by Storybook 9
-        'react-storybook-addon-static-markup'
-    ],
-    framework: {
-        name: '@storybook/react-webpack5',
-        options: {
-            builder: '@storybook/react-webpack5',
-        },
+  stories: ['../src/**/*.stories.@(js|mdx)'],
+  staticDirs: ['../public'],
+  addons: [
+    '@storybook/addon-a11y',
+    '@storybook/addon-links',
+    '@storybook/addon-options',
+    {
+      name: '@storybook/addon-styling-webpack',
+      options: {
+        rules: [
+          {
+            test: /\.s[ac]ss$/i,
+            use: [
+              'style-loader',
+              'css-loader',
+              {
+                loader: 'sass-loader',
+                options: {
+                  implementation: require('sass'),
+                },
+              },
+            ],
+            include: path.resolve(__dirname, '../src'),
+          },
+        ],
+      },
     },
-}
+  ],
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: {
+      builder: '@storybook/react-webpack5',
+    },
+  },  
+  webpackFinal: async (config) => {
+    config.module.rules.push({
+      test: /\.(js|jsx)$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env', '@babel/preset-react'],
+        },
+      }
+    });
+    
+    return config;
+  },
+};

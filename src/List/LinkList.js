@@ -4,7 +4,7 @@ import * as classNames from 'classnames';
 
 import LinkListSymbol from './LinkListSymbol';
 
-// import './LinkList.scss';
+import './LinkList.scss';
 
 export default function LinkList({ title, links, invert }) {
   // string titles are rendered as h2 by default

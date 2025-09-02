@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import './Header.scss';
+import './Header.scss';
 
 export default function Burger({
   className, open, fill, width, height,

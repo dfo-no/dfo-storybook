@@ -1,6 +1,6 @@
 import React from "react";
 // import addons, { makeDecorator } from "@storybook/addons";
-import { addons } from "@storybook/manager-api";
+import { addons } from "storybook/manager-api";
 import { makeDecorator } from "@storybook/preview-api";
 
 export const withCSS = makeDecorator({

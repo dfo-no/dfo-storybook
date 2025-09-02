@@ -7,7 +7,7 @@ import Logo from './Logo';
 import Tr from './Translate';
 import HeaderLanguageOptions from './HeaderLanguageOptions';
 
-// import './Header.scss';
+import './Header.scss';
 
 export default class Header extends React.Component {
   constructor(props) {

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { background } from 'storybook/internal/theming';
 
-// import './Alertbox.scss';
+import './Alertbox.scss';
 
 // the img 👇is a url-encoded version of alert.svg
 export default function Alertbox({ children = [] }) {

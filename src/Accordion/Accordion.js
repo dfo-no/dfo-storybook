@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import AccordionPanel from './AccordionPanel';
 
-// import './Accordion.scss';
+import './Accordion.scss';
 
 export default class Accordion extends React.Component {
   constructor(props) {

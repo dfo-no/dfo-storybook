@@ -1,6 +1,6 @@
 import React from "react";
 
-import './TypographyPage.scss';
+// import './TypographyPage.scss';
 
 export default function TypographyPage() {
   return (

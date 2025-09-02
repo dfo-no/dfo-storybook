@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import TextareaAutosize from 'react-textarea-autosize';
 
-// import './Textarea.scss';
+import './Textarea.scss';
 
 export default class Textarea extends PureComponent {
   render() {
