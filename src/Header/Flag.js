@@ -3,18 +3,26 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ReactComponent as FlagNO } from './FlagNO.svg';
-import { ReactComponent as FlagEN } from './FlagEN.svg';
+
+import FlagNO from './FlagNO.svg';
+import FlagEN from './FlagEN.svg';
 
 export default function Flag({ code, ...rest }) {
+  let flagSrc = null;
+  let titleText = '';
   switch (code) {
     case 'no':
-      return <FlagNO {...rest} />;
+      flagSrc = FlagNO;
+      titleText = 'Norsk flagg';
+      break;
     case 'en':
-      return <FlagEN {...rest} />;
+      flagSrc = FlagEN;
+      titleText = 'English flag';
+      break;
     default:
       return null;
   }
+  return <img src={flagSrc} {...{title: titleText, ...rest}} />;
 }
 
 Flag.propTypes = {
