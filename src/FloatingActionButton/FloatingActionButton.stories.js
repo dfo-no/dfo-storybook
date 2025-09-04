@@ -42,6 +42,7 @@ export default {
   },
 };
 
+
 const TemplateBasic = (args) => (
   <>
     <div style={{ height: '1500px' }} />
@@ -57,6 +58,7 @@ Basic.args = {
   SubComponent: Chat,
 };
 
+// Replaced with TemplateBasic above
 // export const Basic = () => (
 //   <>
 //     <div style={{ height: '1500px' }} />
@@ -65,6 +67,7 @@ Basic.args = {
 //     </div>
 //   </>
 // );
+
 
 const TemplateSimple = (args) => (
   <>
@@ -80,6 +83,7 @@ ChatIconVersion.args = {
   chat: true,
 };
 
+// Replaced with TemplateSimple above
 // export const ChatIconVersion = () => (
 //   <>
 //     <div style={{ height: '1500px' }} />
@@ -94,6 +98,7 @@ AbsolutePosition.args = {
   absolute: true,
 };
 
+// Replaced with TemplateSimple above
 // export const AbsolutePositionn = () => (
 //   <>
 //     <div style={{ height: '1500px' }} />
