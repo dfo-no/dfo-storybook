@@ -43,11 +43,11 @@ Input.defaultProps = {
 };
 
 Input.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
   name: PropTypes.string.isRequired,
   label: PropTypes.string,
-  type: PropTypes.string.isRequired,
-  placeholder: PropTypes.string,
+  type: PropTypes.string.isRequired, // eslint-disable-line react/no-unused-prop-types
+  placeholder: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
   error: PropTypes.any,
   asterisk: PropTypes.bool,
 };

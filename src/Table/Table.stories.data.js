@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
+// Probably a false positive error reported by the linter hence deactivating the rule above for this file.
 import React from 'react';
 
 export default function ExampleTableHtml() {
