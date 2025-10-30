@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { object } from '@storybook/addon-knobs';
 import { Accordion } from '.';
 
 storiesOf('Accordion', module)
@@ -9,7 +8,7 @@ storiesOf('Accordion', module)
     'Accordion',
     () => (
       <Accordion
-        panels={object('Panels', [
+        panels={[
           {
             heading: 'Something vague about the role structure',
             id: '1',
@@ -29,7 +28,7 @@ storiesOf('Accordion', module)
             id: '3',
             content: <p>Something about something in here</p>,
           },
-        ])}
+        ]}
         onPanelClicked={action('onPanelClicked')}
       />
     ),
