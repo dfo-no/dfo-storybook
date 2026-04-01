@@ -1,8 +1,8 @@
 export * from './Arrow';
 export * from './Accordion';
 export * from './Alertbox';
+export * from './Button';
 // TODO: Enable exports
-// export * from './Button';
 // export * from './Checkbox';
 // export * from './Expand';
 // export * from './Factbox';
