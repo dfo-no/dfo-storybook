@@ -1,8 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { withCSS } from '../../.storybook/static-css-addon';
 import Accordion from './Accordion';
-import './Accordion.scss';
-import './AccordionArrow.scss';
 import SCSS from './Accordion.scss?raw'; // Vite-specific syntax
 
 const meta: Meta<typeof Accordion> = {
