@@ -1,4 +1,4 @@
-@import "../../sass/base/index";
+@use "../../sass/base/index" as *;
 
 .dfo-accordion-arrow {
   transition: transform 0.1s ease;

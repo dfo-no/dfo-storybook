@@ -1,0 +1,4 @@
+{
+  // extend plugin:storybook/<configuration>, such as:
+  "extends": ["plugin:storybook/recommended"]
+}

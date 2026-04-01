@@ -1,3 +1,5 @@
+## NOT-UPDATED-TO-SB10
+
 ## 🤓 Development
 In order to work on the components you first need to clone the repo, install the dependencies by writing `npm install` and after that: `npm start`.
 

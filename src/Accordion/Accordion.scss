@@ -1,4 +1,4 @@
-@import "../../sass/base/index";
+@use "@/sass/base/index" as *;
 
 .dfo-accordion {
   list-style: none;

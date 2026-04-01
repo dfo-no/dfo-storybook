@@ -1,8 +1,10 @@
-@import "./base/_index";
+@use 'sass:map';
+@use 'sass:string';
+@use 'base/index' as *;
 
 // Build path to font file
 @function buildPath($nodeModule, $format, $fileBase, $fileSuffix) {
-  $folder: to-upper-case($format);
+  $folder: string.to-upper-case($format);
   $extension: $format;
 
   // Account for nested folder for woff/woff2
@@ -14,14 +16,16 @@
     $extension: "otf.woff";
   }
 
-  @return "~#{$nodeModule}/#{$folder}/#{$fileBase}#{$fileSuffix}.#{$extension}";
+  $path: "/fonts/#{$folder}/#{$fileBase}#{$fileSuffix}.#{$extension}";
+  // @debug "Current value of $text: #{$path}";
+  @return $path;
 }
 
 // The font's we're making available
 $fonts: (
-  "Source Sans Pro": (
-    nodeModule: 'source-sans-pro',
-    fileBase: 'SourceSansPro-',
+  "Source Sans 3": (
+    nodeModule: 'source-sans',
+    fileBase: 'SourceSans3-',
     weights: (
       (name: 'Light', weight: 300, styles: (normal, italic)),
       (name: 'Regular', weight: 400, styles: (normal, italic)),
@@ -29,9 +33,9 @@ $fonts: (
       (name: 'Bold', weight: 700, styles: (normal)),
     )
   ),
-  "Source Serif Pro": (
-    nodeModule: 'source-serif-pro',
-    fileBase: 'SourceSerifPro-',
+  "Source Serif 4": (
+    nodeModule: 'source-serif',
+    fileBase: 'SourceSerif4-',
     weights: (
       (name: 'Regular', weight: 400, styles: (normal)),
       (name: 'Bold', weight: 700, styles: (normal)),
@@ -41,12 +45,12 @@ $fonts: (
 
 // Generate the font-face definitions
 @each $font, $data in $fonts {
-  $nodeModule: map-get($data, "nodeModule");
-  $fileBase: map-get($data, "fileBase");
+  $nodeModule: map.get($data, "nodeModule");
+  $fileBase: map.get($data, "fileBase");
 
-  @each $weight in map-get($data, "weights") {
-    @each $style in map-get($weight, "styles") {
-      $weightName: map-get($weight, "name");
+  @each $weight in map.get($data, "weights") {
+    @each $style in map.get($weight, "styles") {
+      $weightName: map.get($weight, "name");
 
       $localFontNameCompact: $fileBase;
       $localFontNameSpaced: $font;
@@ -54,7 +58,7 @@ $fonts: (
       $fileSuffix: '';
 
       // Build file suffix and full font name (referencing a font possibly
-      // installed locally). The full font name looks like "Source Sans Pro
+      // installed locally). The full font name looks like "Source Sans 3
       // Semibold Italic". The suffix is for instance LightIt (It for Italic)
       @if ($weightName == "Regular" and $style == italic) {
         $fileSuffix: "It";
@@ -72,11 +76,11 @@ $fonts: (
 
       $localFontNameCompact: "#{$localFontNameCompact}#{$fileSuffix}";
 
-      /* #{$font} #{map-get($weight, name)} (#{map-get($weight, weight)}) #{$style} */
+      /* #{$font} #{map.get($weight, name)} (#{map.get($weight, weight)}) #{$style} */
       @font-face {
         font-family: $font;
         font-style: $style;
-        font-weight: map-get($weight, weight);
+        font-weight: map.get($weight, weight);
         src:
           local("#{$localFontNameSpaced}"),
           local("#{$localFontNameCompact}"),

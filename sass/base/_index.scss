@@ -1,11 +1,11 @@
 
-@use "sass:color";
-@use "sass:math";
-@use "sass:map";
-@use "sass:string";
+@use "sass:color" as *;
+@use "sass:math" as *;
+@use "sass:map" as *;
+@use "sass:string" as *;
 
-@import './_functions';
-@import './_sizes';
-@import './_colors';
-@import './_mixins';
-@import './foundation';
+@forward 'functions';
+@forward 'sizes';
+@forward 'colors';
+@forward 'mixins';
+@forward 'foundation';

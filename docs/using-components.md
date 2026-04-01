@@ -1,3 +1,5 @@
+## NOT-UPDATED-TO-SB10
+
 ## Using the components in your project
 
 Short summary: To install, write `npm install @dfo/components` in the terminal. NPM will let you know which `peerDependencies` you need to install with it. Alternatively, you can write `npx install-peerdeps @dfo/components` which will install both the components and its peers.

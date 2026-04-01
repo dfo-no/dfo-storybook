@@ -1,5 +1,5 @@
-@import "./base/_index";
-
+@use 'base/index' as index;
+@use 'base/foundation' as *;
 @include foundation-global-styles;
 
 * {
@@ -13,7 +13,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  color: $text;
+  color: index.$text;
 }
 
 html {
@@ -34,7 +34,7 @@ figure img {
 }
 
 blockquote {
-  color: $primary;
+  color: index.$primary;
   font-size: 3.2rem;
 }
 
@@ -50,7 +50,7 @@ input {
 }
 
 button {
-  font-family: "Source Sans Pro";
+  font-family: "Source Sans 3";
 }
 
 html {
@@ -59,21 +59,21 @@ html {
 }
 
 body {
-  font-family: "Source Sans Pro";
+  font-family: "Source Sans 3";
   font-style: normal;
   font-weight: 400;
   font-size: 1.8rem;
-  color: $text;
+  color: index.$text;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 a {
-  color: $primary;
+  color: index.$primary;
 
   &:hover {
-    color: $secondary;
+    color: index.$secondary;
   }
 }
 
@@ -95,14 +95,14 @@ h6,
 .h1,
 .h2,
 .h3 {
-  color: $primary;
+  color: index.$primary;
   margin: 0 0 0.125em;
   line-height: 1.25em;
 
   ol + &,
   ul + &,
   p + & {
-    margin-top: $padding-large;
+    margin-top: index.$padding-large;
   }
 }
 
@@ -114,7 +114,7 @@ h4,
 .h2,
 .h3,
 .h4 {
-  font-family: "Source Serif Pro";
+  font-family: "Source Serif 4";
   font-weight: 700;
 }
 
@@ -122,11 +122,11 @@ h1,
 .h1 {
   font-size: 5rem;
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: index.$tablet) {
     font-size: 5rem * 0.75;
   }
 
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: index.$mobile) {
     font-size: 5rem * 0.6;
   }
 }
@@ -135,7 +135,7 @@ h2,
 .h2 {
   font-size: 2.2rem;
 
-  @media screen and (max-width: $tablet) {
+  @media screen and (max-width: index.$tablet) {
     font-size: 2.2rem * 0.9;
   }
 }
@@ -154,19 +154,19 @@ h4,
 
 h5,
 .h5 {
-  font-family: "Source Sans Pro";
+  font-family: "Source Sans 3";
   font-weight: 600;
   font-size: 1.8rem;
 }
 
 ul,
 ol {
-  margin: $padding-medium 0;
-  padding-left: $padding-large;
+  margin: index.$padding-medium 0;
+  padding-left: index.$padding-large;
 }
 
 blockquote {
-  margin: $padding-large 0;
+  margin: index.$padding-large 0;
 }
 
 fieldset,
@@ -181,7 +181,7 @@ form {
 
 fieldset > legend {
   float: left;
-  margin-bottom: $padding-medium;
+  margin-bottom: index.$padding-medium;
 
   + * {
     clear: left;
