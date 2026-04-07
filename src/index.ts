@@ -2,12 +2,12 @@ export * from './Arrow';
 export * from './Accordion';
 export * from './Alertbox';
 export * from './Button';
+export * from './Checkbox';
 // TODO: Enable exports
-// export * from './Checkbox';
 // export * from './Expand';
 // export * from './Factbox';
 // export * from './Footer';
-// export * from './Form';
+export * from './Form';
 // export * from './Header';
 // export * from './Input';
 // export * from './List';

@@ -1,16 +1,23 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-
 import './Checkbox.scss';
+
+
+interface CheckboxProps {
+  label: string,
+  description?: string,
+  inline?: boolean,
+  asterisk?: boolean,
+  name?: string,
+  [key: string]: any, // Optional: Allow any additional props
+}
 
 export default function Checkbox({
   label,
   description,
-  inline,
-  asterisk,
+  inline = false,
+  asterisk = false,
   ...rest
-}) {
+}: CheckboxProps) {
   // Remove whitespace from id and for
   const labelKey = `checkbox-${label.replace(/\s/g, '')}`;
   return (
@@ -41,16 +48,3 @@ export default function Checkbox({
     </label>
   );
 }
-
-Checkbox.propTypes = {
-  label: PropTypes.string.isRequired,
-  description: PropTypes.string,
-  inline: PropTypes.bool,
-  asterisk: PropTypes.bool,
-};
-
-Checkbox.defaultProps = {
-  description: null,
-  inline: false,
-  asterisk: false,
-};
