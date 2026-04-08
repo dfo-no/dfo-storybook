@@ -14,6 +14,7 @@ export default meta;
 
 type Story = StoryObj<typeof Accordion>;
 
+// Stories
 export const Default: Story = {
   parameters: {
     css: SCSS,

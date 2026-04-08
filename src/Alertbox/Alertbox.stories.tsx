@@ -15,6 +15,7 @@ export default meta;
 
 type Story = StoryObj<typeof Alertbox>;
 
+// Stories
 export const Default: Story = {
   parameters: {
     css: SCSS, // Inject the raw SCSS content

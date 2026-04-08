@@ -37,6 +37,7 @@ export default meta;
 
 type Story = StoryObj<typeof Button>;
 
+// Stories
 export const Basic: Story = {
   args: {
     children: 'Sign up for our newsletter',
