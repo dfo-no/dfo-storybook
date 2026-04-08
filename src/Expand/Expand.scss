@@ -1,8 +1,8 @@
-@import '../../sass/base/index';
+@use '@/sass/base/index';
 
 .dfo-expand {
-  padding: $padding-small 0;
-  border-bottom: 1px solid $secondary;
+  padding: index.$padding-small 0;
+  border-bottom: 1px solid index.$secondary;
   font-size: 1.8rem;
 
   &__button {
@@ -13,12 +13,12 @@
     cursor: pointer;
 
     &:hover, &:focus {
-      color: $secondary;
+      color: index.$secondary;
       outline: none;
     }
   }
 }
 
 .dfo-form__fieldset .dfo-expand {
-  margin-left: $padding-small;
+  margin-left: index.$padding-small;
 }

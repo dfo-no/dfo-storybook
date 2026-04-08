@@ -3,8 +3,8 @@ export * from './Accordion';
 export * from './Alertbox';
 export * from './Button';
 export * from './Checkbox';
+export * from './Expand';
 // TODO: Enable exports
-// export * from './Expand';
 // export * from './Factbox';
 // export * from './Footer';
 export * from './Form';
