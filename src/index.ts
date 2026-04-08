@@ -4,8 +4,8 @@ export * from './Alertbox';
 export * from './Button';
 export * from './Checkbox';
 export * from './Expand';
+export * from './Factbox';
 // TODO: Enable exports
-// export * from './Factbox';
 // export * from './Footer';
 export * from './Form';
 // export * from './Header';
