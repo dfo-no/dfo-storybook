@@ -1,10 +1,11 @@
+import { type ReactNode } from 'react';
 import classNames from 'classnames';
 import AccordionArrow from './AccordionArrow';
 
 interface AccordionPanelProps {
   id: string,
   heading: string,
-  children: React.ReactNode,
+  children: ReactNode,
   isOpen: boolean,
   onClick: (args: { id: string }) => void,
 }

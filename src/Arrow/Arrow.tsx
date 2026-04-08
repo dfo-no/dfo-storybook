@@ -2,10 +2,10 @@ import classNames from 'classnames';
 import './Arrow.scss';
 
 interface ArrowProps {
-  fill: string,
-  modifier: string, 
-  active: boolean,
-  large: boolean,
+  fill?: string,
+  modifier?: string, 
+  active?: boolean,
+  large?: boolean,
 };
 
 export default function Arrow({

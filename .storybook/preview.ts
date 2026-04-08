@@ -5,6 +5,7 @@ import { withCSS } from './static-css-addon';
 import '../sass/main.scss';
 import { background } from 'storybook/theming';
 
+
 const preview: Preview = {
   parameters: {
     actions: { argTypeRegex: '^on[A-Z].*' },
