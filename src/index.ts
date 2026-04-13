@@ -5,6 +5,7 @@ export * from './Button';
 export * from './Checkbox';
 export * from './Expand';
 export * from './Factbox';
+export * from './FloatingActionButton';
 // TODO: Enable exports
 // export * from './Footer';
 export * from './Form';
@@ -15,4 +16,3 @@ export * from './Form';
 // export * from './Textarea';
 // export * from './RadioButtons';
 // export * from './Select';
-// export * from './FloatingActionButton';

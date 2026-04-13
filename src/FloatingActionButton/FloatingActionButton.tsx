@@ -1,90 +1,26 @@
 /* eslint-disable func-names */
-import React from 'react';
-import PropTypes from 'prop-types';
-import * as classNames from 'classnames';
-
+import { useRef, useState } from 'react';
+import classNames from 'classnames';
 import './FloatingActionButton.scss';
 
-export default class FloatingActionButton extends React.Component {
-  constructor(props) {
-    super(props);
-    this.subComponentRef = React.createRef();
 
-    this.state = {
-      open: false,
-    };
-  }
-
-  render() {
-    const { SubComponent, type, absolute = false, chat = false, overRidePosition, danger, invert, cta, ...rest } = this.props;
-
-    const { open } = this.state;
-
-    const classes = classNames({
-      'dfo-fab-button': !chat || open,
-      'dfo-fab-button--danger': !chat && danger,
-      'dfo-fab-button--invert': !chat && invert,
-      'dfo-fab-button--cta': !chat && cta,
-    });
-
-    // we filter away non-positional elements to disallow arbitrary css-changes
-    const filteredPosition = overRidePosition && {
-      ...(overRidePosition.bottom ? { bottom: overRidePosition.bottom } : {}),
-      ...(overRidePosition.right ? { right: overRidePosition.right } : {}),
-      ...(overRidePosition.top ? { top: overRidePosition.top } : {}),
-      ...(overRidePosition.left ? { left: overRidePosition.left } : {}),
-    };
-
-    return (
-      <>
-        <div className={!absolute ? 'fab-wrapper' : 'fab-wrapper-absolute'} style={filteredPosition || null}>
-          <div className="fab-content">
-            {open && (
-              <div ref={this.subComponentRef}>
-                {' '}
-                <SubComponent closeParent={() => this.setState({ open: !open })} />
-              </div>
-            )}
-          </div>
-          <div className="fab-button">
-            <button
-              type="button"
-              className={!chat || open ? classes : null}
-              {...rest}
-              onClick={() => {
-                this.setState({ open: !open }, () => {
-                  if (this.subComponentRef.current) {
-                    // find all focusable sub-elements since only some of them are focusable
-                    const focusable = this.subComponentRef.current.querySelectorAll(
-                      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
-                    );
-                    if (focusable.length > 0) {
-                      focusable[0].focus();
-                    }
-                  }
-                });
-              }}
-            >
-              <div className="fab-button-icon">
-                {(function () {
-                  if (!open) {
-                    if (chat) {
-                      return <ChatIcon />;
-                    }
-                    return <OpenIcon invert={invert || null} />;
-                  }
-                  return <CloseIcon invert={invert || null} />;
-                }())}
-              </div>
-            </button>
-          </div>
-        </div>
-      </>
-    );
-  }
+interface IconProps {
+  invert?: boolean,
 }
 
-const CloseIcon = ({ invert = false }) => (
+interface FloatingActionButtonProps {
+  cta?: boolean,
+  invert?: boolean,
+  danger?: boolean,
+  SubComponent: React.ComponentType<{ closeParent: () => void }>,
+  overridePosition?: { bottom?: string; right?: string; top?: string; left?: string },
+  chat?: boolean,
+  absolute?: boolean,
+  type?: string,
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void,
+}
+
+const CloseIcon = ({ invert = false }: IconProps) => (
   <div className="fab-button--background">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
       <title>cross1</title>
@@ -101,7 +37,7 @@ const CloseIcon = ({ invert = false }) => (
   </div>
 );
 
-const OpenIcon = ({ invert = false }) => (
+const OpenIcon = ({ invert = false }: IconProps) => (
   <div className="fab-button--background">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
       <title>question1</title>
@@ -179,38 +115,79 @@ const ChatIcon = () => (
   </div>
 );
 
-CloseIcon.propTypes = {
-  invert: PropTypes.bool,
-};
+export default function FloatingActionButton ({
+  cta = false,
+  danger = false,
+  invert = false,
+  overridePosition = { bottom: '10%', right: '2%' },
+  chat = false,
+  absolute = false,
+  type = 'button',
+  SubComponent,
+}: FloatingActionButtonProps) {
+  
+  const [open, setOpen] = useState(false);
+  const subComponentRef = useRef<HTMLDivElement>(null);
 
-CloseIcon.defaultProps = {
-  invert: false,
-};
+  const classes = classNames({
+    'dfo-fab-button': !chat || open,
+    'dfo-fab-button--danger': !chat && danger,
+    'dfo-fab-button--invert': !chat && invert,
+    'dfo-fab-button--cta': !chat && cta,
+  });
 
-OpenIcon.propTypes = {
-  invert: PropTypes.bool,
-};
-OpenIcon.defaultProps = {
-  invert: false,
-};
+  // Filter away non-positional elements to disallow arbitrary css-changes
+  const filteredPosition = overridePosition && {
+    ...(overridePosition.bottom ? { bottom: overridePosition.bottom } : {}),
+    ...(overridePosition.right ? { right: overridePosition.right } : {}),
+    ...(overridePosition.top ? { top: overridePosition.top } : {}),
+    ...(overridePosition.left ? { left: overridePosition.left } : {}),
+  };
 
-FloatingActionButton.propTypes = {
-  cta: PropTypes.bool,
-  invert: PropTypes.bool,
-  danger: PropTypes.bool,
-  SubComponent: PropTypes.any.isRequired,
-  overRidePosition: PropTypes.object,
-  chat: PropTypes.bool,
-  absolute: PropTypes.bool,
-  type: PropTypes.string,
-};
-
-FloatingActionButton.defaultProps = {
-  cta: false,
-  danger: false,
-  invert: false,
-  overRidePosition: { bottom: '10%', right: '2%' },
-  chat: false,
-  absolute: false,
-  type: 'button',
+  return (
+    <>
+      <div className={!absolute ? 'fab-wrapper' : 'fab-wrapper-absolute'} style={filteredPosition || null}>
+        <div className="fab-content">
+          {open && (
+            <div ref={subComponentRef}>
+              {' '}
+              <SubComponent closeParent={() => setOpen(!open)} />
+            </div>
+          )}
+        </div>
+        <div className="fab-button">
+          <button
+            type="button"
+            className={!chat || open ? classes : undefined}
+            onClick={() => {
+              setOpen(!open);
+              setTimeout(() => {
+                if (subComponentRef.current) {
+                  // find all focusable sub-elements since only some of them are focusable
+                  const focusable = subComponentRef.current.querySelectorAll(
+                    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+                  );
+                  if (focusable.length > 0) {
+                    (focusable[0] as HTMLElement).focus();
+                  }
+                }
+              }, 0);
+            }}
+          >
+            <div className="fab-button-icon">
+              {(function () {
+                if (!open) {
+                  if (chat) {
+                    return <ChatIcon />;
+                  }
+                  return <OpenIcon invert={invert} />;
+                }
+                return <CloseIcon invert={invert} />;
+              }())}
+            </div>
+          </button>
+        </div>
+      </div>
+    </>
+  );
 };
