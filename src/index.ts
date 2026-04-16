@@ -10,7 +10,7 @@ export * from './Footer';
 export * from './Form';
 // TODO: Enable exports
 // export * from './Header';
-// export * from './Input';
+export * from './Input';
 // export * from './List';
 // export * from './Table';
 // export * from './Textarea';
