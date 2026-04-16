@@ -6,9 +6,9 @@ export * from './Checkbox';
 export * from './Expand';
 export * from './Factbox';
 export * from './FloatingActionButton';
-// TODO: Enable exports
-// export * from './Footer';
+export * from './Footer';
 export * from './Form';
+// TODO: Enable exports
 // export * from './Header';
 // export * from './Input';
 // export * from './List';

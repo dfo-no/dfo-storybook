@@ -1,14 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
 import NavSymbol from './FooterNavSymbol';
-import LogoWhite from './logo-white.svg';
-
+import LogoWhite from './LogoWhite';
 import './Footer.scss';
 
+
+interface Link {
+  uri: string,
+  title: string,
+}
+
+interface FooterProps {
+  links?: Link[] | null,
+}
+
 export default function Footer({
-  links,
-}) {
+  links = null,
+}: FooterProps) {
   if (links) {
     return (
       <footer className="dfo-footer">
@@ -76,14 +82,3 @@ export default function Footer({
     </footer>
   );
 }
-
-Footer.propTypes = {
-  links: PropTypes.arrayOf(PropTypes.shape({
-    uri: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-  })),
-};
-
-Footer.defaultProps = {
-  links: null,
-};

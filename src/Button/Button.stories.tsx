@@ -15,8 +15,6 @@ const meta: Meta<typeof Button> = {
   },
   // Optional: Add argTypes for controls, or other Storybook features.
   argTypes: {
-    // onClick: action('clicked'),
-    // onClick: fn(),
     children: {
       control: { type: 'text' },
       defaultValue: 'Sign up for our newsletter',
