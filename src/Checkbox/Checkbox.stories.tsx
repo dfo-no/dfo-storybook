@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { withCSS } from '../../.storybook/static-css-addon';
 import Checkbox from './Checkbox';
-import { Form, Fieldset } from '../index';
 import CheckboxGroup from './CheckboxGroup';
+import { Form, Fieldset } from '../index';
 import SCSS from './Checkbox.scss?raw'; // Vite-specific syntax
 import SCSSGroup from './CheckboxGroup.scss?raw'; // Vite-specific syntax
 

@@ -10,10 +10,10 @@ const meta: Meta<typeof Footer> = {
   decorators: [withCSS],
   args: {
     links: [
-        { title: 'Link title', uri: '/' },
-        { title: 'Link title', uri: '/' },
-        { title: 'Link title', uri: '/' },
-      ],
+      { title: 'Link title', uri: '/' },
+      { title: 'Link title', uri: '/' },
+      { title: 'Link title', uri: '/' },
+    ],
   },
   argTypes: {
     links: {
