@@ -15,4 +15,4 @@ export * from './Input';
 // export * from './Table';
 // export * from './Textarea';
 export * from './RadioButtons';
-// export * from './Select';
+export * from './Select';
