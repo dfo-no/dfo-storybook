@@ -1,9 +1,11 @@
-import { type ReactNode } from 'react';
+import { type FormEvent, type ReactNode } from 'react';
 import './Form.scss';
 
 interface FormProps {
   children: ReactNode,
-  className?: string
+  className?: string,
+  method?: string,
+  onSubmit?: (e: FormEvent<HTMLFormElement>) => void,
 }
 
 export default function Form({ 

@@ -11,6 +11,7 @@ interface InputProps {
   error?: any,
   asterisk?: boolean,
   disabled?: boolean,
+  defaultValue?: string,
 }
 
 export default function Input({
@@ -21,6 +22,7 @@ export default function Input({
   error = '', 
   asterisk = false,
   disabled = false,
+  defaultValue,
   ...rest
 }: InputProps) {
 
@@ -43,6 +45,7 @@ export default function Input({
           name={name}
           required={asterisk}
           disabled={disabled}
+          defaultValue={defaultValue}
           {...{ ...rest, id }}
         />
 
