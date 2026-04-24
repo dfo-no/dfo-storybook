@@ -8,9 +8,9 @@ export * from './Factbox';
 export * from './FloatingActionButton';
 export * from './Footer';
 export * from './Form';
-// TODO: Enable exports
-// export * from './Header';
+export * from './Header';
 export * from './Input';
+// TODO: Enable exports
 // export * from './List';
 // export * from './Table';
 // export * from './Textarea';

@@ -15,6 +15,7 @@ const config: StorybookConfig = {
     "@storybook/addon-links",         // Keep if you use links
     "@chromatic-com/storybook",
     "@storybook/addon-vitest",
+    "@storybook/addon-docs",
   ],
   framework: {
     name: '@storybook/react-vite',

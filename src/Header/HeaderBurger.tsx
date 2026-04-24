@@ -1,11 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
 import './Header.scss';
 
+
+interface BurgerProps {
+  className?: string,
+  open?: boolean,
+  width?: string,
+  height?: string,
+  fill?: string,
+}
+
 export default function Burger({
-  className, open, fill, width, height,
-}) {
+  className,
+  open = false,
+  width = '14',
+  height = '10.8',
+  fill = '#032b4a',
+}: BurgerProps) {
   if (open) {
     return (
       <svg
@@ -39,19 +49,3 @@ export default function Burger({
     </svg>
   );
 }
-
-Burger.propTypes = {
-  className: PropTypes.string,
-  open: PropTypes.bool,
-  width: PropTypes.string,
-  height: PropTypes.string,
-  fill: PropTypes.string,
-};
-
-Burger.defaultProps = {
-  className: null,
-  open: false,
-  width: '14',
-  height: '10.8',
-  fill: '#032b4a',
-};
