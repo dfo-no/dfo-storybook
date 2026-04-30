@@ -1,9 +1,9 @@
-@import '../../sass/base/index';
+@use '@/sass/base/index';
 
-$navBorderColor: $secondary;
+$navBorderColor: index.$secondary;
 
-@if $site == "intranet" {
-  $navBorderColor: $darkborder;
+@if index.$site == "intranet" {
+  $navBorderColor: index.$darkborder;
 }
 
 .nav {
@@ -28,7 +28,7 @@ $navBorderColor: $secondary;
         &--left {
           .nav {
             &__link {
-              padding-left: $padding-medium + 2.2rem;
+              padding-left: index.$padding-medium + 2.2rem;
 
               &__symbol {
                 left: 0;
@@ -52,7 +52,7 @@ $navBorderColor: $secondary;
           color: #fff;
 
           &:hover {
-            color: $secondary;
+            color: index.$secondary;
           }
         }
       }
@@ -70,22 +70,22 @@ $navBorderColor: $secondary;
   }
 
   &__link {
-    padding: $padding-small ($padding-medium + 2.2rem + $padding-large)
-      $padding-small $padding-medium;
+    padding: index.$padding-small (index.$padding-medium + 2.2rem + index.$padding-large)
+      index.$padding-small index.$padding-medium;
     text-decoration: none;
-    color: $text;
+    color: index.$text;
     font-size: 1.8rem;
     display: block;
     position: relative;
 
     &:hover {
-      color: $secondary;
+      color: index.$secondary;
     }
 
     &__symbol {
       position: absolute;
-      top: $padding-small + 0.3rem;
-      right: $padding-medium;
+      top: index.$padding-small + 0.3rem;
+      right: index.$padding-medium;
     }
   }
 
@@ -109,12 +109,12 @@ $navBorderColor: $secondary;
 
     &--left {
       .nav__link {
-        padding-right: $padding-medium;
-        padding-left: $padding-medium + 2.2rem + $padding-medium;
+        padding-right: index.$padding-medium;
+        padding-left: index.$padding-medium + 2.2rem + index.$padding-medium;
 
         &__symbol {
           right: auto;
-          left: $padding-medium;
+          left: index.$padding-medium;
         }
       }
     }

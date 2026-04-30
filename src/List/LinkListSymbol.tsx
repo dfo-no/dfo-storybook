@@ -1,7 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+interface LinkListSymbolProps {
+  light?: boolean,
+  download?: boolean,
+  external?: boolean,
+}
 
-export default function LinkListSymbol({ external, download, light }) {
+export default function LinkListSymbol({ 
+  light = false,
+  download = false, 
+  external = false, 
+}: LinkListSymbolProps) {
   const fill = light ? '#ffffff' : '#032b4a';
 
   if (external) {
@@ -79,15 +86,3 @@ export default function LinkListSymbol({ external, download, light }) {
     </svg>
   );
 }
-
-LinkListSymbol.propTypes = {
-  light: PropTypes.bool,
-  download: PropTypes.bool,
-  external: PropTypes.bool,
-};
-
-LinkListSymbol.defaultProps = {
-  light: false,
-  download: false,
-  external: false,
-};
