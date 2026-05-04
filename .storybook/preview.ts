@@ -1,7 +1,7 @@
 import type { Preview } from '@storybook/react';
 import { DarkBackground, Padding } from './stories.decorators';
 // import { ShowStaticMarkup } from './stories.decorators';
-import { withCSS } from './static-css-addon';
+import { withCSS } from './static-css-addon'; // Decorator
 import '../sass/main.scss';
 import { create } from 'storybook/theming';
 

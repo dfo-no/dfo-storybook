@@ -1,3 +1,12 @@
+// static-css-addon/register.tsx
+/*
+register.tsx (Panel - runs in manager/UI)
+Purpose: Displays the CSS in a panel
+Runs in: The Storybook manager (UI chrome)
+What it does: Listens for CSS data and renders it
+Imported in: manager.ts
+*/
+
 import React, { Component } from "react";
 import { addons, types } from "storybook/manager-api";
 import { AddonPanel } from "storybook/internal/components";
@@ -5,6 +14,7 @@ import { STORY_CHANGED } from "storybook/internal/core-events";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import cssbeautify from "cssbeautify";
+
 
 const ADDON_ID = "WITHCSS";
 const PANEL_ID = `${ADDON_ID}/panel`;
@@ -58,10 +68,15 @@ class CSSPanelComponent extends Component<CSSPanelProps, CSSPanelState> {
   }
 }
 
-addons.register(ADDON_ID, () => {
-  addons.add(PANEL_ID, {
-    type: types.PANEL,
-    title: "CSS",
-    render: ({ active }) => <CSSPanelComponent active={active ?? false} />,
+try {
+  addons.register(ADDON_ID, () => {
+    addons.add(PANEL_ID, {
+      type: types.PANEL,
+      title: "CSS",
+      match: ({ viewMode }) => viewMode === 'story',
+      render: ({ active }) => <CSSPanelComponent active={!!active} />,
+    });
   });
-});
+} catch (error) {
+  console.error('Failed to register CSS panel:', error);
+}
