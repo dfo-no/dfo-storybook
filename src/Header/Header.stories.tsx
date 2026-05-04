@@ -1,8 +1,3 @@
-// import React from 'react';
-// import { storiesOf } from '@storybook/react';
-// import { object, boolean } from '@storybook/addon-knobs';
-// import { action } from '@storybook/addon-actions';
-
 import type { Meta, StoryObj } from '@storybook/react';
 import { withCSS } from '../../.storybook/static-css-addon';
 import { fn } from 'storybook/test';

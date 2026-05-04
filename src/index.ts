@@ -10,9 +10,9 @@ export * from './Footer';
 export * from './Form';
 export * from './Header';
 export * from './Input';
+export * from './List';
+export * from './Table';
 // TODO: Enable exports
-// export * from './List';
-// export * from './Table';
 // export * from './Textarea';
 export * from './RadioButtons';
 export * from './Select';
