@@ -36,7 +36,6 @@ const config: StorybookConfig = {
         '@': path.resolve(__dirname, '../'),
       },
     };
-    // return config;
     return mergeConfig(config, {
       plugins: [svgr()], // Ensure SVGR is applied in SB
     })

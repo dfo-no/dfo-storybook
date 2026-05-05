@@ -1,7 +1,7 @@
 import type { Preview } from '@storybook/react-vite';
-import { DarkBackground, Padding } from './stories.decorators';
-// import { ShowStaticMarkup } from './stories.decorators';
+// import { DarkBackground, Padding } from './stories.decorators';
 import { withCSS } from './static-css-addon'; // Decorator
+import { withStaticMarkup } from './static-markup-addon'; // Decorator
 import '../sass/main.scss';
 import { create } from 'storybook/theming';
 
@@ -69,7 +69,7 @@ const preview: Preview = {
     // DarkBackground,
     // Padding,
     withCSS,
-    // ShowStaticMarkup,
+    withStaticMarkup,
   ],
 };
 

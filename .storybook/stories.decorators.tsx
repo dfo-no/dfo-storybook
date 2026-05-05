@@ -1,5 +1,4 @@
 import { type Decorator } from '@storybook/react-vite';
-// import { ShowStaticMarkup as SSM } from "react-storybook-addon-static-markup";
 
 
 // Type for Story Decorators
@@ -16,13 +15,3 @@ export const Padding: StoryDecorator = (Story) => (
     <Story />
   </div>
 );
-
-// ShowStaticMarkup Decorator (deprecated, consider alternatives)
-export const ShowStaticMarkup: StoryDecorator = (Story) => {
-  // If you still use react-storybook-addon-static-markup:
-  // import { ShowStaticMarkup as SSM } from "react-storybook-addon-static-markup";
-  // return <SSM><Story /></SSM>;
-
-  // Modern alternative: Use Storybook Docs or MDX for static content.
-  return <Story />;
-};

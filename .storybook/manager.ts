@@ -1,2 +1,3 @@
 // Addon panel registrations
-import './static-css-addon/register';
+import './static-css-addon/registerPanel';
+import './static-markup-addon/registerPanel';
