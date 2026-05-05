@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { withCSS } from '../../.storybook/static-css-addon';
 import { DarkBackground } from '../../.storybook/stories.decorators';
 import LinkList from './LinkList';

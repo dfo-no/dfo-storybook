@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { withCSS } from '../../.storybook/static-css-addon';
 import SCSS from './Form.scss?raw'; // Vite-specific syntax
 import { fn } from 'storybook/test'; 

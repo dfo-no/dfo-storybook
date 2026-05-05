@@ -1,8 +1,12 @@
+// This file has been automatically migrated to valid ESM format by Storybook.
 import type { StorybookConfig } from '@storybook/react-vite';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { mergeConfig } from 'vite';
+import svgr from 'vite-plugin-svgr';
 
-const dirname = typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const config: StorybookConfig = {
   stories: [
@@ -29,10 +33,13 @@ const config: StorybookConfig = {
       ...config.resolve,
       alias: {
         ...config.resolve?.alias,
-        '@': path.resolve(dirname, '../'),
+        '@': path.resolve(__dirname, '../'),
       },
     };
-    return config;
+    // return config;
+    return mergeConfig(config, {
+      plugins: [svgr()], // Ensure SVGR is applied in SB
+    })
   },
 };
 

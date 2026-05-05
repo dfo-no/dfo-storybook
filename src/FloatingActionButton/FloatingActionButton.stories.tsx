@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { withCSS } from '../../.storybook/static-css-addon';
 import { fn } from 'storybook/test';
 import FloatingActionButton from './FloatingActionButton';
