@@ -11,8 +11,8 @@ import React, { Component } from "react";
 import { addons, types } from "storybook/manager-api";
 import { AddonPanel } from "storybook/internal/components";
 import { STORY_CHANGED } from "storybook/internal/core-events";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import cssbeautify from "cssbeautify";
 
 
@@ -60,7 +60,7 @@ class CSSPanelComponent extends Component<CSSPanelProps, CSSPanelState> {
     const { active } = this.props;
     return (
       <AddonPanel active={active}>
-          <SyntaxHighlighter language="css" style={docco}>
+          <SyntaxHighlighter language="css" style={atomDark}>
             {css}
           </SyntaxHighlighter>
       </AddonPanel>
