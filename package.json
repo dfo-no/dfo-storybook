@@ -20,6 +20,7 @@
     "foundation-sites": "^6.9.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
+    "react-textarea-autosize": "^8.5.9",
     "source-sans": "^3.52.0",
     "source-serif": "^4.5.1"
   },
@@ -38,6 +39,7 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@types/react-syntax-highlighter": "^15.5.13",
+    "@types/react-textarea-autosize": "^4.3.6",
     "@vitejs/plugin-react": "^6.0.1",
     "@vitest/browser-playwright": "^4.1.2",
     "@vitest/coverage-v8": "^4.1.2",
