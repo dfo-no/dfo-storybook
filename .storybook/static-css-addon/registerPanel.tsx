@@ -13,7 +13,7 @@ import { AddonPanel } from "storybook/internal/components";
 import { STORY_CHANGED } from "storybook/internal/core-events";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import cssbeautify from "cssbeautify";
+import { css as cssJsBeautify } from 'js-beautify';
 
 
 const ADDON_ID = "WITHCSS";
@@ -34,14 +34,16 @@ class CSSPanelComponent extends Component<CSSPanelProps, CSSPanelState> {
   private stopListeningOnStory?: () => void;
 
   onAddCSS = (rawCss: string | string[]): void => {
+    
     const css = Array.isArray(rawCss) ? rawCss.join("\n") : rawCss;
-    const prettyCss = cssbeautify(css, {
-      indent: "  ",
-      openbrace: "end-of-line",
-      autosemicolon: true
+    const prettyCss = cssJsBeautify(css, {
+      indent_size: 2,
+      indent_char: ' ',
+      eol: '\n',
+      newline_between_rules: true,
     });
     this.setState({ css: prettyCss });
-  };
+  }
 
   componentDidMount(): void {
     this.channel.on("WITHCSS/add_css", this.onAddCSS);
