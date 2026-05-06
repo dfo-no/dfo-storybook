@@ -1,10 +1,13 @@
-import { version } from '../../src/version';
+import * as versions from '../../src/versions';
 
 export default function WelcomePage({ storybookVersion }: { storybookVersion: string }) {
   return (
     <div>
       <h1><code>@dfo/components</code> 🚀</h1>
-      <p>Version:   {version}<br />Storybook: {storybookVersion}</p>
+      <p>Version:   {versions.dfo_version}<br />
+        Storybook: {storybookVersion}<br />
+        React: {versions.react_version}
+      </p>
       <p>Documentation of components built for Direktoratet for forvaltning og økonomistyring (DFØ).</p>
 
       {/*

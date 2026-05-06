@@ -5,6 +5,8 @@ const require = createRequire(import.meta.url);
 const packageJson = require('../package.json');
 
 fs.writeFileSync(
-  'src/version.ts',
-  `export const version = '${packageJson.version}';\n`
+  'src/versions.ts',
+  `export const dfo_version = '${packageJson.version}';\n` +
+  `export const react_version = '${packageJson.dependencies.react}';\n` +
+  ``
 );

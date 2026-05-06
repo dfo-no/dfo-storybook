@@ -6,7 +6,7 @@
   "scripts": {
     "delete:fonts": "shx rm -rf public/fonts",
     "copy:fonts": "shx rm -rf public/fonts && shx mkdir -p public/fonts && copyfiles -u 2 \"node_modules/source-sans/WOFF*/**/*\" public/fonts && copyfiles -u 2 \"node_modules/source-serif/WOFF*/**/*\" public/fonts",
-    "prebuild": "ts-node scripts/generate-version.ts",
+    "prebuild": "ts-node scripts/generate-versions.ts",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
