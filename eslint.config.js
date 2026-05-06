@@ -8,16 +8,40 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
 import { defineConfig, globalIgnores } from 'eslint/config'
 
-export default defineConfig([globalIgnores(['dist']), {
-  files: ['**/*.{ts,tsx}'],
-  extends: [
-    js.configs.recommended,
-    tseslint.configs.recommended,
-    reactHooks.configs.flat.recommended,
-    reactRefresh.configs.vite,
-  ],
-  languageOptions: {
-    ecmaVersion: 2020,
-    globals: globals.browser,
+export default defineConfig([globalIgnores([
+  // Ignore patterns (replaces .eslintignore)
+  {
+    ignores: [
+      'node_modules/**',
+      '.cache/**',
+      'storybook-static/**',
+      'dist/**',
+      '!.storybook/**', // Explicitly unignore .storybook
+    ],
   },
-}, ...storybook.configs["flat/recommended"]])
+
+  // Main config for TypeScript/React files
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      js.configs.recommended,
+      ...tseslint.configs.recommended, // Spread to merge arrays
+      reactHooks.configs.flat.recommended,
+      reactRefresh.configs.vite,
+    ],
+    languageOptions: {
+      ecmaVersion: 2020,
+      globals: {
+        ...globals.browser,
+      },
+    },
+    plugins: {
+      '@typescript-eslint': tseslint.plugin,
+      'react-hooks': reactHooks,
+      'react-refresh': reactRefresh,
+    },
+  }, 
+  
+  // Storybook-specific config
+  ...storybook.configs["flat/recommended"]])
+]);

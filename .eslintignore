@@ -1,5 +1,0 @@
-!.storybook
-
-node_modules
-.cache
-storybook-static
