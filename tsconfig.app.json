@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "composite": true,
+    "outDir": "dist/app",
+    "declaration": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2023",
     "useDefineForClassFields": true,
@@ -24,5 +27,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": false
   },
-  "include": ["src", "scripts/generate-versions.ts"]
+  "include": ["src", ".storybook/storybook.d.ts"]
 }

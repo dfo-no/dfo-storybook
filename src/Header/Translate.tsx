@@ -8,7 +8,7 @@ const translations: {[key: string]: string} = {
   noMenu: 'Meny',
 };
 
-export default function Translate({
+export function Translate({
   id,
   code
 }: TranslateProps) {

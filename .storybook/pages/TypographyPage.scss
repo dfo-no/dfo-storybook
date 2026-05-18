@@ -1,4 +1,4 @@
-@use "../../sass/base/index" as index;
+@use "../../src/sass/base/index" as index;
 
 @mixin block($lastChildZeroMargin:true) {
   margin-bottom: index.$padding-large;
@@ -24,7 +24,7 @@
     &:vertical {
       width: 5px;
     }
-    &::horizontal {
+    &:horizontal {
       height: 5px;
     }
   }

@@ -44,3 +44,6 @@ storybook-static
 .env.development.local
 .env.test.local
 .env.production.local
+
+# library (too big)
+*.tgz

@@ -7,7 +7,7 @@ interface LogoProps extends React.ComponentProps<'svg'> {
   title?: string,
 }
 
-export default function Logo({ 
+export function Logo({ 
   language = 'no', 
   title = 'Logo',
   ...restOfSvgAttributes

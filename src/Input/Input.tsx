@@ -14,7 +14,7 @@ interface InputProps {
   defaultValue?: string,
 }
 
-export default function Input({
+export function Input({
   name, 
   label = '', 
   type,

@@ -4,7 +4,7 @@ interface LinkListSymbolProps {
   external?: boolean,
 }
 
-export default function LinkListSymbol({ 
+export function LinkListSymbol({ 
   light = false,
   download = false, 
   external = false, 

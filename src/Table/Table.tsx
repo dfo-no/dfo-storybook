@@ -6,6 +6,6 @@ interface TableProps {
   children: ReactNode,
 }
 
-export default function Table({ children = [] }: TableProps) {
+export function Table({ children = [] }: TableProps) {
   return <div className="dfo-table-wrapper">{children}</div>;
 };

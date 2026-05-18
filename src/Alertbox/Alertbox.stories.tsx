@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { withCSS } from '../../.storybook/static-css-addon';
-import Alertbox from './Alertbox';
+import type { Meta, StoryObj } from '@storybook/react';
+import { withCSS } from '../../.storybook/static-css-addon/index';
+import { Alertbox } from './Alertbox';
 import './Alertbox.scss';
 import SCSS from './AlertBox.scss?raw'; // Vite-specific syntax
 

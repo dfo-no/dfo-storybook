@@ -11,7 +11,7 @@ interface CheckboxProps {
   [key: string]: any, // Optional: Allow any additional props
 }
 
-export default function Checkbox({
+export function Checkbox({
   label,
   description,
   inline = false,

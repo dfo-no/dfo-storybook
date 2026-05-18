@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { withCSS } from '../../.storybook/static-css-addon';
-import Expand from '../Expand/Expand';
+import type { Meta, StoryObj } from '@storybook/react';
+import { withCSS } from '../../.storybook/static-css-addon/index';
+import { Expand } from '../Expand/Expand';
 import SCSS from '../Expand/Expand.scss?raw'; // Vite-specific syntax
 
 const meta: Meta<typeof Expand> = {

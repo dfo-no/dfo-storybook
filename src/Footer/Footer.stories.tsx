@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { withCSS } from '../../.storybook/static-css-addon';
-import Footer from './Footer';
+import type { Meta, StoryObj } from '@storybook/react';
+import { withCSS } from '../../.storybook/static-css-addon/index';
+import { Footer } from './Footer';
 import SCSS from './Footer.scss?raw'; // Vite-specific syntax
 
 

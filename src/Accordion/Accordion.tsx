@@ -17,7 +17,7 @@ interface AccordionState {
   openPanelId: string | null;
 }
 
-export default class Accordion extends React.Component<AccordionProps, AccordionState> {
+export class Accordion extends React.Component<AccordionProps, AccordionState> {
   constructor(props: AccordionProps) {
     super(props);
     this.state = {

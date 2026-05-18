@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { withCSS } from '../../.storybook/static-css-addon';
+import type { Meta, StoryObj } from '@storybook/react';
+import { withCSS } from '../../.storybook/static-css-addon/index';
 import { fn } from 'storybook/test'; // Instead of addon-actions
 // import { action } from 'storybook/actions'; // Instead of addon-actions
-import Button from './Button';
+import { Button } from './Button';
 import SCSS from './Button.scss?raw'; // Vite-specific syntax
 // TODO: import { text, boolean } from '@storybook/addon-knobs';
 

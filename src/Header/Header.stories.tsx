@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { withCSS } from '../../.storybook/static-css-addon';
+import type { Meta, StoryObj } from '@storybook/react';
+import { withCSS } from '../../.storybook/static-css-addon/index';
 import { fn } from 'storybook/test';
-import Header from './Header';
+import { Header } from './Header';
 import SCSS from './Header.scss?raw';
 
 const meta: Meta<typeof Header> = {

@@ -5,7 +5,7 @@ import TextareaAutosize from 'react-textarea-autosize';
 import './Textarea.scss';
 
 
-interface TextareaProps {
+export interface TextareaProps {
   id?: string,
   name: string,
   label?: string,
@@ -17,7 +17,7 @@ interface TextareaProps {
 }
 
 // Using value-parameter as a controlled value => Textarea is a controlled component
-function Textarea ({
+function TextareaComponent ({
     id = undefined,
     name,
     label = undefined,
@@ -64,7 +64,11 @@ function Textarea ({
   );
 };
 
-Textarea.displayName = 'Textarea';
+TextareaComponent.displayName = 'Textarea';
 
 // Wrap with forwardRef enable partly uncontrolled access and React.memo to mimic PureComponent behavior.
-export default React.memo(forwardRef<HTMLTextAreaElement, TextareaProps>(Textarea));
+const forwardRefTextareaComponent = forwardRef<HTMLTextAreaElement, TextareaProps>((props, ref) => {
+  return TextareaComponent(props, ref);
+});
+const Textarea = React.memo(forwardRefTextareaComponent);
+export { Textarea };

@@ -1,7 +1,10 @@
 {
   "extends": "./tsconfig.app.json",
   "compilerOptions": {
-    "noUncheckedSideEffectImports": false
+    "jsx": "preserve",
+    "noUncheckedSideEffectImports": false,
+    "allowImportingTsExtensions": true,
+    "rewriteRelativeImportExtensions": true
   },
-  "include": ["src", ".storybook"]
+  "include": [".storybook/**/*", "src/versions.ts"]
 }

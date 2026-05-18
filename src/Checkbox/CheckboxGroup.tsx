@@ -7,7 +7,7 @@ interface CheckboxGroupProps {
   twoCols?: boolean,
 }
 
-export default function CheckboxGroup({
+export function CheckboxGroup({
   children,
   twoCols = false
 }: CheckboxGroupProps) {

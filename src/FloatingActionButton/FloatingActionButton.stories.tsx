@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { withCSS } from '../../.storybook/static-css-addon';
+import type { Meta, StoryObj } from '@storybook/react';
+import { withCSS } from '../../.storybook/static-css-addon/index';
 import { fn } from 'storybook/test';
-import FloatingActionButton from './FloatingActionButton';
+import { FloatingActionButton } from './FloatingActionButton';
 import SCSS from './FloatingActionButton.scss?raw'; // Vite-specific syntax
 
 

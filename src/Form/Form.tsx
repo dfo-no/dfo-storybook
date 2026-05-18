@@ -8,7 +8,7 @@ interface FormProps {
   onSubmit?: (e: FormEvent<HTMLFormElement>) => void,
 }
 
-export default function Form({ 
+export function Form({ 
   children, 
   className, 
   ...rest 

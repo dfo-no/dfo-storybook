@@ -7,7 +7,7 @@ interface FieldsetProps {
   resetBackground?: boolean,
 }
 
-export default function Fieldset({ 
+export function Fieldset({ 
   children,
   legend, 
   resetBackground = false,

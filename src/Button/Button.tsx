@@ -14,7 +14,7 @@ interface ButtonProps {
   disabled?: boolean,
 }
 
-export default function Button({
+export function Button({
   children = [],
   invert = false,
   danger = false,

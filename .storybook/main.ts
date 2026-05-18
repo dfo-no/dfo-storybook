@@ -36,8 +36,37 @@ const config: StorybookConfig = {
         '@': path.resolve(__dirname, '../'),
       },
     };
+
+    // // Add Sass include paths:
+    // config.css = config.css ||  {};
+    // config.css.preprocessorOptions = config.css.preprocessorOptions || {};
+    // config.css.preprocessorOptions.scss = {
+    //   ...config.css.preprocessorOptions?.scss,
+    //   loadPaths: [
+    //     path.resolve(__dirname, '../node_modules'),
+    //     path.resolve(__dirname, '../'),
+    //   ],
+    // };
+
     return mergeConfig(config, {
       plugins: [svgr()], // Ensure SVGR is applied in SB
+      esbuild: {
+        // Ensure JSX is handled by esbuild (fallback for Vite)
+        jsx: 'automatic',
+      },
+      css: {
+        api: 'modern-compiler',
+        silenceDeprecations: ['legacy-js-api', 'global-builtin'], // Suppress deprecation warnings from dependencies. TODO: Remove when foundation-sites is updated to modern sass.
+        preprocessorOptions: {
+          // Add Sass include paths:
+          scss: {
+            loadPaths: [
+              path.resolve(__dirname, '../node_modules'),
+              path.resolve(__dirname, '../'),
+            ],
+          },
+        },
+      },
     })
   },
 };

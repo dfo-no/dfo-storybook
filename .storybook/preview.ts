@@ -2,7 +2,8 @@ import type { Preview } from '@storybook/react-vite';
 // import { DarkBackground, Padding } from './stories.decorators';
 import { withCSS } from './static-css-addon'; // Decorator
 import { withStaticMarkup } from './static-markup-addon'; // Decorator
-import '../sass/main.scss';
+// import '../src/sass/main.scss';
+import '../src/sass/main.scss';
 import { create } from 'storybook/theming';
 
 const customTheme = create({

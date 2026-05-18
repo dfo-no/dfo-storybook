@@ -9,7 +9,7 @@ interface BurgerProps {
   fill?: string,
 }
 
-export default function Burger({
+export function Burger({
   className,
   open = false,
   width = '14',

@@ -2,24 +2,66 @@
 @use 'sass:string';
 @use 'base/index' as *;
 
-// Build path to font file
-@function buildPath($nodeModule, $format, $fileBase, $fileSuffix) {
-  $folder: string.to-upper-case($format);
-  $extension: $format;
+// CSS Variables for font paths (default to ./fonts/)
+:root {
+  // Source Sans 3
+  --font-source-sans-3-light-normal: url('./fonts/SourceSans3-Light.woff2') format('woff2');
+  --font-source-sans-3-light-italic: url('./fonts/SourceSans3-LightIt.woff2') format('woff2');
+  --font-source-sans-3-regular-normal: url('./fonts/SourceSans3-Regular.woff2') format('woff2');
+  --font-source-sans-3-regular-italic: url('./fonts/SourceSans3-RegularIt.woff2') format('woff2');
+  --font-source-sans-3-semibold-normal: url('./fonts/SourceSans3-Semibold.woff2') format('woff2');
+  --font-source-sans-3-bold-normal: url('./fonts/SourceSans3-Bold.woff2') format('woff2');
 
-  // Account for nested folder for woff/woff2
+  // Source Serif 4
+  --font-source-serif-4-regular-normal: url('./fonts/SourceSerif4-Regular.woff2') format('woff2');
+  --font-source-serif-4-bold-normal: url('./fonts/SourceSerif4-Bold.woff2') format('woff2');
+}
+
+// Build path to font file (now returns CSS variable names)
+@function buildPath($nodeModule, $format, $fileBase, $fileSuffix) {
+  $fontName: string.to-lower-case($nodeModule);
+  $fileName: "#{$fileBase}#{$fileSuffix}";
+
+  // Determine the folder structure based on format
+  $folder: '';
+  $extension: '';
+
   @if ($format == 'woff2') {
-    $folder: "WOFF2/TTF";
-    $extension: "ttf.woff2";
+    $folder: "WOFF2/OTF";
+    $extension: "otf.woff2";
   } @else if ($format == 'woff') {
     $folder: "WOFF/OTF";
     $extension: "otf.woff";
-  }
+  } @else if ($format == 'otf') {
+    $folder: "WOFF/OTF";
+    $extension: "otf";
+  } @else if ($format == "ttf") {
+    $folder: "WOFF2/TTF";
+    $extension: "ttf.woff2";
+  } 
 
-  $path: "/fonts/#{$folder}/#{$fileBase}#{$fileSuffix}.#{$extension}";
-  // @debug "Current value of $text: #{$path}";
-  @return $path;
+  // Return the path relative to dist/fonts
+  @return "./fonts/#{$folder}/#{$fileName}.#{$extension}";
 }
+
+// // Build path to font file
+// @function buildPath($nodeModule, $format, $fileBase, $fileSuffix) {
+//   $folder: string.to-upper-case($format);
+//   $extension: $format;
+
+//   // Account for nested folder for woff/woff2
+//   @if ($format == 'woff2') {
+//     $folder: "WOFF2/TTF";
+//     $extension: "ttf.woff2";
+//   } @else if ($format == 'woff') {
+//     $folder: "WOFF/OTF";
+//     $extension: "otf.woff";
+//   }
+
+//   $path: "/fonts/#{$folder}/#{$fileBase}#{$fileSuffix}.#{$extension}";
+//   // @debug "Current value of $text: #{$path}";
+//   @return $path;
+// }
 
 // The font's we're making available
 $fonts: (
@@ -84,10 +126,11 @@ $fonts: (
         src:
           local("#{$localFontNameSpaced}"),
           local("#{$localFontNameCompact}"),
-          url(buildPath($nodeModule, 'woff2', $fileBase, $fileSuffix)) format('woff2'),
-          url(buildPath($nodeModule, 'woff', $fileBase, $fileSuffix)) format('woff'),
-          url(buildPath($nodeModule, 'otf', $fileBase, $fileSuffix)) format('opentype'),
-          url(buildPath($nodeModule, 'ttf', $fileBase, $fileSuffix)) format('truetype'),
+          buildPath($nodeModule, 'woff2', $fileBase, $fileSuffix),
+          // url(buildPath($nodeModule, 'woff2', $fileBase, $fileSuffix)) format('woff2'),
+          // url(buildPath($nodeModule, 'woff', $fileBase, $fileSuffix)) format('woff'),
+          // url(buildPath($nodeModule, 'otf', $fileBase, $fileSuffix)) format('opentype'),
+          // url(buildPath($nodeModule, 'ttf', $fileBase, $fileSuffix)) format('truetype'),
       }
     }
   }

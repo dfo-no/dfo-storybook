@@ -1,8 +1,8 @@
 /* eslint max-len:0 */
 
-import LogoWhiteSVG from './logo-white.svg?react'; // Import dependent of declaration in file types/svg.d.ts
+import LogoWhiteSVG from './logo-white.svg?react'; // Import dependent of declaration in file types/svg.d
 
-export default function LogoWhite() {
+export function LogoWhite() {
   return (
     <LogoWhiteSVG />
   );

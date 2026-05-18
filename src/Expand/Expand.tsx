@@ -1,6 +1,6 @@
 import { type ReactNode, useState } from 'react';
 import classnames from 'classnames';
-import Arrow from '../Arrow/Arrow';
+import { Arrow } from '../Arrow/Arrow';
 import '../Expand/Expand.scss';
 
 interface ExpandProps {
@@ -8,7 +8,7 @@ interface ExpandProps {
   children: ReactNode,
 }
 
-export default function Expand({
+export function Expand({
   title,
   children
 }: ExpandProps) {

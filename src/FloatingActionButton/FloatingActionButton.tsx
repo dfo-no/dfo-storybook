@@ -115,14 +115,14 @@ const ChatIcon = () => (
   </div>
 );
 
-export default function FloatingActionButton ({
+export function FloatingActionButton ({
   cta = false,
   danger = false,
   invert = false,
   overridePosition = { bottom: '10%', right: '2%' },
   chat = false,
   absolute = false,
-  type = 'button',
+  // type = 'button',
   SubComponent,
 }: FloatingActionButtonProps) {
   

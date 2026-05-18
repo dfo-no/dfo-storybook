@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { withCSS } from '../../.storybook/static-css-addon';
+import type { Meta, StoryObj } from '@storybook/react';
+import { withCSS } from '../../.storybook/static-css-addon/index';
 import { fn } from 'storybook/test'; // Instead of addon-actions
-import Select from './Select';
+import { Select } from './Select';
 import { type SelectProps } from './Select';
 import SCSS from './Select.scss?raw'; // Vite-specific syntax
 import { useState } from 'react';

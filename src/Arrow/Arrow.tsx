@@ -8,7 +8,7 @@ interface ArrowProps {
   large?: boolean,
 };
 
-export default function Arrow({
+export function Arrow({
   fill = '#032b4a', 
   modifier, 
   large = false, 

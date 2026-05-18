@@ -1,4 +1,4 @@
-@use "@/sass/base/index";
+@use '../sass/base/index';
 
 .dfo-table-wrapper {
   width: 100%;
@@ -13,7 +13,7 @@
     &:vertical {
       width: 5px;
     }
-    &::horizontal {
+    &:horizontal {
       height: 5px;
     }
   }

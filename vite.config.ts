@@ -8,15 +8,36 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
 import { playwright } from '@vitest/browser-playwright';
+
 const dirname = typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
   plugins: [
-    react(),
+    react({  // This plugin handles JSX transformation
+      jsxRuntime: 'automatic',  // or 'classic' for older React
+    }),
     svgr(),
     sassPlugin(),
   ],
+  build: {
+    outDir: 'dist/lib', // Output to dist/lib/ in the project root
+    emptyOutDir: false,  // Don't clear dist/lib (TSC has already written files there)
+    lib: {
+      entry: path.resolve(dirname, 'src/index.ts'), // Entry point of your library
+      name: 'DFOComponents', // Global variable name (if used in UMD)
+      formats: ['es'], // Output ESM (matches your "type": "module")
+      fileName: (format) => `index.${format}.js`, // Output filename
+    },
+    rollupOptions: {
+      // Ensure external dependencies (React, etc.) are not bundled
+      external: ['react', 'react-dom', 'classnames'],
+      output: {
+        // Preserve directory structure for SCSS files
+        assetFileNames: 'assets/[name][extname]',
+      },
+    },
+  },
   css: {
     preprocessorOptions: {
       scss: {

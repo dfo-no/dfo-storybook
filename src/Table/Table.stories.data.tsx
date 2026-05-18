@@ -1,4 +1,4 @@
-export default function ExampleTableHtml() {
+export function ExampleTableHtml() {
   return (
     <table className="table table--striped">
       <caption>

@@ -1,1 +1,1 @@
-export { default as Factbox } from './Factbox';
+export {  Factbox } from './Factbox';

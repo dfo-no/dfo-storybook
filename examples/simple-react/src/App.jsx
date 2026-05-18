@@ -3,7 +3,7 @@ import { Button } from '@dfo/components';
 
 export default () => (
   <div>
-    <Button>Yo</Button>
-    <div>Welcome to next.js!</div>
+    <Button plainLink href='https://dfo.no'>Go to DFØ</Button>
+    <div>Welcome to DFØ Button!</div>
   </div>
 );

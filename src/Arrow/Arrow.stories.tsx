@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { withCSS } from '../../.storybook/static-css-addon';
-import Arrow from './Arrow';
+import type { Meta, StoryObj } from '@storybook/react';
+import { withCSS } from '../../.storybook/static-css-addon/index';
+import { Arrow } from './Arrow';
 import './Arrow.scss';
 import SCSS from './Arrow.scss?raw'; // Vite-specific syntax
 // TODO: import { color, boolean } from '@storybook/addon-knobs';

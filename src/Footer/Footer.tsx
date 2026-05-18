@@ -1,5 +1,5 @@
-import NavSymbol from './FooterNavSymbol';
-import LogoWhite from './LogoWhite';
+import { NavSymbol } from './FooterNavSymbol';
+import { LogoWhite } from './LogoWhite';
 import './Footer.scss';
 
 
@@ -12,7 +12,7 @@ interface FooterProps {
   links?: Link[] | null,
 }
 
-export default function Footer({
+export function Footer({
   links = null,
 }: FooterProps) {
   if (links) {

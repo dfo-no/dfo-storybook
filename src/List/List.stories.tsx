@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { withCSS } from '../../.storybook/static-css-addon';
+import type { Meta, StoryObj } from '@storybook/react';
+import { withCSS } from '../../.storybook/static-css-addon/index';
 import { DarkBackground } from '../../.storybook/stories.decorators';
-import LinkList from './LinkList';
+import { LinkList } from './LinkList';
 import SCSS from './LinkList.scss?raw'; // Vite-specific syntax
 
 

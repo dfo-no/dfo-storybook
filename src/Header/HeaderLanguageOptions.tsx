@@ -25,7 +25,7 @@ interface HeaderLanguageOptionsProps {
  * If the component should be used independently it should be
  * made less reliant on header css.
  */
-export default function HeaderLanguageOptions ({
+export function HeaderLanguageOptions ({
   languages = [],
   onEvent = () => undefined,
 }: HeaderLanguageOptionsProps) {

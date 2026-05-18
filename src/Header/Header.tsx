@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import classNames from 'classnames';
-import Burger from './HeaderBurger';
-import Logo from './Logo';
-import Tr from './Translate';
-import HeaderLanguageOptions, { type LanguageOptionProps } from './HeaderLanguageOptions';
+import { Burger } from './HeaderBurger';
+import { Logo } from './Logo';
+import { Translate as Tr } from './Translate';
+import { HeaderLanguageOptions, type LanguageOptionProps } from './HeaderLanguageOptions';
 import './Header.scss';
 
 
@@ -21,7 +21,7 @@ interface HeaderProps {
   notes?: string,
 }
 
-export default function Header ({
+export function Header ({
   languages = [],
   links = [],
   isOpen: isOpenProp,

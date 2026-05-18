@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { withCSS } from '../../.storybook/static-css-addon';
-import RadioButtons from './RadioButtons';
-import { Form, Fieldset } from '../index';
+import type { Meta, StoryObj } from '@storybook/react';
+import { withCSS } from '../../.storybook/static-css-addon/index';
+import { RadioButtons } from './RadioButtons';
+import { Form, Fieldset } from '../Form/index';
 import SCSS from './RadioButtons.scss?raw'; // Vite-specific syntax
 
 

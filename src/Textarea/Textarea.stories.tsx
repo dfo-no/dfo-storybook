@@ -1,7 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { withCSS } from '../../.storybook/static-css-addon';
-import Fieldset from '../Form/Fieldset';
-import Textarea from './Textarea';
+import type { Meta, StoryObj } from '@storybook/react';
+import { withCSS } from '../../.storybook/static-css-addon/index';
+import { Fieldset } from '../Form/Fieldset';
+import { Textarea } from './Textarea';
+import { type TextareaProps } from './Textarea';
 import SCSS from './Textarea.scss?raw'; // Vite-specific syntax
 
 
@@ -47,7 +48,7 @@ type Story = StoryObj<typeof Textarea>;
 
 // Stories (CSF: Component Story Format)
 export const TextareaNormal: Story = {
-  render: (args) => (
+  render: (args: TextareaProps) => (
     <Fieldset>
       <Textarea {...args} />
     </Fieldset>
@@ -59,7 +60,7 @@ export const TextareaRequired: Story = {
     asterisk: true,
     // Inherits other args (name, autosize, label, error, value, onChange) from meta
   },
-  render: (args) => (
+  render: (args: TextareaProps) => (
     <Fieldset>
       <Textarea {...args} />
     </Fieldset>

@@ -58,7 +58,7 @@ const DefaultSVG = ({ fill }: { fill: string }) => (
   </svg>
 )
 
-export default function NavSymbol({
+export function NavSymbol({
   external = false, 
   download = false, 
   light = false,

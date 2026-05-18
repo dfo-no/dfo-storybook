@@ -5,7 +5,7 @@ interface  AlertBoxProps {
 }
 
 // the img 👇is a url-encoded version of alert.svg
-export default function Alertbox({ children = [] }: AlertBoxProps) {
+export function Alertbox({ children = [] }: AlertBoxProps) {
   return children.length > 0 ? (
     <div className="dfo-alertbox">
       <img

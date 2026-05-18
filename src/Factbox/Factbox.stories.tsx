@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { withCSS } from '../../.storybook/static-css-addon';
-import Factbox from './Factbox';
+import type { Meta, StoryObj } from '@storybook/react';
+import { withCSS } from '../../.storybook/static-css-addon/index';
+import { Factbox } from './Factbox';
 import SCSS from './Factbox.scss?raw'; // Vite-specific syntax
 
 const meta: Meta<typeof Factbox> = {

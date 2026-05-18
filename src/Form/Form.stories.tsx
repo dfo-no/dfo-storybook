@@ -1,8 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react-vite'
-import { withCSS } from '../../.storybook/static-css-addon';
+import type { Meta, StoryObj } from '@storybook/react'
+import { withCSS } from '../../.storybook/static-css-addon/index';
 import SCSS from './Form.scss?raw'; // Vite-specific syntax
 import { fn } from 'storybook/test'; 
-
 import {
   Form,
   Fieldset,
@@ -13,7 +12,8 @@ import {
   Select,
   Expand,
 } from '../index';
-import { useState, type FormEvent, type FormEventHandler } from 'react';
+import { useState, type FormEvent } from 'react';
+// import type { EventData } from 'node:test';
 
 
 const meta: Meta<typeof Form> = {

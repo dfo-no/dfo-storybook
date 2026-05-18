@@ -2,7 +2,7 @@
 // unsure if we can remove the need for updating this overview when
 // updating _colors.scss
 
-import React, { JSX } from "react";
+import React, { type JSX } from "react";
 
 
 // Define types for your color objects and styles
@@ -41,9 +41,9 @@ const colorBox: React.CSSProperties = {
   textAlign: "right"
 };
 
-const colorName = {
-  backgroundColor: "white"
-};
+// const colorName = {
+//   backgroundColor: "white"
+// };
 
 const colorNameStyle: React.CSSProperties = {
   backgroundColor: "white"

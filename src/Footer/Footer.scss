@@ -1,4 +1,4 @@
-@use "@/sass/base/index";
+@use '../sass/base/index';
 
 @mixin block($lastChildZeroMargin:true) {
   margin-bottom: index.$padding-large;

@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { withCSS } from '../../.storybook/static-css-addon';
-import ExampleTableHtml from './Table.stories.data';
-import Table from './Table';
+import type { Meta, StoryObj } from '@storybook/react';
+import { withCSS } from '../../.storybook/static-css-addon/index';
+import { ExampleTableHtml } from './Table.stories.data';
+import { Table } from './Table';
 import SCSS from './Table.scss?raw'; // Vite-specific syntax
 
 

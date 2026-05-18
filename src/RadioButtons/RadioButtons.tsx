@@ -11,7 +11,7 @@ interface RadioButtonsProps {
   options: Button[],
 }
 
-export default function RadioButtons({ 
+export function RadioButtons({ 
   name, 
   options = [],
 }: RadioButtonsProps) {

@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import LinkListSymbol from './LinkListSymbol';
+import { LinkListSymbol } from './LinkListSymbol';
 import './LinkList.scss';
 import type { ReactNode } from 'react';
 
@@ -43,7 +43,7 @@ function isDownloadLinkProps(link: LinkProps): link is DownloadLinkProps {
   return (link as DownloadLinkProps).downloadLink !== undefined;
 }
 
-export default function LinkList({ 
+export function LinkList({ 
   title = '', 
   invert = false,
   links = []

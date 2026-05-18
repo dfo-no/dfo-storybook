@@ -58,7 +58,7 @@ function parseSelectOptions(
   return [];
 };
 
-export default function Select({
+export function Select({
   name,
   displayAttr = 'text',
   label = undefined,
