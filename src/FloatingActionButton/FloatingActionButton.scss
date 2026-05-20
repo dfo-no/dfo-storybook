@@ -1,4 +1,4 @@
-@use '../sass/base/index';
+@use '../sass/base/index' as base;
 
 $dangerColor: #e5243b;
 $darkDangerColor: #890303;
@@ -21,14 +21,14 @@ $disabledColor: #cccccc;
 
   cursor: pointer;
 
-  background: index.$primaryLight;
-  color: index.$background;
+  background: base.$primaryLight;
+  color: base.$background;
   border: 2px solid white;
   &:hover,
   &:focus {
-    background-color: index.$secondary;
-    border-color: index.$secondary;
-    color: index.$background;
+    background-color: base.$secondary;
+    border-color: base.$secondary;
+    color: base.$background;
   }
 
   &:disabled {
@@ -39,45 +39,45 @@ $disabledColor: #cccccc;
 
   &--danger {
     background: $dangerColor;
-    color: index.$textonprimary;
+    color: base.$textonprimary;
     border-color: $dangerColor;
 
     &:hover,
     &:focus {
       background-color: $darkDangerColor;
       border-color: $darkDangerColor;
-      color: index.$textonprimary;
+      color: base.$textonprimary;
     }
   }
 
   &--cta {
     background: $ctaColor;
-    color: index.$textonprimary;
+    color: base.$textonprimary;
     border-color: $ctaColor;
 
     &:hover,
     &:focus {
-      background-color: index.$secondary;
-      border-color: index.$secondary;
-      color: index.$textonprimary;
+      background-color: base.$secondary;
+      border-color: base.$secondary;
+      color: base.$textonprimary;
     }
   }
 
   &--invert {
-    background: index.$blogBackground;
-    color: index.$text;
-    border-color: index.$text;
+    background: base.$blogBackground;
+    color: base.$text;
+    border-color: base.$text;
 
     &:hover,
     &:focus {
-      color: index.$background;
-      border-color: index.$text;
-      background: index.$text;
+      color: base.$background;
+      border-color: base.$text;
+      background: base.$text;
     }
   }
   &--invert:hover path,
   &--invert:focus path {
-    fill: index.$blogBackground;
+    fill: base.$blogBackground;
   }
 }
 

@@ -1,4 +1,4 @@
-@use '../sass/base/index';
+@use '../sass/base/index' as base;
 
 $disabledColor: #dddddd;
 $disabledBorderColor: #aaaaaa;
@@ -7,24 +7,24 @@ $disabledBorderColor: #aaaaaa;
   width: 100%;
   font-size: 1.8rem;
   font-weight: 600;
-  color: index.$primary;
+  color: base.$primary;
   display: block;
   position: relative;
 
   + .dfo-expand {
-    margin-top: index.$padding-small;
+    margin-top: base.$padding-small;
   }
 
   input {
     appearance: none;
     outline: none;
     box-shadow: none;
-    border: 2px solid index.$primaryLight;
-    margin: index.$padding-small 0;
+    border: 2px solid base.$primaryLight;
+    margin: base.$padding-small 0;
     outline-color: transparent;
     outline-style: none;
     background-color: #fff;
-    padding: index.$padding-medium;
+    padding: base.$padding-medium;
     width: 100%;
   }
 
@@ -33,7 +33,7 @@ $disabledBorderColor: #aaaaaa;
   input:focus,
   label:focus {
     appearance: none;
-    box-shadow: inset 0 0 0 1px index.$primaryLight;
+    box-shadow: inset 0 0 0 1px base.$primaryLight;
   }
 
   input:disabled {
@@ -57,14 +57,14 @@ $disabledBorderColor: #aaaaaa;
   }
 
   &--is-error {
-    margin-bottom: index.$padding-medium;
+    margin-bottom: base.$padding-medium;
 
     .dfo-error-wrapper::before {
-      background-color: index.$error;
+      background-color: base.$error;
     }
 
     .dfo-error-wrapper__error {
-      padding-left: index.$padding-small;
+      padding-left: base.$padding-small;
       font-weight: normal;
       font-style: italic;
     }
@@ -72,5 +72,5 @@ $disabledBorderColor: #aaaaaa;
 }
 
 .dfo-required-asterisk {
-  color: index.$error;
+  color: base.$error;
 }

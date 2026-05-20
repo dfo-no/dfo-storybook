@@ -57,8 +57,8 @@
     "classnames": "2.5.1",
     "foundation-sites": "6.9.0",
     "js-beautify": "1.15.4",
-    "react": "19.2.5",
-    "react-dom": "19.2.5",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
     "react-textarea-autosize": "8.5.9",
     "source-sans": "3.52.0",
     "source-serif": "4.5.1"

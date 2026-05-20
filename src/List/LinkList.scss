@@ -1,9 +1,9 @@
-@use '../sass/base/index';
+@use '../sass/base/index' as base;
 
-$navBorderColor: index.$secondary;
+$navBorderColor: base.$secondary;
 
-@if index.$site == "intranet" {
-  $navBorderColor: index.$darkborder;
+@if base.$site == "intranet" {
+  $navBorderColor: base.$darkborder;
 }
 
 .nav {
@@ -28,7 +28,7 @@ $navBorderColor: index.$secondary;
         &--left {
           .nav {
             &__link {
-              padding-left: index.$padding-medium + 2.2rem;
+              padding-left: base.$padding-medium + 2.2rem;
 
               &__symbol {
                 left: 0;
@@ -52,7 +52,7 @@ $navBorderColor: index.$secondary;
           color: #fff;
 
           &:hover {
-            color: index.$secondary;
+            color: base.$secondary;
           }
         }
       }
@@ -70,22 +70,22 @@ $navBorderColor: index.$secondary;
   }
 
   &__link {
-    padding: index.$padding-small (index.$padding-medium + 2.2rem + index.$padding-large)
-      index.$padding-small index.$padding-medium;
+    padding: base.$padding-small (base.$padding-medium + 2.2rem + base.$padding-large)
+      base.$padding-small base.$padding-medium;
     text-decoration: none;
-    color: index.$text;
+    color: base.$text;
     font-size: 1.8rem;
     display: block;
     position: relative;
 
     &:hover {
-      color: index.$secondary;
+      color: base.$secondary;
     }
 
     &__symbol {
       position: absolute;
-      top: index.$padding-small + 0.3rem;
-      right: index.$padding-medium;
+      top: base.$padding-small + 0.3rem;
+      right: base.$padding-medium;
     }
   }
 
@@ -109,12 +109,12 @@ $navBorderColor: index.$secondary;
 
     &--left {
       .nav__link {
-        padding-right: index.$padding-medium;
-        padding-left: index.$padding-medium + 2.2rem + index.$padding-medium;
+        padding-right: base.$padding-medium;
+        padding-left: base.$padding-medium + 2.2rem + base.$padding-medium;
 
         &__symbol {
           right: auto;
-          left: index.$padding-medium;
+          left: base.$padding-medium;
         }
       }
     }

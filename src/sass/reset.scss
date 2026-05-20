@@ -1,4 +1,4 @@
-@use 'base/index' as index;
+@use 'base/index' as base;
 @use 'base/foundation' as *;
 @include foundation-global-styles;
 
@@ -13,7 +13,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  color: index.$text;
+  color: base.$text;
 }
 
 html {
@@ -34,7 +34,7 @@ figure img {
 }
 
 blockquote {
-  color: index.$primary;
+  color: base.$primary;
   font-size: 3.2rem;
 }
 
@@ -63,17 +63,17 @@ body {
   font-style: normal;
   font-weight: 400;
   font-size: 1.8rem;
-  color: index.$text;
+  color: base.$text;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 a {
-  color: index.$primary;
+  color: base.$primary;
 
   &:hover {
-    color: index.$secondary;
+    color: base.$secondary;
   }
 }
 
@@ -95,14 +95,14 @@ h6,
 .h1,
 .h2,
 .h3 {
-  color: index.$primary;
+  color: base.$primary;
   margin: 0 0 0.125em;
   line-height: 1.25em;
 
   ol + &,
   ul + &,
   p + & {
-    margin-top: index.$padding-large;
+    margin-top: base.$padding-large;
   }
 }
 
@@ -122,11 +122,11 @@ h1,
 .h1 {
   font-size: 5rem;
 
-  @media screen and (max-width: index.$tablet) {
+  @media screen and (max-width: base.$tablet) {
     font-size: 5rem * 0.75;
   }
 
-  @media screen and (max-width: index.$mobile) {
+  @media screen and (max-width: base.$mobile) {
     font-size: 5rem * 0.6;
   }
 }
@@ -135,7 +135,7 @@ h2,
 .h2 {
   font-size: 2.2rem;
 
-  @media screen and (max-width: index.$tablet) {
+  @media screen and (max-width: base.$tablet) {
     font-size: 2.2rem * 0.9;
   }
 }
@@ -161,12 +161,12 @@ h5,
 
 ul,
 ol {
-  margin: index.$padding-medium 0;
-  padding-left: index.$padding-large;
+  margin: base.$padding-medium 0;
+  padding-left: base.$padding-large;
 }
 
 blockquote {
-  margin: index.$padding-large 0;
+  margin: base.$padding-large 0;
 }
 
 fieldset,
@@ -181,7 +181,7 @@ form {
 
 fieldset > legend {
   float: left;
-  margin-bottom: index.$padding-medium;
+  margin-bottom: base.$padding-medium;
 
   + * {
     clear: left;

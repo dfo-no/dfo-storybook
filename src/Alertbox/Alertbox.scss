@@ -1,8 +1,8 @@
-@use '../sass/base/index' as *;
+@use '../sass/base/index' as base;
 
 .dfo-alertbox {
-  background-color: $error;
-  color: $textonprimary;
+  background-color: base.$error;
+  color: base.$textonprimary;
   font-size: 19px;
   font-weight: 600;
   padding-bottom: 5px;
