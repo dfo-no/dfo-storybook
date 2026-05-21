@@ -9,8 +9,8 @@
     "dist/fonts"
   ],
   "sideEffects": [
-  "dist/lib/sass/**/*.scss",
-  "dist/sass/**/*.scss"
+    "dist/lib/sass/**/*.scss",
+    "dist/sass/**/*.scss"
   ],
   "style": [
     "dist/sass/fonts.scss",
@@ -19,39 +19,43 @@
   "private": true,
   "version": "10.0.0-beta",
   "scripts": {
-    "delete:dist": "shx rm -rf dist",
-    "delete:fonts": "shx rm -rf public/fonts",
+    "delete:dist":                "echo 'delete:dist'                && shx rm -rf dist",
+    "delete:static":              "echo 'delete:static'              && shx rm -rf storybook-static",
+    "delete:public:fonts":        "echo 'delete:public:fonts'        && shx rm -rf public/fonts",
 
-    "lint": "eslint .",
-    "compile:styles": "sass src:dist/lib --no-source-map",
-    
-    "test": "vitest",
-    "test:watch": "vitest watch",
-    
-    "copy:component_scss": "copyfiles -u 1 \"src/**/*.scss\" dist/lib",
-    "copy:base_sass": "shx cp -r src/sass dist/lib/",
-    "copy:xtra_sass": "shx cp -r src/sass dist/sass",
-    "copy:svg": "copyfiles -u 1 \"src/**/*.svg\" dist/lib",
-    "copy:foundation": "ts-node scripts/copy-foundation.ts",
-    "copy:assets": "npm run copy:component_scss && npm run copy:base_sass && npm run copy:xtra_sass && npm run copy:svg && npm run copy:foundation",
-    "copy:fonts:lib": "shx mkdir -p dist/fonts && copyfiles -u 2 \"node_modules/source-sans/WOFF*/**/*\" dist/fonts && copyfiles -u 2 \"node_modules/source-serif/WOFF*/**/*\" dist/fonts",
-    "copy:fonts:storybook": "shx rm -rf public/fonts && shx mkdir -p public/fonts && copyfiles -u 2 \"node_modules/source-sans/WOFF*/**/*\" public/fonts && copyfiles -u 2 \"node_modules/source-serif/WOFF*/**/*\" public/fonts",
-    
-    "prebuild:lib": "npm run delete:dist && ts-node scripts/generate-versions.ts",
-    "build:lib": "npm run prebuild:lib && tsc -p tsconfig.lib.json && npm run postbuild:lib",
-    "postbuild:lib": "npm run compile:styles && npm run copy:assets && npm run copy:fonts:lib || (echo 'ERROR: postbuild:lib failed. Check compile:styles, copy:assets, or copy:fonts:lib' >&2 && exit 1)",
-    "pack:lib": "npm run build:lib && npm pack",
-    
-    "dev": "vite",
-    "preview": "vite preview",
-    "build:app": "vite build || echo 'Failed to build app for deployment' >&2",
-    "build": "npm run build:lib && npm run build:app",
-    
-    "prebuild:storybook": "npm run delete:dist && ts-node scripts/generate-versions.ts && npm run copy:fonts:storybook",
-    "storybook": "npm run prebuild:storybook && storybook dev || echo 'Failed to start Storybook' >&2",
-    "build-storybook": "npm run prebuild:storybook && storybook build || echo 'Failed to build static Storybook into storybook-static folder' >&2",
+    "lint":                       "echo 'lint'                       && eslint .",
+    "compile:styles":             "echo 'compile:styles'             && sass src:dist/lib --no-source-map",
 
-    "build-all": "npm run build && npm run build-static-storybook"
+    "test":                       "echo 'test'                       && vitest",
+    "test:watch":                 "echo 'test:watch'                 && vitest watch",
+
+    "copy:component_scss":        "echo 'copy:component_scss'        && copyfiles -u 1 \"src/**/*.scss\" dist/lib",
+    "copy:base_sass":             "echo 'copy:base_sass'             && shx cp -r src/sass dist/lib/",
+    "copy:xtra_sass":             "echo 'copy:xtra_sass'             && shx cp -r src/sass dist/sass",
+    "copy:svg":                   "echo 'copy:svg'                   && copyfiles -u 1 \"src/**/*.svg\" dist/lib",
+    "copy:foundation":            "echo 'copy:foundation'            && ts-node scripts/copy-foundation.ts",
+    "copy:assets":                "echo 'copy:assets'                && npm run copy:component_scss && npm run copy:base_sass && npm run copy:xtra_sass && npm run copy:svg && npm run copy:foundation",
+    "copy:dist:fonts":            "echo 'copy:dist:fonts'            && shx mkdir -p dist/fonts     && copyfiles --flat \"node_modules/source-sans/WOFF*/**/*\" dist/fonts && copyfiles --flat \"node_modules/source-serif/WOFF*/**/*\" dist/fonts",
+    "copy:public:fonts":          "echo 'copy:public:fonts'          && shx rm -rf public/fonts     && shx mkdir -p public/fonts && copyfiles --flat \"node_modules/source-sans/WOFF*/**/*\" public/fonts && copyfiles --flat \"node_modules/source-serif/WOFF*/**/*\" public/fonts",
+
+    "dev":                        "echo 'dev'                        && vite",
+    "preview":                    "echo 'preview'                    && vite preview",
+
+    "_storybook":                  "echo 'storybook'                  && npm run copy:public:fonts && storybook dev || echo 'Failed to start Storybook' >&2",
+    "storybook:dev":              "echo 'storybook:dev'              && storybook dev -p 9009",
+    "storybook":                  "echo 'storybook'                  && npm run copy:public:fonts && npm run storybook:dev || echo 'Failed to start Storybook' >&2",
+
+    "prebuild:static:storybook":  "echo 'prebuild:static:storybook'  && npm run delete:static       && ts-node scripts/generate-versions.ts",
+    "build:static:storybook":     "echo 'build:static:storybook'     && npm run prebuild:static:storybook  && storybook build || echo 'Failed to build static Storybook into storybook-static folder' >&2",
+
+    "prebuild:lib":               "echo 'prebuild:lib'               && npm run delete:public:fonts && ts-node scripts/generate-versions.ts",
+    "build:lib:tsc":              "echo 'build:lib:tsc'              && npm run prebuild:lib        && tsc -p tsconfig.lib.json && npm run postbuild:lib || echo 'Failed to build lib for deployment' >&2",
+    "build:lib:vite":             "echo 'build:lib:vite'             && npm run prebuild:lib        && vite build || echo 'Failed to build lib for deployment' >&2",
+    "build:lib":                  "echo 'build:lib'                  && npm run build:lib:tsc",
+    "postbuild:lib":              "echo 'postbuild:lib'              && npm run compile:styles      && npm run copy:assets && npm run copy:dist:fonts || (echo 'ERROR: postbuild:lib failed. Check compile:styles, copy:assets, or copy:dist:fonts' >&2 && exit 1)",
+    "pack:lib":                   "echo 'pack:lib'                   && npm run build:lib           && npm pack",
+
+    "build":                      "echo 'build'                      && npm run build:lib           && npm run build:static:storybook"
   },
   "dependencies": {
     "classnames": "2.5.1",

@@ -2,7 +2,7 @@
 
 A collection of frontend components and building blocks for Direktoratet for forvaltning og Økonomistyring (DFØ).
 
-The library is maintained for legacy purposes and is not actively integrated into new projects.
+The library is maintained for legacy purposes and is not actively integrated into new projects any longer.
 
 The components are built with react and SCSS. The components are documented using storybook. 
 

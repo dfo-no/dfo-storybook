@@ -24,7 +24,10 @@ const config: StorybookConfig = {
   framework: {
     name: '@storybook/react-vite',
     options: {}
-  },
+  },  
+  staticDirs: [ // Explicitly define static directories
+    '../public' // Serves files from the project's public/ directory
+  ],
   core: {
     builder: '@storybook/builder-vite'
   },
@@ -36,17 +39,6 @@ const config: StorybookConfig = {
         '@': path.resolve(__dirname, '../'),
       },
     };
-
-    // // Add Sass include paths:
-    // config.css = config.css ||  {};
-    // config.css.preprocessorOptions = config.css.preprocessorOptions || {};
-    // config.css.preprocessorOptions.scss = {
-    //   ...config.css.preprocessorOptions?.scss,
-    //   loadPaths: [
-    //     path.resolve(__dirname, '../node_modules'),
-    //     path.resolve(__dirname, '../'),
-    //   ],
-    // };
 
     return mergeConfig(config, {
       plugins: [svgr()], // Ensure SVGR is applied in SB
