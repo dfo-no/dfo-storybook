@@ -4,11 +4,11 @@ A collection of frontend components and building blocks for Direktoratet for for
 
 The library is maintained for legacy purposes and is not actively integrated into new projects any longer.
 
-The components are built with react and SCSS. The components are documented using storybook. 
+The components are built with react and SCSS. The components are documented using Storybook. 
 
-To start it, run `npm start storybook` after you've cloned the repository and installed the [storybook] dependencies.
+To start it, run `npm run storybook` after you've cloned the repository and installed the [storybook] dependencies using `npm install`.
 
-To build local package, run `npm run pack:lib:local`.
+To build local package, run `npm run pack:lib`.
 
 To import package into your project, run `npm install <your-local-path>/dfo-storybook/dfo-components-10.0.0-beta.tgz --force`. Adjust <your-local-path> and the package name/version as needed.
 

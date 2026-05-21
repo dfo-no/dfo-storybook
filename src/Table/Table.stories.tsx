@@ -30,7 +30,7 @@ export const WrappingNativeTable: Story = {
     docs: {
       description: {
         story: `
-    This version show how this component wraps a regular table and ensures that it is styled correctly.
+    This version shows how this component wraps a regular table and ensures that it is styled correctly.
     In dfo.no's Craft CMS tables are stored as plain html.
     That's why this component is built to handle a plain html table.`
       },
