@@ -2,7 +2,7 @@
 
 NOTE: This version of the component library is not published on npmjs. Only local installation is supported.
 
-Short summary: To install write `npm install ../../dfo/toaesign/dfo-storybook/dfo-components-10.0.0-beta.tgz`. Add `--force` at the end, if needed, to reinstall the library (same, newer or modified version). Adjust the source path `../../dfo/toaesign/dfo-storybook/` according to your local placement of the component library and the .tgz file in particular.
+Short summary: To install write `npm install ../../dfo/toaesign/dfo-storybook/dfo-components-10.0.0.tgz`. Add `--force` at the end, if needed, to reinstall the library (same, newer or modified version). Adjust the source path `../../dfo/toaesign/dfo-storybook/` according to your local placement of the component library and the .tgz file in particular.
 
 ### Next.js
 See a minimal working project under `/examples/nextjs`.

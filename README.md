@@ -10,7 +10,7 @@ To start it, run `npm run storybook` after you've cloned the repository and inst
 
 To build local package, run `npm run pack:lib`.
 
-To import package into your project, run `npm install <your-local-path>/dfo-storybook/dfo-components-10.0.0-beta.tgz --force`. Adjust <your-local-path> and the package name/version as needed.
+To import package into your project, run `npm install <your-local-path>/dfo-storybook/dfo-components-10.0.0.tgz --force`. Adjust <your-local-path> and the package name/version as needed.
 
 ## <span style="color: red;">NOT-UPDATED-TO-SB10</span>
 

@@ -8,5 +8,6 @@ fs.writeFileSync(
   'src/versions.ts',
   `export const dfo_version = '${packageJson.version}';\n` +
   `export const react_version = '${packageJson.dependencies.react}';\n` +
+  `export const storybook_version = '${packageJson.devDependencies.storybook}';\n` +
   ``
 );
