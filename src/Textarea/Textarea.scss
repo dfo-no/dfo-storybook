@@ -1,19 +1,19 @@
-@import "../../sass/base/index";
+@use '../sass/base/index' as base;
 
 .dfo-textarea {
   width: 100%;
   font-size: 1.8rem;
   font-weight: 600;
-  color: $primary;
+  color: base.$primary;
   display: block;
   position: relative;
 
   + * {
-    margin-top: $padding-medium;
+    margin-top: base.$padding-medium;
   }
 
   + .dfo-expand {
-    margin-top: $padding-small;
+    margin-top: base.$padding-small;
   }
 
   textarea {
@@ -21,12 +21,12 @@
     line-height: 1.5;
     outline: none;
     box-shadow: none;
-    border: 2px solid $primaryLight;
-    margin: $padding-small 0;
+    border: 2px solid base.$primaryLight;
+    margin: base.$padding-small 0;
     outline-color: transparent;
     outline-style: none;
     background-color: #fff;
-    padding: $padding-small;
+    padding: base.$padding-small;
     width: 100%;
   }
 
@@ -36,7 +36,7 @@
   label:focus {
     -webkit-appearance: none;
     appearance: none;
-    box-shadow: inset 0 0 0 1px $primaryLight;
+    box-shadow: inset 0 0 0 1px base.$primaryLight;
   }
 
   .dfo-error-wrapper {
@@ -54,14 +54,14 @@
   }
 
   &--is-error {
-    margin-bottom: $padding-medium;
+    margin-bottom: base.$padding-medium;
 
     .dfo-error-wrapper::before {
-      background-color: $error;
+      background-color: base.$error;
     }
 
     .dfo-error-wrapper__error {
-      padding-left: $padding-small;
+      padding-left: base.$padding-small;
       font-weight: normal;
       font-style: italic;
     }
@@ -69,5 +69,5 @@
 }
 
 .dfo-required-asterisk {
-  color: $error;
+  color: base.$error;
 }

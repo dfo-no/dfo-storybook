@@ -1,0 +1,24 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+      "composite": true,
+      "outDir": "dist/lib",
+      "rootDir": "src",
+      "declaration": true,
+      "module": "ESNext",
+      "moduleResolution": "bundler",
+      "jsx": "react-jsx",
+      "noEmit": false,              // Ensure files are emitted
+      "emitDeclarationOnly": false  // Generate both .js and .d.ts
+    },
+    "include": ["src/**/*", "src/global.d.ts"],
+    "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.stories.*",       // Exclude all story files
+    "**/*.test.*",          // Exclude test files
+    ".storybook/**/*",      // Exclude Storybook config files
+    "src/versions.json",    // Exclude versions file - only used in SB app
+    "scripts/**/*",         // Exclude build helper scripts
+  ]
+}

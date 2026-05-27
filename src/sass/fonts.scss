@@ -1,0 +1,65 @@
+@use 'sass:map';
+@use 'sass:string';
+@use 'base/index' as *;
+
+// The font's we're making available
+$fonts: (
+  "Source Sans 3": (
+    nodeModule: 'source-sans',
+    fileBase: 'SourceSans3-',
+    weights: (
+      (name: 'Light', weight: 300, styles: (normal, italic)),
+      (name: 'Regular', weight: 400, styles: (normal, italic)),
+      (name: 'Semibold', weight: 600, styles: (normal)),
+      (name: 'Bold', weight: 700, styles: (normal)),
+    )
+  ),
+  "Source Serif 4": (
+    nodeModule: 'source-serif',
+    fileBase: 'SourceSerif4-',
+    weights: (
+      (name: 'Regular', weight: 400, styles: (normal)),
+      (name: 'Bold', weight: 700, styles: (normal)),
+    )
+  )
+);
+
+// Generate the font-face definitions
+@each $font, $data in $fonts {
+  $nodeModule: map.get($data, "nodeModule");
+  $fileBase: map.get($data, "fileBase");
+
+  @each $weight in map.get($data, "weights") {
+    @each $style in map.get($weight, "styles") {
+      $weightName: map.get($weight, "name");
+
+      $fileSuffix: '';
+
+      // Build file suffix. The suffix is for instance LightIt (It for Italic)
+      @if ($weightName == "Regular" and $style == italic) {
+        $fileSuffix: "It";
+    } @else if ($weightName == 'Regular') {
+        $fileSuffix: $weightName;
+      } @else if ($style == italic) {
+        $fileSuffix: "#{$weightName}It";
+      } @else {
+        $fileSuffix: $weightName;
+      }
+
+      // Use absolute paths for Storybook
+      $fontFileName: "#{$fileBase}#{$fileSuffix}.otf.woff2";
+      $fontPath: "/fonts/#{$fontFileName}";
+
+      /* #{$font} #{map.get($weight, name)} (#{map.get($weight, weight)}) #{$style} */
+      @font-face {
+        font-family: $font;
+        font-style: $style;
+        font-weight: map.get($weight, weight);
+        src:
+          local("#{$font} #{$weightName} #{$style}"),
+          local("#{$fileBase} #{$fileSuffix}"),
+          url('#{$fontPath}') format('woff2');
+      }
+    }
+  }
+}

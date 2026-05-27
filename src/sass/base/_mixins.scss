@@ -1,0 +1,12 @@
+@use 'sizes';
+
+@mixin block($lastChildZeroMargin: true) {
+  margin-bottom: sizes.$padding-large;
+  clear: both;
+
+  @if $lastChildZeroMargin {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

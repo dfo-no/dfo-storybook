@@ -1,56 +1,55 @@
-@import "../../sass/base/index";
+@use '../sass/base/index' as base;
 
 .dfo-form {
   width: 100%;
   max-width: unset;
-  margin-bottom: $element-gap;
-  background-color: $darkerbackground;
+  margin-bottom: base.$element-gap;
+  background-color: base.$darkerbackground;
 
   &__fieldset {
     padding-inline-start: 0;
     padding-inline-end: 0;
-    padding: $padding-large;
+    padding: base.$padding-large;
 
-    @media screen and (max-width: $mobile) {
-      padding: $padding-medium;
+    @media screen and (max-width: base.$mobile) {
+      padding: base.$padding-medium;
     }
 
     &:not(:first-of-type) {
-      border-top: 5px solid $darkbackground;
+      border-top: 5px solid base.$darkbackground;
     }
 
     &--reset-background {
       padding: 0;
-      padding-top: $padding-medium;
+      padding-top: base.$padding-medium;
       border: 0;
-      background-color: $darkbackground;
+      background-color: base.$darkbackground;
     }
   }
 
   h2 {
     width: auto;
-    margin: 0 $padding-large $padding-semilarge $padding-large;
-    padding: $padding-large 0 $padding-semilarge;
-    border-bottom: 1px solid $primary;
+    margin: 0 base.$padding-large base.$padding-semilarge base.$padding-large;
+    padding: base.$padding-large 0 base.$padding-semilarge;
+    border-bottom: 1px solid base.$primary;
 
-    @media screen and (max-width: $mobile) {
-      margin-left: $padding-medium;
-      margin-right: $padding-medium;
+    @media screen and (max-width: base.$mobile) {
+      margin-left: base.$padding-medium;
+      margin-right: base.$padding-medium;
     }
   }
 
   legend {
     font-size: 1.8rem;
     line-height: 1.8rem;
-    color: $text;
+    color: base.$text;
   }
 
   h3, .dfo-form__fieldset-title {
     width: auto;
     font-size: 2.2rem;
     line-height: 2.2rem;
-    margin-bottom: $padding-medium;
-    font-family: "Source Sans Pro";
+    margin-bottom: base.$padding-medium;
     font-weight: normal;
   }
 }

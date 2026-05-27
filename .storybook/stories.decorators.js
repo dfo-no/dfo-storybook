@@ -1,24 +1,3 @@
-import React from "react";
-import { ShowStaticMarkup as SSM } from "react-storybook-addon-static-markup";
-
-export const DarkBackground = storyFn => (
-  <div
-    style={{
-      backgroundColor: "#012a4c"
-    }}
-  >
-    {storyFn()}
-  </div>
-);
-
-export const Padding = storyFn => (
-  <div
-    style={{
-      padding: "24px"
-    }}
-  >
-    {storyFn()}
-  </div>
-);
-
-export const ShowStaticMarkup = storyFn => <SSM>{storyFn()}</SSM>;
+import { jsx as _jsx } from "react/jsx-runtime";
+export const DarkBackground = (Story) => (_jsx("div", { style: { backgroundColor: "#012a4c" }, children: _jsx(Story, {}) }));
+export const Padding = (Story) => (_jsx("div", { style: { padding: "24px" }, children: _jsx(Story, {}) }));

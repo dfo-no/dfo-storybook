@@ -1,0 +1,1 @@
+export {  Factbox } from './Factbox';

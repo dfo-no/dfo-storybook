@@ -1,7 +1,7 @@
-@import "../../sass/base/index";
+@use '../sass/base/index' as base;
 
 @mixin block($lastChildZeroMargin:true) {
-  margin-bottom: $padding-large;
+  margin-bottom: base.$padding-large;
   clear: both;
 
   @if $lastChildZeroMargin {
@@ -12,21 +12,21 @@
 }
 
 .dfo-container {
-  margin: 0 $document-padding;
+  margin: 0 base.$document-padding;
 }
 
 .dfo-footer {
-  background-color: $primary;
-  padding: $padding-xlarge 0;
-  color: $textonprimary;
+  background-color: base.$primary;
+  padding: base.$padding-xlarge 0;
+  color: base.$textonprimary;
 
   &--compact {
-    padding: $padding-large 0;
+    padding: base.$padding-large 0;
   }
 
   &__contact-wrapper {
-    @media screen and (max-width: map-get($breakpoints, 'medium')) {
-      margin-top: $padding-large;
+    @media screen and (max-width: map-get(base.$breakpoints, 'medium')) {
+      margin-top: base.$padding-large;
     }
   }
 
@@ -43,7 +43,7 @@
   }
 
   &__logo {
-    margin-bottom: $padding-medium;
+    margin-bottom: base.$padding-medium;
   }
 }
 
@@ -63,7 +63,7 @@
           color: #fff;
 
           &:hover {
-            color: $secondary;
+            color: base.$secondary;
           }
         }
       }
@@ -81,35 +81,35 @@
   }
 
   &__link {
-    padding: $padding-small ($padding-medium + 2.2rem + $padding-large) $padding-small $padding-medium;
+    padding: base.$padding-small (base.$padding-medium + 2.2rem + base.$padding-large) base.$padding-small base.$padding-medium;
     text-decoration: none;
-    color: $text;
+    color: base.$text;
     font-size: 1.8rem;
     display: block;
     position: relative;
 
     &:hover {
-      color: $secondary;
+      color: base.$secondary;
     }
 
     &__symbol {
       position: absolute;
-      top: $padding-small + 0.3rem;
-      right: $padding-medium;
+      top: base.$padding-small + 0.3rem;
+      right: base.$padding-medium;
     }
   }
 
   &__item {
-    border-bottom: 1px solid $secondary;
+    border-bottom: 1px solid base.$secondary;
     font-weight: normal;
     cursor: pointer;
 
     &:first-child {
-      border-top: 1px solid $secondary;
+      border-top: 1px solid base.$secondary;
     }
 
     &:nth-last-child(1) {
-      border-bottom: 1px solid $secondary;
+      border-bottom: 1px solid base.$secondary;
     }
   }
 }

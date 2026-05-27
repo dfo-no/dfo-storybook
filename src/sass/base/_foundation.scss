@@ -1,0 +1,4 @@
+// Sass utilities
+@forward '../../../node_modules/foundation-sites/scss/foundation' hide $global-width;
+
+$column-gutter: 100px;

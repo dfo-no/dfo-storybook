@@ -1,0 +1,11 @@
+@use 'base/index' as *;
+@use 'fonts' as *;
+@use 'reset' as *;
+
+@font-face {
+  font-family: 'SourceSerif4';
+  src: url('/fonts/WOFF2/TTF/SourceSerif4-Regular.ttf.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

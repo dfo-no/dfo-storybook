@@ -1,0 +1,14 @@
+{
+  "files": [],
+  "references": [
+    // { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.lib.json" },
+    // { "path": "./tsconfig.node.json" },
+    // { "path": "./tsconfig.storybook.json" }
+  ],
+  "compilerOptions": {
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*", "src/global.d.ts", "scripts"],
+  "exclude": ["node_modules"]
+}

@@ -1,4 +1,24 @@
 ## 🤓 Development
+In order to work on the components you fist need to clone the repo, and install the dependencies by `npm install`.
+
+To run the Storybook use `npm run storybook`.
+
+### Useful commands
+- Build library (main asset)
+    - `npm run pack:lib` => Creates file `dfo-components-<version>.tgz`
+- Install the library in a consumer app
+    - `MyAppRoot> npm install <path>/dfo-components-<version>.tgz`
+- Start Storybook in development:
+    - `npm run storybook`
+- Create a static set of Storybook files for deployment:
+    - `npm run build-storybook` => Creates folder `/storybook-static`
+- Run and serve the static Storybook locally:
+    - `npx serve storybook-static`
+
+
+## NOT-UPDATED-TO-SB10 - Kept for reference for now:
+
+## 🤓 Development
 In order to work on the components you first need to clone the repo, install the dependencies by writing `npm install` and after that: `npm start`.
 
 ### 🔗 npm link

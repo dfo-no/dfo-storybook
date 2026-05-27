@@ -1,0 +1,195 @@
+@use 'base/index' as base;
+@use 'base/foundation' as *;
+@include foundation-global-styles;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html { font-size: 10px; }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: base.$text;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+figure img {
+  max-width: 100%;
+}
+
+blockquote {
+  color: base.$primary;
+  font-size: 3.2rem;
+}
+
+cite {
+  display: block;
+  float: right;
+  font-weight: 300;
+}
+
+input {
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+button {
+  font-family: "Source Sans 3";
+}
+
+html {
+  // In order for all rem sizes to be multiples of 10 (1.2rem => 12px)
+  font-size: 10px;
+}
+
+body {
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: base.$text;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: base.$primary;
+
+  &:hover {
+    color: base.$secondary;
+  }
+}
+
+p {
+  margin: 0 0 2.5rem;
+  line-height: 1.5em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3 {
+  color: base.$primary;
+  margin: 0 0 0.125em;
+  line-height: 1.25em;
+
+  ol + &,
+  ul + &,
+  p + & {
+    margin-top: base.$padding-large;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+.h1,
+.h2,
+.h3,
+.h4 {
+  font-family: "Source Serif 4";
+  font-weight: 700;
+}
+
+h1,
+.h1 {
+  font-size: 5rem;
+
+  @media screen and (max-width: base.$tablet) {
+    font-size: 5rem * 0.75;
+  }
+
+  @media screen and (max-width: base.$mobile) {
+    font-size: 5rem * 0.6;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 2.2rem;
+
+  @media screen and (max-width: base.$tablet) {
+    font-size: 2.2rem * 0.9;
+  }
+}
+
+h3,
+.h3,
+h4,
+.h4 {
+  font-size: 1.8rem;
+}
+
+h4,
+.h4 {
+  font-weight: 400;
+}
+
+h5,
+.h5 {
+  font-family: "Source Sans 3";
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+ul,
+ol {
+  margin: base.$padding-medium 0;
+  padding-left: base.$padding-large;
+}
+
+blockquote {
+  margin: base.$padding-large 0;
+}
+
+fieldset,
+legend,
+form {
+  margin: 0;
+  padding: 0;
+  position: static;
+  display: block;
+  border: 0;
+}
+
+fieldset > legend {
+  float: left;
+  margin-bottom: base.$padding-medium;
+
+  + * {
+    clear: left;
+  }
+}
+
+// Stuff from foundation. Can we get rid of this over time?
+@include foundation-flex-grid;
+@include foundation-flex-classes;
+@include foundation-visibility-classes;
+@include foundation-media-object;

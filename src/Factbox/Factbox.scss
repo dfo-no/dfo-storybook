@@ -1,14 +1,14 @@
-@import '../../sass/base/index';
+@use '../sass/base/index' as base;
 
 .dfo-factbox {
-  @include block;
-  border: 1px solid $secondary;
+  @include base.block;
+  border: 1px solid base.$secondary;
   width: 100%;
   display: block;
-  padding: $padding-large;
-  max-width: $content-max-width;
+  padding: base.$padding-large;
+  max-width: base.$content-max-width;
 
-  @media screen and (max-width: $tablet) {
-    padding: $padding-medium;
+  @media screen and (max-width: base.$tablet) {
+    padding: base.$padding-medium;
   }
 }

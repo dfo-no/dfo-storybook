@@ -1,4 +1,4 @@
-@import "../../sass/base/index";
+@use '../sass/base/index' as base;
 
 .dfo-table-wrapper {
   width: 100%;
@@ -7,23 +7,23 @@
 
   // Force scrollbars to show on Mac if the content is overflowing.
   // Source: https://stackoverflow.com/questions/7855590
-  padding-bottom: $padding-xsmall;
+  padding-bottom: base.$padding-xsmall;
   &::-webkit-scrollbar {
     -webkit-appearance: none;
     &:vertical {
       width: 5px;
     }
-    &::horizontal {
+    &:horizontal {
       height: 5px;
     }
   }
   &::-webkit-scrollbar-thumb {
     border-radius: 8px;
-    border: 2px solid $background; /* should match background, can't be transparent */
-    background-color: $darkborder;
+    border: 2px solid base.$background; /* should match background, can't be transparent */
+    background-color: base.$darkborder;
   }
   &::-webkit-scrollbar-track {
-    background-color: $background;
+    background-color: base.$background;
     border-radius: 8px;
   }
 
@@ -36,9 +36,9 @@
 
   .table {
     border: 0;
-    border-color: $darkborder !important;
-    border-top: 1px solid $darkborder;
-    border-bottom: 1px solid $darkborder;
+    border-color: base.$darkborder !important;
+    border-top: 1px solid base.$darkborder;
+    border-bottom: 1px solid base.$darkborder;
     border-collapse: collapse;
 
     font-size: 1.6rem;
@@ -47,9 +47,9 @@
     font-weight: 400;
 
     caption {
-      margin: $padding-xsmall 0;
-      padding: $padding-medium;
-      border-top: 1px solid $darkborder;
+      margin: base.$padding-xsmall 0;
+      padding: base.$padding-medium;
+      border-top: 1px solid base.$darkborder;
       font-size: 1.6rem;
       font-weight: 400;
     }
@@ -67,13 +67,13 @@
 
     thead {
       th {
-        border-bottom: 4px solid $darkborder;
+        border-bottom: 4px solid base.$darkborder;
         vertical-align: bottom;
       }
     }
 
     tfoot {
-      border-top: 3px solid $darkborder;
+      border-top: 3px solid base.$darkborder;
     }
 
     &.table--striped {
@@ -81,10 +81,10 @@
         tr:nth-child(odd) td {
           // specialcase handling for intranet because
           // $darkerbackground does not look that great as stripe.
-          @if $site == "intranet" {
+          @if base.$site == "intranet" {
             background: #dce8f1;
           } @else {
-            background: $darkerbackground;
+            background: base.$darkerbackground;
           }
         }
       }
@@ -93,7 +93,7 @@
     &.table--with-borders {
       td,
       th {
-        border: 1px solid $darkborder;
+        border: 1px solid base.$darkborder;
         padding: 1rem 1.5rem;
       }
 

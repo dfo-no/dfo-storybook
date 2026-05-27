@@ -1,5 +1,21 @@
 ## Using the components in your project
 
+NOTE: This version of the component library is not published on npmjs. Only local installation is supported.
+
+Short summary: To install write `npm install ../../dfo/toaesign/dfo-storybook/dfo-components-10.0.0.tgz`. Add `--force` at the end, if needed, to reinstall the library (same, newer or modified version). Adjust the source path `../../dfo/toaesign/dfo-storybook/` according to your local placement of the component library and the .tgz file in particular.
+
+### Next.js
+See a minimal working project under `/examples/nextjs`.
+
+Be aware of this line in `next.config.ts`:
+```ts
+transpilePackages: ['@dfo/components'],
+```
+
+## NOT-UPDATED-TO-SB10 - Kept for reference for now:
+
+## Using the components in your project
+
 Short summary: To install, write `npm install @dfo/components` in the terminal. NPM will let you know which `peerDependencies` you need to install with it. Alternatively, you can write `npx install-peerdeps @dfo/components` which will install both the components and its peers.
 
 ### Next.js
