@@ -90,30 +90,3 @@ export function Header ({
     </header>
   );
 };
-
-
-// Header.propTypes = {
-//   languages: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       languageCode: PropTypes.string.isRequired,
-//       title: PropTypes.string.isRequired,
-//       link: PropTypes.string,
-//       isActive: PropTypes.bool,
-//     }),
-//   ),
-//   links: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       link: PropTypes.string,
-//       title: PropTypes.string,
-//     }),
-//   ),
-//   isOpen: PropTypes.bool,
-//   onEvent: PropTypes.func,
-// };
-
-// Header.defaultProps = {
-//   links: [],
-//   languages: [],
-//   isOpen: null,
-//   onEvent: () => undefined,
-// };

@@ -17,7 +17,7 @@
     "dist/sass/reset.scss"
   ],
   "private": true,
-  "version": "10.0.0",
+  "version": "10.0.1",
   "scripts": {
     "delete:dist":                "echo 'delete:dist'                && shx rm -rf dist",
     "delete:static":              "echo 'delete:static'              && shx rm -rf storybook-static",

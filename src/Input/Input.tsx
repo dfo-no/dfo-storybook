@@ -43,9 +43,11 @@ export function Input({
         <input
           aria-invalid={!!error}
           name={name}
+          type={type}
           required={asterisk}
           disabled={disabled}
           defaultValue={defaultValue}
+          placeholder={placeholder}
           {...{ ...rest, id }}
         />
 
