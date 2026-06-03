@@ -17,7 +17,7 @@
     "dist/sass/reset.scss"
   ],
   "private": true,
-  "version": "10.0.2",
+  "version": "10.0.3",
   "scripts": {
     "delete:dist":                "echo 'delete:dist'                && shx rm -rf dist",
     "delete:static":              "echo 'delete:static'              && shx rm -rf storybook-static",
@@ -41,7 +41,6 @@
     "dev":                        "echo 'dev'                        && vite",
     "preview":                    "echo 'preview'                    && vite preview",
 
-    "_storybook":                  "echo 'storybook'                  && npm run copy:public:fonts && storybook dev || echo 'Failed to start Storybook' >&2",
     "storybook:dev":              "echo 'storybook:dev'              && storybook dev -p 9009",
     "storybook":                  "echo 'storybook'                  && npm run copy:public:fonts && npm run storybook:dev || echo 'Failed to start Storybook' >&2",
 
@@ -109,6 +108,10 @@
   "overrides": {
     "storybook": {
       "@vitest/expect": "4.1.8"
-    }
+    },
+    "js-cookie": "3.0.8"
+  },
+  "_comments": {
+    "js-cookie": "Override (v3.0.8) added to solve CVE-2026-46625 due to dependency from js-beautify v1.15.4 (which is the latest version on 03.06.2026)."
   }
 }
