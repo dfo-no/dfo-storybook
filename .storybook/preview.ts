@@ -42,11 +42,10 @@ const preview: Preview = {
     },
 
     backgrounds: {
-      default: 'light',
-      values: [
-        { name: 'light', value: '#ffffff' },
-        { name: 'dark', value: '#012a4c' },
-      ],
+      options: {
+        light: { name: 'light', value: '#ffffff' },
+        dark: { name: 'dark', value: '#012a4c' }
+      }
     },
 
     options: {
@@ -66,12 +65,19 @@ const preview: Preview = {
       test: 'todo',
     },
   },
+
   decorators: [
     // DarkBackground,
     // Padding,
     withCSS,
     withStaticMarkup,
   ],
+
+  initialGlobals: {
+    backgrounds: {
+      value: 'light'
+    }
+  }
 };
 
 export default preview;
